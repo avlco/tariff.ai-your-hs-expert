@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-navy: #114B5F;
+  --primary-teal: #42C0B9;
+  --primary-gold: #D89C42;
+  --darker-navy: #0B2C36;
+  --light-surface: #F4F6F8;
+  
+  /* Light mode colors - Liquid Intelligence */
+  --background: 0 0% 99%;
+  --foreground: 200 40% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 200 40% 15%;
+  --primary: 189 58% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 200 35% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 200 20% 97%;
+  --muted-foreground: 200 15% 45%;
+  --accent: 34 66% 56%;
+  --accent-foreground: 0 0% 100%;
+  --border: 200 15% 92%;
+  --input: 200 15% 92%;
+  --ring: 189 58% 50%;
+  
+  /* Glass effects */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(17, 75, 95, 0.1);
+  --glass-shadow: rgba(17, 75, 95, 0.05);
+}
+
+html.dark {
+  --background: 222 47% 5%;
+  --foreground: 0 0% 98%;
+  --card: 222 40% 8%;
+  --card-foreground: 0 0% 98%;
+  --primary: 189 58% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 200 35% 15%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 222 35% 12%;
+  --muted-foreground: 200 15% 60%;
+  --accent: 34 66% 56%;
+  --accent-foreground: 0 0% 100%;
+  --border: 222 30% 15%;
+  --input: 222 30% 15%;
+  --ring: 189 58% 50%;
+  
+  /* Glass effects - Dark */
+  --glass-bg: rgba(11, 44, 54, 0.7);
+  --glass-border: rgba(66, 192, 185, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  
+  .mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" auto;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+  
+  /* Smooth transitions */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer utilities {
+  .bg-gradient-radial {
+    background: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .bg-gradient-conic {
+    background: conic-gradient(var(--tw-gradient-stops));
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Liquid Intelligence - Glassmorphism */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+  }
+  
+  .glass-morphism {
+    background: rgba(11, 44, 54, 0.5);
+    backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(66, 192, 185, 0.15);
+  }
+  
+  .glass-morphism-light {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(17, 75, 95, 0.1);
+  }
+  
+  /* Text Gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, #42C0B9 0%, #3ab0a9 50%, #114B5F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #D89C42 0%, #f0b056 50%, #D89C42 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Teal Glow Effect */
+  .teal-glow {
+    color: #42C0B9;
+    text-shadow: 0 0 20px rgba(66, 192, 185, 0.5),
+                 0 0 40px rgba(66, 192, 185, 0.3);
+  }
+  
+  /* Card Hover with Lift */
+  .card-hover {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px -12px rgba(66, 192, 185, 0.3),
+                0 8px 24px -8px rgba(66, 192, 185, 0.2),
+                0 0 0 1px rgba(66, 192, 185, 0.4);
+  }
+  
+  /* Premium Gold Card */
+  .gold-card {
+    background: linear-gradient(135deg, 
+      rgba(216, 156, 66, 0.15) 0%, 
+      rgba(216, 156, 66, 0.05) 100%);
+    border: 2px solid rgba(216, 156, 66, 0.3);
+    box-shadow: 0 8px 32px rgba(216, 156, 66, 0.15);
+  }
+  
+  /* Line Icons Style */
+  .line-icon {
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  /* Liquid Flow Background */
+  .liquid-flow {
+    background: linear-gradient(135deg, 
+      rgba(66, 192, 185, 0.05) 0%,
+      rgba(17, 75, 95, 0.05) 50%,
+      rgba(66, 192, 185, 0.05) 100%);
+    background-size: 400% 400%;
+    animation: liquidFlow 15s ease infinite;
+  }
+  
+  @keyframes liquidFlow {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Smooth Shadow */
+  .soft-shadow {
+    box-shadow: 0 2px 8px rgba(17, 75, 95, 0.08),
+                0 8px 24px rgba(17, 75, 95, 0.04);
+  }
+  
+  .soft-shadow-lg {
+    box-shadow: 0 4px 16px rgba(17, 75, 95, 0.1),
+                0 16px 48px rgba(17, 75, 95, 0.06);
+  }
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #42C0B9, #114B5F);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #3ab0a9, #0d3a4a);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #42C0B9 transparent;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Input Focus States */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #42C0B9;
+  box-shadow: 0 0 0 3px rgba(66, 192, 185, 0.1);
+}
+
+/* Number Counting Animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.count-up {
+  animation: countUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Selection colors */
+::selection {
+  background-color: rgba(66, 192, 185, 0.3);
+  color: var(--primary-navy);
+}
+
+.dark ::selection {
+  background-color: rgba(66, 192, 185, 0.5);
+  color: white;
+}
