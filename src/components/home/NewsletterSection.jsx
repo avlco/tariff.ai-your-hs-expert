@@ -1,173 +1,133 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, Sparkles } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useLanguage } from '../LanguageContext';
-import { base44 } from '@/api/base44Client';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Mail, ArrowRight, Sparkles } from 'lucide-react';
 
-export default function NewsletterSection() {
-  const { t, isRTL } = useLanguage();
+export default function NewsletterSection({ theme, language }) {
+  const isRTL = language === 'he';
   const [email, setEmail] = useState('');
-  const [consent, setConsent] = useState(false);
+  const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email || !consent) {
-      setError(isRTL ? 'יש להסכים לקבלת הניוזלטר' : 'Please agree to receive newsletter');
-      return;
-    }
-
-    try {
-      const response = await base44.functions.invoke('subscribeToNewsletter', {
-        email,
-        is_consented: consent,
-        source_page: 'newsletter_section'
-      });
-
-      if (response.data.success) {
-        setSubmitted(true);
-        setEmail('');
-        setConsent(false);
-        setError('');
-        setTimeout(() => setSubmitted(false), 3000);
-      }
-    } catch (err) {
-      if (err.response?.data?.already_subscribed) {
-        setError(isRTL ? 'כתובת האימייל כבר רשומה' : 'Email already subscribed');
-      } else {
-        setError(isRTL ? 'שגיאה בהרשמה' : 'Subscription failed');
-      }
+    if (email && agreed) {
+      setSubmitted(true);
+      setEmail('');
+      setAgreed(false);
+      setTimeout(() => setSubmitted(false), 3000);
     }
   };
 
   return (
-    <section className="relative py-24 bg-gradient-to-r from-[#114B5F] via-[#0d3a4a] to-[#114B5F] overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        <motion.div
-          animate={{ 
-            backgroundPosition: ['0% 0%', '100% 100%'],
-          }}
-          transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 20% 50%, #42C0B9 0%, transparent 50%), radial-gradient(circle at 80% 50%, #D89C42 0%, transparent 50%)',
-            backgroundSize: '100% 100%'
-          }}
-        />
-      </div>
-
-      {/* Floating Elements */}
-      <motion.div
-        animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-        className="absolute top-10 left-10 w-20 h-20 rounded-full bg-[#42C0B9]/20 blur-xl"
-      />
-      <motion.div
-        animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-[#D89C42]/20 blur-xl"
-      />
-
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="newsletter" className={`py-24 ${
+      theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'
+    }`} dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6"
+          className={`relative overflow-hidden rounded-[2.5rem] p-8 md:p-12 lg:p-16 ${
+            theme === 'dark' 
+              ? 'bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-white/10'
+              : 'bg-gradient-to-br from-slate-100 to-white border border-slate-200'
+          }`}
         >
-          <Sparkles className="w-4 h-4 text-[#D89C42]" />
-          <span className="text-sm font-medium text-white">{t.newsletter.badge}</span>
-        </motion.div>
+          {/* Background Elements */}
+          <div className={`absolute top-0 ${isRTL ? 'left-0' : 'right-0'} w-96 h-96 rounded-full ${
+            theme === 'dark' ? 'bg-[#E5A840]/10' : 'bg-[#E5A840]/5'
+          } blur-[100px]`} />
+          <div className={`absolute bottom-0 ${isRTL ? 'right-0' : 'left-0'} w-64 h-64 rounded-full ${
+            theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-500/5'
+          } blur-[80px]`} />
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-3xl sm:text-4xl font-bold text-white mb-4"
-        >
-          {t.newsletter.title}
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-lg text-white/70 mb-8 max-w-xl mx-auto"
-        >
-          {t.newsletter.subtitle}
-        </motion.p>
-
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-3 max-w-lg mx-auto"
-        >
-          <div className="flex flex-col sm:flex-row gap-3">
-            <div className="relative flex-1">
-              <Mail className={`absolute top-1/2 ${isRTL ? 'right-4' : 'left-4'} -translate-y-1/2 w-5 h-5 text-[#114B5F]/40`} />
-              <Input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t.newsletter.placeholder}
-                required
-                className={`w-full ${isRTL ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-6 rounded-xl border-0 bg-white text-[#114B5F] placeholder:text-[#114B5F]/40 text-base`}
-              />
+          <div className="relative grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <div className={isRTL ? 'lg:order-2' : ''}>
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 ${
+                theme === 'dark' 
+                  ? 'bg-[#E5A840]/20 text-[#E5A840]'
+                  : 'bg-[#E5A840]/10 text-[#C28E36]'
+              }`}>
+                <Sparkles className="w-4 h-4" />
+                {language === 'en' ? 'Stay Updated' : 'הישארו מעודכנים'}
+              </div>
+              
+              <h2 className={`text-3xl sm:text-4xl font-bold ${
+                theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+              }`}>
+                {language === 'en' ? 'Join Our Newsletter' : 'הצטרפו לניוזלטר'}
+              </h2>
+              <p className={`mt-4 text-lg ${
+                theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
+              }`}>
+                {language === 'en' 
+                  ? 'Get the latest tariff updates, trade news, and exclusive insights delivered to your inbox'
+                  : 'קבלו עדכוני מכס, חדשות סחר ותובנות בלעדיות ישירות למייל'}
+              </p>
             </div>
-            <Button
-              type="submit"
-              size="lg"
-              disabled={submitted}
-              className="px-8 py-6 rounded-xl bg-gradient-to-r from-[#D89C42] to-[#42C0B9] hover:from-[#c88f3a] hover:to-[#3ab0a9] text-white font-medium shadow-lg shadow-[#D89C42]/25 disabled:opacity-50"
-            >
-              {submitted ? '✓' : (
-                <>
-                  {t.newsletter.cta}
-                  <Send className={`w-4 h-4 ${isRTL ? 'mr-2' : 'ml-2'}`} />
-                </>
-              )}
-            </Button>
+
+            {/* Form */}
+            <div className={isRTL ? 'lg:order-1' : ''}>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="relative">
+                  <Mail className={`absolute top-1/2 -translate-y-1/2 ${isRTL ? 'right-4' : 'left-4'} w-5 h-5 ${
+                    theme === 'dark' ? 'text-gray-500' : 'text-slate-400'
+                  }`} />
+                  <Input
+                    type="email"
+                    placeholder={language === 'en' ? 'Enter your email' : 'הזינו אימייל'}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className={`h-14 ${isRTL ? 'pr-12' : 'pl-12'} rounded-full text-base ${
+                      theme === 'dark' 
+                        ? 'bg-[#0F172A] border-white/20 text-white placeholder:text-gray-500 focus:border-[#E5A840]'
+                        : 'bg-white border-slate-300 focus:border-[#E5A840]'
+                    }`}
+                  />
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Checkbox 
+                    id="newsletter-agree" 
+                    checked={agreed}
+                    onCheckedChange={setAgreed}
+                    className="mt-0.5 border-[#E5A840] data-[state=checked]:bg-[#E5A840] data-[state=checked]:text-[#0F172A]"
+                  />
+                  <label htmlFor="newsletter-agree" className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
+                  }`}>
+                    {language === 'en' 
+                      ? 'I agree to receive newsletters from tariff.ai'
+                      : 'אני מסכים/ה לקבל ניוזלטר מ-tariff.ai'}
+                  </label>
+                </div>
+
+                <Button 
+                  type="submit"
+                  disabled={!email || !agreed}
+                  className="w-full h-14 rounded-full bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold text-base disabled:opacity-50 transition-all duration-300 hover:shadow-xl hover:shadow-[#E5A840]/25"
+                >
+                  {submitted 
+                    ? (language === 'en' ? 'Subscribed!' : 'נרשמת בהצלחה!')
+                    : (language === 'en' ? 'Subscribe' : 'הרשמה')}
+                  {!submitted && <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 rotate-180' : 'ml-2'}`} />}
+                </Button>
+
+                <p className={`text-xs text-center ${
+                  theme === 'dark' ? 'text-gray-500' : 'text-slate-500'
+                }`}>
+                  {language === 'en' 
+                    ? 'We respect your privacy. Unsubscribe anytime.'
+                    : 'אנו מכבדים את הפרטיות שלך. בטל את המנוי בכל עת.'}
+                </p>
+              </form>
+            </div>
           </div>
-
-          <div className={`flex items-start gap-2 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}>
-            <input
-              type="checkbox"
-              id="newsletter-consent"
-              checked={consent}
-              onChange={(e) => setConsent(e.target.checked)}
-              className="mt-1 accent-[#D89C42] cursor-pointer"
-              required
-            />
-            <label htmlFor="newsletter-consent" className="text-sm text-white/80 cursor-pointer">
-              {isRTL 
-                ? 'אני מסכים/ה לקבל ניוזלטרים מ-tariff.ai'
-                : 'I agree to receive newsletters from tariff.ai'}
-            </label>
-          </div>
-
-          {error && (
-            <p className="text-sm text-red-300 text-center">{error}</p>
-          )}
-        </motion.form>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-sm text-white/50 mt-4"
-        >
-          {t.newsletter.privacy}
-        </motion.p>
+        </motion.div>
       </div>
     </section>
   );

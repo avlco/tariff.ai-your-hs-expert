@@ -1,155 +1,183 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, MessageSquare } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useLanguage } from '../LanguageContext';
-import { base44 } from '@/api/base44Client';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Mail, Clock, CheckCircle, Send } from 'lucide-react';
 
-export default function ContactSection() {
-  const { t, isRTL } = useLanguage();
-  const [formState, setFormState] = useState({
+export default function ContactSection({ theme, language }) {
+  const isRTL = language === 'he';
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     subject: '',
-    message: ''
+    message: '',
   });
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    
-    try {
-      const response = await base44.functions.invoke('submitContactForm', {
-        full_name: formState.name,
-        email: formState.email,
-        company: formState.company,
-        subject: formState.subject,
-        message: formState.message
-      });
+    setSubmitted(true);
+    setFormData({ name: '', email: '', company: '', subject: '', message: '' });
+    setTimeout(() => setSubmitted(false), 3000);
+  };
 
-      if (response.data.success) {
-        setSubmitted(true);
-        setFormState({ name: '', email: '', company: '', subject: '', message: '' });
-        setError('');
-        setTimeout(() => setSubmitted(false), 3000);
-      }
-    } catch (err) {
-      setError(isRTL ? 'שגיאה בשליחת הטופס' : 'Form submission failed');
-    }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-gradient-to-br from-[#f8fafa] to-white dark:from-[#0d1f35] dark:to-[#0a1628] overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#42C0B9]/50 to-transparent" />
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+    <section id="contact" className={`py-24 ${
+      theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'
+    }`} dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <span className={`text-sm font-semibold tracking-wider uppercase ${
+            theme === 'dark' ? 'text-[#E5A840]' : 'text-[#C28E36]'
+          }`}>
+            {language === 'en' ? 'Get in Touch' : 'צרו קשר'}
+          </span>
+          <h2 className={`mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold ${
+            theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+          }`}>
+            {language === 'en' ? 'Contact Us' : 'יצירת קשר'}
+          </h2>
+          <p className={`mt-4 text-lg max-w-2xl mx-auto ${
+            theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
+          }`}>
+            {language === 'en' 
+              ? "Have questions? We'd love to hear from you"
+              : 'יש לכם שאלות? נשמח לשמוע מכם'}
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Form */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#42C0B9]/10 border border-[#42C0B9]/20 mb-6"
-          >
-            <MessageSquare className="w-4 h-4 text-[#42C0B9]" />
-            <span className="text-sm font-medium text-[#42C0B9]">{t.contact.badge}</span>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-bold text-[#114B5F] dark:text-white mb-6"
-          >
-            {t.contact.title}
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="max-w-2xl mx-auto text-lg text-[#114B5F]/70 dark:text-gray-400"
-          >
-            {t.contact.subtitle}
-          </motion.p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: isRTL ? 30 : -30 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className={isRTL ? 'lg:order-2' : ''}
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-6">
                 <div>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+                  }`}>
+                    {language === 'en' ? 'Full Name' : 'שם מלא'}
+                  </label>
                   <Input
-                    placeholder={t.contact.form.name}
-                    value={formState.name}
-                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     required
-                    className="py-6 rounded-xl border-[#114B5F]/20 dark:border-white/20 bg-white dark:bg-[#1a2d42]"
+                    className={`h-12 rounded-xl ${
+                      theme === 'dark' 
+                        ? 'bg-[#1E293B] border-white/20 text-white placeholder:text-gray-500'
+                        : 'bg-slate-50 border-slate-200'
+                    }`}
                   />
                 </div>
                 <div>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+                  }`}>
+                    {language === 'en' ? 'Email Address' : 'כתובת אימייל'}
+                  </label>
                   <Input
+                    name="email"
                     type="email"
-                    placeholder={t.contact.form.email}
-                    value={formState.email}
-                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                    value={formData.email}
+                    onChange={handleChange}
                     required
-                    className="py-6 rounded-xl border-[#114B5F]/20 dark:border-white/20 bg-white dark:bg-[#1a2d42]"
+                    className={`h-12 rounded-xl ${
+                      theme === 'dark' 
+                        ? 'bg-[#1E293B] border-white/20 text-white placeholder:text-gray-500'
+                        : 'bg-slate-50 border-slate-200'
+                    }`}
                   />
                 </div>
               </div>
-              <Input
-                placeholder={t.contact.form.company}
-                value={formState.company}
-                onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                className="py-6 rounded-xl border-[#114B5F]/20 dark:border-white/20 bg-white dark:bg-[#1a2d42]"
-              />
-              <select
-                value={formState.subject}
-                onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                required
-                className="py-6 px-4 rounded-xl border-[#114B5F]/20 dark:border-white/20 bg-white dark:bg-[#1a2d42] text-[#114B5F] dark:text-white focus:ring-2 focus:ring-[#42C0B9] focus:border-transparent"
-              >
-                <option value="">{t.contact.form.subject || 'Select Subject'}</option>
-                <option value="general">General Inquiry</option>
-                <option value="enterprise">Enterprise Solution</option>
-                <option value="support">Technical Support</option>
-                <option value="partnership">Partnership Opportunity</option>
-                <option value="other">Other</option>
-              </select>
-              <Textarea
-                placeholder={t.contact.form.message}
-                value={formState.message}
-                onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                rows={5}
-                className="rounded-xl border-[#114B5F]/20 dark:border-white/20 bg-white dark:bg-[#1a2d42]"
-              />
-              {error && (
-                <p className="text-sm text-red-500">{error}</p>
-              )}
-              <Button
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+                  }`}>
+                    {language === 'en' ? 'Company' : 'חברה'}
+                  </label>
+                  <Input
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className={`h-12 rounded-xl ${
+                      theme === 'dark' 
+                        ? 'bg-[#1E293B] border-white/20 text-white placeholder:text-gray-500'
+                        : 'bg-slate-50 border-slate-200'
+                    }`}
+                  />
+                </div>
+                <div>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+                  }`}>
+                    {language === 'en' ? 'Subject' : 'נושא'}
+                  </label>
+                  <Input
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className={`h-12 rounded-xl ${
+                      theme === 'dark' 
+                        ? 'bg-[#1E293B] border-white/20 text-white placeholder:text-gray-500'
+                        : 'bg-slate-50 border-slate-200'
+                    }`}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className={`block text-sm font-medium mb-2 ${
+                  theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+                }`}>
+                  {language === 'en' ? 'Message' : 'הודעה'}
+                </label>
+                <Textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className={`rounded-xl resize-none ${
+                    theme === 'dark' 
+                      ? 'bg-[#1E293B] border-white/20 text-white placeholder:text-gray-500'
+                      : 'bg-slate-50 border-slate-200'
+                  }`}
+                />
+              </div>
+
+              <Button 
                 type="submit"
-                size="lg"
-                disabled={submitted}
-                className="w-full py-6 rounded-xl bg-gradient-to-r from-[#42C0B9] to-[#114B5F] hover:from-[#3ab0a9] hover:to-[#0d3a4a] text-white font-medium shadow-lg shadow-[#42C0B9]/25"
+                className="w-full h-14 rounded-full bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#E5A840]/25"
               >
-                {submitted ? '✓ Sent!' : (
+                {submitted ? (
                   <>
-                    {t.contact.form.submit}
-                    <Send className={`w-4 h-4 ${isRTL ? 'mr-2' : 'ml-2'}`} />
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    {language === 'en' ? 'Message Sent!' : 'ההודעה נשלחה!'}
+                  </>
+                ) : (
+                  <>
+                    <Send className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                    {language === 'en' ? 'Send Message' : 'שלח הודעה'}
                   </>
                 )}
               </Button>
@@ -158,50 +186,72 @@ export default function ContactSection() {
 
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: isRTL ? -30 : 30 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className={`space-y-6 ${isRTL ? 'lg:order-1' : ''}`}
+            className={`space-y-8 ${isRTL ? 'lg:order-1' : ''}`}
           >
             {/* Email Card */}
-            <motion.a
-              href={`mailto:${t.contact.info.email}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02, x: isRTL ? -5 : 5 }}
-              className="flex items-center gap-4 p-6 rounded-2xl bg-white dark:bg-[#1a2d42] border border-[#114B5F]/10 dark:border-white/10 shadow-lg shadow-black/5 cursor-pointer hover:border-[#42C0B9]/30 transition-all"
-            >
-              <div className="p-4 rounded-xl bg-gradient-to-br from-[#42C0B9]/20 to-[#114B5F]/10">
-                <Mail className="w-6 h-6 text-[#42C0B9]" />
+            <div className={`rounded-3xl p-8 ${
+              theme === 'dark' 
+                ? 'bg-[#1E293B]/50 border border-white/10'
+                : 'bg-slate-50 border border-slate-200'
+            }`}>
+              <div className={`inline-flex p-4 rounded-2xl mb-6 ${
+                theme === 'dark' ? 'bg-[#E5A840]/20' : 'bg-[#E5A840]/10'
+              }`}>
+                <Mail className="w-7 h-7 text-[#E5A840]" />
               </div>
-              <div>
-                <div className="text-sm text-[#114B5F]/60 dark:text-gray-400">Email</div>
-                <div className="text-lg font-medium text-[#114B5F] dark:text-white">{t.contact.info.email}</div>
-              </div>
-            </motion.a>
+              <h3 className={`text-xl font-bold mb-2 ${
+                theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+              }`}>
+                {language === 'en' ? 'Email' : 'אימייל'}
+              </h3>
+              <a 
+                href="mailto:hello@tariff.ai" 
+                className={`text-lg hover:text-[#E5A840] transition-colors ${
+                  theme === 'dark' ? 'text-gray-300' : 'text-slate-700'
+                }`}
+              >
+                hello@tariff.ai
+              </a>
+            </div>
 
-            {/* Info Box */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="p-8 rounded-2xl bg-gradient-to-br from-[#42C0B9]/10 to-[#114B5F]/10 border border-[#114B5F]/10 dark:border-white/10"
-            >
-              <h4 className="text-xl font-bold text-[#114B5F] dark:text-white mb-4">
-                {isRTL ? 'זמני תגובה' : 'Response Time'}
-              </h4>
-              <p className="text-[#114B5F]/70 dark:text-gray-400 mb-4">
-                {isRTL 
-                  ? 'אנו מחזירים תשובה תוך 24 שעות בימי עסקים. לפניות דחופות, נא לציין זאת בהודעה.' 
-                  : 'We respond within 24 hours on business days. For urgent inquiries, please mention it in your message.'}
-              </p>
-              <div className="flex items-center gap-2 text-sm text-[#42C0B9]">
-                <div className="w-2 h-2 rounded-full bg-[#42C0B9] animate-pulse" />
-                {isRTL ? 'זמין עכשיו' : 'Available now'}
+            {/* Response Time Card */}
+            <div className={`rounded-3xl p-8 ${
+              theme === 'dark' 
+                ? 'bg-[#1E293B]/50 border border-white/10'
+                : 'bg-slate-50 border border-slate-200'
+            }`}>
+              <div className={`inline-flex p-4 rounded-2xl mb-6 ${
+                theme === 'dark' ? 'bg-[#E5A840]/20' : 'bg-[#E5A840]/10'
+              }`}>
+                <Clock className="w-7 h-7 text-[#E5A840]" />
               </div>
-            </motion.div>
+              <h3 className={`text-xl font-bold mb-2 ${
+                theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+              }`}>
+                {language === 'en' ? 'Response Time' : 'זמן תגובה'}
+              </h3>
+              <p className={`${
+                theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
+              }`}>
+                {language === 'en' 
+                  ? 'We respond within 24 hours on business days. For urgent inquiries, please mention it in your message.'
+                  : 'אנו משיבים תוך 24 שעות בימי עסקים. לפניות דחופות, אנא ציינו זאת בהודעה.'}
+              </p>
+            </div>
+
+            {/* Status Badge */}
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+                <div className="absolute inset-0 w-3 h-3 rounded-full bg-green-500 animate-ping" />
+              </div>
+              <span className={theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}>
+                {language === 'en' ? 'Available now' : 'זמינים עכשיו'}
+              </span>
+            </div>
           </motion.div>
         </div>
       </div>

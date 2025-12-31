@@ -1,99 +1,173 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Quote, Star } from 'lucide-react';
-import { useLanguage } from '../LanguageContext';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
-export default function TestimonialsSection() {
-  const { t, isRTL } = useLanguage();
+export default function TestimonialsSection({ theme, language }) {
+  const isRTL = language === 'he';
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const testimonials = [
+    {
+      quote: language === 'en' 
+        ? 'tariff.ai saved us over $50,000 in the first quarter by identifying FTA opportunities we had missed.'
+        : 'tariff.ai חסך לנו מעל 50,000$ ברבעון הראשון על ידי זיהוי הזדמנויות FTA שהחמצנו.',
+      name: 'Sarah Chen',
+      role: language === 'en' ? 'Import Manager' : 'מנהלת יבוא',
+      company: 'GlobalTech Solutions',
+      avatar: 'S',
+    },
+    {
+      quote: language === 'en' 
+        ? 'The accuracy and speed are incredible. What used to take our team days now takes minutes.'
+        : 'הדיוק והמהירות מדהימים. מה שנהג לקחת לצוות שלנו ימים, עכשיו לוקח דקות.',
+      name: 'Michael Torres',
+      role: language === 'en' ? 'Trade Compliance Director' : 'מנהל ציות סחר',
+      company: 'Atlas Logistics',
+      avatar: 'M',
+    },
+    {
+      quote: language === 'en' 
+        ? 'Finally, a tool that speaks our language. The reports are clear, actionable, and always up-to-date.'
+        : 'סוף סוף, כלי שמדבר בשפה שלנו. הדוחות ברורים, ניתנים ליישום ותמיד עדכניים.',
+      name: 'Emma Williams',
+      role: 'CEO',
+      company: 'ImportHub',
+      avatar: 'E',
+    },
+  ];
+
+  const nextTestimonial = () => {
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   return (
-    <section id="testimonials" className="relative py-24 bg-gradient-to-b from-[#f8fafa] to-white dark:from-[#0d1f35] dark:to-[#0a1628] overflow-hidden">
-      {/* Background Accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-radial from-[#42C0B9]/10 to-transparent blur-3xl" />
+    <section id="testimonials" className={`py-24 ${
+      theme === 'dark' ? 'bg-[#0F172A]' : 'bg-[#F1F5F9]'
+    }`} dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <span className={`text-sm font-semibold tracking-wider uppercase ${
+            theme === 'dark' ? 'text-[#E5A840]' : 'text-[#C28E36]'
+          }`}>
+            {language === 'en' ? 'Success Stories' : 'סיפורי הצלחה'}
+          </span>
+          <h2 className={`mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold ${
+            theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+          }`}>
+            {language === 'en' ? 'What Our Clients Say' : 'מה הלקוחות שלנו אומרים'}
+          </h2>
+          <p className={`mt-4 text-lg max-w-2xl mx-auto ${
+            theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
+          }`}>
+            {language === 'en' 
+              ? 'Trusted by importers, exporters, and trade professionals worldwide'
+              : 'מהימן על ידי יבואנים, יצואנים ואנשי סחר ברחבי העולם'}
+          </p>
+        </motion.div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D89C42]/10 border border-[#D89C42]/20 mb-6"
-          >
-            <Star className="w-4 h-4 text-[#D89C42]" />
-            <span className="text-sm font-medium text-[#D89C42]">{t.testimonials.badge}</span>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-bold text-[#114B5F] dark:text-white mb-6"
-          >
-            {t.testimonials.title}
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="max-w-2xl mx-auto text-lg text-[#114B5F]/70 dark:text-gray-400"
-          >
-            {t.testimonials.subtitle}
-          </motion.p>
-        </div>
-
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {t.testimonials.items.map((testimonial, index) => (
+        {/* Testimonial Carousel */}
+        <div className="relative max-w-4xl mx-auto">
+          <AnimatePresence mode="wait">
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="relative group"
+              key={activeIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className={`relative rounded-3xl p-8 md:p-12 ${
+                theme === 'dark' 
+                  ? 'bg-[#1E293B]/50 border border-white/10'
+                  : 'bg-white border border-slate-200 shadow-xl'
+              }`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#42C0B9]/20 to-[#D89C42]/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative h-full p-8 rounded-3xl bg-white dark:bg-[#1a2d42] border border-[#114B5F]/10 dark:border-white/10 shadow-lg shadow-black/5">
-                {/* Quote Icon */}
-                <div className="absolute -top-4 -left-2 p-3 rounded-xl bg-gradient-to-br from-[#42C0B9] to-[#114B5F] shadow-lg">
-                  <Quote className="w-5 h-5 text-white" />
+              {/* Quote Icon */}
+              <div className={`absolute top-8 ${isRTL ? 'left-8' : 'right-8'}`}>
+                <Quote className={`w-12 h-12 ${
+                  theme === 'dark' ? 'text-[#E5A840]/30' : 'text-[#E5A840]/20'
+                }`} />
+              </div>
+
+              {/* Quote */}
+              <p className={`text-xl md:text-2xl leading-relaxed mb-8 ${
+                theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+              }`}>
+                "{testimonials[activeIndex].quote}"
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold ${
+                  theme === 'dark' 
+                    ? 'bg-[#E5A840]/20 text-[#E5A840]'
+                    : 'bg-[#E5A840]/10 text-[#C28E36]'
+                }`}>
+                  {testimonials[activeIndex].avatar}
                 </div>
-
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#D89C42] text-[#D89C42]" />
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <p className="text-[#114B5F]/80 dark:text-gray-300 leading-relaxed mb-6 italic">
-                  "{testimonial.quote}"
-                </p>
-
-                {/* Author */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#42C0B9] to-[#114B5F] flex items-center justify-center text-white font-bold text-lg">
-                    {testimonial.author.charAt(0)}
+                <div>
+                  <div className={`font-semibold ${
+                    theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+                  }`}>
+                    {testimonials[activeIndex].name}
                   </div>
-                  <div>
-                    <div className="font-semibold text-[#114B5F] dark:text-white">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-sm text-[#114B5F]/60 dark:text-gray-400">
-                      {testimonial.role}, {testimonial.company}
-                    </div>
+                  <div className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
+                  }`}>
+                    {testimonials[activeIndex].role}, {testimonials[activeIndex].company}
                   </div>
                 </div>
               </div>
             </motion.div>
-          ))}
+          </AnimatePresence>
+
+          {/* Navigation */}
+          <div className="flex justify-center items-center gap-4 mt-8">
+            <button
+              onClick={prevTestimonial}
+              className={`p-3 rounded-full transition-colors ${
+                theme === 'dark' 
+                  ? 'bg-[#1E293B] hover:bg-[#E5A840] text-white hover:text-[#0F172A]'
+                  : 'bg-slate-100 hover:bg-[#E5A840] text-slate-600 hover:text-white'
+              }`}
+            >
+              <ChevronLeft className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
+            </button>
+
+            {/* Dots */}
+            <div className="flex gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${
+                    index === activeIndex 
+                      ? 'w-8 bg-[#E5A840]'
+                      : theme === 'dark' ? 'bg-white/20' : 'bg-slate-300'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextTestimonial}
+              className={`p-3 rounded-full transition-colors ${
+                theme === 'dark' 
+                  ? 'bg-[#1E293B] hover:bg-[#E5A840] text-white hover:text-[#0F172A]'
+                  : 'bg-slate-100 hover:bg-[#E5A840] text-slate-600 hover:text-white'
+              }`}
+            >
+              <ChevronRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -1,199 +1,301 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Check, Sparkles } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { useLanguage } from '../LanguageContext';
 
-export default function PricingSection() {
-  const { t, isRTL } = useLanguage();
-  const [activeTab, setActiveTab] = useState('packages');
+export default function PricingSection({ theme, language }) {
+  const isRTL = language === 'he';
+  const [pricingType, setPricingType] = useState('packages');
+  const [billingPeriod, setBillingPeriod] = useState('monthly');
+
+  const freeReport = {
+    title: language === 'en' ? 'Try Free' : 'נסו חינם',
+    price: '$0',
+    description: language === 'en' ? 'Perfect for trying out' : 'מושלם לניסיון',
+    features: [
+      language === 'en' ? 'HS-Code & Reasoning' : 'HS-Code והסבר',
+      language === 'en' ? 'Confidence Score' : 'ציון ביטחון',
+      language === 'en' ? 'Sources' : 'מקורות',
+    ],
+  };
+
+  const packages = [
+    { reports: 1, price: '$2.99', perReport: '$2.99' },
+    { reports: 5, price: '$12.99', perReport: '$2.60' },
+    { reports: 10, price: '$22.99', perReport: '$2.30' },
+    { reports: 25, price: '$54.99', perReport: '$2.20' },
+  ];
+
+  const packageFeatures = [
+    language === 'en' ? 'HS-Code & Reasoning' : 'HS-Code והסבר',
+    language === 'en' ? 'Tariff & taxes' : 'מכס ומיסים',
+    language === 'en' ? 'Regulation' : 'תקינה',
+    language === 'en' ? 'Compliance' : 'ציות',
+    language === 'en' ? 'Alternative Codes' : 'קודים חלופיים',
+    language === 'en' ? 'Confidence Score' : 'ציון ביטחון',
+    language === 'en' ? 'Sources' : 'מקורות',
+  ];
+
+  const subscriptions = [
+    { reports: 15, monthlyPrice: '$19.99', yearlyPrice: '$15.99', perReport: '$1.33' },
+    { reports: 50, monthlyPrice: '$59.99', yearlyPrice: '$47.99', perReport: '$1.20', popular: true },
+    { reports: 200, monthlyPrice: '$199', yearlyPrice: '$159', perReport: '$1.00' },
+  ];
+
+  const subscriptionFeatures = [
+    language === 'en' ? 'Full report' : 'דוח מלא',
+    language === 'en' ? 'HS-Code Alert' : 'התראות HS-Code',
+    language === 'en' ? 'Tax Calculator' : 'מחשבון מיסים',
+    language === 'en' ? 'Freight Calculator' : 'מחשבון משלוח',
+    language === 'en' ? 'Shipping Management' : 'ניהול משלוחים',
+  ];
 
   return (
-    <section id="pricing" className="relative py-32 bg-white dark:bg-[#0B2C36] overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="pricing" className={`py-24 ${
+      theme === 'dark' ? 'bg-[#0F172A]' : 'bg-[#F1F5F9]'
+    }`} dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-4"
-          >
-            <span className="text-xs font-medium text-[#42C0B9] tracking-[0.2em] uppercase mono">
-              {t.pricing.badge}
-            </span>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl sm:text-6xl font-bold text-[#114B5F] dark:text-white mb-6 tracking-tight"
-          >
-            {t.pricing.title}
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-[#114B5F]/60 dark:text-white/50"
-          >
-            {t.pricing.subtitle}
-          </motion.p>
-        </div>
-
-        {/* Tab Toggle */}
-        <div className="flex justify-center mb-16">
-          <div className="inline-flex border border-[#114B5F]/20 dark:border-white/20">
-            <button
-              onClick={() => setActiveTab('packages')}
-              className={`px-8 py-3 text-sm font-medium transition-colors ${
-                activeTab === 'packages'
-                  ? 'bg-[#42C0B9] text-white'
-                  : 'text-[#114B5F] dark:text-white hover:bg-[#114B5F]/5 dark:hover:bg-white/5'
-              }`}
-            >
-              {t.pricing.tabs.packages}
-            </button>
-            <button
-              onClick={() => setActiveTab('subscriptions')}
-              className={`px-8 py-3 text-sm font-medium transition-colors ${
-                activeTab === 'subscriptions'
-                  ? 'bg-[#42C0B9] text-white'
-                  : 'text-[#114B5F] dark:text-white hover:bg-[#114B5F]/5 dark:hover:bg-white/5'
-              }`}
-            >
-              {t.pricing.tabs.subscriptions}
-            </button>
-          </div>
-        </div>
-
-        {/* Free Plan */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto mb-24"
+          className="text-center mb-12"
         >
-          <div className="relative border border-[#42C0B9]/50 bg-white dark:bg-[#0B2C36] p-12">
-            <div className="absolute top-0 left-0 bg-[#42C0B9] px-4 py-1">
-              <span className="text-xs font-medium text-white uppercase tracking-wider">{t.pricing.tryFree}</span>
+          <span className={`text-sm font-semibold tracking-wider uppercase ${
+            theme === 'dark' ? 'text-[#E5A840]' : 'text-[#C28E36]'
+          }`}>
+            {language === 'en' ? 'Plans' : 'תוכניות'}
+          </span>
+          <h2 className={`mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold ${
+            theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+          }`}>
+            {language === 'en' ? 'Simple, Transparent Pricing' : 'תמחור פשוט ושקוף'}
+          </h2>
+          <p className={`mt-4 text-lg max-w-2xl mx-auto ${
+            theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
+          }`}>
+            {language === 'en' 
+              ? 'Choose the plan that fits your business needs'
+              : 'בחרו את התוכנית המתאימה לצרכים העסקיים שלכם'}
+          </p>
+        </motion.div>
+
+        {/* Pricing Type Toggle */}
+        <div className="flex justify-center mb-12">
+          <Tabs value={pricingType} onValueChange={setPricingType} className="w-auto">
+            <TabsList className={`rounded-full p-1 ${
+              theme === 'dark' ? 'bg-[#1E293B]' : 'bg-slate-200'
+            }`}>
+              <TabsTrigger 
+                value="packages" 
+                className="rounded-full px-6 py-2 data-[state=active]:bg-[#E5A840] data-[state=active]:text-[#0F172A]"
+              >
+                {language === 'en' ? 'Packages' : 'חבילות'}
+              </TabsTrigger>
+              <TabsTrigger 
+                value="subscriptions" 
+                className="rounded-full px-6 py-2 data-[state=active]:bg-[#E5A840] data-[state=active]:text-[#0F172A]"
+              >
+                {language === 'en' ? 'Subscriptions' : 'מנויים'}
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </div>
+
+        {/* Free Tier Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-md mx-auto mb-12"
+        >
+          <div className={`rounded-3xl p-8 text-center ${
+            theme === 'dark' 
+              ? 'bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-white/10'
+              : 'bg-white border border-slate-200 shadow-lg'
+          }`}>
+            <h3 className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+              {freeReport.title}
+            </h3>
+            <div className={`text-5xl font-bold mt-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+              {freeReport.price}
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-12 mt-8">
-              <div>
-                <h3 className="text-4xl font-bold text-[#114B5F] dark:text-white mb-2 mono">
-                  {t.pricing.free.price}
-                </h3>
-                <p className="text-[#114B5F]/60 dark:text-white/50 mb-8">
-                  {t.pricing.free.description}
-                </p>
-                <Button className="bg-[#42C0B9] hover:bg-[#42C0B9]/90 text-white px-8 py-6 rounded-none font-medium w-full">
-                  {t.pricing.getStarted}
-                </Button>
-              </div>
-              
-              <div>
-                <div className="text-xs font-medium text-[#114B5F] dark:text-white/60 mb-4 uppercase tracking-wider">
-                  {t.pricing.reportIncludes}
+            <p className={`mt-2 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
+              {freeReport.description}
+            </p>
+            <Button className="w-full mt-6 bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold rounded-full h-12">
+              {language === 'en' ? 'Get Started' : 'התחילו'}
+            </Button>
+            <div className={`mt-6 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
+              <p className="font-medium mb-2">{language === 'en' ? 'Report Includes:' : 'הדוח כולל:'}</p>
+              {freeReport.features.map((f, i) => (
+                <div key={i} className="flex items-center justify-center gap-2 mt-1">
+                  <Check className="w-4 h-4 text-[#E5A840]" />
+                  <span>{f}</span>
                 </div>
-                <ul className="space-y-3">
-                  {t.pricing.free.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#42C0B9] flex-shrink-0 mt-0.5" strokeWidth={2} />
-                      <span className="text-sm text-[#114B5F]/80 dark:text-white/70">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              ))}
             </div>
           </div>
         </motion.div>
 
-        {/* Packages Grid */}
-        {activeTab === 'packages' && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#114B5F]/10 dark:bg-white/5 border border-[#114B5F]/10 dark:border-white/5">
-            {t.pricing.packages.map((pkg, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05 }}
-                className="bg-white dark:bg-[#0B2C36] p-8 hover:bg-[#114B5F]/5 dark:hover:bg-white/5 transition-colors"
-              >
-                <div className="text-xs font-medium text-[#42C0B9] mb-4 mono uppercase tracking-wider">
-                  {pkg.reports} {isRTL ? 'דוחות' : 'Reports'}
-                </div>
-                <div className="text-4xl font-bold text-[#114B5F] dark:text-white mb-1 mono">
-                  {pkg.price}
-                </div>
-                <div className="text-xs text-[#114B5F]/50 dark:text-white/40 mb-8">
-                  {pkg.pricePerReport} {isRTL ? 'לדוח' : 'per report'}
-                </div>
-                <Button className="w-full border border-[#114B5F]/20 dark:border-white/20 text-[#114B5F] dark:text-white hover:bg-[#42C0B9] hover:text-white hover:border-[#42C0B9] rounded-none font-medium transition-colors">
-                  {t.pricing.getStarted}
-                </Button>
-              </motion.div>
-            ))}
+        {/* Packages View */}
+        {pricingType === 'packages' && (
+          <div className="space-y-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {packages.map((pkg, index) => (
+                <motion.div
+                  key={pkg.reports}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className={`rounded-3xl p-6 ${
+                    theme === 'dark' 
+                      ? 'bg-[#1E293B]/50 border border-white/10 hover:border-[#E5A840]/30'
+                      : 'bg-white border border-slate-200 hover:border-[#E5A840]/50 shadow-lg'
+                  } transition-all duration-300`}
+                >
+                  <h4 className={`text-lg font-bold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+                    {pkg.reports} {language === 'en' ? (pkg.reports === 1 ? 'Report' : 'Reports') : 'דוחות'}
+                  </h4>
+                  <div className={`text-3xl font-bold mt-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+                    {pkg.price}
+                  </div>
+                  <p className={`text-sm mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>
+                    {pkg.perReport} {language === 'en' ? 'per report' : 'לדוח'}
+                  </p>
+                  <Button 
+                    variant="outline" 
+                    className={`w-full mt-4 rounded-full ${
+                      theme === 'dark' ? 'border-white/20 text-white hover:bg-white/10' : ''
+                    }`}
+                  >
+                    {language === 'en' ? 'Get Started' : 'התחילו'}
+                  </Button>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Package Features */}
+            <div className={`rounded-2xl p-6 ${
+              theme === 'dark' ? 'bg-[#1E293B]/30' : 'bg-white/50'
+            }`}>
+              <p className={`font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+                {language === 'en' ? 'Includes Full Report:' : 'כולל דוח מלא:'}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                {packageFeatures.map((f, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#E5A840]" />
+                    <span className={theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}>{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
-        {/* Subscriptions Grid */}
-        {activeTab === 'subscriptions' && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {Object.entries(t.pricing.subscriptions).map(([key, plan], idx) => (
-              <motion.div
-                key={key}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05 }}
-                className={`relative border p-8 ${
-                  key === 'pro'
-                    ? 'border-[#D89C42] bg-gradient-to-br from-[#D89C42]/5 to-transparent'
-                    : 'border-[#114B5F]/20 dark:border-white/20 bg-white dark:bg-[#0B2C36]'
+        {/* Subscriptions View */}
+        {pricingType === 'subscriptions' && (
+          <div className="space-y-8">
+            {/* Billing Toggle */}
+            <div className="flex justify-center items-center gap-4">
+              <span className={`text-sm ${billingPeriod === 'monthly' ? (theme === 'dark' ? 'text-white' : 'text-[#0F172A]') : (theme === 'dark' ? 'text-gray-400' : 'text-slate-500')}`}>
+                {language === 'en' ? 'Monthly' : 'חודשי'}
+              </span>
+              <button
+                onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'yearly' : 'monthly')}
+                className={`relative w-14 h-8 rounded-full transition-colors ${
+                  billingPeriod === 'yearly' ? 'bg-[#E5A840]' : (theme === 'dark' ? 'bg-[#1E293B]' : 'bg-slate-300')
                 }`}
               >
-                {key === 'pro' && (
-                  <div className="absolute -top-3 left-8 bg-[#D89C42] px-3 py-1 flex items-center gap-1">
-                    <Sparkles className="w-3 h-3 text-white" />
-                    <span className="text-xs font-medium text-white uppercase">{t.pricing.popular}</span>
-                  </div>
-                )}
-                
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-[#114B5F] dark:text-white mb-2">
-                    {plan.name}
-                  </h3>
-                  <p className="text-sm text-[#114B5F]/60 dark:text-white/50">
-                    {plan.description}
-                  </p>
-                </div>
+                <div className={`absolute top-1 w-6 h-6 rounded-full bg-white transition-transform ${
+                  billingPeriod === 'yearly' ? 'translate-x-7' : 'translate-x-1'
+                }`} />
+              </button>
+              <span className={`text-sm flex items-center gap-2 ${billingPeriod === 'yearly' ? (theme === 'dark' ? 'text-white' : 'text-[#0F172A]') : (theme === 'dark' ? 'text-gray-400' : 'text-slate-500')}`}>
+                {language === 'en' ? 'Yearly' : 'שנתי'}
+                <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-xs">
+                  20% {language === 'en' ? 'off' : 'הנחה'}
+                </Badge>
+              </span>
+            </div>
 
-                <div className="mb-6">
-                  <div className="text-4xl font-bold text-[#114B5F] dark:text-white mb-1 mono">
-                    {plan.price}
-                  </div>
-                  <div className="text-xs text-[#114B5F]/50 dark:text-white/40">
-                    {plan.reports} {isRTL ? 'דוחות חודשיים' : 'monthly reports'}
-                  </div>
-                </div>
-
-                <Button 
-                  className={`w-full rounded-none font-medium ${
-                    key === 'pro'
-                      ? 'bg-[#D89C42] hover:bg-[#D89C42]/90 text-white'
-                      : 'border border-[#114B5F]/20 dark:border-white/20 text-[#114B5F] dark:text-white hover:bg-[#42C0B9] hover:text-white hover:border-[#42C0B9]'
+            <div className="grid md:grid-cols-3 gap-8">
+              {subscriptions.map((sub, index) => (
+                <motion.div
+                  key={sub.reports}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className={`relative rounded-3xl p-8 ${
+                    sub.popular 
+                      ? 'bg-gradient-to-br from-[#E5A840] to-[#C28E36] text-[#0F172A]'
+                      : theme === 'dark' 
+                        ? 'bg-[#1E293B]/50 border border-white/10'
+                        : 'bg-white border border-slate-200 shadow-lg'
                   }`}
                 >
-                  {key === 'enterprise' ? t.pricing.contactSales : t.pricing.getStarted}
-                </Button>
-              </motion.div>
-            ))}
+                  {sub.popular && (
+                    <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0F172A] text-[#E5A840]">
+                      <Sparkles className="w-3 h-3 mr-1" />
+                      {language === 'en' ? 'Popular' : 'פופולרי'}
+                    </Badge>
+                  )}
+                  
+                  <h4 className={`text-lg font-bold ${
+                    sub.popular ? 'text-[#0F172A]' : theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+                  }`}>
+                    {language === 'en' ? `Up to ${sub.reports} Reports` : `עד ${sub.reports} דוחות`}
+                  </h4>
+                  <div className={`text-4xl font-bold mt-4 ${
+                    sub.popular ? 'text-[#0F172A]' : theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+                  }`}>
+                    {billingPeriod === 'monthly' ? sub.monthlyPrice : sub.yearlyPrice}
+                    <span className={`text-lg font-normal ${
+                      sub.popular ? 'text-[#0F172A]/70' : theme === 'dark' ? 'text-gray-400' : 'text-slate-500'
+                    }`}>
+                      /{language === 'en' ? 'mo' : 'חודש'}
+                    </span>
+                  </div>
+                  <p className={`text-sm mt-1 ${
+                    sub.popular ? 'text-[#0F172A]/70' : theme === 'dark' ? 'text-gray-400' : 'text-slate-500'
+                  }`}>
+                    {sub.perReport} {language === 'en' ? 'per report' : 'לדוח'}
+                  </p>
+                  <Button 
+                    className={`w-full mt-6 rounded-full h-12 font-semibold ${
+                      sub.popular 
+                        ? 'bg-[#0F172A] text-white hover:bg-slate-800'
+                        : 'bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A]'
+                    }`}
+                  >
+                    {language === 'en' ? 'Get Started' : 'התחילו'}
+                  </Button>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Subscription Features */}
+            <div className={`rounded-2xl p-6 ${
+              theme === 'dark' ? 'bg-[#1E293B]/30' : 'bg-white/50'
+            }`}>
+              <p className={`font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+                {language === 'en' ? 'Includes:' : 'כולל:'}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                {subscriptionFeatures.map((f, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#E5A840]" />
+                    <span className={theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}>{f}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>
