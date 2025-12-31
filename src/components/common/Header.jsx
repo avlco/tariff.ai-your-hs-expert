@@ -23,12 +23,7 @@ export default function Header({ theme, toggleTheme, language, setLanguage }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { label: language === 'en' ? 'Features' : 'יכולות', href: '#features' },
-    { label: language === 'en' ? 'How It Works' : 'איך זה עובד', href: '#how-it-works' },
-    { label: language === 'en' ? 'Pricing' : 'תמחור', href: '#pricing' },
-    { label: language === 'en' ? 'FAQs' : 'שאלות נפוצות', href: '#faqs' },
-  ];
+  const navItems = [];
 
   return (
     <motion.header
@@ -108,11 +103,13 @@ export default function Header({ theme, toggleTheme, language, setLanguage }) {
             </Button>
 
             {/* CTA Button */}
-            <Button
-              className="hidden sm:flex bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold px-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E5A840]/25"
-            >
-              {language === 'en' ? 'Get Started' : 'התחל עכשיו'}
-            </Button>
+            <a href="https://app.tariff-ai.com" className="hidden sm:block">
+              <Button
+                className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold px-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E5A840]/25"
+              >
+                {language === 'en' ? 'Get Started' : 'התחל עכשיו'}
+              </Button>
+            </a>
 
             {/* Mobile Menu Button */}
             <Button
@@ -151,9 +148,11 @@ export default function Header({ theme, toggleTheme, language, setLanguage }) {
                   {item.label}
                 </a>
               ))}
-              <Button className="w-full bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold rounded-full mt-4">
-                {language === 'en' ? 'Get Started' : 'התחל עכשיו'}
-              </Button>
+              <a href="https://app.tariff-ai.com" className="block mt-4">
+                <Button className="w-full bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold rounded-full">
+                  {language === 'en' ? 'Get Started' : 'התחל עכשיו'}
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}

@@ -152,7 +152,7 @@ export default function FeaturesSection({ theme, language }) {
           className="text-center mt-12"
         >
           <a
-            href="#pricing"
+            href="https://app.tariff-ai.com"
             className={`inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 ${
               theme === 'dark'
                 ? 'bg-[#E5A840] text-[#0F172A] hover:shadow-xl hover:shadow-[#E5A840]/25'

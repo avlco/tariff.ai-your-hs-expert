@@ -72,13 +72,15 @@ export default function HeroSection({ theme, language }) {
 
             {/* CTA Buttons */}
             <div className={`mt-10 flex flex-wrap gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <Button 
-                size="lg"
-                className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold px-8 rounded-full h-14 text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#E5A840]/25"
-              >
-                {language === 'en' ? 'Start Free Analysis' : 'התחילו ניתוח חינם'}
-                <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 rotate-180' : 'ml-2'}`} />
-              </Button>
+              <a href="https://app.tariff-ai.com">
+                <Button 
+                  size="lg"
+                  className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold px-8 rounded-full h-14 text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#E5A840]/25"
+                >
+                  {language === 'en' ? 'Start Free Analysis' : 'התחילו ניתוח חינם'}
+                  <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 rotate-180' : 'ml-2'}`} />
+                </Button>
+              </a>
               <Button 
                 variant="outline"
                 size="lg"

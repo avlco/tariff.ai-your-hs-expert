@@ -50,10 +50,12 @@ export default function HeroModern() {
           </p>
 
           <div className={`flex flex-wrap gap-4 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}>
-            <Button size="lg" className="h-14 px-8 bg-[#42C0B9] hover:bg-[#3ab0a9] text-[#0B2C36] font-bold text-lg rounded-full shadow-[0_0_20px_rgba(66,192,185,0.3)] hover:shadow-[0_0_30px_rgba(66,192,185,0.5)] transition-all">
-              {t.hero.cta}
-              {isRTL ? <ArrowRight className="mr-2 w-5 h-5 rotate-180" /> : <ArrowRight className="ml-2 w-5 h-5" />}
-            </Button>
+            <a href="https://app.tariff-ai.com">
+              <Button size="lg" className="h-14 px-8 bg-[#42C0B9] hover:bg-[#3ab0a9] text-[#0B2C36] font-bold text-lg rounded-full shadow-[0_0_20px_rgba(66,192,185,0.3)] hover:shadow-[0_0_30px_rgba(66,192,185,0.5)] transition-all">
+                {t.hero.cta}
+                {isRTL ? <ArrowRight className="mr-2 w-5 h-5 rotate-180" /> : <ArrowRight className="ml-2 w-5 h-5" />}
+              </Button>
+            </a>
             
             <Button variant="outline" size="lg" className="h-14 px-8 border-white/20 text-white hover:bg-white/10 hover:text-white rounded-full backdrop-blur-sm">
               <Play className="mr-2 w-5 h-5 fill-current" />
