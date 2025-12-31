@@ -1,255 +1,176 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Shield, Mail, User, CheckCircle2, AlertCircle } from 'lucide-react';
+import { base44 } from '@/api/base44Client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { base44 } from '@/api/base44Client';
-import { useLanguage } from './LanguageContext';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Loader2, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { toast } from 'sonner';
 
-export default function DataRequestForm() {
-  const { isRTL } = useLanguage();
-  const [step, setStep] = useState(1); // 1: form, 2: verification, 3: success
-  const [requestId, setRequestId] = useState('');
-  const [formData, setFormData] = useState({
-    request_type: 'access',
-    requester_email: '',
-    requester_name: '',
-    request_details: '',
-    verification_code: ''
-  });
+export default function DataRequestForm({ theme, language }) {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    request_type: '',
+    requester_name: '',
+    requester_email: '',
+    request_details: ''
+  });
+
+  const requestTypes = [
+    { value: 'access', label: language === 'en' ? 'Access my personal data' : 'גישה למידע האישי שלי' },
+    { value: 'rectification', label: language === 'en' ? 'Correct my data' : 'תיקון המידע שלי' },
+    { value: 'erasure', label: language === 'en' ? 'Delete my data (Right to be forgotten)' : 'מחיקת המידע שלי' },
+    { value: 'restriction', label: language === 'en' ? 'Restrict processing' : 'הגבלת עיבוד' },
+    { value: 'portability', label: language === 'en' ? 'Data portability' : 'ניוד מידע' },
+    { value: 'objection', label: language === 'en' ? 'Object to processing' : 'התנגדות לעיבוד' }
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
 
     try {
-      const response = await base44.functions.invoke('submitDataRequest', {
-        request_type: formData.request_type,
-        requester_email: formData.requester_email,
-        requester_name: formData.requester_name,
-        request_details: formData.request_details
+      await base44.entities.DataRequest.create({
+        ...formData,
+        request_status: 'submitted',
+        verification_status: 'pending'
       });
-
-      if (response.data.success) {
-        setRequestId(response.data.request_id);
-        setStep(2);
-      }
-    } catch (err) {
-      setError(err.response?.data?.error || (isRTL ? 'שגיאה בשליחת הבקשה' : 'Failed to submit request'));
+      setSuccess(true);
+      toast.success(language === 'en' ? 'Request submitted successfully' : 'הבקשה נשלחה בהצלחה');
+    } catch (error) {
+      console.error('Error submitting request:', error);
+      toast.error(language === 'en' ? 'Failed to submit request' : 'שליחת הבקשה נכשלה');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleVerify = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
+  const isRTL = language === 'he';
 
-    try {
-      const response = await base44.functions.invoke('verifyDataRequest', {
-        request_id: requestId,
-        verification_code: formData.verification_code
-      });
-
-      if (response.data.success) {
-        setStep(3);
-      }
-    } catch (err) {
-      setError(err.response?.data?.error || (isRTL ? 'קוד אימות שגוי' : 'Invalid verification code'));
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const requestTypes = {
-    access: isRTL ? 'גישה לנתונים האישיים שלי' : 'Access my personal data',
-    rectification: isRTL ? 'תיקון נתונים שגויים' : 'Correct inaccurate data',
-    erasure: isRTL ? 'מחיקת הנתונים שלי (הזכות להישכח)' : 'Delete my data (Right to be Forgotten)',
-    restriction: isRTL ? 'הגבלת עיבוד נתונים' : 'Restrict data processing',
-    portability: isRTL ? 'ניוד נתונים' : 'Data portability',
-    objection: isRTL ? 'התנגדות לעיבוד נתונים' : 'Object to data processing'
-  };
+  if (success) {
+    return (
+      <div className={`rounded-2xl p-8 text-center border ${
+        theme === 'dark' ? 'bg-[#1E293B]/50 border-white/10' : 'bg-green-50 border-green-200'
+      }`}>
+        <div className="flex justify-center mb-4">
+          <CheckCircle2 className={`w-12 h-12 ${theme === 'dark' ? 'text-[#42C0B9]' : 'text-green-600'}`} />
+        </div>
+        <h3 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          {language === 'en' ? 'Request Submitted' : 'הבקשה התקבלה'}
+        </h3>
+        <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+          {language === 'en' 
+            ? 'We have received your request and will process it within the legally required timeframe. Check your email for a confirmation.'
+            : 'קיבלנו את בקשתך ונטפל בה במסגרת הזמן הנדרש בחוק. אנא בדוק/י את המייל שלך לאישור.'}
+        </p>
+        <Button 
+          variant="outline" 
+          className="mt-6"
+          onClick={() => {
+            setSuccess(false);
+            setFormData({ request_type: '', requester_name: '', requester_email: '', request_details: '' });
+          }}
+        >
+          {language === 'en' ? 'Submit Another Request' : 'שלח בקשה נוספת'}
+        </Button>
+      </div>
+    );
+  }
 
   return (
-    <div className="max-w-2xl mx-auto">
-      {/* Step 1: Request Form */}
-      {step === 1 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="glass-card p-6 sm:p-8 rounded-2xl"
-        >
-          <div className={`flex items-center gap-3 mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <div className="p-3 rounded-xl bg-[#42C0B9]/10">
-              <Shield className="w-6 h-6 text-[#42C0B9]" />
-            </div>
-            <div className={isRTL ? 'text-right' : 'text-left'}>
-              <h3 className="text-xl font-bold text-[#114B5F] dark:text-white">
-                {isRTL ? 'בקשת נתונים אישיים' : 'Personal Data Request'}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {isRTL ? 'מימוש זכויותיך לפי GDPR ו-LGPD' : 'Exercise your GDPR & LGPD rights'}
-              </p>
-            </div>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className={`block text-sm font-medium mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
-                {isRTL ? 'סוג הבקשה' : 'Request Type'}
-              </label>
-              <select
-                value={formData.request_type}
-                onChange={(e) => setFormData({ ...formData, request_type: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-[#114B5F] dark:text-white focus:ring-2 focus:ring-[#42C0B9]"
-                required
-              >
-                {Object.entries(requestTypes).map(([key, label]) => (
-                  <option key={key} value={key}>{label}</option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label className={`block text-sm font-medium mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
-                {isRTL ? 'שם מלא' : 'Full Name'}
-              </label>
-              <div className="relative">
-                <User className={`absolute top-1/2 -translate-y-1/2 ${isRTL ? 'right-3' : 'left-3'} w-5 h-5 text-gray-400`} />
-                <Input
-                  type="text"
-                  value={formData.requester_name}
-                  onChange={(e) => setFormData({ ...formData, requester_name: e.target.value })}
-                  placeholder={isRTL ? 'הזן את שמך המלא' : 'Enter your full name'}
-                  className={`${isRTL ? 'pr-10 text-right' : 'pl-10'}`}
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className={`block text-sm font-medium mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
-                {isRTL ? 'כתובת דוא"ל' : 'Email Address'}
-              </label>
-              <div className="relative">
-                <Mail className={`absolute top-1/2 -translate-y-1/2 ${isRTL ? 'right-3' : 'left-3'} w-5 h-5 text-gray-400`} />
-                <Input
-                  type="email"
-                  value={formData.requester_email}
-                  onChange={(e) => setFormData({ ...formData, requester_email: e.target.value })}
-                  placeholder={isRTL ? 'your@email.com' : 'your@email.com'}
-                  className={`${isRTL ? 'pr-10 text-right' : 'pl-10'}`}
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className={`block text-sm font-medium mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>
-                {isRTL ? 'פרטים נוספים (אופציונלי)' : 'Additional Details (Optional)'}
-              </label>
-              <Textarea
-                value={formData.request_details}
-                onChange={(e) => setFormData({ ...formData, request_details: e.target.value })}
-                placeholder={isRTL ? 'הוסף פרטים נוספים על הבקשה שלך...' : 'Add any additional details about your request...'}
-                rows={4}
-                className={isRTL ? 'text-right' : ''}
-              />
-            </div>
-
-            {error && (
-              <div className="flex items-center gap-2 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400">
-                <AlertCircle className="w-5 h-5" />
-                <span className="text-sm">{error}</span>
-              </div>
-            )}
-
-            <Button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-gradient-to-r from-[#42C0B9] to-[#114B5F] hover:from-[#3ab0a9] hover:to-[#0d3a4a] text-white py-6"
-            >
-              {loading ? (isRTL ? 'שולח...' : 'Submitting...') : (isRTL ? 'שלח בקשה' : 'Submit Request')}
-            </Button>
-          </form>
-        </motion.div>
-      )}
-
-      {/* Step 2: Verification */}
-      {step === 2 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="glass-card p-6 sm:p-8 rounded-2xl text-center"
-        >
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#42C0B9]/10 flex items-center justify-center">
-            <Mail className="w-8 h-8 text-[#42C0B9]" />
-          </div>
-          
-          <h3 className="text-xl font-bold mb-2 text-[#114B5F] dark:text-white">
-            {isRTL ? 'בדוק את הדוא"ל שלך' : 'Check Your Email'}
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            {isRTL 
-              ? 'שלחנו קוד אימות לכתובת הדוא"ל שלך. הזן אותו למטה כדי לאמת את הבקשה שלך.'
-              : 'We sent a verification code to your email. Enter it below to verify your request.'}
+    <div className={`rounded-2xl p-6 sm:p-8 border ${
+      theme === 'dark' ? 'bg-[#1E293B]/50 border-white/10' : 'bg-white border-slate-200 shadow-sm'
+    }`}>
+      <div className="flex items-start gap-4 mb-6">
+        <div className={`p-3 rounded-xl ${theme === 'dark' ? 'bg-[#E5A840]/20' : 'bg-[#E5A840]/10'}`}>
+          <ShieldAlert className="w-6 h-6 text-[#E5A840]" />
+        </div>
+        <div>
+          <h2 className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+            {language === 'en' ? 'Exercise Your Data Rights' : 'מימוש זכויות המידע שלך'}
+          </h2>
+          <p className={`mt-1 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>
+            {language === 'en' 
+              ? 'Request access, correction, or deletion of your personal data under GDPR & LGPD.'
+              : 'בקשת גישה, תיקון או מחיקה של המידע האישי שלך תחת תקנות GDPR ו-LGPD.'}
           </p>
+        </div>
+      </div>
 
-          <form onSubmit={handleVerify} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4" dir={isRTL ? 'rtl' : 'ltr'}>
+        <div className="space-y-2">
+          <label className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-200' : 'text-slate-700'}`}>
+            {language === 'en' ? 'Request Type' : 'סוג הבקשה'}
+          </label>
+          <Select 
+            value={formData.request_type} 
+            onValueChange={(value) => setFormData({...formData, request_type: value})}
+            required
+          >
+            <SelectTrigger className={theme === 'dark' ? 'bg-[#0F172A] border-white/20 text-white' : ''}>
+              <SelectValue placeholder={language === 'en' ? 'Select request type...' : 'בחר/י סוג בקשה...'} />
+            </SelectTrigger>
+            <SelectContent>
+              {requestTypes.map((type) => (
+                <SelectItem key={type.value} value={type.value}>
+                  {type.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <label className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-200' : 'text-slate-700'}`}>
+              {language === 'en' ? 'Full Name' : 'שם מלא'}
+            </label>
             <Input
-              type="text"
-              value={formData.verification_code}
-              onChange={(e) => setFormData({ ...formData, verification_code: e.target.value })}
-              placeholder={isRTL ? 'הזן קוד אימות' : 'Enter verification code'}
-              className="text-center text-lg tracking-widest uppercase"
-              maxLength={6}
               required
+              placeholder={language === 'en' ? 'Enter your full name' : 'הכנס/י שם מלא'}
+              value={formData.requester_name}
+              onChange={(e) => setFormData({...formData, requester_name: e.target.value})}
+              className={theme === 'dark' ? 'bg-[#0F172A] border-white/20 text-white' : ''}
             />
-
-            {error && (
-              <div className="flex items-center justify-center gap-2 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400">
-                <AlertCircle className="w-5 h-5" />
-                <span className="text-sm">{error}</span>
-              </div>
-            )}
-
-            <Button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-gradient-to-r from-[#42C0B9] to-[#114B5F] hover:from-[#3ab0a9] hover:to-[#0d3a4a] text-white py-6"
-            >
-              {loading ? (isRTL ? 'מאמת...' : 'Verifying...') : (isRTL ? 'אמת' : 'Verify')}
-            </Button>
-          </form>
-        </motion.div>
-      )}
-
-      {/* Step 3: Success */}
-      {step === 3 && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="glass-card p-6 sm:p-8 rounded-2xl text-center"
-        >
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
-            <CheckCircle2 className="w-8 h-8 text-green-600 dark:text-green-400" />
           </div>
-          
-          <h3 className="text-xl font-bold mb-2 text-[#114B5F] dark:text-white">
-            {isRTL ? 'הבקשה אומתה בהצלחה!' : 'Request Verified Successfully!'}
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400">
-            {isRTL 
-              ? 'נטפל בבקשה שלך תוך 30 יום. תקבל אימייל עם עדכונים.'
-              : 'We will process your request within 30 days. You will receive email updates.'}
-          </p>
-        </motion.div>
-      )}
+
+          <div className="space-y-2">
+            <label className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-200' : 'text-slate-700'}`}>
+              {language === 'en' ? 'Email Address' : 'כתובת אימייל'}
+            </label>
+            <Input
+              required
+              type="email"
+              placeholder={language === 'en' ? 'your@email.com' : 'your@email.com'}
+              value={formData.requester_email}
+              onChange={(e) => setFormData({...formData, requester_email: e.target.value})}
+              className={theme === 'dark' ? 'bg-[#0F172A] border-white/20 text-white' : ''}
+            />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-200' : 'text-slate-700'}`}>
+            {language === 'en' ? 'Additional Details (Optional)' : 'פרטים נוספים (אופציונלי)'}
+          </label>
+          <Textarea
+            placeholder={language === 'en' ? 'Add any additional details about your request...' : 'הוסף/י פרטים נוספים על הבקשה...'}
+            value={formData.request_details}
+            onChange={(e) => setFormData({...formData, request_details: e.target.value})}
+            className={`min-h-[100px] ${theme === 'dark' ? 'bg-[#0F172A] border-white/20 text-white' : ''}`}
+          />
+        </div>
+
+        <Button 
+          type="submit" 
+          disabled={loading}
+          className="w-full sm:w-auto bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold"
+        >
+          {loading && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
+          {language === 'en' ? 'Submit Request' : 'שלח/י בקשה'}
+        </Button>
+      </form>
     </div>
   );
 }

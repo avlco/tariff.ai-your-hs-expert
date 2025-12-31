@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
+import DataRequestForm from '@/components/DataRequestForm';
 import { ArrowLeft, Check } from 'lucide-react';
 
 export default function PrivacyPolicy() {
@@ -118,8 +119,13 @@ export default function PrivacyPolicy() {
                 ))}
               </div>
               <p className={`mt-4 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                To exercise these rights, contact info@tariff-ai.com
+                To exercise these rights, you can use the form below or contact info@tariff-ai.com
               </p>
+            </section>
+
+            {/* Data Request Form */}
+            <section id="data-request">
+              <DataRequestForm theme={theme} language={language} />
             </section>
 
             {/* Data Security */}
