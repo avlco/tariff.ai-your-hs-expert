@@ -6,6 +6,7 @@ import Terms from './pages/Terms';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiePolicy from './pages/CookiePolicy';
+import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
@@ -22,4 +23,5 @@ export const PAGES = {
 export const pagesConfig = {
     mainPage: "Home",
     Pages: PAGES,
+    Layout: __Layout,
 };
