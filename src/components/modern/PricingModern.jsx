@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from '../LanguageContext';
 
 export default function PricingModern() {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
   const [activeTab, setActiveTab] = useState('subscriptions');
 
   return (
@@ -35,7 +35,7 @@ export default function PricingModern() {
         {/* Plans Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {activeTab === 'subscriptions' && Object.entries(t.pricing.subscriptions).map(([key, plan], idx) => {
-            const isPopular = key === 'pro';
+            const isPro = key === 'pro';
             return (
               <motion.div
                 key={key}
@@ -43,9 +43,9 @@ export default function PricingModern() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`relative p-8 rounded-3xl border flex flex-col ${isPopular ? "border-[#D89C42]/50 bg-gradient-to-b from-[#D89C42]/10 to-transparent shadow-[0_0_40px_-10px_rgba(216,156,66,0.15)]" : "border-white/5 bg-white/5 hover:border-white/20"}`}
+                className={`relative p-8 rounded-3xl border flex flex-col ${isPro ? "border-[#D89C42]/50 bg-gradient-to-b from-[#D89C42]/10 to-transparent shadow-[0_0_40px_-10px_rgba(216,156,66,0.15)]" : "border-white/5 bg-white/5 hover:border-white/20"}`}
               >
-                {isPopular && (
+                {isPro && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#D89C42] text-black text-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-lg">
                     <Sparkles className="w-3 h-3" /> Most Popular
                   </div>
@@ -66,7 +66,6 @@ export default function PricingModern() {
                       <Check className="w-4 h-4 text-[#42C0B9]" />
                       {plan.reports} Reports
                     </li>
-                    {/* Features list */}
                     {t.pricing.subscriptionFeatures && t.pricing.subscriptionFeatures.slice(0, 5).map((feature, i) => (
                         <li key={i} className="flex items-center gap-3 text-sm text-slate-300">
                              <Check className="w-4 h-4 text-[#42C0B9]" />
@@ -78,7 +77,7 @@ export default function PricingModern() {
 
                 <Button 
                   asChild
-                  className={`w-full h-12 rounded-xl font-medium transition-all ${isPopular ? "bg-[#D89C42] hover:bg-[#c28b39] text-black" : "bg-white/10 hover:bg-white/20 text-white"}`}
+                  className={`w-full h-12 rounded-xl font-medium transition-all ${isPro ? "bg-[#D89C42] hover:bg-[#c28b39] text-black" : "bg-white/10 hover:bg-white/20 text-white"}`}
                 >
                   <a href="https://app.tariff-ai.com/" target="_blank" rel="noopener noreferrer">
                     Get Started
@@ -110,7 +109,7 @@ export default function PricingModern() {
                   className="w-full h-12 rounded-xl font-medium transition-all bg-white/10 hover:bg-white/20 text-white"
                 >
                   <a href="https://app.tariff-ai.com/" target="_blank" rel="noopener noreferrer">
-                    Get Started
+                    Buy Now
                   </a>
                 </Button>
              </motion.div>
