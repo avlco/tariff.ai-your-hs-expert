@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Facebook, Instagram, Mail, Send } from 'lucide-react';
+import { Linkedin, Twitter, Facebook, Instagram, Mail, Send, ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Input } from "@/components/ui/input";
@@ -104,10 +104,6 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToSection = (id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <footer className="relative bg-[#114B5F] dark:bg-[#0a1628] overflow-hidden">
       {/* Top Gradient Line */}
@@ -121,12 +117,11 @@ export default function Footer() {
         }} />
       </div>
 
-
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand Column */}
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          
+          {/* Column 1: Brand & Info */}
+          <div className="flex flex-col items-start">
             <motion.a 
               href="#"
               onClick={scrollToTop}
@@ -138,7 +133,7 @@ export default function Footer() {
                 tariff<span className="text-[#42C0B9]">.ai</span>
               </span>
             </motion.a>
-            <p className="text-white/60 mb-6">
+            <p className="text-white/60 mb-6 max-w-sm">
               {t.footer.description}
             </p>
             {/* Social Links */}
@@ -156,23 +151,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Newsletter Signup */}
-          <div className="md:col-span-1">
-            <h4 className="text-white font-semibold mb-4">{t.newsletter.title}</h4>
-            <p className="text-white/60 text-sm mb-4">
-              {t.newsletter.subtitle}
-            </p>
-            <NewsletterForm />
-          </div>
-
-          {/* Legal Links */}
-          <div>
+          {/* Column 2: Legal Links */}
+          <div className="md:px-8">
             <h4 className="text-white font-semibold mb-4">{t.footer.legal}</h4>
             <ul className="space-y-3">
               <li>
                 <Link
                   to={createPageUrl('Terms')}
-                  className="text-white/60 hover:text-[#42C0B9] transition-colors"
+                  className="text-white/60 hover:text-[#42C0B9] transition-colors inline-block"
                 >
                   {t.footer.links.terms}
                 </Link>
@@ -180,7 +166,7 @@ export default function Footer() {
               <li>
                 <Link
                   to={createPageUrl('Privacy')}
-                  className="text-white/60 hover:text-[#42C0B9] transition-colors"
+                  className="text-white/60 hover:text-[#42C0B9] transition-colors inline-block"
                 >
                   {t.footer.links.privacy}
                 </Link>
@@ -188,31 +174,53 @@ export default function Footer() {
               <li>
                 <Link
                   to={createPageUrl('Cookies')}
-                  className="text-white/60 hover:text-[#42C0B9] transition-colors"
+                  className="text-white/60 hover:text-[#42C0B9] transition-colors inline-block"
                 >
                   {t.footer.links.cookies}
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Column 3: Newsletter */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">{t.newsletter.title}</h4>
+            <p className="text-white/60 text-sm mb-4">
+              {t.newsletter.subtitle}
+            </p>
+            <NewsletterForm />
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-white/40 text-sm">
+            <p className="text-white/40 text-sm order-2 sm:order-1">
               {t.footer.copyright}
             </p>
-            <div className="flex items-center gap-2">
-              <span className="text-white/40 text-sm">Made with</span>
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="text-red-500"
+            
+            <div className="flex items-center gap-6 order-1 sm:order-2">
+              <div className="flex items-center gap-2">
+                <span className="text-white/40 text-sm">Made with</span>
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                  className="text-red-500"
+                >
+                  ❤️
+                </motion.span>
+                <span className="text-white/40 text-sm">for global trade</span>
+              </div>
+
+              {/* Back to Top Button */}
+              <motion.button
+                onClick={scrollToTop}
+                whileHover={{ y: -3 }}
+                className="p-2 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-[#42C0B9] hover:bg-white/10 transition-all"
+                title="Back to Top"
               >
-                ❤️
-              </motion.span>
-              <span className="text-white/40 text-sm">for global trade</span>
+                <ArrowUp className="w-4 h-4" />
+              </motion.button>
             </div>
           </div>
         </div>
