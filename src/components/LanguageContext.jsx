@@ -221,7 +221,8 @@ export const translations = {
       subtitle: 'Get the latest tariff updates, trade news, and exclusive insights delivered to your inbox',
       placeholder: 'Enter your email',
       cta: 'Subscribe',
-      privacy: 'We respect your privacy. Unsubscribe anytime.'
+      privacy: 'We respect your privacy. Unsubscribe anytime.',
+      consent: 'I agree to receive newsletters from tariff.ai'
     },
     testimonials: {
       badge: 'Success Stories',
@@ -590,10 +591,11 @@ export const translations = {
     newsletter: {
       badge: 'הישארו מעודכנים',
       title: 'הצטרפו לניוזלטר',
-      subtitle: 'קבלו עדכוני מכסים, חדשות סחר ותובנות בלעדיות ישירות לתיבת הדואר',
+      subtitle: 'קבלו עדכוני מכס, חדשות סחר ותובנות בלעדיות ישירות למייל',
       placeholder: 'הזינו את האימייל שלכם',
       cta: 'הרשמה',
-      privacy: 'אנחנו מכבדים את הפרטיות שלכם. ביטול בכל עת.'
+      privacy: 'אנחנו מכבדים את הפרטיות שלכם. ביטול בכל עת.',
+      consent: 'אני מסכים/ה לקבל ניוזלטר מ-tariff.ai'
     },
     testimonials: {
       badge: 'סיפורי הצלחה',
@@ -713,7 +715,7 @@ export const translations = {
       }
     },
     footer: {
-      description: 'בינה מלאכותית לניתוח מכסים עבור אנשי מקצוע בסחר בינלאומי.',
+      description: 'מודיעין מכס מונע AI לאנשי סחר בינלאומי.',
       product: 'מוצר',
       company: 'חברה',
       legal: 'משפטי',
