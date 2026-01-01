@@ -1,549 +1,316 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Cookie, CheckCircle2, XCircle, Clock, Settings, Globe, Database, Shield, Lock, FileText, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
-import { ArrowLeft, Check, X, Info } from 'lucide-react';
+import { LanguageProvider, useLanguage } from '../components/LanguageContext';
+import Footer from '../components/home/Footer';
+import ScrollToTop from '../components/home/ScrollToTop';
+import ReactMarkdown from 'react-markdown';
 
-export default function CookiePolicy() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
-  const [language, setLanguage] = useState(() => localStorage.getItem('language') || 'en');
+function CookiesContent() {
+  const { language, isRTL } = useLanguage();
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
-  }, [theme]);
+    window.scrollTo(0, 0);
+  }, []);
 
-  const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  const isRTL = language === 'he';
+  const content = {
+    en: {
+      title: 'Cookie Policy',
+      subtitle: 'Understanding how we use cookies and similar technologies on tariff.ai',
+      lastUpdated: 'Last updated: December 22, 2025 | Version 1.0',
+      back: 'Back to Home',
+      sections: [
+        {
+          icon: Cookie,
+          title: '1. What Are Cookies',
+          content: `Cookies are small text files stored on your device (computer, tablet, or mobile phone) when you visit a website. They help websites remember your preferences, understand how you use them, and provide a better user experience.\n\n**Key Characteristics:**\n* Text files (not programs or viruses)\n* Store information about your visit\n* Can be deleted or blocked at any time\n* Come in different types with different purposes`
+        },
+        {
+          icon: Settings,
+          title: '2. How We Use Cookies',
+          content: `tariff.ai uses cookies for the following purposes:\n\n**Essential Functions:**\n* Maintain your logged-in session\n* Remember your language and theme preferences\n* Secure your connection to our services\n\n**Analytics & Performance:**\n* Understand which pages are most popular\n* Analyze user behavior to improve our service\n* Track technical errors and bugs\n\n**User Experience:**\n* Remember your cookie consent preferences\n* Personalize content based on your interests\n* Optimize site performance`
+        },
+        {
+          icon: CheckCircle2,
+          title: '3. Types of Cookies We Use',
+          content: `**3.1 Essential Cookies (Always Active)**\nThese cookies are necessary for the website to function and cannot be disabled.\n\n* **Session Management:** Keeps you logged in as you navigate\n* **Security:** Protects against CSRF and other attacks\n* **Load Balancing:** Distributes traffic across servers\n\nExamples: session_id, csrf_token, auth_state\n\n**3.2 Analytics Cookies (Requires Consent)**\nHelp us understand how visitors interact with our website.\n\n* **Page Views:** Track which pages are visited (PageView entity)\n* **User Actions:** Monitor clicks, form submissions, scrolling (UserAction entity)\n* **Session Data:** Analyze user journey and engagement\n* **Device Info:** Browser type, OS, screen resolution, language\n\nExamples: Google Analytics\n\n**3.3 Marketing Cookies (Requires Consent)**\nUsed to deliver relevant advertisements and measure campaign effectiveness.\n\n* **Ad Targeting:** Show relevant ads based on interests\n* **Conversion Tracking:** Measure effectiveness of campaigns\n* **Retargeting:** Display ads to previous visitors\n\nExamples: Facebook Pixel, Google Ads\n\nNote: Marketing cookies are currently not active on tariff.ai`
+        },
+        {
+          icon: Clock,
+          title: '4. Cookie Duration',
+          content: `**Session Cookies (Temporary)**\nThese cookies expire when you close your browser.\n\n* Duration: Until browser closes\n* Purpose: Maintain active session, navigation state\n* Examples: PHPSESSID, session_token\n* Storage: Browser memory only\n\n**Persistent Cookies (Long-term)**\nThese cookies remain on your device for a specified period.\n\n* **Short-term:** 24 hours to 30 days (analytics)\n* **Medium-term:** 30 days to 1 year (preferences)\n* **Long-term:** 1-2 years (consent records)\n\nExamples:\n* Cookie Consent: 1 year (stores your cookie preferences)\n* Analytics Session: 12 months (tracks returning visitors)\n* Language Preference: 6 months (remembers your language choice)`
+        },
+        {
+          icon: Database,
+          title: '5. Cookies We Use - Detailed List',
+          content: `**Essential Cookies:**
+
+| Cookie Name | Purpose | Duration | Type |
+|---|---|---|---|
+| session_id | User session management | Session | First-party |
+| analytics_session_id | Analytics tracking ID | 12 months | First-party |
+| cookie_consent | Stores consent preferences | 1 year | First-party |
+
+**Analytics Cookies (with consent):**
+
+| Cookie Name | Purpose | Duration | Type |
+|---|---|---|---|
+| Page tracking | Records page views | 12 months | First-party |
+| Action tracking | Records user interactions | 12 months | First-party |
+| Session data | Tracks user sessions | 30 minutes | First-party |`
+        },
+        {
+          icon: Globe,
+          title: '6. Third-Party Cookies',
+          content: `Currently, tariff.ai minimizes the use of third-party cookies. However, we may use:\n\n**Base44 Platform (Infrastructure Provider):**\n* Essential for application functionality\n* Secure data processing\n* Covered by our Data Processing Agreement (DPA)\n\n**Future Third-Party Services:**\nIf we integrate additional third-party services (analytics, payment processors, etc.), we will:\n* Update this policy with details\n* Request your consent where required\n* Provide opt-out mechanisms\n* Ensure GDPR/LGPD compliance\n\n**Note:** We do NOT use third-party advertising networks or social media tracking pixels.`
+        },
+        {
+          icon: Settings,
+          title: '7. Managing Your Cookie Preferences',
+          content: `**7.1 Through Our Cookie Banner:**
+When you first visit tariff.ai, you'll see a cookie consent banner allowing you to:
+* Accept all cookies
+* Accept only essential cookies
+* Customize your preferences (choose which categories to allow)
+
+Your preferences are saved and can be changed at any time.
+
+**7.2 Through Your Browser:**
+All modern browsers allow you to control cookies:
+
+**Google Chrome:**
+1. Settings → Privacy and security → Cookies and other site data
+2. Choose: Allow all, Block third-party, or Block all
+
+
+**Mozilla Firefox:**
+1. Settings → Privacy & Security → Cookies and Site Data
+2. Choose standard, strict, or custom blocking
+
+
+**Safari (Mac/iOS):**
+1. Preferences → Privacy → Cookies and website data
+2. Block all cookies or allow from current website only
+
+
+**Microsoft Edge:**
+1. Settings → Cookies and site permissions → Manage cookies
+2. Choose blocking level
+
+
+**Important:** Blocking essential cookies will prevent the site from functioning properly.`
+        },
+        {
+          icon: XCircle,
+          title: '8. Disabling Cookies - Impact',
+          content: `**If You Disable All Cookies:**\n* ❌ Cannot stay logged in\n* ❌ Settings and preferences won't be saved\n* ❌ Some features may not work\n* ❌ You'll need to set preferences on every visit\n\n**If You Disable Only Non-Essential Cookies:**\n* ✅ Website will function normally\n* ✅ You'll stay logged in\n* ❌ We won't be able to improve the site based on usage data\n* ❌ You may see less relevant content\n\n**Recommendation:** Keep essential cookies enabled, customize analytics/marketing based on your privacy preferences.`
+        },
+        {
+          icon: Shield,
+          title: '9. Do Not Track (DNT)',
+          content: `Some browsers offer a "Do Not Track" (DNT) signal that indicates you don't want to be tracked.\n\n**Our Approach:**\n* We honor your cookie consent choices through our banner\n* DNT signals are not universally standardized\n* Your explicit cookie preferences take precedence\n* We provide granular control through our cookie settings\n\n**Best Practice:** Use our cookie consent banner for precise control over tracking.`
+        },
+        {
+          icon: Lock,
+          title: '10. Data Collected Through Cookies',
+          content: `The data collected through cookies includes:\n\n**Device Information:**\n* IP address (anonymized after 90 days)\n* Browser type and version\n* Operating system\n* Device type (mobile, tablet, desktop)\n* Screen resolution\n\n**Usage Information:**\n* Pages visited and time spent\n* Click patterns and interactions\n* Referrer URL (where you came from)\n* Session duration\n* Scroll depth\n\n**Technical Information:**\n* Language preference\n* Timezone\n* Connection type\n* Viewport size\n\nAll data is processed in accordance with our Privacy Policy and GDPR/LGPD requirements.`
+        },
+        {
+          icon: FileText,
+          title: '11. Your Rights',
+          content: `Under GDPR and LGPD, you have the right to:\n\n✓ **Be Informed:** This Cookie Policy explains our practices\n\n✓ **Give or Withdraw Consent:** Control which cookies are used\n\n✓ **Access Your Data:** Request information about cookies stored\n\n✓ **Delete Data:** Request deletion of cookie data\n\n✓ **Object to Processing:** Opt out of non-essential cookies\n\nTo exercise these rights, visit our Privacy Policy page or contact info@tariff-ai.com`
+        },
+        {
+          icon: Globe,
+          title: '12. International Users',
+          content: `**For EU Users (GDPR):**\n* We obtain explicit consent before non-essential cookies\n* You can withdraw consent at any time\n* Data transfers comply with Standard Contractual Clauses (SCCs)\n\n**For Brazilian Users (LGPD):**\n* We obtain consent for non-essential cookies\n* You have the right to revoke consent\n* Data processing complies with LGPD requirements\n\n**For All Users:**\nCookie data is subject to the same protections as other personal data under our Privacy Policy.`
+        },
+        {
+          icon: Settings,
+          title: '13. Updates to This Cookie Policy',
+          content: `We may update this Cookie Policy to reflect:\n* Changes in technology or cookie usage\n* New features or services\n* Legal or regulatory requirements\n* User feedback and best practices\n\n**When We Update:**\n* The "Last Updated" date will change\n* Material changes will be highlighted\n* You may be asked to review and accept new terms\n* Previous versions will be archived\n\n**Staying Informed:**\nReview this policy periodically to stay informed about how we use cookies.`
+        },
+        {
+          icon: Mail,
+          title: '14. Contact Us',
+          content: `If you have questions about our use of cookies:\n\n**Email:** info@tariff-ai.com\n\n**Subject Line:** "Cookie Policy Inquiry"\n\n**What to Include:**\n* Your question or concern\n* Browser and device information (if technical issue)\n* Screenshots (if helpful)\n\nWe respond to all cookie-related inquiries within 48 hours.\n\n**For GDPR/LGPD-specific inquiries:**\n* EU: info@tariff-ai.com\n* Brazil: info@tariff-ai.com`
+        }
+      ]
+    },
+    he: {
+      title: 'מדיניות עוגיות (Cookies)',
+      subtitle: 'הבנת האופן שבו אנו משתמשים בעוגיות ובטכנולוגיות דומות באתר tariff.ai.',
+      lastUpdated: 'עדכון אחרון: 22 בדצמבר 2025 | גרסה 1.0',
+      back: 'חזרה לדף הבית',
+      sections: [
+        {
+          icon: Cookie,
+          title: '1. מהן עוגיות (Cookies)?',
+          content: `עוגיות הן קבצי טקסט קטנים המאוחסנים במכשיר שלך (מחשב, טאבלט או טלפון נייד) כאשר אתה מבקר באתר אינטרנט. הן עוזרות לאתרים לזכור את העדפותיך, להבין כיצד אתה משתמש בהם ולספק חווית משתמש טובה יותר.\nמאפיינים עיקריים:\n\n* קבצי טקסט (ולא תוכנות או וירוסים).\n* מאחסנות מידע על הביקור שלך.\n* ניתן למחוק או לחסום אותן בכל עת.\n* מגיעות בסוגים שונים למטרות שונות.`
+        },
+        {
+          icon: Settings,
+          title: '2. כיצד אנו משתמשים בעוגיות',
+          content: `tariff.ai משתמשת בעוגיות למטרות הבאות:\nפונקציות חיוניות:\n\n* שמירה על מצב המחובר של המשתמש (Logged-in session).\n* זכירת העדפות שפה וערכת נושא (Theme).\n* אבטחת החיבור שלך לשירותים שלנו.\nאנליטיקה וביצועים:\n\n* הבנה אילו דפים הם הפופולריים ביותר.\n* ניתוח התנהגות משתמשים לשיפור השירות שלנו.\n* מעקב אחר שגיאות טכניות ותקלות (Bugs).\nחווית משתמש:\n\n* זכירת העדפות הסכמת העוגיות שלך.\n* התאמה אישית של תוכן על בסיס תחומי עניין שלך.\n* אופטימיזציה של ביצועי האתר.`
+        },
+        {
+          icon: CheckCircle2,
+          title: '3. סוגי העוגיות שאנו משתמשים בהן',
+          content: `**3.1 עוגיות חיוניות (פעילות תמיד)**\nעוגיות אלו נחוצות לתפקוד האתר ולא ניתן להשביתן.\n\n* **ניהול הפעלה (Session):** שומר על מצב מחובר בזמן הניווט.\n* **אבטחה:** מגן מפני התקפות CSRF והתקפות אחרות.\n* **איזון עומסים:** מחלק את התעבורה בין שרתים.\n\nדוגמאות: session_id, csrf_token, auth_state.\n\n**3.2 עוגיות אנליטיקה (דורשות הסכמה)**\nעוזרות לנו להבין כיצד המבקרים מתקשרים עם האתר.\n\n* **צפיות בדפים:** מעקב אחר דפים שביקרו בהם.\n* **פעולות משתמש:** ניטור הקלקות, שליחת טפסים, גלילה.\n* **נתוני הפעלה:** ניתוח מסע המשתמש ומעורבותו.\n* **פרטי מכשיר:** סוג דפדפן, מערכת הפעלה, רזולוציה ושפה.\n\nדוגמה: Google Analytics.\n\n**3.3 עוגיות שיווק (דורשות הסכמה)**\nמשמשות להצגת פרסומות רלוונטיות ולמדידת אפקטיביות של קמפיינים.\n\n* **מיקוד מודעות (Ad Targeting):** הצגת מודעות רלוונטיות לפי תחומי עניין.\n* **מעקב המרות:** מדידת הצלחת קמפיינים.\n* **שיווק מחדש (Retargeting):** הצגת מודעות למבקרים קודמים.\n\nהערה: כיום, עוגיות שיווק אינן פעילות ב-tariff.ai.`
+        },
+        {
+          icon: Clock,
+          title: '4. משך זמן אחסון העוגיות',
+          content: `**עוגיות הפעלה (זמניות - Session Cookies):**\nעוגיות אלו פוקעות ברגע סגירת הדפדפן. הן משמשות לשמירה על הפעלה פעילה ומצב ניווט.\n**עוגיות קבועות (Long-term / Persistent Cookies):**\nעוגיות אלו נשארות במכשירך לתקופה מוגדרת:\n\n* **טווח קצר:** 24 שעות עד 30 יום (אנליטיקה).\n* **טווח בינוני:** 30 יום עד שנה (העדפות).\n* **טווח ארוך:** 1-2 שנים (תיעוד הסכמות).`
+        },
+        {
+          icon: Database,
+          title: '5. רשימת עוגיות מפורטת',
+          content: `**עוגיות חיוניות:**\n| שם העוגייה | מטרה | משך זמן | סוג |\n| :--- | :--- | :--- | :--- |\n| session_id | ניהול הפעלת משתמש | זמן הפעלה | צד ראשון |\n| analytics_session_id | מזהה מעקב אנליטי | 12 חודשים | צד ראשון |\n| cookie_consent | שמירת העדפות הסכמה | שנה אחת | צד ראשון |\n**עוגיות אנליטיקה (בכפוף להסכמה):**\n| שם העוגייה | מטרה | משך זמן | סוג |\n| :--- | :--- | :--- | :--- |\n| Page tracking | תיעוד צפיות בדפים | 12 חודשים | צד ראשון |\n| Action tracking | תיעוד אינטראקציות משתמש | 12 חודשים | צד ראשון |\n| Session data | מעקב אחר הפעלות משתמש | 30 דקות | צד ראשון |`
+        },
+        {
+          icon: Globe,
+          title: '6. עוגיות צד שלישי',
+          content: `כיום, tariff.ai מצמצמת ככל הניתן את השימוש בעוגיות צד שלישי. עם זאת, אנו עשויים להשתמש ב:\n\n**פלטפורמת Base44 (ספק תשתית):** חיוני לתפקוד האפליקציה ועיבוד נתונים מאובטח.\n**שירותי צד שלישי עתידיים:** אם נשלב שירותים נוספים (תשלומים, אנליטיקה מתקדמת), נעדכן מדיניות זו ונבקש הסכמה במידת הצורך.\n**הערה:** איננו משתמשים ברשתות פרסום של צד שלישי או בפיקסלים של רשתות חברתיות למעקב.`
+        },
+        {
+          icon: Settings,
+          title: '7. ניהול העדפות העוגיות שלך',
+          content: `**7.1 באמצעות באנר העוגיות שלנו:**\nבביקורך הראשון ב-tariff.ai, יופיע באנר המאפשר לך:\n\n* לאשר את כל העוגיות.\n* לאשר עוגיות חיוניות בלבד.\n* להתאים אישית את ההעדפות שלך.\n\n**7.2 באמצעות הדפדפן שלך:**\nכל הדפדפנים המודרניים מאפשרים שליטה בעוגיות דרך תפריט ההגדרות (Settings) > פרטיות ואבטחה (Privacy and security) > עוגיות (Cookies).חשוב: חסימת עוגיות חיוניות תמנע מהאתר לתפקד כראוי.`
+        },
+        {
+          icon: XCircle,
+          title: '8. השפעת השבתת העוגיות',
+          content: `**אם תשבית את כל העוגיות:** לא תוכל להישאר מחובר, הגדרות לא יישמרו, וחלק מהתכונות לא יעבדו.\n**אם תשבית רק עוגיות לא חיוניות:** האתר יפעל כרגיל, אך לא נוכל לשפר את השירות בהתבסס על נתוני השימוש שלך.`
+        },
+        {
+          icon: Shield,
+          title: '9. "אל תעקוב" (Do Not Track - DNT)',
+          content: `אנו מכבדים את בחירות הסכמת העוגיות שלך דרך הבאנר שלנו. מכיוון שאותות DNT אינם מתוקננים באופן גלובלי, העדפותיך המפורשות בבאנר האתר הן הקובעות.`
+        },
+        {
+          icon: Lock,
+          title: '10. נתונים שנאספים באמצעות עוגיות',
+          content: `הנתונים כוללים: פרטי מכשיר (כתובת IP אנונימית, סוג דפדפן), נתוני שימוש (דפים שביקרת בהם, זמן שהייה, אינטראקציות) ומידע טכני (שפה, אזור זמן). כל הנתונים מעובדים בהתאם למדיניות הפרטיות שלנו ולדרישות GDPR/LGPD.`
+        },
+        {
+          icon: FileText,
+          title: '11. הזכויות שלך (GDPR ו-LGPD)',
+          content: `יש לך את הזכות לקבל מידע, לתת או לבטל הסכמה, לגשת לנתונים שלך, לבקש את מחיקתם או להתנגד לעיבודם. למימוש זכויות אלו, פנה ל-info@tariff-ai.com.`
+        },
+        {
+          icon: Globe,
+          title: '12. משתמשים בינלאומיים',
+          content: `**משתמשי האיחוד האירופי (GDPR):** אנו מקבלים הסכמה מפורשת לפני הפעלת עוגיות לא חיוניות.\n**משתמשי ברזיל (LGPD):** אנו פועלים בהתאם לדרישות ה-LGPD בנוגע להסכמה וביטולה.`
+        },
+        {
+          icon: Settings,
+          title: '13. עדכונים למדיניות זו',
+          content: `אנו עשויים לעדכן מדיניות זו מעת לעת כדי לשקף שינויים טכנולוגיים או משפטיים. תאריך ה"עדכון האחרון" ישתנה בהתאם, ושינויים מהותיים יודגשו.`
+        },
+        {
+          icon: Mail,
+          title: '14. יצירת קשר',
+          content: `לשאלות בנוגע לשימוש בעוגיות:אימייל: info@tariff-ai.comנושא המייל: "Cookie Policy Inquiry"\nאנו משיבים לפניות בנושא עוגיות תוך 48 שעות.`
+        }
+      ]
+    }
+  };
+
+  const t = content[language];
 
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-      <Header theme={theme} toggleTheme={toggleTheme} language={language} setLanguage={setLanguage} />
-      
-      <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back Link */}
+    <div className={`min-h-screen bg-gradient-to-b from-white to-[#f8fafa] dark:from-[#0a1628] dark:to-[#0d1f35] ${isRTL ? 'rtl' : 'ltr'}`}>
+      {/* Header */}
+      <div className="bg-gradient-to-r from-[#114B5F] via-[#0d3a4a] to-[#114B5F] dark:from-[#0d1f35] dark:via-[#0a1628] dark:to-[#0d1f35] py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             to={createPageUrl('Home')}
-            className={`inline-flex items-center gap-2 mb-8 text-sm font-medium ${
-              theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-slate-600 hover:text-[#0F172A]'
-            } transition-colors`}
+            className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-8 transition-colors"
           >
             <ArrowLeft className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
-            {language === 'en' ? 'Back to Home' : 'חזרה לדף הבית'}
+            {t.back}
           </Link>
-
-          {/* Header */}
-          <div className="mb-12">
-            <h1 className={`text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
-              {language === 'en' ? 'Cookie Policy' : 'מדיניות עוגיות'}
-            </h1>
-            <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>
-              Last updated: December 22, 2025 | Version 1.0
-            </p>
-            <p className={`mt-4 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-              Understanding how we use cookies and similar technologies on tariff.ai
-            </p>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm">
+              <Cookie className="w-10 h-10 text-[#42C0B9]" />
+            </div>
+            <div>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-2">{t.title}</h1>
+              <p className="text-white/70 text-sm">{t.lastUpdated}</p>
+            </div>
           </div>
-
-          {/* Content */}
-          <div className="space-y-8">
-            
-            {/* 1. What Are Cookies */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>1. What Are Cookies</h2>
-              <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                Cookies are small text files stored on your device (computer, tablet, or mobile phone) when you visit a website. They help websites remember your preferences, understand how you use them, and provide a better user experience.
-              </p>
-              <div className={`mt-4 p-4 rounded-xl ${theme === 'dark' ? 'bg-[#0F172A]/50' : 'bg-white'}`}>
-                <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Key Characteristics:</h3>
-                <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                  <li>Text files (not programs or viruses)</li>
-                  <li>Store information about your visit</li>
-                  <li>Can be deleted or blocked at any time</li>
-                  <li>Come in different types with different purposes</li>
-                </ul>
-              </div>
-            </section>
-
-            {/* 2. How We Use Cookies */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>2. How We Use Cookies</h2>
-              <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                tariff.ai uses cookies for the following purposes:
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <h3 className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Essential Functions:</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} mt-1 space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Maintain your logged-in session</li>
-                    <li>Remember your language and theme preferences</li>
-                    <li>Secure your connection to our services</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Analytics & Performance:</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} mt-1 space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Understand which pages are most popular</li>
-                    <li>Analyze user behavior to improve our service</li>
-                    <li>Track technical errors and bugs</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>User Experience:</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} mt-1 space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Remember your cookie consent preferences</li>
-                    <li>Personalize content based on your interests</li>
-                    <li>Optimize site performance</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            {/* 3. Types of Cookies We Use */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>3. Types of Cookies We Use</h2>
-              
-              <div className="space-y-6">
-                <div>
-                  <h3 className={`font-semibold text-lg ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>3.1 Essential Cookies (Always Active)</h3>
-                  <p className={`mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>These cookies are necessary for the website to function and cannot be disabled.</p>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li><strong>Session Management:</strong> Keeps you logged in as you navigate</li>
-                    <li><strong>Security:</strong> Protects against CSRF and other attacks</li>
-                    <li><strong>Load Balancing:</strong> Distributes traffic across servers</li>
-                  </ul>
-                  <p className={`mt-2 text-sm ${theme === 'dark' ? 'text-gray-500' : 'text-slate-500'}`}>Examples: session_id, csrf_token, auth_state</p>
-                </div>
-
-                <div>
-                  <h3 className={`font-semibold text-lg ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>3.2 Analytics Cookies (Requires Consent)</h3>
-                  <p className={`mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>Help us understand how visitors interact with our website.</p>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li><strong>Page Views:</strong> Track which pages are visited (PageView entity)</li>
-                    <li><strong>User Actions:</strong> Monitor clicks, form submissions, scrolling (UserAction entity)</li>
-                    <li><strong>Session Data:</strong> Analyze user journey and engagement</li>
-                    <li><strong>Device Info:</strong> Browser type, OS, screen resolution, language</li>
-                  </ul>
-                  <p className={`mt-2 text-sm ${theme === 'dark' ? 'text-gray-500' : 'text-slate-500'}`}>Examples: Google Analytics</p>
-                </div>
-
-                <div>
-                  <h3 className={`font-semibold text-lg ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>3.3 Marketing Cookies (Requires Consent)</h3>
-                  <p className={`mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>Used to deliver relevant advertisements and measure campaign effectiveness.</p>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li><strong>Ad Targeting:</strong> Show relevant ads based on interests</li>
-                    <li><strong>Conversion Tracking:</strong> Measure effectiveness of campaigns</li>
-                    <li><strong>Retargeting:</strong> Display ads to previous visitors</li>
-                  </ul>
-                  <p className={`mt-2 text-sm ${theme === 'dark' ? 'text-gray-500' : 'text-slate-500'}`}>Examples: Facebook Pixel, Google Ads</p>
-                  <p className={`mt-2 text-sm italic ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>Note: Marketing cookies are currently not active on tariff.ai</p>
-                </div>
-              </div>
-            </section>
-
-            {/* 4. Cookie Duration */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>4. Cookie Duration</h2>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className={`font-semibold text-lg ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Session Cookies (Temporary)</h3>
-                  <p className={`mb-2 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>These cookies expire when you close your browser.</p>
-                  <ul className={`space-y-1 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li><strong>Duration:</strong> Until browser closes</li>
-                    <li><strong>Purpose:</strong> Maintain active session, navigation state</li>
-                    <li><strong>Examples:</strong> PHPSESSID, session_token</li>
-                    <li><strong>Storage:</strong> Browser memory only</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className={`font-semibold text-lg ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Persistent Cookies (Long-term)</h3>
-                  <p className={`mb-2 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>These cookies remain on your device for a specified period.</p>
-                  <ul className={`space-y-1 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li><strong>Short-term:</strong> 24 hours to 30 days (analytics)</li>
-                    <li><strong>Medium-term:</strong> 30 days to 1 year (preferences)</li>
-                    <li><strong>Long-term:</strong> 1-2 years (consent records)</li>
-                  </ul>
-                  <div className={`mt-2 text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-slate-500'}`}>
-                    <p>Examples:</p>
-                    <ul className="list-disc pl-4 mt-1">
-                      <li>Cookie Consent: 1 year</li>
-                      <li>Analytics Session: 12 months</li>
-                      <li>Language Preference: 6 months</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* 5. Cookies We Use - Detailed List */}
-            <section className={`rounded-2xl p-6 overflow-hidden ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>5. Cookies We Use - Detailed List</h2>
-              
-              <div className="space-y-6 overflow-x-auto">
-                <div>
-                  <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Essential Cookies:</h3>
-                  <table className={`w-full text-sm text-left ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <thead className={`text-xs uppercase ${theme === 'dark' ? 'bg-[#0F172A] text-gray-300' : 'bg-slate-200 text-slate-700'}`}>
-                      <tr>
-                        <th className="px-4 py-3 rounded-tl-lg">Cookie Name</th>
-                        <th className="px-4 py-3">Purpose</th>
-                        <th className="px-4 py-3">Duration</th>
-                        <th className="px-4 py-3 rounded-tr-lg">Type</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className={theme === 'dark' ? 'border-b border-white/5' : 'border-b border-slate-200'}>
-                        <td className="px-4 py-3 font-medium">session_id</td>
-                        <td className="px-4 py-3">User session management</td>
-                        <td className="px-4 py-3">Session</td>
-                        <td className="px-4 py-3">First-party</td>
-                      </tr>
-                      <tr className={theme === 'dark' ? 'border-b border-white/5' : 'border-b border-slate-200'}>
-                        <td className="px-4 py-3 font-medium">analytics_session_id</td>
-                        <td className="px-4 py-3">Analytics tracking ID</td>
-                        <td className="px-4 py-3">12 months</td>
-                        <td className="px-4 py-3">First-party</td>
-                      </tr>
-                      <tr>
-                        <td className="px-4 py-3 font-medium">cookie_consent</td>
-                        <td className="px-4 py-3">Stores consent preferences</td>
-                        <td className="px-4 py-3">1 year</td>
-                        <td className="px-4 py-3">First-party</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div>
-                  <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Analytics Cookies (with consent):</h3>
-                  <table className={`w-full text-sm text-left ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <thead className={`text-xs uppercase ${theme === 'dark' ? 'bg-[#0F172A] text-gray-300' : 'bg-slate-200 text-slate-700'}`}>
-                      <tr>
-                        <th className="px-4 py-3 rounded-tl-lg">Cookie Name</th>
-                        <th className="px-4 py-3">Purpose</th>
-                        <th className="px-4 py-3">Duration</th>
-                        <th className="px-4 py-3 rounded-tr-lg">Type</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className={theme === 'dark' ? 'border-b border-white/5' : 'border-b border-slate-200'}>
-                        <td className="px-4 py-3 font-medium">Page tracking</td>
-                        <td className="px-4 py-3">Records page views</td>
-                        <td className="px-4 py-3">12 months</td>
-                        <td className="px-4 py-3">First-party</td>
-                      </tr>
-                      <tr className={theme === 'dark' ? 'border-b border-white/5' : 'border-b border-slate-200'}>
-                        <td className="px-4 py-3 font-medium">Action tracking</td>
-                        <td className="px-4 py-3">Records user interactions</td>
-                        <td className="px-4 py-3">12 months</td>
-                        <td className="px-4 py-3">First-party</td>
-                      </tr>
-                      <tr>
-                        <td className="px-4 py-3 font-medium">Session data</td>
-                        <td className="px-4 py-3">Tracks user sessions</td>
-                        <td className="px-4 py-3">30 minutes</td>
-                        <td className="px-4 py-3">First-party</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </section>
-
-            {/* 6. Third-Party Cookies */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>6. Third-Party Cookies</h2>
-              <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                Currently, tariff.ai minimizes the use of third-party cookies. However, we may use:
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <h3 className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Base44 Platform (Infrastructure Provider):</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} mt-1 space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Essential for application functionality</li>
-                    <li>Secure data processing</li>
-                    <li>Covered by our Data Processing Agreement (DPA)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Future Third-Party Services:</h3>
-                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>If we integrate additional third-party services (analytics, payment processors, etc.), we will:</p>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} mt-1 space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Update this policy with details</li>
-                    <li>Request your consent where required</li>
-                    <li>Provide opt-out mechanisms</li>
-                    <li>Ensure GDPR/LGPD compliance</li>
-                  </ul>
-                </div>
-                <p className={`text-sm italic ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                  Note: We do NOT use third-party advertising networks or social media tracking pixels.
-                </p>
-              </div>
-            </section>
-
-            {/* 7. Managing Your Cookie Preferences */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>7. Managing Your Cookie Preferences</h2>
-              
-              <div className="space-y-6">
-                <div>
-                  <h3 className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>7.1 Through Our Cookie Banner:</h3>
-                  <p className={`mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>When you first visit tariff.ai, you'll see a cookie consent banner allowing you to:</p>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} mt-2 space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Accept all cookies</li>
-                    <li>Accept only essential cookies</li>
-                    <li>Customize your preferences (choose which categories to allow)</li>
-                  </ul>
-                  <p className={`mt-2 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>Your preferences are saved and can be changed at any time.</p>
-                </div>
-
-                <div>
-                  <h3 className={`font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>7.2 Through Your Browser:</h3>
-                  <p className={`mt-1 mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>All modern browsers allow you to control cookies:</p>
-                  <ul className={`space-y-3 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li><strong>Google Chrome:</strong> Settings → Privacy and security → Cookies and other site data (Choose: Allow all, Block third-party, or Block all)</li>
-                    <li><strong>Mozilla Firefox:</strong> Settings → Privacy & Security → Cookies and Site Data (Choose standard, strict, or custom blocking)</li>
-                    <li><strong>Safari (Mac/iOS):</strong> Preferences → Privacy → Cookies and website data (Block all cookies or allow from current website only)</li>
-                    <li><strong>Microsoft Edge:</strong> Settings → Cookies and site permissions → Manage cookies (Choose blocking level)</li>
-                  </ul>
-                  <p className={`mt-3 font-medium text-sm text-red-500`}>Important: Blocking essential cookies will prevent the site from functioning properly.</p>
-                </div>
-              </div>
-            </section>
-
-            {/* 8. Disabling Cookies - Impact */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>8. Disabling Cookies - Impact</h2>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className={`p-5 rounded-xl ${theme === 'dark' ? 'bg-red-500/10 border border-red-500/20' : 'bg-red-50 border border-red-200'}`}>
-                  <h3 className={`font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
-                    If You Disable All Cookies:
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <X className="w-4 h-4 text-red-500" />
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>Cannot stay logged in</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <X className="w-4 h-4 text-red-500" />
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>Settings and preferences won't be saved</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <X className="w-4 h-4 text-red-500" />
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>Some features may not work</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <X className="w-4 h-4 text-red-500" />
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>You'll need to set preferences on every visit</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className={`p-5 rounded-xl ${theme === 'dark' ? 'bg-green-500/10 border border-green-500/20' : 'bg-green-50 border border-green-200'}`}>
-                  <h3 className={`font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
-                    If You Disable Only Non-Essential Cookies:
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-green-500" />
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>Website will function normally</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-green-500" />
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>You'll stay logged in</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <X className="w-4 h-4 text-red-500" />
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>We won't be able to improve the site based on usage data</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <X className="w-4 h-4 text-red-500" />
-                      <span className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>You may see less relevant content</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <p className={`mt-4 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                <strong>Recommendation:</strong> Keep essential cookies enabled, customize analytics/marketing based on your privacy preferences.
-              </p>
-            </section>
-
-            {/* 9. Do Not Track (DNT) */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>9. Do Not Track (DNT)</h2>
-              <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                Some browsers offer a "Do Not Track" (DNT) signal that indicates you don't want to be tracked.
-              </p>
-              <div className={`mt-4 p-4 rounded-xl ${theme === 'dark' ? 'bg-[#0F172A]/50' : 'bg-white'}`}>
-                <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Our Approach:</h3>
-                <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                  <li>We honor your cookie consent choices through our banner</li>
-                  <li>DNT signals are not universally standardized</li>
-                  <li>Your explicit cookie preferences take precedence</li>
-                  <li>We provide granular control through our cookie settings</li>
-                </ul>
-              </div>
-              <p className={`mt-4 text-sm font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>
-                Best Practice: Use our cookie consent banner for precise control over tracking.
-              </p>
-            </section>
-
-            {/* 10. Data Collected Through Cookies */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>10. Data Collected Through Cookies</h2>
-              <p className={`mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>The data collected through cookies includes:</p>
-              
-              <div className="grid sm:grid-cols-3 gap-6">
-                <div>
-                  <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Device Information:</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>IP address (anonymized after 90 days)</li>
-                    <li>Browser type and version</li>
-                    <li>Operating system</li>
-                    <li>Device type (mobile, tablet, desktop)</li>
-                    <li>Screen resolution</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Usage Information:</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Pages visited and time spent</li>
-                    <li>Click patterns and interactions</li>
-                    <li>Referrer URL</li>
-                    <li>Session duration</li>
-                    <li>Scroll depth</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>Technical Information:</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Language preference</li>
-                    <li>Timezone</li>
-                    <li>Connection type</li>
-                    <li>Viewport size</li>
-                  </ul>
-                </div>
-              </div>
-              <p className={`mt-4 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                All data is processed in accordance with our Privacy Policy and GDPR/LGPD requirements.
-              </p>
-            </section>
-
-            {/* 11. Your Rights */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>11. Your Rights (GDPR & LGPD)</h2>
-              <div className="space-y-2">
-                {[
-                  'Be Informed: This Cookie Policy explains our practices',
-                  'Give or Withdraw Consent: Control which cookies are used',
-                  'Access Your Data: Request information about cookies stored',
-                  'Delete Data: Request deletion of cookie data',
-                  'Object to Processing: Opt out of non-essential cookies'
-                ].map((right, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#E5A840] flex-shrink-0 mt-0.5" />
-                    <span className={theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}>{right}</span>
-                  </div>
-                ))}
-              </div>
-              <p className={`mt-4 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                To exercise these rights, visit our <Link to={createPageUrl('PrivacyPolicy')} className="text-[#E5A840] hover:underline">Privacy Policy</Link> page or contact info@tariff-ai.com
-              </p>
-            </section>
-
-            {/* 12. International Users */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>12. International Users</h2>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>For EU Users (GDPR):</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>We obtain explicit consent before non-essential cookies</li>
-                    <li>You can withdraw consent at any time</li>
-                    <li>Data transfers comply with Standard Contractual Clauses (SCCs)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className={`font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>For Brazilian Users (LGPD):</h3>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>We obtain consent for non-essential cookies</li>
-                    <li>You have the right to revoke consent</li>
-                    <li>Data processing complies with LGPD requirements</li>
-                  </ul>
-                </div>
-              </div>
-              <p className={`mt-4 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                For All Users: Cookie data is subject to the same protections as other personal data under our Privacy Policy.
-              </p>
-            </section>
-
-            {/* 13. Updates to This Cookie Policy */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>13. Updates to This Cookie Policy</h2>
-              <div className="space-y-4">
-                <div>
-                  <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>We may update this Cookie Policy to reflect:</p>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} mt-1 space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>Changes in technology or cookie usage</li>
-                    <li>New features or services</li>
-                    <li>Legal or regulatory requirements</li>
-                    <li>User feedback and best practices</li>
-                  </ul>
-                </div>
-                <div>
-                  <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>When We Update:</p>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} mt-1 space-y-1 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                    <li>The "Last Updated" date will change</li>
-                    <li>Material changes will be highlighted</li>
-                    <li>You may be asked to review and accept new terms</li>
-                    <li>Previous versions will be archived</li>
-                  </ul>
-                </div>
-              </div>
-              <p className={`mt-4 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                Staying Informed: Review this policy periodically to stay informed about how we use cookies.
-              </p>
-            </section>
-
-            {/* 14. Contact Us */}
-            <section className={`rounded-2xl p-6 ${theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'}`}>
-              <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>14. Contact Us</h2>
-              <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-                If you have questions about our use of cookies:
-              </p>
-              <div className={`mt-4 space-y-2 ${theme === 'dark' ? 'text-gray-300' : 'text-slate-700'}`}>
-                <p><strong>Email:</strong> info@tariff-ai.com</p>
-                <p><strong>Subject Line:</strong> "Cookie Policy Inquiry"</p>
-                <div className="mt-2">
-                  <p className="font-semibold mb-1">What to Include:</p>
-                  <ul className={`list-disc ${isRTL ? 'pr-6' : 'pl-6'} space-y-1 text-sm`}>
-                    <li>Your question or concern</li>
-                    <li>Browser and device information (if technical issue)</li>
-                    <li>Screenshots (if helpful)</li>
-                  </ul>
-                </div>
-                <p className="mt-4">We respond to all cookie-related inquiries within 48 hours.</p>
-                <div className="mt-4 pt-4 border-t border-slate-200 dark:border-white/10">
-                  <p className="font-semibold mb-2">For GDPR/LGPD-specific inquiries:</p>
-                  <p>EU: info@tariff-ai.com</p>
-                  <p>Brazil: info@tariff-ai.com</p>
-                </div>
-              </div>
-            </section>
-
-          </div>
+          <p className="text-white/80 text-lg max-w-3xl">{t.subtitle}</p>
         </div>
-      </main>
+      </div>
 
-      <Footer theme={theme} language={language} />
+      {/* Content */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="space-y-8">
+          {t.sections.map((section, index) => {
+            const Icon = section.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.03 }}
+                className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#1a2d42] border border-[#114B5F]/10 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className={`flex items-start gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <div className="p-3 rounded-xl bg-[#42C0B9]/10 flex-shrink-0">
+                    <Icon className="w-6 h-6 text-[#42C0B9]" />
+                  </div>
+                  <div className="flex-1">
+                    <h2 className={`text-xl font-semibold text-[#114B5F] dark:text-white mb-3 ${isRTL ? 'text-right' : ''}`}>
+                      {section.title}
+                    </h2>
+                    <ReactMarkdown 
+                      className={`text-[#114B5F]/70 dark:text-gray-400 leading-relaxed prose prose-sm max-w-none dark:prose-invert ${isRTL ? 'text-right' : ''}`}
+                      components={{
+                        p: ({ children }) => <p className="mb-3">{children}</p>,
+                        ul: ({ children }) => <ul className="space-y-2 mb-4">{children}</ul>,
+                        li: ({ children }) => (
+                          <li className="flex items-start gap-2">
+                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#42C0B9] mt-2 flex-shrink-0" />
+                            <span>{children}</span>
+                          </li>
+                        ),
+                        strong: ({ children }) => <strong className="font-semibold text-[#114B5F] dark:text-white">{children}</strong>,
+                        table: ({ children }) => (
+                          <div className="w-full overflow-x-auto rounded-lg border border-[#114B5F]/20 dark:border-white/20 my-4 shadow-sm">
+                            <table className="w-full text-left text-sm">{children}</table>
+                          </div>
+                        ),
+                        thead: ({ children }) => <thead className="bg-gradient-to-r from-[#42C0B9]/10 to-[#114B5F]/10 dark:from-[#42C0B9]/20 dark:to-[#114B5F]/20">{children}</thead>,
+                        th: ({ children }) => <th className="px-4 py-3 font-semibold text-[#114B5F] dark:text-white text-xs uppercase tracking-wider border-b-2 border-[#42C0B9]/30">{children}</th>,
+                        tbody: ({ children }) => <tbody className="divide-y divide-[#114B5F]/10 dark:divide-white/10">{children}</tbody>,
+                        tr: ({ children }) => <tr className="hover:bg-[#42C0B9]/5 dark:hover:bg-[#42C0B9]/10 transition-colors">{children}</tr>,
+                        td: ({ children }) => <td className="px-4 py-3 text-[#114B5F]/80 dark:text-gray-300">{children}</td>,
+                      }}
+                    >
+                      {section.content}
+                    </ReactMarkdown>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      <Footer />
+      <ScrollToTop />
     </div>
+  );
+}
+
+export default function CookiePolicy() {
+  return (
+    <LanguageProvider>
+      <CookiesContent />
+    </LanguageProvider>
   );
 }
