@@ -1,42 +1,35 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useAuth } from './AuthContext';
-import { base44 } from '@/api/base44Client';
-import { pagesConfig } from '@/pages.config';
+import { trackEvent } from '../../functions/trackEvent'; 
 
-export default function NavigationTracker() {
-    const location = useLocation();
-    const { isAuthenticated } = useAuth();
-    const { Pages, mainPage } = pagesConfig;
-    const mainPageKey = mainPage ?? Object.keys(Pages)[0];
+const NavigationTracker = () => {
+  const location = useLocation();
 
-    // Log user activity when navigating to a page
-    useEffect(() => {
-        // Extract page name from pathname
-        const pathname = location.pathname;
-        let pageName;
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
 
-        if (pathname === '/' || pathname === '') {
-            pageName = mainPageKey;
-        } else {
-            // Remove leading slash and get the first segment
-            const pathSegment = pathname.replace(/^\//, '').split('/')[0];
+    // Analytics tracking
+    const trackPageView = async () => {
+      try {
+        await trackEvent({
+          event_type: 'page_view',
+          event_data: {
+            path: location.pathname,
+            search: location.search,
+            hash: location.hash,
+            referrer: document.referrer
+          }
+        });
+      } catch (error) {
+        console.error('Failed to track page view:', error);
+      }
+    };
 
-            // Try case-insensitive lookup in Pages config
-            const pageKeys = Object.keys(Pages);
-            const matchedKey = pageKeys.find(
-                key => key.toLowerCase() === pathSegment.toLowerCase()
-            );
+    trackPageView();
+  }, [location]);
 
-            pageName = matchedKey || null;
-        }
+  return null;
+};
 
-        if (isAuthenticated && pageName) {
-            base44.appLogs.logUserInApp(pageName).catch(() => {
-                // Silently fail - logging shouldn't break the app
-            });
-        }
-    }, [location, isAuthenticated, Pages, mainPageKey]);
-
-    return null;
-}
+export default NavigationTracker;
