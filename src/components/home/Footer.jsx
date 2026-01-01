@@ -71,9 +71,7 @@ function NewsletterForm() {
           required
         />
         <label htmlFor="footer-consent" className="text-xs text-white/60 cursor-pointer">
-          {isRTL 
-            ? 'אני מסכים/ה לקבל ניוזלטר מ-tariff.ai'
-            : 'I agree to receive newsletters from tariff.ai'}
+          {t.newsletter.consent}
         </label>
       </div>
 
@@ -88,7 +86,7 @@ function NewsletterForm() {
       >
         {submitted ? '✓ ' + (isRTL ? 'נשלח' : 'Sent') : (
           <>
-            {t.newsletter.cta || (isRTL ? 'הרשמה' : 'Subscribe')}
+            {t.newsletter.cta}
             <Send className={`w-4 h-4 ${isRTL ? 'mr-2' : 'ml-2'}`} />
           </>
         )}
@@ -120,7 +118,7 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
-          {/* Column 1: Brand, Tagline & Socials */}
+          {/* Column 1: Brand & Info */}
           <div className="flex flex-col items-start">
             <motion.a 
               href="#"
@@ -134,7 +132,7 @@ export default function Footer() {
               </span>
             </motion.a>
             <p className="text-white/60 mb-6 max-w-sm font-medium">
-              {t.footer.description || (isRTL ? 'מודיעין מכס מונע AI לאנשי סחר בינלאומי.' : 'AI-driven customs intelligence for international trade.')}
+              {t.footer.description}
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
@@ -153,9 +151,7 @@ export default function Footer() {
 
           {/* Column 2: Legal Links */}
           <div className={`flex flex-col ${isRTL ? 'md:items-start' : 'md:items-start'}`}>
-            <h4 className="text-white font-semibold mb-6 text-lg">
-                {t.footer.legal || (isRTL ? 'משפטי' : 'Legal')}
-            </h4>
+            <h4 className="text-white font-semibold mb-6 text-lg">{t.footer.legal}</h4>
             <ul className="space-y-4">
               <li>
                 <Link
@@ -186,11 +182,9 @@ export default function Footer() {
 
           {/* Column 3: Newsletter */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-lg">
-                {t.newsletter.title || (isRTL ? 'הצטרפו לניוזלטר' : 'Join our Newsletter')}
-            </h4>
+            <h4 className="text-white font-semibold mb-4 text-lg">{t.newsletter.title}</h4>
             <p className="text-white/60 text-sm mb-6">
-              {t.newsletter.subtitle || (isRTL ? 'קבלו עדכוני מכס, חדשות סחר ותובנות בלעדיות ישירות למייל' : 'Get customs updates, trade news and exclusive insights directly to your email')}
+              {t.newsletter.subtitle}
             </p>
             <NewsletterForm />
           </div>
