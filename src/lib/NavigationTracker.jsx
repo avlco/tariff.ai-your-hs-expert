@@ -1,35 +1,23 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { trackEvent } from '../../functions/trackEvent'; 
+import { base44 } from '@/api/base44Client';
+import { pagesConfig } from '@/pages.config';
 
-const NavigationTracker = () => {
-  const location = useLocation();
+export default function NavigationTracker() {
+    const location = useLocation();
+    
+    // Scroll to top on every route change
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
 
-  useEffect(() => {
-    // Scroll to top on route change
-    window.scrollTo(0, 0);
+    // Post navigation changes to parent window
+    useEffect(() => {
+        window.parent?.postMessage({
+            type: "app_changed_url",
+            url: window.location.href
+        }, '*');
+    }, [location]);
 
-    // Analytics tracking
-    const trackPageView = async () => {
-      try {
-        await trackEvent({
-          event_type: 'page_view',
-          event_data: {
-            path: location.pathname,
-            search: location.search,
-            hash: location.hash,
-            referrer: document.referrer
-          }
-        });
-      } catch (error) {
-        console.error('Failed to track page view:', error);
-      }
-    };
-
-    trackPageView();
-  }, [location]);
-
-  return null;
-};
-
-export default NavigationTracker;
+    return null;
+}
