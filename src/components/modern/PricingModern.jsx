@@ -28,7 +28,7 @@ export default function PricingModern() {
             {t.pricing.subtitle}
           </p>
 
-          {/* Toggle (Visual only for now since pricing structure in JSON is simple) */}
+          {/* Toggle */}
           <div className="inline-flex items-center p-1 bg-white/5 rounded-full border border-white/10 backdrop-blur-md">
             <button 
               onClick={() => setBillingCycle('monthly')}
@@ -94,13 +94,16 @@ export default function PricingModern() {
                 </div>
 
                 <Button 
+                  asChild
                   className={`w-full py-6 text-lg font-bold rounded-xl transition-all ${
                     isPro 
                       ? 'bg-[#D89C42] hover:bg-[#c28b39] text-[#0B2C36] shadow-[0_0_20px_rgba(216,156,66,0.2)]' 
                       : 'bg-white/10 hover:bg-white/20 text-white'
                   }`}
                 >
-                  {t.pricing.getStarted}
+                  <a href="https://app.tariff-ai.com/" target="_blank" rel="noopener noreferrer">
+                    {t.pricing.getStarted}
+                  </a>
                 </Button>
               </motion.div>
             );
