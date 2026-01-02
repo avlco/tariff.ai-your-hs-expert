@@ -3,13 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Globe, Target, FileText, CheckCircle, Zap } from 'lucide-react';
+import { useLanguage } from '@/components/LanguageContext'; // שינוי: ייבוא
 
-export default function HeroSection({ theme, language }) {
-  const isRTL = language === 'he';
+export default function HeroSection({ theme }) {
+  const { t, isRTL } = useLanguage(); // שינוי: שימוש ב-Context
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20" dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Background Elements */}
+      {/* Background Elements - ללא שינוי */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient Orbs */}
         <div className={`absolute top-20 ${isRTL ? 'left-20' : 'right-20'} w-[600px] h-[600px] rounded-full ${
@@ -46,7 +47,7 @@ export default function HeroSection({ theme, language }) {
                   ? 'bg-[#E5A840]/20 text-[#E5A840] border border-[#E5A840]/30'
                   : 'bg-[#E5A840]/10 text-[#C28E36] border border-[#E5A840]/20'
               }`}>
-                {language === 'en' ? 'AI-Powered Tariff Intelligence' : 'מודיעין מכס מונע AI'}
+                {t('hero.badge')}
               </Badge>
             </motion.div>
 
@@ -54,20 +55,15 @@ export default function HeroSection({ theme, language }) {
             <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight ${
               theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
             }`}>
-              {language === 'en' ? (
-                <>Navigate Global Trade<br /><span className="text-[#E5A840]">With Confidence</span></>
-              ) : (
-                <>נווטו בסחר גלובלי<br /><span className="text-[#E5A840]">בביטחון מלא</span></>
-              )}
+              {t('hero.title')}<br />
+              <span className="text-[#E5A840]">{t('hero.titleHighlight')}</span>
             </h1>
 
             {/* Description */}
             <p className={`mt-6 text-lg lg:text-xl leading-relaxed ${
               theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
             }`}>
-              {language === 'en' 
-                ? 'Instantly analyze tariffs, duties, and trade regulations for any product across 190+ countries. Make informed decisions with AI-powered insights.'
-                : 'נתחו באופן מיידי מכסים, מיסים ותקנות סחר עבור כל מוצר ב-190+ מדינות. קבלו החלטות מושכלות עם תובנות מונעות AI.'}
+              {t('hero.subtitle')}
             </p>
 
             {/* CTA Buttons */}
@@ -77,7 +73,7 @@ export default function HeroSection({ theme, language }) {
                   size="lg"
                   className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold px-8 rounded-full h-14 text-base transition-all duration-300 hover:shadow-xl hover:shadow-[#E5A840]/25"
                 >
-                  {language === 'en' ? 'Start Free Analysis' : 'התחילו ניתוח חינם'}
+                  {t('hero.cta')}
                   <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 rotate-180' : 'ml-2'}`} />
                 </Button>
               </a>
@@ -91,19 +87,19 @@ export default function HeroSection({ theme, language }) {
                 }`}
               >
                 <Play className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                {language === 'en' ? 'Watch Demo' : 'צפו בהדגמה'}
+                {t('hero.ctaSecondary')}
               </Button>
             </div>
 
             {/* Stats */}
             <div className={`mt-12 flex flex-wrap gap-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
               {[
-                { value: '190+', label: language === 'en' ? 'Countries Covered' : 'מדינות מכוסות' },
-                { value: '98%', label: language === 'en' ? 'Accuracy Rate' : 'אחוז דיוק' },
-                { value: '1M+', label: language === 'en' ? 'Reports Generated' : 'דוחות שנוצרו' },
+                { value: '190+', label: t('hero.stats.countries') },
+                { value: '98%', label: t('hero.stats.accuracy') },
+                { value: '1M+', label: t('hero.stats.reports') },
               ].map((stat, index) => (
                 <motion.div
-                  key={stat.label}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1 }}
@@ -124,114 +120,67 @@ export default function HeroSection({ theme, language }) {
             </div>
           </motion.div>
 
-          {/* Right Content - Dashboard Preview */}
+          {/* Right Content - Dashboard Preview (נשאר זהה לחלוטין) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className={`relative ${isRTL ? 'lg:order-1' : ''}`}
           >
-            {/* Main Card */}
             <div className={`relative rounded-3xl p-6 lg:p-8 ${
               theme === 'dark' 
                 ? 'bg-[#1E293B]/80 backdrop-blur-xl border border-white/10'
                 : 'bg-white/80 backdrop-blur-xl border border-slate-200 shadow-2xl'
             }`}>
-              {/* Header */}
+              {/* תוכן הכרטיס הסטטי נשאר כרגע באנגלית כדי לא לשבור את העיצוב */}
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>
-                    {language === 'en' ? 'Export Route' : 'מסלול יצוא'}
-                  </p>
-                  <p className={`text-lg font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
-                    US to Germany
-                  </p>
+                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>Export Route</p>
+                  <p className={`text-lg font-semibold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>US to Germany</p>
                 </div>
                 <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
-                  <CheckCircle className="w-3 h-3 mr-1" />
-                  COMPLIANT
+                  <CheckCircle className="w-3 h-3 mr-1" /> COMPLIANT
                 </Badge>
               </div>
 
-              {/* Duty Info */}
-              <div className={`p-4 rounded-2xl mb-4 ${
-                theme === 'dark' ? 'bg-[#0F172A]/50' : 'bg-slate-50'
-              }`}>
-                <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>
-                  {language === 'en' ? 'Estimated Duty' : 'מכס משוער'}
-                </p>
-                <p className={`text-3xl font-bold mt-1 ${
-                  theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
-                }`}>
-                  €1,240.50
-                </p>
+              <div className={`p-4 rounded-2xl mb-4 ${theme === 'dark' ? 'bg-[#0F172A]/50' : 'bg-slate-50'}`}>
+                <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>Estimated Duty</p>
+                <p className={`text-3xl font-bold mt-1 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>€1,240.50</p>
               </div>
 
-              {/* HS Code */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
-                  <div className={`p-2 rounded-lg ${
-                    theme === 'dark' ? 'bg-[#E5A840]/20' : 'bg-[#E5A840]/10'
-                  }`}>
+                  <div className={`p-2 rounded-lg ${theme === 'dark' ? 'bg-[#E5A840]/20' : 'bg-[#E5A840]/10'}`}>
                     <FileText className="w-4 h-4 text-[#E5A840]" />
                   </div>
-                  <span className={`text-sm font-medium ${
-                    theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
-                  }`}>
-                    HS Code
-                  </span>
+                  <span className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>HS Code</span>
                 </div>
-                <Badge className={`${
-                  theme === 'dark' 
-                    ? 'bg-green-500/20 text-green-400'
-                    : 'bg-green-100 text-green-700'
-                }`}>
-                  {language === 'en' ? 'Verified' : 'מאומת'}
-                </Badge>
+                <Badge className={`${theme === 'dark' ? 'bg-green-500/20 text-green-400' : 'bg-green-100 text-green-700'}`}>Verified</Badge>
               </div>
 
-              {/* Confidence Score */}
-              <div className={`flex items-center gap-2 text-sm ${
-                theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
-              }`}>
+              <div className={`flex items-center gap-2 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
                 <Target className="w-4 h-4 text-[#E5A840]" />
-                <span>{language === 'en' ? 'AI confidence score:' : 'ציון ביטחון AI:'}</span>
+                <span>AI confidence score:</span>
                 <span className="font-semibold text-[#E5A840]">98.5%</span>
               </div>
 
-              {/* Processing Badge */}
               <div className="absolute -bottom-4 -right-4">
-                <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${
-                  theme === 'dark' 
-                    ? 'bg-[#E5A840] text-[#0F172A]'
-                    : 'bg-[#0F172A] text-white'
-                } shadow-lg`}>
+                <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${theme === 'dark' ? 'bg-[#E5A840] text-[#0F172A]' : 'bg-[#0F172A] text-white'} shadow-lg`}>
                   <Zap className="w-4 h-4" />
-                  <span className="text-sm font-semibold">
-                    {language === 'en' ? 'Instant Analysis' : 'ניתוח מיידי'}
-                  </span>
+                  <span className="text-sm font-semibold">Instant Analysis</span>
                 </div>
               </div>
             </div>
 
-            {/* Floating Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 }}
-              className={`absolute -top-6 ${isRTL ? '-right-6' : '-left-6'} px-4 py-2 rounded-2xl ${
-                theme === 'dark' 
-                  ? 'bg-[#1E293B] border border-white/10'
-                  : 'bg-white border border-slate-200 shadow-lg'
-              }`}
+              className={`absolute -top-6 ${isRTL ? '-right-6' : '-left-6'} px-4 py-2 rounded-2xl ${theme === 'dark' ? 'bg-[#1E293B] border border-white/10' : 'bg-white border border-slate-200 shadow-lg'}`}
             >
               <div className="flex items-center gap-2">
                 <Globe className="w-5 h-5 text-[#E5A840]" />
-                <span className={`text-sm font-medium ${
-                  theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
-                }`}>
-                  0.4s {language === 'en' ? 'processing' : 'עיבוד'}
-                </span>
+                <span className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>0.4s processing</span>
               </div>
             </motion.div>
           </motion.div>
