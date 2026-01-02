@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-50 text-slate-600 dark:bg-[#050507] dark:text-white py-12">
+    <footer className="bg-slate-50 text-slate-600 dark:bg-[#050507] dark:text-slate-300 py-12">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Branding */}
@@ -13,13 +13,13 @@ const Footer = () => {
             <div className="flex space-x-4 mt-4">
               <a
                 href="https://linkedin.com"
-                className="text-[#114B5F] hover:text-blue-800"
+                className="text-[#114B5F] dark:text-white hover:text-blue-800"
               >
                 <i className="fab fa-linkedin"></i>
               </a>
               <a
                 href="https://twitter.com"
-                className="text-[#114B5F] hover:text-blue-500"
+                className="text-[#114B5F] dark:text-white hover:text-blue-500"
               >
                 <i className="fab fa-twitter"></i>
               </a>
