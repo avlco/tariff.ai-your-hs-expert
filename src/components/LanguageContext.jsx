@@ -21,12 +21,10 @@ export function LanguageProvider({ children }) {
   useEffect(() => {
     const loadLanguage = async () => {
       try {
-        // טעינת אנגלית כגיבוי פעם אחת
         if (!fallback) {
           const enData = await import('../locales/en.json');
           setFallback(enData.default);
         }
-        // טעינה דינמית של השפה שנבחרה
         const selectedData = await import(`../locales/${langCode}.json`);
         setTranslations(selectedData.default);
         
@@ -36,7 +34,7 @@ export function LanguageProvider({ children }) {
         localStorage.setItem('tariff-lang', langCode);
       } catch (err) {
         console.error("Translation load error:", err);
-        setTranslations({});
+        setTranslations({}); 
       }
     };
     loadLanguage();
@@ -49,13 +47,19 @@ export function LanguageProvider({ children }) {
     return getValue(translations) || getValue(fallback) || path;
   };
 
+  const isRTL = SUPPORTED_LANGUAGES[langCode]?.dir === 'rtl';
+
   if (!translations) return null;
 
   return (
-    <LanguageContext.Provider value={{ language: langCode, setLanguage: setLangCode, t, isRTL: SUPPORTED_LANGUAGES[langCode]?.dir === 'rtl', SUPPORTED_LANGUAGES }}>
+    <LanguageContext.Provider value={{ language: langCode, setLanguage: setLangCode, t, isRTL, SUPPORTED_LANGUAGES }}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
-export const useLanguage = () => useContext(LanguageContext);
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) throw new Error('useLanguage must be used within a LanguageProvider');
+  return context;
+};
