@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, FileText, Handshake, CreditCard, User, Gavel, ShieldCheck, LifeBuoy, Wrench, RefreshCcw, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
 import { useLanguage } from '@/components/LanguageContext';
+import Footer from '@/components/home/Footer';
+import ScrollToTop from '@/components/home/ScrollToTop';
 import ReactMarkdown from 'react-markdown';
 
-// תוכן מתורגם מלא
 const TERMS_CONTENT = {
   en: {
     title: 'Terms of Service',
@@ -22,18 +22,62 @@ const TERMS_CONTENT = {
       {
         icon: FileText,
         title: '2. Description of Service',
-        content: `tariff.ai provides AI-powered tariff analysis, trade intelligence, and related services. The Service includes various features, subscription plans, and usage limits as described on our website.`
+        content: `tariff.ai provides AI-powered tariff analysis, trade intelligence, and related services designed to assist businesses with international trade compliance and strategy.`
       },
-      // ... יתר הסעיפים קוצרו כאן אך ישמרו בקובץ המקורי ...
       {
         icon: User,
-        title: '3. User Accounts',
-        content: `To access certain features, you must register. You agree to provide accurate information and keep your password secure.`
+        title: '3. User Accounts and Responsibilities',
+        content: `To access and use certain features of the Service, you must register for a user account. You agree to maintain accurate information and keep your password confidential.`
       },
       {
         icon: CreditCard,
-        title: '4. Payment Terms',
-        content: `Subscription fees are billed in advance. Subscriptions automatically renew unless cancelled 24 hours before the end of the period.`
+        title: '4. Payment Terms and Subscriptions',
+        content: `Subscription fees are billed in advance on a recurring basis. Subscriptions automatically renew unless you cancel at least 24 hours before the end of the current billing period.`
+      },
+      {
+        icon: Wrench,
+        title: '5. Use of Service',
+        content: `You agree to use the Service only for lawful purposes. You shall not misuse, attempt unauthorized access, scrape data, or transmit harmful content.`
+      },
+      {
+        icon: ShieldCheck,
+        title: '6. Data Accuracy',
+        content: `While tariff.ai strives to provide accurate information, we do not guarantee the accuracy, completeness, or timeliness of any data provided through the Service.`
+      },
+      {
+        icon: Gavel,
+        title: '7. Intellectual Property',
+        content: `All content, features, and functionality of tariff.ai are the exclusive property of tariff.ai and its licensors.`
+      },
+      {
+        icon: LifeBuoy,
+        title: '8. Limitation of Liability',
+        content: `In no event shall tariff.ai be liable for any indirect, incidental, special, consequential, or punitive damages.`
+      },
+      {
+        icon: User,
+        title: '9. Termination',
+        content: `We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever.`
+      },
+      {
+        icon: Gavel,
+        title: '10. Governing Law',
+        content: `These Terms shall be governed and construed in accordance with the laws of the State of California, United States.`
+      },
+      {
+        icon: RefreshCcw,
+        title: '11. Changes to Terms',
+        content: `We reserve the right to modify or replace these Terms at any time.`
+      },
+      {
+        icon: FileText,
+        title: '12. Miscellaneous',
+        content: `These Terms constitute the entire agreement between you and tariff.ai regarding our Service.`
+      },
+      {
+        icon: Mail,
+        title: '13. Contact Information',
+        content: `For any questions regarding these Terms of Service, please contact us at info@tariff-ai.com.`
       }
     ]
   },
@@ -46,12 +90,12 @@ const TERMS_CONTENT = {
       {
         icon: Handshake,
         title: '1. קבלת התנאים',
-        content: `בעצם הגישה או השימוש בכל חלק מאתר tariff.ai, מהפלטפורמה או מהשירותים (יחד: "השירות"), הנך מסכים להיות כפוף לתנאי שימוש אלה ("התנאים"). אם אינך מסכים לכל התנאים וההתניות של הסכם זה, אינך רשאי לגשת לשירות או להשתמש בשירות כלשהו.`
+        content: `בעצם הגישה או השימוש בכל חלק מאתר tariff.ai, מהפלטפורמה או מהשירותים (יחד: "השירות"), הנך מסכים להיות כפוף לתנאי שימוש אלה ("התנאים").`
       },
       {
         icon: FileText,
         title: '2. תיאור השירות',
-        content: `tariff.ai מספקת ניתוח מכסים מבוסס בינה מלאכותית (AI), מודיעין סחר ושירותים נלווים. השירות כולל תכונות שונות, תוכניות מנוי ומגבלות שימוש כפי שמתואר באתר האינטרנט שלנו.`
+        content: `tariff.ai מספקת ניתוח מכסים מבוסס בינה מלאכותית (AI), מודיעין סחר ושירותים נלווים שנועדו לסייע לעסקים בציות לאסטרטגיית סחר בינלאומית.`
       },
       {
         icon: User,
@@ -61,22 +105,47 @@ const TERMS_CONTENT = {
       {
         icon: CreditCard,
         title: '4. תנאי תשלום ומנויים',
-        content: `דמי המנוי מחויבים מראש. המנויים מתחדשים באופן אוטומטי אלא אם כן תבטל את המנוי לפחות 24 שעות לפני תום תקופת החיוב הנוכחית.`
+        content: `דמי המנוי מחויבים מראש על בסיס חוזר. המנויים מתחדשים באופן אוטומטי אלא אם כן תבטל את המנוי לפחות 24 שעות לפני תום תקופת החיוב הנוכחית.`
       },
       {
         icon: Wrench,
         title: '5. שימוש בשירות והתנהגות אסורה',
-        content: `הנך מסכים להשתמש בשירות רק למטרות חוקיות. אסור לבצע שימוש לרעה, גישה בלתי מורשית או גירוד נתונים (Data Scraping).`
+        content: `הנך מסכים להשתמש בשירות רק למטרות חוקיות ובהתאם לתנאים אלו. לא תבצע שימוש לרעה או גישה בלתי מורשית.`
       },
       {
         icon: ShieldCheck,
         title: '6. דיוק נתונים והצהרת אי-אחריות',
-        content: `בעוד ש-tariff.ai שואפת לספק מידע מדויק, איננו מבטיחים את הדיוק, השלמות או העדכניות של נתונים כלשהם. המידע נועד למטרות מידע כללי בלבד.`
+        content: `בעוד ש-tariff.ai שואפת לספק מידע מדויק, איננו מבטיחים את הדיוק, השלמות או העדכניות של נתונים כלשהם.`
       },
       {
         icon: Gavel,
         title: '7. קניין רוחני',
-        content: `כל התוכן, התכונות והפונקציונליות של tariff.ai הם רכושה הבלעדי של tariff.ai ומוגנים על ידי חוקי זכויות יוצרים.`
+        content: `כל התוכן, התכונות והפונקציונליות של tariff.ai הם רכושה הבלעדי של tariff.ai ושל מעניקי הרישיון שלה.`
+      },
+      {
+        icon: LifeBuoy,
+        title: '8. הגבלת אחריות',
+        content: `בשום מקרה tariff.ai לא תהיה אחראית לכל נזק עקיף, מקרי, מיוחד, תוצאתי או עונשי.`
+      },
+      {
+        icon: User,
+        title: '9. סיום התקשרות',
+        content: `אנו רשאים לסגור או להשעות את חשבונך באופן מיידי, ללא הודעה מוקדמת או חבות.`
+      },
+      {
+        icon: Gavel,
+        title: '10. הדין החל',
+        content: `תנאים אלה יהיו כפופים ויפורשו בהתאם לחוקי מדינת קליפורניה, ארצות הברית.`
+      },
+      {
+        icon: RefreshCcw,
+        title: '11. שינויים בתנאים',
+        content: `אנו שומרים לעצמנו את הזכות לשנות או להחליף תנאים אלו בכל עת.`
+      },
+      {
+        icon: FileText,
+        title: '12. שונות',
+        content: `תנאים אלו מהווים את ההסכם המלא בינך לבין tariff.ai בנוגע לשירות שלנו.`
       },
       {
         icon: Mail,
@@ -89,8 +158,6 @@ const TERMS_CONTENT = {
 
 export default function TermsOfService() {
   const { language, isRTL } = useLanguage();
-  
-  // fallback to English if language not found
   const t = TERMS_CONTENT[language] || TERMS_CONTENT.en;
 
   useEffect(() => {
@@ -99,7 +166,6 @@ export default function TermsOfService() {
 
   return (
     <div className={`min-h-screen bg-slate-50 dark:bg-[#050507] ${isRTL ? 'rtl' : 'ltr'}`}>
-      {/* Header Area - Using standard styling */}
       <div className="bg-[#114B5F] dark:bg-[#0a1628] py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
@@ -122,7 +188,6 @@ export default function TermsOfService() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="space-y-6">
           {t.sections.map((section, index) => {
@@ -144,7 +209,7 @@ export default function TermsOfService() {
                       {section.title}
                     </h2>
                     <div className={`text-slate-600 dark:text-slate-300 leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
-                        {section.content}
+                      <ReactMarkdown>{section.content}</ReactMarkdown>
                     </div>
                   </div>
                 </div>
@@ -153,6 +218,8 @@ export default function TermsOfService() {
           })}
         </div>
       </div>
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 }
