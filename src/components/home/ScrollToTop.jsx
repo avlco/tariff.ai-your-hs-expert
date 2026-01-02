@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
-import { useLocation } from 'react-router-dom'; // נוסף לזיהוי מעבר דף
+import { useLocation } from 'react-router-dom';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
-  const { pathname } = useLocation(); // זיהוי נתיב העמוד הנוכחי
+  const { pathname } = useLocation();
 
-  // לוגיקה 1: גלילה לראש העמוד בכל פעם שה-pathname משתנה (מעבר עמוד)
+  // גלילה לראש העמוד במעבר בין דפים
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // לוגיקה 2: הצגת הכפתור רק לאחר גלילה של 500 פיקסלים
   useEffect(() => {
     const handleScroll = () => {
       setIsVisible(window.scrollY > 500);
     };
-
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
@@ -37,15 +35,15 @@ export default function ScrollToTop() {
           onClick={scrollToTop}
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9 }}
-          // עדכון צבעים למיתוג: Teal & Navy עם תמיכה ב-Dark Mode
-          className="fixed bottom-8 right-8 z-50 p-4 rounded-2xl shadow-2xl transition-all duration-300
-                     bg-gradient-to-br from-[#42C0B9] to-[#114B5F] 
-                     dark:from-[#42C0B9] dark:to-[#3ab0a9]
-                     text-white 
-                     shadow-[#42C0B9]/20 hover:shadow-[#42C0B9]/40
-                     border border-white/10 dark:border-[#42C0B9]/30"
+          // שימוש בצבע הזהב המיתוגי #E5A840
+          className="fixed bottom-8 right-8 z-50 p-4 rounded-2xl transition-all duration-300
+                     bg-[#E5A840] hover:bg-[#C28E36] 
+                     text-[#0F172A] 
+                     shadow-2xl shadow-[#E5A840]/30 hover:shadow-[#E5A840]/50
+                     border border-[#E5A840]/20
+                     dark:shadow-[#E5A840]/20"
         >
-          <ArrowUp className="w-6 h-6 stroke-[2.5px]" />
+          <ArrowUp className="w-6 h-6 stroke-[3px]" />
         </motion.button>
       )}
     </AnimatePresence>
