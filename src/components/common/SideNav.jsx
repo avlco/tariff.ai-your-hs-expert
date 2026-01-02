@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
-const sections = [
-  { id: 'home', label: 'Home' },
-  { id: 'challenges', label: 'Challenges' },
-  { id: 'about', label: 'About Us' },
-  { id: 'features', label: 'Features' },
-  { id: 'how-it-works', label: 'How It Works' },
-  { id: 'pricing', label: 'Pricing' },
-  { id: 'newsletter', label: 'Newsletter' },
-  { id: 'testimonials', label: 'Success Stories' },
-  { id: 'faqs', label: 'FAQs' },
-  { id: 'blog', label: 'Insights' },
-  { id: 'contact', label: 'Contact' },
-];
+import { useLanguage } from '@/components/LanguageContext'; // שינוי: ייבוא
 
 export default function SideNav({ theme }) {
+  const { t } = useLanguage(); // שינוי: שימוש ב-Context
   const [activeSection, setActiveSection] = useState('home');
+
+  // שינוי: הגדרת הסקשנים בתוך הקומפננטה כדי שיוכלו להשתמש ב-t()
+  const sections = [
+    { id: 'home', label: t('nav.home') },
+    { id: 'challenges', label: t('problem.badge') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'features', label: t('nav.features') },
+    { id: 'how-it-works', label: t('nav.howItWorks') },
+    { id: 'pricing', label: t('nav.pricing') },
+    { id: 'newsletter', label: t('newsletter.title') },
+    { id: 'testimonials', label: t('nav.testimonials') },
+    { id: 'faqs', label: t('nav.faq') },
+    { id: 'blog', label: t('nav.blog') },
+    { id: 'contact', label: t('nav.contact') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +36,7 @@ export default function SideNav({ theme }) {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [sections]); // הוספנו את sections כתלות כדי שיתעדכן בהחלפת שפה
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -50,12 +53,10 @@ export default function SideNav({ theme }) {
       className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:block"
     >
       <div className="relative">
-        {/* Timeline Line */}
         <div className={`absolute left-[5px] top-0 bottom-0 w-[2px] ${
           theme === 'dark' ? 'bg-white/10' : 'bg-slate-200'
         }`} />
         
-        {/* Progress Line */}
         <motion.div
           className="absolute left-[5px] top-0 w-[2px] bg-[#E5A840]"
           style={{
@@ -64,15 +65,13 @@ export default function SideNav({ theme }) {
           transition={{ duration: 0.3 }}
         />
 
-        {/* Navigation Items */}
         <ul className="space-y-4">
-          {sections.map((section, index) => (
+          {sections.map((section) => (
             <li key={section.id}>
               <button
                 onClick={() => scrollToSection(section.id)}
                 className="flex items-center gap-3 group"
               >
-                {/* Dot */}
                 <div className={`relative w-3 h-3 rounded-full transition-all duration-300 ${
                   activeSection === section.id
                     ? 'bg-[#E5A840] scale-125'
@@ -89,7 +88,6 @@ export default function SideNav({ theme }) {
                   )}
                 </div>
                 
-                {/* Label */}
                 <span className={`text-xs font-medium transition-all duration-300 ${
                   activeSection === section.id
                     ? 'text-[#E5A840] opacity-100'
