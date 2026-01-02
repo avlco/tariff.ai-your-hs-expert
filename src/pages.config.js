@@ -1,27 +1,21 @@
-import Home from "./pages/Home";
-import TermsOfService from "./pages/TermsOfService";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import CookiePolicy from "./pages/CookiePolicy";
-import PublicReport from "./pages/PublicReport";
-import Layout from "./Layout";
+import CookiePolicy from './pages/CookiePolicy';
+import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import PublicReport from './pages/PublicReport';
+import TermsOfService from './pages/TermsOfService';
+import __Layout from './Layout.jsx';
+
+
+export const PAGES = {
+    "CookiePolicy": CookiePolicy,
+    "Home": Home,
+    "PrivacyPolicy": PrivacyPolicy,
+    "PublicReport": PublicReport,
+    "TermsOfService": TermsOfService,
+}
 
 export const pagesConfig = {
-  mainPage: 'home',
-  visitedPage: 'home',
-  // חשוב: Pages עם P גדולה כדי להתאים ל-App.jsx
-  Pages: {
-    'home': Home,
-    'terms': TermsOfService,
-    'privacy': PrivacyPolicy,
-    'cookies': CookiePolicy,
-    'report': PublicReport
-  },
-  routes: [
-    { path: '/', component: Home },
-    { path: '/terms', component: TermsOfService },
-    { path: '/privacy', component: PrivacyPolicy },
-    { path: '/cookies', component: CookiePolicy },
-    { path: '/report', component: PublicReport },
-  ],
-  Layout: Layout 
+    mainPage: "Home",
+    Pages: PAGES,
+    Layout: __Layout,
 };
