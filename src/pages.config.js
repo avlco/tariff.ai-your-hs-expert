@@ -6,17 +6,16 @@ import PublicReport from "./pages/PublicReport";
 import Layout from "./Layout";
 
 export const pagesConfig = {
-  mainPage: 'Home',
-  visitedPage: 'Home',
-  // מיפוי אובייקטים לשימוש פנימי
-  pages: {
-    'Home': Home,
-    'Terms': TermsOfService,
-    'Privacy': PrivacyPolicy,
-    'Cookies': CookiePolicy,
-    'PublicReport': PublicReport
+  mainPage: 'home',
+  visitedPage: 'home',
+  // חשוב: Pages עם P גדולה כדי להתאים ל-App.jsx
+  Pages: {
+    'home': Home,
+    'terms': TermsOfService,
+    'privacy': PrivacyPolicy,
+    'cookies': CookiePolicy,
+    'report': PublicReport
   },
-  // הגדרת הנתיבים (Routes) בפועל - חובה שתהיה תאימות לקישורים בפוטר
   routes: [
     { path: '/', component: Home },
     { path: '/terms', component: TermsOfService },
