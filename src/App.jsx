@@ -6,7 +6,7 @@ import { pagesConfig } from './pages.config'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
-import { LanguageProvider } from '@/components/LanguageContext'; // ייבוא הפרוביידר החדש
+import { LanguageProvider } from '@/components/LanguageContext'; // ייבוא
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from '@/components/home/ScrollToTop';
 
@@ -30,9 +30,8 @@ const AuthenticatedApp = () => {
   }
 
   if (authError) {
-    if (authError.type === 'user_not_registered') {
-      return <UserNotRegisteredError />;
-    } else if (authError.type === 'auth_required') {
+    if (authError.type === 'user_not_registered') return <UserNotRegisteredError />;
+    if (authError.type === 'auth_required') {
       navigateToLogin();
       return null;
     }
@@ -40,21 +39,9 @@ const AuthenticatedApp = () => {
 
   return (
     <Routes>
-      <Route path="/" element={
-        <LayoutWrapper currentPageName={mainPageKey}>
-          <MainPage />
-        </LayoutWrapper>
-      } />
+      <Route path="/" element={<LayoutWrapper currentPageName={mainPageKey}><MainPage /></LayoutWrapper>} />
       {Object.entries(Pages).map(([path, Page]) => (
-        <Route
-          key={path}
-          path={`/${path}`}
-          element={
-            <LayoutWrapper currentPageName={path}>
-              <Page />
-            </LayoutWrapper>
-          }
-        />
+        <Route key={path} path={`/${path}`} element={<LayoutWrapper currentPageName={path}><Page /></LayoutWrapper>} />
       ))}
       <Route path="*" element={<PageNotFound />} />
     </Routes>
@@ -63,8 +50,7 @@ const AuthenticatedApp = () => {
 
 function App() {
   return (
-    /* הוספת LanguageProvider כעטיפה עליונה ביותר */
-    <LanguageProvider> 
+    <LanguageProvider>
       <AuthProvider>
         <QueryClientProvider client={queryClientInstance}>
           <Router>
