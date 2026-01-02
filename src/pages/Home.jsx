@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
+import Footer from '@/components/home/Footer'; // משתמש בפוטר המעודכן
 import SideNav from '@/components/common/SideNav';
 import CookieBanner from '@/components/common/CookieBanner';
 import HeroSection from '@/components/home/HeroSection';
@@ -70,7 +70,7 @@ export default function Home() {
         <ContactSection theme={theme} language={language} />
       </main>
 
-      <Footer theme={theme} language={language} />
+      <Footer theme={theme} language={language} /> {/* הצבת פוטר מעודכן */}
       <CookieBanner theme={theme} language={language} />
     </div>
   );
