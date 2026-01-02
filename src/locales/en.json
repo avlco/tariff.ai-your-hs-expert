@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "faq": "FAQs",
+    "contact": "Contact"
+  },
+  "common": {
+    "getStarted": "Get Started",
+    "subscribe": "Subscribe",
+    "allRightsReserved": "All rights reserved.",
+    "madeWith": "Made with",
+    "forGlobalTrade": "for global trade"
+  },
+  "hero": {
+    "badge": "AI-Powered Tariff Intelligence",
+    "title": "Navigate Global Trade",
+    "titleHighlight": "With Confidence",
+    "subtitle": "Instantly analyze tariffs, duties, and trade regulations for any product across 190+ countries. Make informed decisions with AI-powered insights."
+  },
+  "problem": {
+    "badge": "The Challenge",
+    "title": "Global Trade is Complex",
+    "subtitle": "Businesses lose millions annually due to tariff miscalculations and compliance issues"
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Choose the plan that fits your business needs",
+    "popular": "Most Popular"
+  },
+  "newsletter": {
+    "title": "Join Our Newsletter",
+    "subtitle": "Get the latest tariff updates, trade news, and exclusive insights delivered to your inbox",
+    "placeholder": "Enter your email",
+    "consent": "I agree to receive newsletters from tariff.ai"
+  },
+  "footer": {
+    "description": "AI-powered tariff intelligence for global trade professionals.",
+    "legal": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy"
+  }
+}
