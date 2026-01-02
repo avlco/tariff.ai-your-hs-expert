@@ -11,11 +11,16 @@ const Footer = () => {
             <h2 className="text-lg font-bold text-[#114B5F] dark:text-white">tariff.ai</h2>
             <p>AI-powered tariff intelligence for global trade professionals.</p>
             <div className="flex space-x-4 mt-4">
-              {/* Social media icons */}
-              <a href="#" className="text-slate-600 dark:text-slate-300 hover:text-[#114B5F]">
+              <a
+                href="https://linkedin.com"
+                className="text-[#114B5F] hover:text-blue-800"
+              >
                 <i className="fab fa-linkedin"></i>
               </a>
-              <a href="#" className="text-slate-600 dark:text-slate-300 hover:text-[#114B5F]">
+              <a
+                href="https://twitter.com"
+                className="text-[#114B5F] hover:text-blue-500"
+              >
                 <i className="fab fa-twitter"></i>
               </a>
             </div>
@@ -26,17 +31,26 @@ const Footer = () => {
             <h2 className="text-lg font-bold text-[#114B5F] dark:text-white">Legal</h2>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link to="/terms" className="hover:underline text-slate-600 dark:text-slate-300">
+                <Link
+                  to="/terms"
+                  className="hover:underline text-slate-600 dark:text-slate-300"
+                >
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="hover:underline text-slate-600 dark:text-slate-300">
+                <Link
+                  to="/privacy"
+                  className="hover:underline text-slate-600 dark:text-slate-300"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/cookies" className="hover:underline text-slate-600 dark:text-slate-300">
+                <Link
+                  to="/cookies"
+                  className="hover:underline text-slate-600 dark:text-slate-300"
+                >
                   Cookie Policy
                 </Link>
               </li>
@@ -71,7 +85,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom text */}
         <div className="mt-12 text-center text-xs text-slate-400 dark:text-slate-500">
           &copy; {new Date().getFullYear()} tariff.ai. All rights reserved.
         </div>
