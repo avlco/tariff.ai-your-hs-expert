@@ -14,21 +14,12 @@ import TestimonialsSection from '@/components/home/TestimonialsSection';
 import FAQSection from '@/components/home/FAQSection';
 import BlogSection from '@/components/home/BlogSection';
 import ContactSection from '@/components/home/ContactSection';
+import { useLanguage } from '@/components/LanguageContext';
 
 export default function Home() {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'light';
-    }
-    return 'light';
-  });
-  
-  const [language, setLanguage] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('language') || 'en';
-    }
-    return 'en';
-  });
+  // משתמשים בתמה ובשפה מה-Context הגלובלי
+  const { isRTL } = useLanguage(); 
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
@@ -36,42 +27,30 @@ export default function Home() {
     document.documentElement.classList.add(theme);
   }, [theme]);
 
-  useEffect(() => {
-    localStorage.setItem('language', language);
-  }, [language]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
+  const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
   return (
-    <div className={`min-h-screen ${
-      theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'
-    }`}>
-      <Header 
-        theme={theme} 
-        toggleTheme={toggleTheme} 
-        language={language} 
-        setLanguage={setLanguage} 
-      />
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'}`}>
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <SideNav theme={theme} />
       
       <main>
-        <HeroSection theme={theme} language={language} />
-        <ChallengesSection theme={theme} language={language} />
-        <AboutSection theme={theme} language={language} />
-        <FeaturesSection theme={theme} language={language} />
-        <HowItWorksSection theme={theme} language={language} />
-        <PricingSection theme={theme} language={language} />
-        <NewsletterSection theme={theme} language={language} />
-        <TestimonialsSection theme={theme} language={language} />
-        <FAQSection theme={theme} language={language} />
-        <BlogSection theme={theme} language={language} />
-        <ContactSection theme={theme} language={language} />
+        {/* הקומפננטות ימשכו את השפה לבד, לא צריך להעביר props של language */}
+        <HeroSection theme={theme} />
+        <ChallengesSection theme={theme} />
+        <AboutSection theme={theme} />
+        <FeaturesSection theme={theme} />
+        <HowItWorksSection theme={theme} />
+        <PricingSection theme={theme} />
+        <NewsletterSection theme={theme} />
+        <TestimonialsSection theme={theme} />
+        <FAQSection theme={theme} />
+        <BlogSection theme={theme} />
+        <ContactSection theme={theme} />
       </main>
 
-      <Footer theme={theme} language={language} />
-      <CookieBanner theme={theme} language={language} />
+      <Footer theme={theme} />
+      <CookieBanner theme={theme} />
     </div>
   );
 }
