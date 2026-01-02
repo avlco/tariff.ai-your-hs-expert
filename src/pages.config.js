@@ -8,6 +8,7 @@ import Layout from "./Layout";
 export const pagesConfig = {
   mainPage: 'Home',
   visitedPage: 'Home',
+  // מיפוי אובייקטים לשימוש פנימי
   pages: {
     'Home': Home,
     'Terms': TermsOfService,
@@ -15,7 +16,7 @@ export const pagesConfig = {
     'Cookies': CookiePolicy,
     'PublicReport': PublicReport
   },
-  // מיפוי נתיבים לקומפוננטות
+  // הגדרת הנתיבים (Routes) בפועל - חובה שתהיה תאימות לקישורים בפוטר
   routes: [
     { path: '/', component: Home },
     { path: '/terms', component: TermsOfService },
