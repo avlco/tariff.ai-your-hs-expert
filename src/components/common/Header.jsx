@@ -4,24 +4,32 @@ import { createPageUrl } from '@/utils';
 import { Button } from '@/components/ui/button';
 import { Moon, Sun, Globe, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage, SUPPORTED_LANGUAGES } from '../LanguageContext'; // ייבוא המנגנון החדש
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+// שינוי: ייבוא ה-Hook והקבועים מהמנגנון החדש
+import { useLanguage, SUPPORTED_LANGUAGES } from '@/components/LanguageContext';
 
 export default function Header({ theme, toggleTheme }) {
-  const { language, setLanguage, t, isRTL } = useLanguage();
+  // שינוי: שימוש ב-Context במקום ב-props
+  const { language, setLanguage, t } = useLanguage();
+  
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // שימוש במפתחות תרגום עבור התפריט (אופציונלי, כרגע התפריט ריק בקוד המקור)
+  const navItems = []; 
 
   return (
     <motion.header
@@ -29,7 +37,9 @@ export default function Header({ theme, toggleTheme }) {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? theme === 'dark' ? 'bg-[#0F172A]/80 backdrop-blur-xl border-b border-white/10 shadow-2xl' : 'bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-lg'
+          ? theme === 'dark'
+            ? 'bg-[#0F172A]/80 backdrop-blur-xl border-b border-white/10 shadow-2xl'
+            : 'bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -37,26 +47,47 @@ export default function Header({ theme, toggleTheme }) {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to={createPageUrl('Home')} className="flex items-center gap-2">
-            <div className={`text-2xl font-bold ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+            <div className={`text-2xl font-bold tracking-tight ${
+              theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+            }`}>
               tariff<span className="text-[#E5A840]">.ai</span>
             </div>
           </Link>
 
-          {/* Actions */}
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition-colors hover:text-[#E5A840] ${
+                  theme === 'dark' ? 'text-gray-300' : 'text-slate-600'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Right Side Actions */}
           <div className="flex items-center gap-3">
-            {/* בורר שפות מעודכן לכל 8 השפות */}
+            {/* Language Selector - מעודכן לתמיכה בכל 8 השפות */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className={theme === 'dark' ? 'text-white' : 'text-slate-700'}>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className={theme === 'dark' ? 'text-white hover:bg-white/10' : 'text-slate-700 hover:bg-slate-100'}
+                >
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className={theme === 'dark' ? 'bg-[#1E293B] border-white/10' : ''}>
                 {Object.entries(SUPPORTED_LANGUAGES).map(([code, info]) => (
                   <DropdownMenuItem 
-                    key={code} 
+                    key={code}
                     onClick={() => setLanguage(code)}
-                    className={`cursor-pointer ${language === code ? 'text-[#E5A840] font-bold' : ''}`}
+                    className={`cursor-pointer ${language === code ? 'text-[#E5A840]' : ''}`}
                   >
                     {info.label}
                   </DropdownMenuItem>
@@ -65,19 +96,70 @@ export default function Header({ theme, toggleTheme }) {
             </DropdownMenu>
 
             {/* Theme Toggle */}
-            <Button variant="ghost" size="icon" onClick={toggleTheme} className={theme === 'dark' ? 'text-white' : 'text-slate-700'}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className={theme === 'dark' ? 'text-white hover:bg-white/10' : 'text-slate-700 hover:bg-slate-100'}
+            >
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
 
-            {/* CTA Button מתוך התרגום */}
+            {/* CTA Button - מתורגם */}
             <a href="https://app.tariff-ai.com" className="hidden sm:block">
-              <Button className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-bold px-6 rounded-full">
+              <Button
+                className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold px-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E5A840]/25"
+              >
                 {t('common.getStarted')}
               </Button>
             </a>
+
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className={`lg:hidden ${theme === 'dark' ? 'text-white' : 'text-slate-700'}`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className={`lg:hidden overflow-hidden ${
+              theme === 'dark' ? 'bg-[#0F172A]/95' : 'bg-white/95'
+            } backdrop-blur-xl`}
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block text-lg font-medium py-2 ${
+                    theme === 'dark' ? 'text-white' : 'text-slate-900'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a href="https://app.tariff-ai.com" className="block mt-4">
+                <Button className="w-full bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold rounded-full">
+                  {t('common.getStarted')}
+                </Button>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
