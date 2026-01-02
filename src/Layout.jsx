@@ -1,11 +1,9 @@
-import React from "react";
-import Footer from "./components/home/Footer";
+import React from 'react';
 
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen font-sans antialiased">
-      <main>{children}</main>
-      <Footer />
+      {children}
     </div>
   );
 }

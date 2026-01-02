@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer'; // שינוי: שימוש בפוטר המעוצב
+import Footer from '@/components/common/Footer';
 import SideNav from '@/components/common/SideNav';
 import CookieBanner from '@/components/common/CookieBanner';
 import HeroSection from '@/components/home/HeroSection';
@@ -16,17 +16,46 @@ import BlogSection from '@/components/home/BlogSection';
 import ContactSection from '@/components/home/ContactSection';
 
 export default function Home() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
-  const [language, setLanguage] = useState(() => localStorage.getItem('language') || 'en');
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'light';
+    }
+    return 'light';
+  });
+  
+  const [language, setLanguage] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('language') || 'en';
+    }
+    return 'en';
+  });
 
   useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(theme);
   }, [theme]);
 
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'}`}>
-      <Header theme={theme} language={language} />
+    <div className={`min-h-screen ${
+      theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'
+    }`}>
+      <Header 
+        theme={theme} 
+        toggleTheme={toggleTheme} 
+        language={language} 
+        setLanguage={setLanguage} 
+      />
       <SideNav theme={theme} />
+      
       <main>
         <HeroSection theme={theme} language={language} />
         <ChallengesSection theme={theme} language={language} />
@@ -40,7 +69,8 @@ export default function Home() {
         <BlogSection theme={theme} language={language} />
         <ContactSection theme={theme} language={language} />
       </main>
-      <Footer theme={theme} language={language} /> {/* שינוי: שמירה על פוטר יחיד */}
+
+      <Footer theme={theme} language={language} />
       <CookieBanner theme={theme} language={language} />
     </div>
   );
