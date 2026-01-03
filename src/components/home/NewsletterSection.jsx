@@ -4,9 +4,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Mail, ArrowRight, Sparkles } from 'lucide-react';
+import { useLanguage } from '@/components/LanguageContext';
 
-export default function NewsletterSection({ theme, language }) {
-  const isRTL = language === 'he';
+export default function NewsletterSection({ theme }) {
+  const { t, isRTL } = useLanguage();
   const [email, setEmail] = useState('');
   const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -36,7 +37,6 @@ export default function NewsletterSection({ theme, language }) {
               : 'bg-gradient-to-br from-slate-100 to-white border border-slate-200'
           }`}
         >
-          {/* Background Elements */}
           <div className={`absolute top-0 ${isRTL ? 'left-0' : 'right-0'} w-96 h-96 rounded-full ${
             theme === 'dark' ? 'bg-[#E5A840]/10' : 'bg-[#E5A840]/5'
           } blur-[100px]`} />
@@ -45,7 +45,6 @@ export default function NewsletterSection({ theme, language }) {
           } blur-[80px]`} />
 
           <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
             <div className={isRTL ? 'lg:order-2' : ''}>
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 ${
                 theme === 'dark' 
@@ -53,24 +52,21 @@ export default function NewsletterSection({ theme, language }) {
                   : 'bg-[#E5A840]/10 text-[#C28E36]'
               }`}>
                 <Sparkles className="w-4 h-4" />
-                {language === 'en' ? 'Stay Updated' : 'הישארו מעודכנים'}
+                {t('common.subscribe')}
               </div>
               
               <h2 className={`text-3xl sm:text-4xl font-bold ${
                 theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
               }`}>
-                {language === 'en' ? 'Join Our Newsletter' : 'הצטרפו לניוזלטר'}
+                {t('newsletter.title')}
               </h2>
               <p className={`mt-4 text-lg ${
                 theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
               }`}>
-                {language === 'en' 
-                  ? 'Get the latest tariff updates, trade news, and exclusive insights delivered to your inbox'
-                  : 'קבלו עדכוני מכס, חדשות סחר ותובנות בלעדיות ישירות למייל'}
+                {t('newsletter.subtitle')}
               </p>
             </div>
 
-            {/* Form */}
             <div className={isRTL ? 'lg:order-1' : ''}>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="relative">
@@ -79,7 +75,7 @@ export default function NewsletterSection({ theme, language }) {
                   }`} />
                   <Input
                     type="email"
-                    placeholder={language === 'en' ? 'Enter your email' : 'הזינו אימייל'}
+                    placeholder={t('newsletter.placeholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className={`h-14 ${isRTL ? 'pr-12' : 'pl-12'} rounded-full text-base ${
@@ -100,9 +96,7 @@ export default function NewsletterSection({ theme, language }) {
                   <label htmlFor="newsletter-agree" className={`text-sm ${
                     theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
                   }`}>
-                    {language === 'en' 
-                      ? 'I agree to receive newsletters from tariff.ai'
-                      : 'אני מסכים/ה לקבל ניוזלטר מ-tariff.ai'}
+                    {t('newsletter.consent')}
                   </label>
                 </div>
 
@@ -111,19 +105,9 @@ export default function NewsletterSection({ theme, language }) {
                   disabled={!email || !agreed}
                   className="w-full h-14 rounded-full bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold text-base disabled:opacity-50 transition-all duration-300 hover:shadow-xl hover:shadow-[#E5A840]/25"
                 >
-                  {submitted 
-                    ? (language === 'en' ? 'Subscribed!' : 'נרשמת בהצלחה!')
-                    : (language === 'en' ? 'Subscribe' : 'הרשמה')}
+                  {submitted ? t('common.sent') : t('common.subscribe')}
                   {!submitted && <ArrowRight className={`w-5 h-5 ${isRTL ? 'mr-2 rotate-180' : 'ml-2'}`} />}
                 </Button>
-
-                <p className={`text-xs text-center ${
-                  theme === 'dark' ? 'text-gray-500' : 'text-slate-500'
-                }`}>
-                  {language === 'en' 
-                    ? 'We respect your privacy. Unsubscribe anytime.'
-                    : 'אנו מכבדים את הפרטיות שלך. בטל את המנוי בכל עת.'}
-                </p>
               </form>
             </div>
           </div>
