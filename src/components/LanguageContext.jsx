@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import en from './locales/en.js';
 
 const LanguageContext = createContext();
 
@@ -16,27 +17,22 @@ export const SUPPORTED_LANGUAGES = {
 
 export function LanguageProvider({ children }) {
   const [langCode, setLangCode] = useState(() => localStorage.getItem('tariff-lang') || 'en');
-  const [translations, setTranslations] = useState(null);
-  const [fallback, setFallback] = useState(null);
+  const [translations, setTranslations] = useState(en);
 
   useEffect(() => {
     const loadLanguage = async () => {
       try {
-        if (!fallback) {
+        if (langCode === 'en') {
+          setTranslations(en);
+        } else {
           try {
-            const enData = await import('./locales/en.js');
-            setFallback(enData.default);
+            // Vite supports dynamic imports with variables if they are relative paths
+            const module = await import(`./locales/${langCode}.js`);
+            setTranslations(module.default);
           } catch (e) {
-            console.error("Fallback load error:", e);
+            console.warn(`Translation for ${langCode} not found, using fallback.`);
+            setTranslations(en);
           }
-        }
-        
-        try {
-          const selectedData = await import(`./locales/${langCode}.js`);
-          setTranslations(selectedData.default);
-        } catch (e) {
-          console.warn(`Translation for ${langCode} not found, using fallback.`);
-          if (fallback) setTranslations(fallback);
         }
         
         const dir = SUPPORTED_LANGUAGES[langCode]?.dir || 'ltr';
@@ -44,14 +40,14 @@ export function LanguageProvider({ children }) {
         document.documentElement.lang = langCode;
         localStorage.setItem('tariff-lang', langCode);
       } catch (err) {
-        console.error("Translation load error:", err);
-        if (fallback) setTranslations(fallback);
+        console.error("Language load error:", err);
+        setTranslations(en);
       }
     };
     loadLanguage();
-  }, [langCode, fallback]);
+  }, [langCode]);
 
-  const t = (path, options = {}) => {
+  const t = (path) => {
     if (!path) return '';
     const keys = path.split('.');
     
@@ -61,21 +57,14 @@ export function LanguageProvider({ children }) {
     };
 
     let result = getValue(translations);
-    
     if (result !== null && result !== undefined) return result;
-    const fallbackResult = getValue(fallback);
-    const finalResult = fallbackResult !== null && fallbackResult !== undefined ? fallbackResult : path;
     
-    // Handle options (like returnObjects) - although for strings it might not be needed
-    // But existing code used { returnObjects: true } which returns the object/array.
-    // My new content is string, so it should be fine.
-    
-    return finalResult;
+    // Fallback to English if translation missing
+    const fallbackResult = getValue(en);
+    return fallbackResult !== null && fallbackResult !== undefined ? fallbackResult : path;
   };
 
   const isRTL = SUPPORTED_LANGUAGES[langCode]?.dir === 'rtl';
-
-  if (!translations && !fallback) return null;
 
   return (
     <LanguageContext.Provider value={{ language: langCode, setLanguage: setLangCode, t, isRTL, SUPPORTED_LANGUAGES }}>
