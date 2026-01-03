@@ -56,6 +56,7 @@ export default function CookieBanner({ theme }) {
               : 'bg-white/95 backdrop-blur-xl border border-slate-200'
           }`}>
             {!showSettings ? (
+              // Main Banner
               <div className="p-6">
                 <div className="flex items-start gap-4">
                   <div className={`p-3 rounded-xl ${
@@ -101,6 +102,7 @@ export default function CookieBanner({ theme }) {
                 </div>
               </div>
             ) : (
+              // Settings Panel
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className={`text-lg font-semibold ${
