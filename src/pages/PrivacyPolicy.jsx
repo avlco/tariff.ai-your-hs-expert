@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
 
   const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
-  const sections = t('legalPages.privacy.sections') || [];
+  const sections = t('legalPages.privacy.sections', { returnObjects: true }) || [];
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'}`} dir={isRTL ? 'rtl' : 'ltr'}>
