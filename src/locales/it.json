@@ -2,37 +2,37 @@
   "nav": {
     "home": "Home",
     "features": "Funzionalità",
-    "howItWorks": "Come funziona",
+    "howItWorks": "Come Funziona",
     "pricing": "Prezzi",
     "faq": "FAQ",
     "testimonials": "Testimonianze",
     "blog": "Blog",
     "contact": "Contatti",
-    "about": "Chi siamo"
+    "about": "Chi Siamo"
   },
   "common": {
-    "getStarted": "Inizia",
+    "getStarted": "Inizia Ora",
     "subscribe": "Iscriviti",
     "allRightsReserved": "Tutti i diritti riservati.",
     "madeWith": "Fatto con",
     "forGlobalTrade": "per il commercio globale",
     "readMore": "Leggi di più",
-    "viewAll": "Vedi tutto",
+    "viewAll": "Vedi Tutti gli Articoli",
     "submit": "Invia",
-    "sending": "Invio...",
+    "sending": "Invio in corso...",
     "sent": "Inviato!",
     "backToHome": "Torna alla Home",
     "tryFree": "Prova Gratis",
-    "startFreeAnalysis": "Analisi Gratuita",
+    "startFreeAnalysis": "Inizia Analisi Gratuita",
     "watchDemo": "Guarda la Demo"
   },
   "hero": {
-    "badge": "Intelligenza Tariffaria AI",
-    "title": "Navigate nel Commercio Globale",
+    "badge": "Intelligenza Tariffaria basata su IA",
+    "title": "Naviga nel Commercio Globale",
     "titleHighlight": "Con Sicurezza",
-    "subtitle": "Analizza istantaneamente tariffe, dazi e regolamenti commerciali per qualsiasi prodotto in oltre 190 paesi.",
-    "cta": "Inizia ora",
-    "ctaSecondary": "Guarda la demo",
+    "subtitle": "Analizza istantaneamente tariffe, dazi e normative commerciali per qualsiasi prodotto in oltre 190 paesi. Prendi decisioni informate con approfondimenti basati sull'IA.",
+    "cta": "Inizia Ora",
+    "ctaSecondary": "Guarda la Demo",
     "stats": {
       "countries": "Paesi",
       "accuracy": "Precisione",
@@ -40,44 +40,44 @@
     },
     "visuals": {
       "processing": "0.4s elaborazione",
-      "exportRoute": "Rotta Export",
+      "exportRoute": "Rotta di Esportazione",
       "usToGermany": "USA verso Germania",
       "compliant": "CONFORME",
       "estimatedDuty": "Dazio Stimato",
       "hsCode": "Codice SA",
       "verified": "Verificato",
-      "aiConfidence": "Affidabilità IA",
+      "aiConfidence": "Punteggio di fiducia IA",
       "instantAnalysis": "Analisi Istantanea"
     }
   },
   "challenges": {
     "badge": "La Sfida",
     "title": "Il Commercio Globale è Complesso",
-    "subtitle": "Le aziende perdono milioni annualmente a causa di errori di calcolo tariffario.",
+    "subtitle": "Le aziende perdono milioni ogni anno a causa di errori di calcolo tariffario e problemi di conformità.",
     "items": [
       {
         "title": "Costi Nascosti",
-        "description": "Dazi imprevisti possono aumentare i costi del 15-30%."
+        "description": "Tariffe e dazi imprevisti possono aumentare i costi del prodotto del 15-30%, distruggendo i margini di profitto da un giorno all'altro."
       },
       {
         "title": "Rischio di Conformità",
-        "description": "La non conformità porta a ritardi e multe."
+        "description": "La non conformità alle normative commerciali porta a ritardi nelle spedizioni, multe e danni alle relazioni commerciali."
       },
       {
         "title": "Perdita di Tempo",
-        "description": "La ricerca manuale richiede ore per prodotto."
+        "description": "La ricerca manuale delle tariffe richiede ore di tempo esperto per prodotto, rallentando le decisioni aziendali."
       }
     ]
   },
   "about": {
     "badge": "Chi Siamo",
-    "title": "Semplificare il Commercio",
-    "description1": "tariff.ai combina IA avanzata con database commerciali completi.",
-    "description2": "Fondata da esperti di compliance e ingegneri IA.",
+    "title": "Semplificare il Commercio Globale",
+    "description1": "tariff.ai combina IA all'avanguardia con database commerciali completi per fornire intelligenza tariffaria istantanea e precisa.",
+    "description2": "Fondata da esperti di conformità commerciale e ingegneri di IA, la nostra missione è democratizzare l'accesso all'intelligenza commerciale. La nostra piattaforma elabora milioni di punti dati per fornirti approfondimenti chiari e utilizzabili in pochi secondi.",
     "features": [
-      { "title": "Precisione Prima di Tutto", "desc": "Verificato con fonti ufficiali" },
-      { "title": "Velocità", "desc": "Risposte in secondi, non ore" },
-      { "title": "Sempre Aggiornato", "desc": "Aggiornamenti in tempo reale" }
+      { "title": "Precisione Prima di Tutto", "desc": "Ogni report è verificato rispetto a fonti ufficiali" },
+      { "title": "La Velocità Conta", "desc": "Ottieni risposte in secondi, non ore" },
+      { "title": "Sempre Aggiornato", "desc": "Aggiornamenti in tempo reale sui cambiamenti tariffari" }
     ],
     "stats": {
       "countries": "Paesi",
@@ -87,166 +87,166 @@
     }
   },
   "features": {
-    "badge": "Capacità",
-    "title": "Tutto ciò che serve",
-    "subtitle": "Strumenti potenti per ottimizzare le operazioni globali",
+    "badge": "Funzionalità",
+    "title": "Tutto ciò di cui hai bisogno",
+    "subtitle": "Strumenti potenti progettati per ottimizzare le tue operazioni commerciali globali",
     "items": [
-      { "title": "Classificazione Codice SA", "desc": "Classificazione automatica con 98% di precisione" },
-      { "title": "Calcolatore Dazi", "desc": "Calcolo istantaneo di dazi e tasse" },
-      { "title": "Ricerca Accordi", "desc": "Scopri tariffe preferenziali negli accordi di libero scambio" },
-      { "title": "Avvisi Conformità", "desc": "Notifiche in tempo reale sui cambiamenti normativi" },
-      { "title": "Analisi Multi-Paese", "desc": "Confronta tariffe su più destinazioni" },
-      { "title": "Documentazione", "desc": "Genera documenti conformi automaticamente" }
+      { "title": "Classificazione Codice SA", "desc": "Classificazione automatica del prodotto con precisione del 98% utilizzando IA avanzata" },
+      { "title": "Calcolatore Dazi", "desc": "Calcolo istantaneo di dazi, tasse e commissioni per qualsiasi rotta commerciale" },
+      { "title": "Trova Accordi Commerciali", "desc": "Scopri tariffe preferenziali sotto Accordi di Libero Scambio (ALS)" },
+      { "title": "Avvisi di Conformità", "desc": "Notifiche in tempo reale sui cambiamenti normativi che riguardano i tuoi prodotti" },
+      { "title": "Analisi Multi-Paese", "desc": "Confronta le tariffe su più destinazioni contemporaneamente" },
+      { "title": "Documentazione Export", "desc": "Genera automaticamente documenti di esportazione conformi" }
     ],
-    "cta": "Inizia subito"
+    "cta": "Inizia Ora"
   },
   "howItWorks": {
     "badge": "Processo",
-    "title": "Come funziona",
-    "subtitle": "Approfondimenti tariffari precisi in tre passaggi",
+    "title": "Come Funziona",
+    "subtitle": "Ottieni approfondimenti tariffari precisi in tre semplici passaggi",
     "steps": [
-      { "title": "Descrivi il prodotto", "desc": "Inserisci dettagli o carica un'immagine." },
-      { "title": "Scegli la rotta", "desc": "Seleziona origine e destinazione." },
-      { "title": "Ottieni il report", "desc": "Ricevi un'analisi completa." }
+      { "title": "Descrivi il Tuo Prodotto", "desc": "Inserisci i dettagli del prodotto o carica un'immagine. La nostra IA identifica automaticamente il codice SA corretto." },
+      { "title": "Seleziona Rotta Commerciale", "desc": "Scegli i paesi di origine e destinazione. Prenderemo in considerazione tutti gli accordi commerciali applicabili." },
+      { "title": "Ottieni il Tuo Report", "desc": "Ricevi istantaneamente una ripartizione completa di dazi, tasse e requisiti di conformità." }
     ]
   },
   "pricing": {
     "badge": "Piani",
     "title": "Prezzi Semplici e Trasparenti",
-    "subtitle": "Scegli il piano adatto alla tua azienda",
+    "subtitle": "Scegli il piano adatto alle tue esigenze aziendali",
     "monthly": "Mensile",
     "yearly": "Annuale",
     "off": "sconto",
-    "popular": "Popolare",
+    "popular": "Più Popolare",
     "mo": "mese",
     "perReport": "per report",
     "includes": "Include:",
     "packages": "Pacchetti",
     "subscriptions": "Abbonamenti",
-    "getStarted": "Scegli",
+    "getStarted": "Inizia",
     "freeTier": {
       "title": "Prova Gratis",
       "desc": "Perfetto per provare",
-      "features": ["Codice SA e Ragionamento", "Punteggio Affidabilità", "Fonti"]
+      "features": ["Codice SA & Ragionamento", "Punteggio di Fiducia", "Fonti"]
     },
     "packageFeatures": [
-      "Codice SA e Ragionamento", "Tariffe e tasse", "Regolamentazione", "Conformità", "Codici Alternativi", "Affidabilità", "Fonti"
+      "Codice SA & Ragionamento", "Tariffe & tasse", "Regolamentazione", "Conformità", "Codici Alternativi", "Punteggio di Fiducia", "Fonti"
     ],
     "subscriptionFeatures": [
       "Report completo", "Avviso Codice SA", "Calcolatore Tasse", "Calcolatore Nolo", "Gestione Spedizioni"
     ]
   },
   "testimonials": {
-    "badge": "Successi",
-    "title": "Cosa dicono i clienti",
-    "subtitle": "Scelto da importatori ed esportatori in tutto il mondo",
+    "badge": "Storie di Successo",
+    "title": "Cosa Dicono i Nostri Clienti",
+    "subtitle": "Scelto da importatori, esportatori e professionisti del commercio in tutto il mondo",
     "items": [
-      { "quote": "tariff.ai ci ha fatto risparmiare oltre $50.000 nel primo trimestre.", "name": "Sarah Chen", "role": "Responsabile Import" },
-      { "quote": "La precisione e la velocità sono incredibili.", "name": "Michael Torres", "role": "Direttore Compliance" },
-      { "quote": "Finalmente uno strumento che parla la nostra lingua.", "name": "Emma Williams", "role": "CEO" }
+      { "quote": "tariff.ai ci ha fatto risparmiare oltre $50.000 nel primo trimestre identificando opportunità di ALS che avevamo perso.", "name": "Sarah Chen", "role": "Responsabile Importazioni" },
+      { "quote": "La precisione e la velocità sono incredibili. Quello che richiedeva giorni al nostro team ora richiede minuti.", "name": "Michael Torres", "role": "Direttore Conformità Commerciale" },
+      { "quote": "Finalmente uno strumento che parla la nostra lingua. I report sono chiari, utilizzabili e sempre aggiornati.", "name": "Emma Williams", "role": "CEO" }
     ]
   },
   "faq": {
-    "badge": "FAQ",
-    "title": "Centro Conoscenza",
-    "subtitle": "Tutto ciò che devi sapere",
-    "contactTitle": "Non hai trovato risposta?",
+    "badge": "Domande Frequenti",
+    "title": "Centro Conoscenza tariff.ai",
+    "subtitle": "Tutto ciò che devi sapere sullo strumento che sta cambiando il commercio internazionale",
+    "contactTitle": "Non hai trovato la risposta? Siamo qui per aiutarti",
     "contactCta": "Contattaci",
     "items": [
-      { "q": "Cos'è tariff.ai?", "a": "Una piattaforma IA per l'analisi tariffaria..." },
-      { "q": "Quanto è precisa la classificazione?", "a": "La nostra IA raggiunge il 98% di precisione..." }
+      { "q": "Cos'è tariff.ai e come mi fa risparmiare denaro?", "a": "tariff.ai è una piattaforma basata su IA che analizza tariffe, dazi e normative commerciali in oltre 190 paesi. Ti fa risparmiare denaro identificando i codici di classificazione più convenienti, avvisandoti sugli accordi commerciali disponibili e prevenendo costosi errori di conformità." },
+      { "q": "Quanto è precisa la classificazione del codice SA?", "a": "La nostra IA raggiunge una precisione del 98% nella classificazione del codice SA, verificata rispetto ai database doganali ufficiali. Ogni classificazione include un punteggio di fiducia e un ragionamento dettagliato, in modo da poter verificare la logica dietro ogni raccomandazione." }
     ]
   },
   "blog": {
     "badge": "Approfondimenti",
-    "title": "Dal nostro Blog",
-    "subtitle": "Analisi di esperti e notizie del settore",
+    "title": "Dal Nostro Blog",
+    "subtitle": "Analisi di esperti, notizie del settore e guide pratiche per il commercio globale",
     "articles": [
-      { "category": "Settore", "title": "Cambiamenti Tariffari 2024", "desc": "Guida completa agli aggiornamenti..." },
-      { "category": "Guida", "title": "Sfruttare gli Accordi Commerciali", "desc": "Massimizza i risparmi..." },
-      { "category": "Tecnologia", "title": "IA nella Compliance", "desc": "Il futuro delle dogane..." }
+      { "category": "Notizie del Settore", "title": "Cambiamenti Tariffari 2024: Cosa Devono Sapere gli Importatori", "desc": "Una guida completa agli ultimi aggiornamenti tariffari che interessano le industrie chiave..." },
+      { "category": "Guida", "title": "Come Sfruttare gli Accordi di Libero Scambio", "desc": "Massimizza i tuoi risparmi comprendendo e utilizzando i vantaggi degli ALS..." },
+      { "category": "Tecnologia", "title": "IA nella Conformità Commerciale: Il Futuro è Qui", "desc": "Esplorando come l'intelligenza artificiale sta rivoluzionando dogane e conformità..." }
     ]
   },
   "contact": {
-    "badge": "Contatti",
+    "badge": "Mettiti in Contatto",
     "title": "Contattaci",
-    "subtitle": "Domande? Siamo qui per aiutarti",
+    "subtitle": "Hai domande? Ci piacerebbe sentirti",
     "form": {
-      "name": "Nome completo",
-      "email": "Email",
+      "name": "Nome Completo",
+      "email": "Indirizzo Email",
       "company": "Azienda",
       "subject": "Oggetto",
       "message": "Messaggio",
-      "send": "Invia messaggio",
-      "success": "Inviato!"
+      "send": "Invia Messaggio",
+      "success": "Messaggio Inviato!"
     },
     "info": {
       "email": "Email",
-      "responseTime": "Tempo di risposta",
-      "responseTimeDesc": "Rispondiamo entro 24 ore nei giorni lavorativi.",
+      "responseTime": "Tempo di Risposta",
+      "responseTimeDesc": "Rispondiamo entro 24 ore nei giorni lavorativi. Per richieste urgenti, menzionalo nel tuo messaggio.",
       "status": "Disponibile ora"
     }
   },
   "cookieBanner": {
     "title": "Utilizziamo i Cookie",
-    "desc": "Per migliorare l'esperienza e analizzare il traffico.",
+    "desc": "Utilizziamo i cookie per migliorare la tua esperienza di navigazione, analizzare il traffico del sito e personalizzare i contenuti. Cliccando su \"Accetta Tutto\", acconsenti al nostro utilizzo dei cookie.",
     "customize": "Personalizza",
     "acceptAll": "Accetta Tutto",
     "essentialOnly": "Solo Essenziali",
     "settingsTitle": "Impostazioni Cookie",
-    "save": "Salva",
+    "save": "Salva Preferenze",
     "cancel": "Annulla",
     "types": {
-      "essential": { "title": "Cookie Essenziali", "desc": "Necessari per il funzionamento del sito." },
-      "analytics": { "title": "Cookie Analitici", "desc": "Per capire l'utilizzo del sito." },
-      "marketing": { "title": "Cookie Marketing", "desc": "Per pubblicità rilevanti." }
+      "essential": { "title": "Cookie Essenziali", "desc": "Questi cookie sono necessari per la funzionalità di base del sito e non possono essere disabilitati." },
+      "analytics": { "title": "Cookie Analitici", "desc": "Questi cookie ci aiutano a capire come gli utenti interagiscono con il nostro sito web." },
+      "marketing": { "title": "Cookie di Marketing", "desc": "Questi cookie vengono utilizzati per mostrarti pubblicità più pertinenti." }
     }
   },
   "newsletter": {
-    "title": "Iscriviti alla Newsletter",
-    "subtitle": "Ricevi gli ultimi aggiornamenti tariffari",
-    "placeholder": "La tua email",
-    "consent": "Accetto di ricevere email da tariff.ai",
+    "title": "Iscriviti alla nostra Newsletter",
+    "subtitle": "Ricevi gli ultimi aggiornamenti tariffari, notizie commerciali e approfondimenti esclusivi direttamente nella tua casella di posta",
+    "placeholder": "Inserisci la tua email",
+    "consent": "Accetto di ricevere newsletter da tariff.ai",
     "cta": "Iscriviti"
   },
   "footer": {
-    "description": "Intelligenza tariffaria IA per professionisti del commercio globale.",
+    "description": "Intelligenza tariffaria basata su IA per professionisti del commercio globale.",
     "legal": "Legale",
     "terms": "Termini di Servizio",
-    "privacy": "Privacy",
-    "cookies": "Cookie",
+    "privacy": "Informativa sulla Privacy",
+    "cookies": "Cookie Policy",
     "copyright": "Tutti i diritti riservati."
   },
   "dataRequest": {
-    "title": "Esercita i tuoi diritti",
-    "subtitle": "Accesso, correzione o cancellazione dati (GDPR & LGPD).",
+    "title": "Esercita i tuoi diritti sui dati",
+    "subtitle": "Richiedi accesso, correzione o cancellazione dei tuoi dati personali ai sensi del GDPR e LGPD.",
     "form": {
-      "requestType": "Tipo richiesta",
-      "requestTypePlaceholder": "Seleziona...",
-      "fullName": "Nome",
-      "fullNamePlaceholder": "Il tuo nome",
-      "email": "Email",
+      "requestType": "Tipo di Richiesta",
+      "requestTypePlaceholder": "Seleziona tipo di richiesta...",
+      "fullName": "Nome Completo",
+      "fullNamePlaceholder": "Inserisci il tuo nome completo",
+      "email": "Indirizzo Email",
       "emailPlaceholder": "tua@email.com",
-      "details": "Dettagli",
-      "detailsPlaceholder": "Info aggiuntive...",
-      "submit": "Invia",
-      "submitAnother": "Nuova richiesta",
+      "details": "Dettagli Aggiuntivi (Opzionale)",
+      "detailsPlaceholder": "Aggiungi ulteriori dettagli sulla tua richiesta...",
+      "submit": "Invia Richiesta",
+      "submitAnother": "Invia un'altra richiesta",
       "types": {
-        "access": "Accesso ai dati",
-        "rectification": "Correzione",
-        "erasure": "Cancellazione (Diritto all'oblio)",
-        "restriction": "Limitazione trattamento",
-        "portability": "Portabilità",
-        "objection": "Opposizione"
+        "access": "Accesso ai miei dati personali",
+        "rectification": "Correggi i miei dati",
+        "erasure": "Cancella i miei dati (Diritto all'oblio)",
+        "restriction": "Limita il trattamento",
+        "portability": "Portabilità dei dati",
+        "objection": "Opposizione al trattamento"
       }
     },
     "success": {
       "title": "Richiesta Ricevuta",
-      "desc": "Elaboreremo la richiesta nei termini di legge."
+      "desc": "Abbiamo ricevuto la tua richiesta e la elaboreremo entro i termini di legge previsti. Controlla la tua email per una conferma."
     },
     "messages": {
-      "success": "Inviata con successo",
-      "error": "Errore nell'invio"
+      "success": "Richiesta inviata con successo",
+      "error": "Impossibile inviare la richiesta"
     }
   },
   "publicReport": {
@@ -260,44 +260,47 @@
     "category": "Categoria",
     "analysisDetails": "Dettagli Analisi",
     "dutiesAndTaxes": "Dazi & Tasse",
-    "complianceCheck": "Verifica Conformità",
-    "importLicense": "Licenza Import",
+    "complianceCheck": "Controllo Conformità",
+    "importLicense": "Licenza di Importazione",
     "prohibited": "Proibito",
     "restricted": "Limitato",
     "required": "Richiesto",
     "notRequired": "Non Richiesto",
     "yes": "Sì",
     "no": "No",
-    "validUntil": "Valido fino al",
+    "validUntil": "Questo report è valido fino al",
     "print": "Stampa",
     "exportPdf": "Esporta PDF"
   },
   "legalPages": {
     "privacy": {
       "title": "Informativa sulla Privacy",
-      "updated": "Ultimo aggiornamento: 22 dicembre 2025",
-      "intro": "Come utilizziamo i tuoi dati.",
-      "back": "Indietro",
+      "updated": "Ultimo aggiornamento: 22 dicembre 2025 | Versione 1.0",
+      "intro": "Comprendere come utilizziamo i cookie e tecnologie simili su tariff.ai",
+      "back": "Torna alla Home",
       "sections": [
-        { "title": "1. Titolare dei dati", "content": "tariff.ai è il titolare..." }
+        { "title": "1. Titolare del Trattamento", "content": "tariff.ai ('noi', 'nostro', 'ci') è il titolare del trattamento responsabile delle tue informazioni personali. Puoi contattarci a:\nEmail: info@tariff-ai.com\nIndirizzo: tariff.ai Privacy Team, San Francisco, CA\nPer richieste relative al GDPR, il nostro rappresentante UE può essere contattato a info@tariff-ai.com" },
+        { "title": "2. Informazioni che Raccogliamo", "content": "Raccogliamo i seguenti tipi di dati personali:\n\n2.1 Informazioni che Fornisci:\n• Informazioni Account: Nome completo, indirizzo email, nome azienda\n• Iscrizioni Newsletter: Indirizzo email, data e ora del consenso\n• Moduli di Contatto: Nome, email, azienda, oggetto, messaggio\n\n2.2 Informazioni Raccolte Automaticamente:\n• Dati Analitici: Visualizzazioni di pagina, URL di pagina, URL di riferimento, ID sessione\n• Informazioni Dispositivo: Indirizzo IP (anonimizzato dopo 90 giorni), tipo di browser, sistema operativo, tipo di dispositivo, risoluzione schermo\n• Dati di Posizione: Paese e città (derivati dall'indirizzo IP)\n• Dati di Interazione: Clic, invii moduli, profondità di scorrimento, interazioni elementi\n• Dati Tecnici: User agent, preferenze lingua, fuso orario\n\n2.3 Cookie e Tracciamento:\n• Cookie Essenziali: Gestione sessione (necessari per la funzionalità)\n• Cookie Analitici: Modelli di utilizzo e prestazioni del sito (richiede consenso)\n• Cookie Marketing: Preferenze utente per comunicazioni di marketing (richiede consenso)" }
       ]
     },
     "terms": {
       "title": "Termini di Servizio",
-      "updated": "Ultimo aggiornamento: 22 dicembre 2025",
-      "intro": "Accordo legale...",
-      "back": "Indietro",
+      "updated": "Ultimo aggiornamento: 22 dicembre 2025 | Versione 1.0",
+      "intro": "Questo documento delinea l'accordo legalmente vincolante tra te e tariff.ai per quanto riguarda l'uso dei nostri servizi.",
+      "back": "Torna alla Home",
       "sections": [
-        { "title": "1. Accettazione", "content": "Utilizzando il servizio accetti..." }
+        { "title": "1. Accettazione dei Termini", "content": "Accedendo o utilizzando qualsiasi parte del sito web, della piattaforma o dei servizi di tariff.ai (collettivamente, 'il Servizio'), accetti di essere vincolato da questi Termini di Servizio ('Termini'). Se non accetti tutti i termini e le condizioni di questo accordo, non puoi accedere al Servizio o utilizzare alcun servizio." },
+        { "title": "2. Descrizione del Servizio", "content": "tariff.ai fornisce analisi tariffaria basata su IA, intelligenza commerciale e servizi correlati progettati per assistere le aziende nella conformità e strategia del commercio internazionale." }
       ]
     },
     "cookiePolicy": {
       "title": "Cookie Policy",
-      "updated": "Ultimo aggiornamento: 22 dicembre 2025",
-      "intro": "Utilizzo dei cookie...",
-      "back": "Indietro",
+      "updated": "Ultimo aggiornamento: 22 dicembre 2025 | Versione 1.0",
+      "intro": "Comprendere come utilizziamo i cookie e tecnologie simili su tariff.ai",
+      "back": "Torna alla Home",
       "sections": [
-        { "title": "1. Cosa sono i cookie", "content": "Piccoli file di testo..." }
+        { "title": "1. Cosa sono i Cookie", "content": "I cookie sono piccoli file di testo memorizzati sul tuo dispositivo (computer, tablet o telefono cellulare) quando visiti un sito web. Aiutano i siti web a ricordare le tue preferenze, capire come li utilizzi e fornire una migliore esperienza utente." },
+        { "title": "2. Come Utilizziamo i Cookie", "content": "tariff.ai utilizza i cookie per i seguenti scopi:\n\nFunzioni Essenziali:\n• Mantenere la tua sessione attiva\n• Ricordare le tue preferenze di lingua e tema\n• Proteggere la tua connessione ai nostri servizi\n\nAnalisi & Prestazioni:\n• Capire quali pagine sono più popolari\n• Analizzare il comportamento degli utenti per migliorare il nostro servizio\n• Tracciare errori tecnici e bug\n\nEsperienza Utente:\n• Ricordare le tue preferenze di consenso ai cookie\n• Personalizzare i contenuti in base ai tuoi interessi\n• Ottimizzare le prestazioni del sito" }
       ]
     }
   }
