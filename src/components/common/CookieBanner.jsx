@@ -3,8 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { X, Cookie, Settings } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/components/LanguageContext';
 
-export default function CookieBanner({ theme, language }) {
+export default function CookieBanner({ theme }) {
+  const { t, isRTL } = useLanguage();
   const [showBanner, setShowBanner] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState({
@@ -38,8 +40,6 @@ export default function CookieBanner({ theme, language }) {
     setShowSettings(false);
   };
 
-  const isRTL = language === 'he';
-
   return (
     <AnimatePresence>
       {showBanner && (
@@ -56,7 +56,6 @@ export default function CookieBanner({ theme, language }) {
               : 'bg-white/95 backdrop-blur-xl border border-slate-200'
           }`}>
             {!showSettings ? (
-              // Main Banner
               <div className="p-6">
                 <div className="flex items-start gap-4">
                   <div className={`p-3 rounded-xl ${
@@ -68,14 +67,12 @@ export default function CookieBanner({ theme, language }) {
                     <h3 className={`text-lg font-semibold mb-2 ${
                       theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
                     }`}>
-                      {language === 'en' ? 'We Use Cookies' : 'אנחנו משתמשים בעוגיות'}
+                      {t('cookieBanner.title')}
                     </h3>
                     <p className={`text-sm ${
                       theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
                     }`}>
-                      {language === 'en' 
-                        ? 'We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies.'
-                        : 'אנו משתמשים בעוגיות לשיפור חווית הגלישה, ניתוח תעבורה והתאמה אישית של תוכן. לחיצה על "קבל הכל" מהווה הסכמה לשימוש בעוגיות.'}
+                      {t('cookieBanner.desc')}
                     </p>
                   </div>
                 </div>
@@ -86,31 +83,30 @@ export default function CookieBanner({ theme, language }) {
                     className={theme === 'dark' ? 'text-gray-300 hover:text-white' : 'text-slate-600'}
                   >
                     <Settings className="w-4 h-4 mr-2" />
-                    {language === 'en' ? 'Customize' : 'התאמה אישית'}
+                    {t('cookieBanner.customize')}
                   </Button>
                   <Button
                     variant="outline"
                     onClick={handleEssentialOnly}
                     className={theme === 'dark' ? 'border-white/20 text-white hover:bg-white/10' : ''}
                   >
-                    {language === 'en' ? 'Essential Only' : 'חיוניות בלבד'}
+                    {t('cookieBanner.essentialOnly')}
                   </Button>
                   <Button
                     onClick={handleAcceptAll}
                     className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold"
                   >
-                    {language === 'en' ? 'Accept All' : 'קבל הכל'}
+                    {t('cookieBanner.acceptAll')}
                   </Button>
                 </div>
               </div>
             ) : (
-              // Settings Panel
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className={`text-lg font-semibold ${
                     theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
                   }`}>
-                    {language === 'en' ? 'Cookie Settings' : 'הגדרות עוגיות'}
+                    {t('cookieBanner.settingsTitle')}
                   </h3>
                   <Button
                     variant="ghost"
@@ -122,7 +118,6 @@ export default function CookieBanner({ theme, language }) {
                 </div>
 
                 <div className="space-y-4">
-                  {/* Essential Cookies */}
                   <div className={`p-4 rounded-xl ${
                     theme === 'dark' ? 'bg-[#0F172A]/50' : 'bg-slate-50'
                   }`}>
@@ -131,21 +126,18 @@ export default function CookieBanner({ theme, language }) {
                         <h4 className={`font-medium ${
                           theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
                         }`}>
-                          {language === 'en' ? 'Essential Cookies' : 'עוגיות חיוניות'}
+                          {t('cookieBanner.types.essential.title')}
                         </h4>
                         <p className={`text-sm mt-1 ${
                           theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
                         }`}>
-                          {language === 'en' 
-                            ? 'These cookies are required for basic site functionality and cannot be disabled.'
-                            : 'עוגיות אלו נדרשות לתפקוד בסיסי של האתר ולא ניתן לכבותן.'}
+                          {t('cookieBanner.types.essential.desc')}
                         </p>
                       </div>
                       <Switch checked disabled className="data-[state=checked]:bg-[#E5A840]" />
                     </div>
                   </div>
 
-                  {/* Analytics Cookies */}
                   <div className={`p-4 rounded-xl ${
                     theme === 'dark' ? 'bg-[#0F172A]/50' : 'bg-slate-50'
                   }`}>
@@ -154,14 +146,12 @@ export default function CookieBanner({ theme, language }) {
                         <h4 className={`font-medium ${
                           theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
                         }`}>
-                          {language === 'en' ? 'Analytics Cookies' : 'עוגיות אנליטיקה'}
+                          {t('cookieBanner.types.analytics.title')}
                         </h4>
                         <p className={`text-sm mt-1 ${
                           theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
                         }`}>
-                          {language === 'en' 
-                            ? 'These cookies help us understand how users interact with our website.'
-                            : 'עוגיות אלו עוזרות לנו להבין כיצד משתמשים מתקשרים עם האתר.'}
+                          {t('cookieBanner.types.analytics.desc')}
                         </p>
                       </div>
                       <Switch 
@@ -172,7 +162,6 @@ export default function CookieBanner({ theme, language }) {
                     </div>
                   </div>
 
-                  {/* Marketing Cookies */}
                   <div className={`p-4 rounded-xl ${
                     theme === 'dark' ? 'bg-[#0F172A]/50' : 'bg-slate-50'
                   }`}>
@@ -181,14 +170,12 @@ export default function CookieBanner({ theme, language }) {
                         <h4 className={`font-medium ${
                           theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
                         }`}>
-                          {language === 'en' ? 'Marketing Cookies' : 'עוגיות שיווק'}
+                          {t('cookieBanner.types.marketing.title')}
                         </h4>
                         <p className={`text-sm mt-1 ${
                           theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
                         }`}>
-                          {language === 'en' 
-                            ? 'These cookies are used to show you more relevant advertisements.'
-                            : 'עוגיות אלו משמשות להצגת פרסומות רלוונטיות יותר.'}
+                          {t('cookieBanner.types.marketing.desc')}
                         </p>
                       </div>
                       <Switch 
@@ -206,13 +193,13 @@ export default function CookieBanner({ theme, language }) {
                     onClick={() => setShowSettings(false)}
                     className={theme === 'dark' ? 'border-white/20 text-white hover:bg-white/10' : ''}
                   >
-                    {language === 'en' ? 'Cancel' : 'ביטול'}
+                    {t('cookieBanner.cancel')}
                   </Button>
                   <Button
                     onClick={handleSavePreferences}
                     className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold"
                   >
-                    {language === 'en' ? 'Save Preferences' : 'שמור העדפות'}
+                    {t('cookieBanner.save')}
                   </Button>
                 </div>
               </div>
