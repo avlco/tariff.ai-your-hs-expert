@@ -31,12 +31,12 @@
     "title": "Navegue pelo Comércio Global",
     "titleHighlight": "Com Confiança",
     "subtitle": "Analise instantaneamente tarifas, impostos e regulamentações comerciais para qualquer produto em mais de 190 países. Tome decisões informadas com insights impulsionados por IA.",
-    "cta": "Começar agora",
-    "ctaSecondary": "Ver demo",
+    "cta": "Iniciar Análise Gratuita",
+    "ctaSecondary": "Ver Demo",
     "stats": {
-      "countries": "Países",
+      "countries": "Países Cobertos",
       "accuracy": "Precisão",
-      "reports": "Relatórios"
+      "reports": "Relatórios Gerados"
     },
     "visuals": {
       "processing": "0.4s processamento",
@@ -51,13 +51,13 @@
     }
   },
   "challenges": {
-    "badge": "O Desafio",
+    "badge": "O DESAFIO",
     "title": "O Comércio Global é Complexo",
-    "subtitle": "Empresas perdem milhões anualmente devido a erros de cálculo tarifário e problemas de compliance.",
+    "subtitle": "Empresas perdem milhões anualmente devido a erros de cálculo tarifário e problemas de compliance",
     "items": [
       {
         "title": "Custos Ocultos",
-        "description": "Tarifas inesperadas podem aumentar os custos do produto em 15-30%, destruindo as margens de lucro da noite para o dia."
+        "description": "Tarifas e impostos inesperados podem aumentar os custos do produto em 15-30%, destruindo as margens de lucro da noite para o dia"
       },
       {
         "title": "Risco de Compliance",
@@ -65,12 +65,12 @@
       },
       {
         "title": "Perda de Tempo",
-        "description": "A pesquisa tarifária manual leva horas de tempo de um especialista por produto, retardando as decisões de negócios."
+        "description": "A pesquisa tarifária manual leva horas de tempo de um especialista por produto, retardando as decisões de negócios"
       }
     ]
   },
   "about": {
-    "badge": "Quem Somos",
+    "badge": "QUEM SOMOS",
     "title": "Simplificando o Comércio Global",
     "description1": "tariff.ai combina IA de ponta com bancos de dados comerciais abrangentes para fornecer inteligência tarifária instantânea e precisa.",
     "description2": "Fundada por especialistas em compliance comercial e engenheiros de IA, nossa missão é democratizar o acesso à inteligência comercial. Nossa plataforma processa milhões de pontos de dados para fornecer insights claros e acionáveis em segundos.",
@@ -87,21 +87,21 @@
     }
   },
   "features": {
-    "badge": "Capacidades",
+    "badge": "CAPACIDADES",
     "title": "Tudo o que você precisa",
     "subtitle": "Ferramentas poderosas projetadas para otimizar suas operações comerciais globais",
     "items": [
       { "title": "Classificação Código SH", "desc": "Classificação automática de produtos com 98% de precisão usando IA avançada" },
       { "title": "Calculadora de Tarifas", "desc": "Cálculo instantâneo de tarifas, impostos e taxas para qualquer rota comercial" },
-      { "title": "Buscador de Acordos Comerciais", "desc": "Descubra taxas preferenciais sob Acordos de Livre Comércio (ALC)" },
+      { "title": "Buscador de Acordos Comerciais", "desc": "Descubra taxas preferenciais sob Acordos de Livre Comércio (ALC) e acordos comerciais" },
       { "title": "Alertas de Compliance", "desc": "Notificações em tempo real sobre mudanças regulatórias que afetam seus produtos" },
       { "title": "Análise Multi-País", "desc": "Compare tarifas em múltiplos destinos simultaneamente" },
       { "title": "Documentação de Exportação", "desc": "Gere documentos de exportação conformes automaticamente" }
     ],
-    "cta": "Começar agora"
+    "cta": "Começar Agora"
   },
   "howItWorks": {
-    "badge": "Processo",
+    "badge": "PROCESSO",
     "title": "Como Funciona",
     "subtitle": "Obtenha insights tarifários precisos em três passos simples",
     "steps": [
@@ -111,7 +111,7 @@
     ]
   },
   "pricing": {
-    "badge": "Planos",
+    "badge": "PLANOS",
     "title": "Preços Simples e Transparentes",
     "subtitle": "Escolha o plano que se adapta às necessidades do seu negócio",
     "monthly": "Mensal",
@@ -120,10 +120,10 @@
     "popular": "Mais Popular",
     "mo": "mês",
     "perReport": "por relatório",
-    "includes": "Inclui:",
+    "includes": "Inclui Relatório Completo:",
     "packages": "Pacotes",
     "subscriptions": "Assinaturas",
-    "getStarted": "Escolher",
+    "getStarted": "Começar",
     "freeTier": {
       "title": "Teste Grátis",
       "desc": "Perfeito para testar",
@@ -137,7 +137,7 @@
     ]
   },
   "testimonials": {
-    "badge": "Histórias de Sucesso",
+    "badge": "HISTÓRIAS DE SUCESSO",
     "title": "O que dizem nossos clientes",
     "subtitle": "Confiado por importadores, exportadores e profissionais de comércio em todo o mundo",
     "items": [
@@ -154,7 +154,15 @@
     "contactCta": "Fale Conosco",
     "items": [
       { "q": "O que é tariff.ai e como me economiza dinheiro?", "a": "tariff.ai é uma plataforma impulsionada por IA que analisa tarifas, impostos e regulamentações comerciais em mais de 190 países. Ela economiza dinheiro identificando os códigos de classificação mais econômicos, alertando sobre acordos comerciais disponíveis e prevenindo erros de compliance dispendiosos." },
-      { "q": "Quão precisa é a classificação do código SH?", "a": "Nossa IA atinge 98% de precisão na classificação do código SH, verificada contra bancos de dados aduaneiros oficiais. Cada classificação inclui um score de confiança e um raciocínio detalhado, para que você possa verificar a lógica por trás de cada recomendação." }
+      { "q": "Quão precisa é a classificação do código SH?", "a": "Nossa IA atinge 98% de precisão na classificação do código SH, verificada contra bancos de dados aduaneiros oficiais. Cada classificação inclui um score de confiança e um raciocínio detalhado, para que você possa verificar a lógica por trás de cada recomendação." },
+      { "q": "O sistema considera Acordos de Livre Comércio (ALC)?", "a": "Absolutamente. tariff.ai identifica automaticamente oportunidades de economia de impostos com base em acordos comerciais entre países (como acordos Israel-Europa ou EUA) e indica quais documentos são necessários para reivindicar a isenção de tarifas." },
+      { "q": "Com que frequência os dados são atualizados?", "a": "Nosso banco de dados é atualizado em tempo real com conexões diretas a bancos de dados governamentais em mais de 190 países. Você sempre terá acesso às taxas tarifárias mais recentes e às mudanças regulatórias." },
+      { "q": "O sistema pode ser integrado ao nosso ERP corporativo?", "a": "Sim, oferecemos acesso à API para clientes empresariais, permitindo integração perfeita com seus sistemas ERP, WMS ou de gestão aduaneira existentes. Entre em contato com nossa equipe de vendas para detalhes de integração." },
+      { "q": "Minhas informações e pesquisas são mantidas confidenciais?", "a": "Absolutamente. Levamos a segurança dos dados muito a sério. Todos os dados são criptografados em trânsito e em repouso, e nunca compartilhamos seu histórico de pesquisa ou dados comerciais com terceiros. Consulte nossa Política de Privacidade para obter detalhes completos." },
+      { "q": "Qual a diferença entre uma pesquisa regular de código SH e sua análise?", "a": "Ao contrário das ferramentas básicas de pesquisa de código SH, nossa análise fornece inteligência comercial completa: tarifas, impostos, regulamentos, requisitos de compliance, oportunidades de ALC, classificações alternativas e pontuações de confiança - tudo em um relatório abrangente." },
+      { "q": "Quais países são suportados pelo sistema?", "a": "tariff.ai cobre mais de 190 países e territórios, incluindo todas as principais nações comerciais. Nossa cobertura inclui EUA, estados membros da UE, Reino Unido, China, Japão e a maioria dos outros países envolvidos no comércio internacional." },
+      { "q": "Existe um período de teste?", "a": "Sim! Você pode testar o tariff.ai gratuitamente com um relatório de cortesia. Isso lhe dá a oportunidade de experimentar nossa classificação de IA e ver o valor antes de se comprometer com um plano pago." },
+      { "q": "Como obtenho suporte para perguntas profissionais?", "a": "Nossa equipe de suporte está disponível por e-mail em hello@tariff.ai. Clientes empresariais recebem suporte prioritário com gerentes de conta dedicados e tempos de resposta mais rápidos." }
     ]
   },
   "blog": {
@@ -168,7 +176,7 @@
     ]
   },
   "contact": {
-    "badge": "Entre em Contato",
+    "badge": "ENTRE EM CONTATO",
     "title": "Fale Conosco",
     "subtitle": "Tem dúvidas? Adoraríamos ouvir você",
     "form": {
@@ -211,11 +219,16 @@
   },
   "footer": {
     "description": "Inteligência tarifária com IA para profissionais de comércio global.",
-    "legal": "Legal",
+    "legal": "LEGAL",
     "terms": "Termos de Serviço",
     "privacy": "Política de Privacidade",
     "cookies": "Política de Cookies",
-    "copyright": "Todos os direitos reservados."
+    "copyright": "Todos os direitos reservados.",
+    "links": {
+        "terms": "Termos de Serviço",
+        "privacy": "Política de Privacidade",
+        "cookies": "Política de Cookies"
+    }
   },
   "dataRequest": {
     "title": "Exercer seus direitos de dados",
@@ -279,28 +292,64 @@
       "intro": "Compreendendo como usamos cookies e tecnologias semelhantes na tariff.ai",
       "back": "Voltar ao Início",
       "sections": [
-        { "title": "1. Controlador de Dados", "content": "tariff.ai ('nós', 'nosso', 'nos') é o controlador de dados responsável pelas suas informações pessoais. Você pode nos contatar em:\nEmail: info@tariff-ai.com\nEndereço: Equipe de Privacidade tariff.ai, São Francisco, CA\nPara consultas relacionadas ao GDPR, nosso representante da UE pode ser contatado em info@tariff-ai.com" },
-        { "title": "2. Informações que Coletamos", "content": "Coletamos os seguintes tipos de dados pessoais:\n\n2.1 Informações que Você Fornece:\n• Informações da Conta: Nome completo, endereço de email, nome da empresa\n• Assinaturas de Newsletter: Endereço de email, carimbo de data/hora do consentimento\n• Formulários de Contato: Nome, email, empresa, assunto, mensagem\n\n2.2 Informações Coletadas Automaticamente:\n• Dados Analíticos: Visualizações de página, URLs de página, URLs de referência, IDs de sessão\n• Informações do Dispositivo: Endereço IP (anonimizado após 90 dias), tipo de navegador, sistema operacional, tipo de dispositivo, resolução da tela\n• Dados de Localização: País e cidade (derivados do endereço IP)\n• Dados de Interação: Cliques, envios de formulários, profundidade de rolagem, interações com elementos\n• Dados Técnicos: Agente de usuário, preferências de idioma, fuso horário\n\n2.3 Cookies e Rastreamento:\n• Cookies Essenciais: Gerenciamento de sessão (necessário para funcionalidade)\n• Cookies Analíticos: Padrões de uso e desempenho do site (requer consentimento)\n• Cookies de Marketing: Preferências do usuário para comunicações de marketing (requer consentimento)" }
+        { "title": "1. Controlador de Dados", "content": "tariff.ai ('nós', 'nosso', 'nos') é o controlador de dados responsável pelas suas informações pessoais. Você pode nos contatar em:\nEmail: info@tariff-ai.com\nEndereço: Equipe de Privacidade tariff.ai, San Francisco, CA\nPara consultas relacionadas ao GDPR, nosso representante da UE pode ser contatado em info@tariff-ai.com." },
+        { "title": "2. Informações que Coletamos", "content": "Coletamos os seguintes tipos de dados pessoais:\n\n2.1 Informações que Você Fornece:\nInformações da Conta: Nome completo, endereço de email, nome da empresa\nAssinaturas de Newsletter: Endereço de email, carimbo de data/hora do consentimento\nFormulários de Contato: Nome, email, empresa, assunto, mensagem\n\n2.2 Informações Coletadas Automaticamente:\nDados Analíticos: Visualizações de página, URLs de página, URLs de referência, IDs de sessão\nInformações do Dispositivo: Endereço IP (anonimizado após 90 dias), tipo de navegador, sistema operacional, tipo de dispositivo, resolução da tela\nDados de Localização: País e cidade (derivados do endereço IP)\nDados de Interação: Cliques, envios de formulários, profundidade de rolagem, interações com elementos, tamanho da janela de visualização\nDados Técnicos: Agente de usuário, preferências de idioma, fuso horário\n\n2.3 Cookies e Rastreamento:\nCookies Essenciais: Gerenciamento de sessão (necessário para funcionalidade)\nCookies Analíticos: Padrões de uso e desempenho do site (requer consentimento)\nCookies de Marketing: Preferências do usuário para comunicações de marketing (requer consentimento)\nPara informações detalhadas sobre cookies, consulte nossa Política de Cookies." },
+        { "title": "3. Base Legal para o Processamento", "content": "Sob GDPR e LGPD, processamos seus dados pessoais com base em:\nConsentimento: Assinaturas de newsletter, cookies analíticos, comunicações de marketing (você pode retirar o consentimento a qualquer momento)\nNecessidade Contratual: Gestão de conta e prestação de serviço\nInteresses Legítimos: Segurança do site, prevenção de fraudes, melhorias de produtos (equilibrado com seus direitos de privacidade)\nObrigações Legais: Conformidade com requisitos fiscais, contábeis e outros requisitos legais" },
+        { "title": "4. Como Usamos Suas Informações", "content": "Usamos seus dados pessoais para os seguintes propósitos:\nPrestação de Serviço: Fornecer relatórios de análise tarifária, manter sua conta, processar transações\nComunicação: Responder a consultas, enviar atualizações de serviço, entregar newsletters (com consentimento)\nAnalítica & Melhoria: Compreender padrões de uso, otimizar a experiência do usuário, desenvolver novos recursos\nSegurança: Detectar e prevenir fraudes, abusos e incidentes de segurança\nCompliance: Cumprir obrigações legais e regulatórias\n\nNós NÃO:\nVendemos seus dados pessoais a terceiros\nUsamos seus dados para tomada de decisão automatizada que afete significativamente você\nProcessamos dados pessoais sensíveis (saúde, biometria, opiniões políticas) sem consentimento explícito" },
+        { "title": "5. Compartilhamento de Informações e Terceiros", "content": "Compartilhamos seus dados pessoais apenas nas seguintes circunstâncias:\n\n5.1 Provedores de Serviços:\nPlataforma Base44: Infraestrutura e hospedagem de banco de dados\nProvedores de Serviços de Email: Emails transacionais e de marketing\nProcessadores de Pagamento: Manuseio seguro de pagamentos (não armazenamos detalhes do cartão de pagamento)\nTodos os provedores de serviços estão vinculados por Acordos de Processamento de Dados (DPA) e estritamente instruídos.\n\n5.2 Requisitos Legais:\nPodemos divulgar seus dados se exigido por lei, ordem judicial ou para proteger nossos direitos legais.\n\n5.3 Transferências Comerciais:\nNo caso de fusão ou aquisição, seus dados podem ser transferidos para a nova entidade, sujeito às mesmas proteções de privacidade.\nNós NÃO alugamos, vendemos ou negociamos seus dados pessoais." },
+        { "title": "6. Transferências Internacionais de Dados", "content": "Seus dados podem ser transferidos e processados em países fora de sua residência, incluindo os Estados Unidos.\nPara usuários da UE: Garantimos proteção adequada por meio de Cláusulas Contratuais Padrão (SCCs) aprovadas pela Comissão Europeia ou decisões de adequação, quando aplicável.\nPara usuários brasileiros (LGPD): Cumprimos os requisitos de transferência transfronteiriça e implementamos salvaguardas apropriadas." },
+        { "title": "7. Retenção de Dados", "content": "Retemos seus dados pessoais apenas pelo tempo necessário:\nDados da Conta: Duração da conta + 90 dias após o encerramento\nDados Analíticos: 12 meses a partir da coleta\nAssinaturas de Newsletter: Até cancelar a inscrição + 30 dias\nEnvios de Formulário de Contato: 24 meses após a última interação\nRegistros de Consentimento: 3 anos (para prova de conformidade)\nRegistros Financeiros: 7 anos (requisito legal)\nApós o término dos períodos de retenção, os dados são permanentemente excluídos ou anonimizados." },
+        { "title": "8. Segurança de Dados", "content": "Implementamos medidas de segurança padrão da indústria:\nCriptografia: Dados criptografados em trânsito (TLS/SSL) e em repouso (AES-256)\nControle de Acesso: Acesso baseado em função, princípio do menor privilégio\nAutenticação: Autenticação multifator para acesso administrativo\nMonitoramento: Monitoramento de segurança 24/7 e resposta a incidentes\nAuditorias Regulares: Avaliações periódicas de segurança e testes de penetração\nEmbora tomemos todas as precauções razoáveis, nenhum sistema é 100% seguro. Notificaremos você sobre qualquer violação de dados conforme exigido por lei." },
+        { "title": "9. Seus Direitos (GDPR & LGPD)", "content": "Você tem os seguintes direitos em relação aos seus dados pessoais:\nSer Informado: Esta Política de Privacidade explica nossas práticas\nDar ou Retirar Consentimento: Controlar quais cookies são usados\nAcessar Seus Dados: Solicitar informações sobre dados armazenados\nExcluir Dados: Solicitar exclusão de dados pessoais\nOpor-se ao Processamento: Optar por não participar de processamento não essencial\nPara exercer esses direitos, use o Formulário de Solicitação de Dados abaixo ou entre em contato com info@tariff-ai.com." },
+        { "title": "10. Privacidade de Crianças", "content": "Nossos serviços não são destinados a indivíduos menores de 18 anos. Não coletamos intencionalmente dados pessoais de crianças. Se descobrirmos que coletamos dados de uma criança, os excluiremos imediatamente. Pais ou responsáveis que acreditam que podemos ter coletado dados de uma criança devem entrar em contato conosco em info@tariff-ai.com." },
+        { "title": "11. Tomada de Decisão Automatizada", "content": "Não usamos tomada de decisão automatizada ou criação de perfil que produza efeitos legais ou similarmente significativos sobre você. Quaisquer recursos de análise ou personalização são usados apenas para melhorar a experiência do usuário e podem ser desativados por meio das preferências de cookies." },
+        { "title": "12. Comunicações de Marketing", "content": "Com seu consentimento, podemos enviar a você:\nAtualizações de produtos e novos recursos\nInsights da indústria e conteúdo educacional\nOfertas especiais e promoções\nVocê pode cancelar a inscrição a qualquer momento:\nClicando em \"cancelar inscrição\" em qualquer e-mail\nAtualizando as preferências da sua conta\nEntrando em contato com info@tariff-ai.com" },
+        { "title": "13. Notificação de Violação de Dados", "content": "No caso de uma violação de dados que represente um risco aos seus direitos e liberdades, nós:\nNotificaremos a autoridade supervisora relevante dentro de 72 horas (GDPR) ou conforme exigido pela LGPD\nInformaremos os indivíduos afetados sem demora indevida\nForneceremos informações sobre a natureza da violação e ações corretivas\nDocumentaremos todas as violações para conformidade regulatória" },
+        { "title": "14. Alterações nesta Política", "content": "Podemos atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossas práticas ou requisitos legais. Nós:\nPublicaremos a política atualizada nesta página\nAtualizaremos a data da \"Última Atualização\"\nNotificaremos você sobre alterações materiais por e-mail ou aviso em destaque\nObteremos novo consentimento quando exigido por lei\nO uso contínuo de nossos serviços após as alterações constitui aceitação da política atualizada." },
+        { "title": "15. Contato e Oficial de Proteção de Dados", "content": "Para quaisquer perguntas relacionadas à privacidade ou para exercer seus direitos:\nConsultas Gerais: info@tariff-ai.com\nConsultas GDPR da UE: Representante da UE: info@tariff-ai.com\nConsultas LGPD do Brasil: Representante do Brasil: info@tariff-ai.com\nEndereço Postal: tariff.ai Privacy Team, San Francisco, CA\nAutoridades Supervisoras:\nUE: Sua Autoridade de Proteção de Dados local\nBrasil: Autoridade Nacional de Proteção de Dados (ANPD)" }
       ]
     },
     "terms": {
       "title": "Termos de Serviço",
-      "updated": "Última atualização: 22 de dezembro de 2025 | Versão 1.0",
+      "updated": "Última atualização: 22 de dezembro de 2025 | Versão: 1.0",
       "intro": "Este documento descreve o acordo legalmente vinculativo entre você e a tariff.ai em relação ao uso de nossos serviços.",
       "back": "Voltar ao Início",
       "sections": [
-        { "title": "1. Aceitação dos Termos", "content": "Ao acessar ou usar qualquer parte do site, plataforma ou serviços da tariff.ai (coletivamente, 'o Serviço'), você concorda em ficar vinculado a estes Termos de Serviço ('Termos'). Se você não concordar com todos os termos e condições deste acordo, então você não poderá acessar o Serviço ou usar quaisquer serviços." },
-        { "title": "2. Descrição do Serviço", "content": "A tariff.ai fornece análise tarifária impulsionada por IA, inteligência comercial e serviços relacionados projetados para ajudar empresas com compliance e estratégia de comércio internacional." }
+        { "title": "1. Aceitação dos Termos", "content": "Ao acessar ou usar qualquer parte do site, plataforma ou serviços da tariff.ai (coletivamente, \"o Serviço\"), você concorda em ficar vinculado a estes Termos de Serviço (\"Termos\"). Se você não concordar com todos os termos e condições deste acordo, então você não poderá acessar o Serviço ou usar quaisquer serviços. Estes Termos constituem um acordo legalmente vinculativo entre você e a tariff.ai. Seu uso contínuo do Serviço significa sua aceitação de quaisquer Termos atualizados." },
+        { "title": "2. Descrição do Serviço", "content": "A tariff.ai fornece análise tarifária impulsionada por IA, inteligência comercial e serviços relacionados projetados para ajudar empresas com compliance e estratégia de comércio internacional. O Serviço inclui várias funcionalidades, planos de assinatura e limites de uso conforme descrito em nosso site e páginas de preços. Reservamo-nos o direito de modificar, suspender ou descontinuar qualquer aspecto do Serviço a qualquer momento, com ou sem aviso prévio." },
+        { "title": "3. Contas de Usuário e Responsabilidades", "content": "Para acessar e usar certos recursos do Serviço, você deve se registrar para uma conta de usuário. Você concorda em:\nFornecer Informações Precisas: Manter informações de registro precisas, completas e atuais.\nSegurança da Conta: Manter seu nome de usuário e senha confidenciais e impedir o acesso não autorizado à sua conta. Você é o único responsável por todas as atividades que ocorrem em sua conta.\nConduta Proibida: Não usar o Serviço para qualquer propósito ilegal, ou de qualquer maneira que viole estes Termos.\nRestrição de Idade: Confirmar que você tem pelo menos 18 anos de idade ou a maioridade legal em sua jurisdição." },
+        { "title": "4. Termos de Pagamento e Assinaturas", "content": "4.1 Taxas de Assinatura: O acesso a certos recursos do Serviço requer uma assinatura paga. As taxas de assinatura são cobradas antecipadamente de forma recorrente (por exemplo, mensal ou anualmente) de acordo com o plano escolhido.\n4.2 Renovação Automática: As assinaturas são renovadas automaticamente, a menos que você cancele pelo menos 24 horas antes do final do período de faturamento atual.\n4.3 Alterações de Preço: Reservamo-nos o direito de alterar nossas taxas de assinatura mediante aviso prévio de 30 dias. Seu uso contínuo após a alteração de preço constitui seu acordo em pagar o valor modificado.\n4.4 Reembolsos e Cancelamentos: Todas as taxas de assinatura não são reembolsáveis, exceto conforme exigido por lei. Você pode cancelar sua assinatura a qualquer momento, e o acesso continuará até o final do ciclo de faturamento atual." },
+        { "title": "5. Uso do Serviço e Conduta Proibida", "content": "Você concorda em usar o Serviço apenas para fins legais e de acordo com estes Termos. Você não deve:\nMau uso: Envolver-se em qualquer atividade que interfira ou interrompa o Serviço.\nAcesso Não Autorizado: Tentar obter acesso não autorizado a qualquer parte do Serviço, outras contas, sistemas de computador ou redes.\nRaspagem de Dados: Usar qualquer sistema automatizado ou software para extrair dados do Serviço sem permissão expressa por escrito.\nConteúdo Nocivo: Transmitir qualquer código malicioso, vírus ou outros dados nocivos.\nRevenda: Reproduzir, duplicar, copiar, vender, revender ou explorar qualquer parte do Serviço sem nossa permissão expressa por escrito." },
+        { "title": "6. Precisão dos Dados e Isenções de Responsabilidade", "content": "Embora a tariff.ai se esforce para fornecer informações tarifárias e inteligência comercial precisas e atualizadas, não garantimos a precisão, integridade ou atualidade de quaisquer dados fornecidos através do Serviço. As informações são apenas para fins informativos gerais e não constituem aconselhamento jurídico, financeiro ou profissional. Você é o único responsável por verificar informações críticas com fontes oficiais e por todas as decisões tomadas com base na saída do Serviço." },
+        { "title": "7. Propriedade Intelectual", "content": "Todo o conteúdo, recursos e funcionalidades da tariff.ai são de propriedade exclusiva da tariff.ai e seus licenciadores e são protegidos por leis internacionais de direitos autorais, marcas registradas, patentes e segredos comerciais. Concedemos a você uma licença limitada, não exclusiva, não transferível e revogável para acessar e usar o Serviço para seus fins comerciais internos, sujeito a estes Termos." },
+        { "title": "8. Limitação de Responsabilidade", "content": "Em nenhum caso a tariff.ai, seus diretores, funcionários, parceiros, agentes, fornecedores ou afiliados serão responsáveis por quaisquer danos indiretos, incidentais, especiais, consequenciais ou punitivos, incluindo, sem limitação, perda de lucros, dados, uso, boa vontade ou outras perdas intangíveis, resultantes do seu acesso ou uso ou incapacidade de acessar ou usar o Serviço." },
+        { "title": "9. Rescisão", "content": "Podemos rescindir ou suspender sua conta imediatamente, sem aviso prévio ou responsabilidade, por qualquer motivo, incluindo, sem limitação, se você violar os Termos. Após a rescisão, seu direito de usar o Serviço cessará imediatamente." },
+        { "title": "10. Lei Aplicável", "content": "Estes Termos serão regidos e interpretados de acordo com as leis do Estado da Califórnia, Estados Unidos, sem levar em conta suas disposições sobre conflito de leis." },
+        { "title": "11. Alterações aos Termos", "content": "Reservamo-nos o direito de modificar ou substituir estes Termos a qualquer momento. Se uma revisão for material, forneceremos um aviso com pelo menos 30 dias de antecedência. Ao continuar a acessar ou usar nosso Serviço após as revisões entrarem em vigor, você concorda em ficar vinculado aos termos revisados." },
+        { "title": "12. Diversos", "content": "Estes Termos constituem o acordo integral entre você e a tariff.ai em relação ao nosso Serviço. Nossa falha em fazer valer qualquer direito ou disposição não será considerada uma renúncia. Se qualquer disposição for considerada inválida, as disposições restantes permanecerão em vigor." },
+        { "title": "13. Informações de Contato", "content": "Para quaisquer dúvidas sobre estes Termos de Serviço, entre em contato conosco em info@tariff-ai.com. Responderemos a todas as consultas dentro de 5 dias úteis." }
       ]
     },
     "cookiePolicy": {
       "title": "Política de Cookies",
-      "updated": "Última atualização: 22 de dezembro de 2025 | Versão 1.0",
+      "updated": "Última atualização: 22 de dezembro de 2025 | Versão: 1.0",
       "intro": "Compreendendo como usamos cookies e tecnologias semelhantes na tariff.ai",
       "back": "Voltar ao Início",
       "sections": [
-        { "title": "1. O que são Cookies", "content": "Cookies são pequenos arquivos de texto armazenados no seu dispositivo (computador, tablet ou telefone celular) quando você visita um site. Eles ajudam os sites a lembrar suas preferências, entender como você os usa e fornecer uma melhor experiência ao usuário." },
-        { "title": "2. Como Usamos Cookies", "content": "A tariff.ai usa cookies para os seguintes propósitos:\n\nFunções Essenciais:\n• Manter sua sessão logada\n• Lembrar suas preferências de idioma e tema\n• Proteger sua conexão com nossos serviços\n\nAnálise e Desempenho:\n• Entender quais páginas são as mais populares\n• Analisar o comportamento do usuário para melhorar nosso serviço\n• Rastrear erros técnicos e bugs\n\nExperiência do Usuário:\n• Lembrar suas preferências de consentimento de cookies\n• Personalizar conteúdo com base em seus interesses\n• Otimizar o desempenho do site" }
+        { "title": "1. O que são Cookies", "content": "Cookies são pequenos arquivos de texto armazenados no seu dispositivo (computador, tablet ou telefone celular) quando você visita um site. Eles ajudam os sites a lembrar suas preferências, entender como você os usa e fornecer uma melhor experiência ao usuário.\n\nCaracterísticas Chave:\nArquivos de texto (não programas ou vírus)\nArmazenam informações sobre sua visita\nPodem ser excluídos ou bloqueados a qualquer momento\nVêm em diferentes tipos com diferentes propósitos" },
+        { "title": "2. Como Usamos Cookies", "content": "tariff.ai usa cookies para os seguintes propósitos:\n\nFunções Essenciais:\nManter sua sessão logada\nLembrar suas preferências de idioma e tema\nProteger sua conexão com nossos serviços\n\nAnálise e Desempenho:\nEntender quais páginas são as mais populares\nAnalisar o comportamento do usuário para melhorar nosso serviço\nRastrear erros técnicos e bugs\n\nExperiência do Usuário:\nLembrar suas preferências de consentimento de cookies\nPersonalizar conteúdo com base em seus interesses\nOtimizar o desempenho do site" },
+        { "title": "3. Tipos de Cookies que Usamos", "content": "3.1 Cookies Essenciais (Sempre Ativos)\nEsses cookies são necessários para o funcionamento do site e não podem ser desativados.\nGestão de Sessão: Mantém você logado enquanto navega\nSegurança: Protege contra CSRF e outros ataques\nBalanceamento de Carga: Distribui o tráfego entre servidores\nExemplos: session_id, csrf_token, auth_state\n\n3.2 Cookies Analíticos (Requer Consentimento)\nNos ajudam a entender como os visitantes interagem com nosso site.\nVisualizações de Página: Rastreia quais páginas são visitadas (entidade PageView)\nAções do Usuário: Monitora cliques, envios de formulários, rolagem (entidade UserAction)\nDados de Sessão: Analisa a jornada e o engajamento do usuário\nInformações do Dispositivo: Tipo de navegador, SO, resolução de tela, idioma\nExemplos: Google Analytics\n\n3.3 Cookies de Marketing (Requer Consentimento)\nUsados para entregar anúncios relevantes e medir a eficácia da campanha.\nSegmentação de Anúncios: Mostra anúncios relevantes com base em interesses\nRastreamento de Conversão: Mede a eficácia das campanhas\nRetargeting: Mostra anúncios para visitantes anteriores\nNota: Cookies de marketing não estão ativos na tariff.ai" },
+        { "title": "4. Duração do Cookie", "content": "Cookies de Sessão (Temporários)\nEsses cookies expiram quando você fecha seu navegador.\nDuração: Até o fechamento do navegador\nPropósito: Manter sessão ativa, estado de navegação\nExemplos: PHPSESSID, token de sessão\nArmazenamento: Apenas memória do navegador\n\nCookies Persistentes (Longo prazo)\nEsses cookies permanecem no seu dispositivo por um período especificado.\nCurto prazo: 24 horas a 30 dias (análise)\nMédio prazo: 30 dias a 1 ano (preferências)\nLongo prazo: 1-2 anos (registros de consentimento)" },
+        { "title": "5. Cookies Usados - Lista Detalhada", "content": "Cookies Essenciais:\n| NOME DO COOKIE | PROPÓSITO | DURAÇÃO | TIPO |\n| :--- | :--- | :--- | :--- |\n| session_id | Gestão de sessão do usuário | Sessão | Primário |\n| analytics_session_id | ID de rastreamento analítico | 12 meses | Primário |\n| language | Preferências de framework | 1 ano | Primário |\n| cookie_consent | Armazena preferências de consentimento | 1 ano | Primário |\n\nCookies Analíticos (com consentimento):\n| NOME DO COOKIE | PROPÓSITO | DURAÇÃO | TIPO |\n| :--- | :--- | :--- | :--- |\n| Page tracking | Registra visualizações de página | 12 meses | Primário |\n| Action tracking | Registra interações | 12 meses | Primário |\n| Session data | Rastreia usuários | 30 minutos | Primário |" },
+        { "title": "6. Cookies de Terceiros", "content": "Atualmente, a tariff.ai minimiza o uso de cookies de terceiros. No entanto, podemos usar:\n\nPlataforma Base44 (Provedor de Infraestrutura):\nEssencial para a funcionalidade do aplicativo\nProcessamento seguro de dados\nCoberto pelo nosso Acordo de Processamento de Dados (DPA)\n\nServiços de Terceiros Futuros:\nSe integrarmos serviços adicionais de terceiros (análise, processadores de pagamento), nós iremos:\nAtualizar esta política com detalhes\nSolicitar seu consentimento onde necessário\nFornecer mecanismos de exclusão\nGarantir a conformidade com GDPR/LGPD\nNota: NÃO usamos redes de publicidade de terceiros ou pixels de rastreamento de mídia social." },
+        { "title": "7. Gerenciando Suas Preferências de Cookies", "content": "7.1 Através do Nosso Banner de Cookies:\nQuando você visita a tariff.ai pela primeira vez, verá um banner de consentimento de cookies permitindo que você:\nAceite todos os cookies\nAceite apenas cookies essenciais\nPersonalize suas preferências (escolha quais categorias permitir)\nSuas preferências são salvas e podem ser alteradas a qualquer momento.\n\n7.2 Através do Seu Navegador:\nTodos os navegadores modernos permitem que você controle cookies:\nGoogle Chrome: Configurações > Privacidade e segurança > Cookies e outros dados do site (Escolha: Permitir todos, Bloquear terceiros ou Bloquear todos)\nMozilla Firefox: Configurações > Privacidade e Segurança > Cookies e Dados do Site (Escolha bloqueio padrão, rigoroso ou personalizado)\nSafari (Mac/iOS): Preferências > Privacidade > Cookies e dados do site (Bloquear todos os cookies ou permitir apenas do site atual)\nMicrosoft Edge: Configurações > Cookies e permissões do site > Gerenciar cookies (Escolha o nível de bloqueio)\nImportante: Bloquear cookies essenciais impedirá que o site funcione corretamente." },
+        { "title": "8. Desativando Cookies - Impacto", "content": "Se Você Desativar Todos os Cookies:\nNão poderá permanecer logado\nConfigurações e preferências não serão salvas\nAlguns recursos podem não funcionar\nVocê precisará definir preferências a cada visita\nRecomendação: Mantenha os cookies essenciais ativos\n\nSe Você Desativar Apenas Cookies Não Essenciais:\nO site funcionará normalmente\nVocê permanecerá logado\nNão poderemos melhorar o site com base em dados de uso\nVocê pode ver conteúdo menos relevante (se análise/marketing for baseado em suas preferências de privacidade)" },
+        { "title": "9. Não Rastrear (DNT)", "content": "Alguns navegadores oferecem um sinal \"Não Rastrear\" (DNT) que indica que você não quer ser rastreado.\n\nNossa Abordagem:\nRespeitamos suas escolhas de consentimento de cookies através do nosso banner\nSinais DNT não são universalmente padronizados\nSuas preferências explícitas de cookies têm precedência\nFornecemos controle granular através de nossas configurações de cookies\nMelhor Prática: Use nosso banner de consentimento de cookies para controle preciso sobre o rastreamento." },
+        { "title": "10. Dados Coletados Através de Cookies", "content": "Os dados coletados através de cookies incluem:\n\nInformações do Dispositivo:\nEndereço IP (anonimizado após a captura)\nTipo e versão do navegador\nSistema operacional\nTipo de dispositivo (celular, tablet, desktop)\nResolução de tela\n\nInformações de Uso:\nPáginas visitadas e tempo gasto\nPadrões de clique e interações\nURL de referência\nDuração da sessão\nProfundidade de rolagem\n\nInformações Técnicas:\nPreferência de idioma\nFuso horário\nTipo de conexão\nTamanho da janela de visualização\n\nTodos os dados são processados de acordo com nossa Política de Privacidade e requisitos GDPR/LGPD." },
+        { "title": "11. Seus Direitos (GDPR & LGPD)", "content": "Ser Informado: Esta Política de Cookies explica nossas práticas\nDar ou Retirar Consentimento: Controlar quais cookies são usados\nAcessar Seus Dados: Solicitar informações sobre cookies armazenados\nExcluir Dados: Solicitar exclusão de dados de cookies\nOpor-se ao Processamento: Optar por não participar de cookies não essenciais\nPara exercer esses direitos, visite nossa página de Política de Privacidade ou entre em contato com info@tariff-ai.com." },
+        { "title": "12. Usuários Internacionais", "content": "Para Usuários da UE (GDPR):\nObtemos consentimento explícito antes de cookies não essenciais\nVocê pode retirar o consentimento a qualquer momento\nAs transferências de dados cumprem as Cláusulas Contratuais Padrão (SCCs)\n\nPara Usuários Brasileiros (LGPD):\nObtemos consentimento para cookies não essenciais\nVocê tem o direito de revogar o consentimento\nO processamento de dados cumpre os requisitos da LGPD\nPara Todos os Usuários: Dados de cookies estão sujeitos às mesmas proteções que outros dados pessoais sob nossa Política de Privacidade." },
+        { "title": "13. Atualizações para Esta Política de Cookies", "content": "Podemos atualizar esta Política de Cookies para refletir:\nMudanças na tecnologia ou uso de cookies\nNovos recursos ou serviços\nRequisitos legais ou regulatórios\nFeedback do usuário e melhores práticas\n\nQuando Atualizamos:\nA data da \"Última Atualização\" mudará\nMudanças materiais serão destacadas\nVocê pode ser solicitado a revisar e aceitar novos termos\nVersões anteriores serão arquivadas\nManter-se informado: Revise esta política periodicamente para se manter informado sobre como usamos cookies." },
+        { "title": "14. Contate-nos", "content": "Se você tiver dúvidas sobre nosso uso de cookies:\nEmail: info@tariff-ai.com\nAssunto: \"Consulta de Política de Cookies\"\n\nO que Incluir:\nSua pergunta ou preocupação\nInformações do navegador e dispositivo (se problema técnico)\nCapturas de tela se útil\nRespondemos a todas as consultas relacionadas a cookies dentro de 48 horas.\n\nPara consultas específicas de GDPR/LGPD:\nUE: info@tariff-ai.com\nBrasil: info@tariff-ai.com" }
       ]
     }
   }
