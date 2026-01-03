@@ -18,7 +18,7 @@ export default function TermsOfService() {
 
   const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
-  const sections = t('legalPages.terms.sections') || [];
+  const sections = t('legalPages.terms.sections', { returnObjects: true }) || [];
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'}`} dir={isRTL ? 'rtl' : 'ltr'}>
@@ -56,6 +56,7 @@ export default function TermsOfService() {
                 <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
                   {section.title}
                 </h2>
+                {/* השימוש ב-whitespace-pre-line חשוב כאן כדי לשמר את ירידות השורה מה-JSON */}
                 <p className={`whitespace-pre-line leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
                   {section.content}
                 </p>
