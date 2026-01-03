@@ -94,7 +94,7 @@
       { "title": "Classification Code SH", "desc": "Classification automatique avec 98% de précision via IA" },
       { "title": "Calculateur de Droits", "desc": "Calcul instantané des droits, taxes et frais" },
       { "title": "Recherche d'Accords", "desc": "Découvrez les taux préférentiels des ALE" },
-      { "title": "Alertes de Conformité", "desc": "Notifications en temps réel sur les changements réglementaires" },
+      { "title": "Alertas de Conformité", "desc": "Notifications en temps réel sur les changements réglementaires" },
       { "title": "Analyse Multi-Pays", "desc": "Comparez les tarifs de plusieurs destinations simultanément" },
       { "title": "Documentation Export", "desc": "Générez automatiquement des documents conformes" }
     ],
@@ -189,50 +189,50 @@
   },
   "cookieBanner": {
     "title": "Nous utilisons des cookies",
-    "desc": "Pour améliorer votre expérience, analyser le trafic et personnaliser le contenu.",
+    "desc": "Nous utilisons des cookies pour améliorer votre expérience de navigation, analyser le trafic du site et personnaliser le contenu. En cliquant sur « Tout accepter », vous consentez à notre utilisation des cookies.",
     "customize": "Personnaliser",
     "acceptAll": "Tout Accepter",
     "essentialOnly": "Essentiels Uniquement",
     "settingsTitle": "Paramètres des Cookies",
-    "save": "Enregistrer",
+    "save": "Enregistrer les préférences",
     "cancel": "Annuler",
     "types": {
-      "essential": { "title": "Cookies Essentiels", "desc": "Requis pour le fonctionnement du site." },
-      "analytics": { "title": "Cookies Analytiques", "desc": "Pour comprendre l'utilisation du site." },
-      "marketing": { "title": "Cookies Marketing", "desc": "Pour des publicités pertinentes." }
+      "essential": { "title": "Cookies Essentiels", "desc": "Ces cookies sont nécessaires au fonctionnement de base du site et ne peuvent pas être désactivés." },
+      "analytics": { "title": "Cookies Analytiques", "desc": "Ces cookies nous aident à comprendre comment les utilisateurs interagissent avec notre site web." },
+      "marketing": { "title": "Cookies Marketing", "desc": "Ces cookies sont utilisés pour vous montrer des publicités plus pertinentes." }
     }
   },
   "newsletter": {
     "title": "Rejoignez notre Newsletter",
-    "subtitle": "Recevez les dernières mises à jour tarifaires et actualités",
+    "subtitle": "Recevez les dernières mises à jour tarifaires, les nouvelles commerciales et des informations exclusives directement dans votre boîte de réception",
     "placeholder": "Votre email",
-    "consent": "J'accepte de recevoir des emails de tariff.ai",
+    "consent": "J'accepte de recevoir des newsletters de tariff.ai",
     "cta": "S'abonner"
   },
   "footer": {
-    "description": "Intelligence tarifaire par IA pour les professionnels du commerce mondial.",
+    "description": "Intelligence tarifaire par IA pour les professionnels du commerce international.",
     "legal": "Légal",
     "terms": "Conditions d'utilisation",
-    "privacy": "Confidentialité",
-    "cookies": "Cookies",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Politique des cookies",
     "copyright": "Tous droits réservés."
   },
   "dataRequest": {
-    "title": "Exercer vos droits",
-    "subtitle": "Demandez l'accès, la correction ou la suppression de vos données (RGPD).",
+    "title": "Exercer vos droits sur les données",
+    "subtitle": "Demandez l'accès, la correction ou la suppression de vos données personnelles en vertu du RGPD et de la LGPD.",
     "form": {
       "requestType": "Type de demande",
-      "requestTypePlaceholder": "Sélectionner...",
+      "requestTypePlaceholder": "Sélectionner le type de demande...",
       "fullName": "Nom complet",
-      "fullNamePlaceholder": "Entrez votre nom",
-      "email": "Email",
+      "fullNamePlaceholder": "Entrez votre nom complet",
+      "email": "Adresse Email",
       "emailPlaceholder": "votre@email.com",
-      "details": "Détails supplémentaires",
-      "detailsPlaceholder": "Ajoutez des détails...",
-      "submit": "Soumettre",
-      "submitAnother": "Nouvelle demande",
+      "details": "Détails supplémentaires (Optionnel)",
+      "detailsPlaceholder": "Ajoutez des détails supplémentaires concernant votre demande...",
+      "submit": "Soumettre la demande",
+      "submitAnother": "Soumettre une autre demande",
       "types": {
-        "access": "Accéder à mes données",
+        "access": "Accéder à mes données personnelles",
         "rectification": "Corriger mes données",
         "erasure": "Supprimer mes données (Droit à l'oubli)",
         "restriction": "Limiter le traitement",
@@ -242,11 +242,11 @@
     },
     "success": {
       "title": "Demande Reçue",
-      "desc": "Nous traiterons votre demande dans les délais légaux."
+      "desc": "Nous avons bien reçu votre demande et la traiterons dans les délais légaux requis. Vérifiez votre email pour une confirmation."
     },
     "messages": {
-      "success": "Demande envoyée avec succès",
-      "error": "Échec de l'envoi"
+      "success": "Demande soumise avec succès",
+      "error": "Échec de l'envoi de la demande"
     }
   },
   "publicReport": {
@@ -276,28 +276,32 @@
     "privacy": {
       "title": "Politique de Confidentialité",
       "updated": "Dernière mise à jour : 22 décembre 2025 | Version 1.0",
-      "intro": "Comprendre comment nous utilisons les cookies et technologies similaires.",
-      "back": "Retour",
+      "intro": "Comprendre comment nous utilisons les cookies et technologies similaires sur tariff.ai",
+      "back": "Retour à l'accueil",
       "sections": [
-        { "title": "1. Responsable des données", "content": "tariff.ai est le responsable du traitement de vos données..." }
+        { "title": "1. Responsable des données", "content": "tariff.ai (« nous », « notre », « nos ») est le responsable du traitement de vos informations personnelles. Vous pouvez nous contacter à :\nEmail : info@tariff-ai.com\nAdresse : Équipe Confidentialité tariff.ai, San Francisco, CA\nPour les demandes liées au RGPD, notre représentant UE peut être contacté à info@tariff-ai.com" },
+        { "title": "2. Informations que nous collectons", "content": "Nous collectons les types de données personnelles suivants :\n\n2.1 Informations que vous fournissez :\n• Informations de compte : Nom complet, adresse email, nom de l'entreprise\n• Abonnements Newsletter : Adresse email, horodatage du consentement\n• Formulaires de contact : Nom, email, entreprise, sujet, message\n\n2.2 Informations collectées automatiquement :\n• Données analytiques : Pages vues, URL, référents, ID de session\n• Informations sur l'appareil : Adresse IP (anonymisée après 90 jours), type de navigateur, système d'exploitation, type d'appareil, résolution d'écran\n• Données de localisation : Pays et ville (dérivés de l'adresse IP)\n• Données d'interaction : Clics, soumissions de formulaires, profondeur de défilement\n• Données techniques : Agent utilisateur, préférences linguistiques, fuseau horaire\n\n2.3 Cookies et suivi :\n• Cookies essentiels : Gestion de session (nécessaire au fonctionnement)\n• Cookies analytiques : Modèles d'utilisation et performance du site (nécessite consentement)\n• Cookies marketing : Préférences utilisateur pour les communications marketing (nécessite consentement)" },
+        { "title": "3. Base légale du traitement", "content": "En vertu du RGPD et de la LGPD, nous traitons vos données personnelles sur la base de :\n• Consentement : Abonnements newsletter, cookies analytiques\n• Nécessité contractuelle : Gestion de compte et prestation de service\n• Intérêts légitimes : Sécurité du site, prévention de la fraude, amélioration des produits\n• Obligations légales : Conformité fiscale, comptable et autres exigences légales" }
       ]
     },
     "terms": {
       "title": "Conditions d'Utilisation",
       "updated": "Dernière mise à jour : 22 décembre 2025 | Version 1.0",
-      "intro": "Accord juridiquement contraignant...",
-      "back": "Retour",
+      "intro": "Ce document décrit l'accord juridiquement contraignant entre vous et tariff.ai concernant votre utilisation de nos services.",
+      "back": "Retour à l'accueil",
       "sections": [
-        { "title": "1. Acceptation", "content": "En accédant au service, vous acceptez ces conditions..." }
+        { "title": "1. Acceptation des conditions", "content": "En accédant ou en utilisant toute partie du site web, de la plateforme ou des services de tariff.ai (collectivement, « le Service »), vous acceptez d'être lié par ces Conditions d'Utilisation (« Conditions »). Si vous n'acceptez pas tous les termes et conditions de cet accord, vous ne pouvez pas accéder au Service ni utiliser aucun service." },
+        { "title": "2. Description du Service", "content": "tariff.ai fournit une analyse tarifaire alimentée par l'IA, une intelligence commerciale et des services connexes conçus pour aider les entreprises dans la conformité et la stratégie du commerce international." }
       ]
     },
     "cookiePolicy": {
       "title": "Politique des Cookies",
       "updated": "Dernière mise à jour : 22 décembre 2025 | Version 1.0",
-      "intro": "Utilisation des cookies...",
-      "back": "Retour",
+      "intro": "Comprendre comment nous utilisons les cookies et technologies similaires sur tariff.ai",
+      "back": "Retour à l'accueil",
       "sections": [
-        { "title": "1. Qu'est-ce qu'un cookie", "content": "Petits fichiers texte stockés sur votre appareil..." }
+        { "title": "1. Qu'est-ce qu'un cookie", "content": "Les cookies sont de petits fichiers texte stockés sur votre appareil (ordinateur, tablette ou téléphone mobile) lorsque vous visitez un site web. Ils aident les sites web à mémoriser vos préférences, à comprendre comment vous les utilisez et à offrir une meilleure expérience utilisateur." },
+        { "title": "2. Comment nous utilisons les cookies", "content": "tariff.ai utilise des cookies aux fins suivantes :\n\nFonctions essentielles :\n• Maintenir votre session connectée\n• Mémoriser vos préférences de langue et de thème\n• Sécuriser votre connexion à nos services\n\nAnalytique & Performance :\n• Comprendre quelles pages sont les plus populaires\n• Analyser le comportement des utilisateurs pour améliorer notre service\n• Suivre les erreurs techniques et les bugs\n\nExpérience utilisateur :\n• Mémoriser vos préférences de consentement aux cookies\n• Personnaliser le contenu en fonction de vos intérêts\n• Optimiser les performances du site" }
       ]
     }
   }
