@@ -1,227 +1,122 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Facebook, Instagram, Mail, Send, ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from '../LanguageContext';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Heart, Linkedin, Twitter } from 'lucide-react';
+import { useLanguage } from '@/components/LanguageContext';
 
-const LOGO_URL = 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_680e05f48b22dd123802c416/3bb573531_tarifficon.png';
-
-function NewsletterForm() {
+export default function Footer({ theme }) {
   const { t, isRTL } = useLanguage();
   const [email, setEmail] = useState('');
-  const [consent, setConsent] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
+  const [agreed, setAgreed] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubscribe = (e) => {
     e.preventDefault();
-    if (!email || !consent) {
-      setError(isRTL ? 'יש להסכים לקבלת הניוזלטר' : 'Please agree to receive newsletter');
-      return;
-    }
-
-    try {
-      const { base44 } = await import('@/api/base44Client');
-      const response = await base44.functions.invoke('subscribeToNewsletter', {
-        email,
-        is_consented: consent,
-        source_page: 'footer'
-      });
-
-      if (response.data.success) {
-        setSubmitted(true);
-        setEmail('');
-        setConsent(false);
-        setError('');
-        setTimeout(() => setSubmitted(false), 3000);
-      }
-    } catch (err) {
-      if (err.response?.data?.already_subscribed) {
-        setError(isRTL ? 'כתובת האימייל כבר רשומה' : 'Email already subscribed');
-      } else {
-        setError(isRTL ? 'שגיאה בהרשמה' : 'Subscription failed');
-      }
+    if (email && agreed) {
+      console.log('Subscribed:', email);
+      setEmail('');
+      setAgreed(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative space-y-3">
-      <div className="relative">
-        <Mail className={`absolute top-1/2 -translate-y-1/2 ${isRTL ? 'right-3' : 'left-3'} w-5 h-5 text-white/40`} />
-        <Input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder={t.newsletter.placeholder}
-          required
-          className={`${isRTL ? 'pr-10 pl-3' : 'pl-10 pr-3'} py-5 bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-xl focus:bg-white/20 focus:border-[#42C0B9]`}
-        />
-      </div>
-
-      <div className={`flex items-start gap-2 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}>
-        <input
-          type="checkbox"
-          id="footer-consent"
-          checked={consent}
-          onChange={(e) => setConsent(e.target.checked)}
-          className="mt-1 accent-[#42C0B9] cursor-pointer"
-          required
-        />
-        <label htmlFor="footer-consent" className="text-xs text-white/60 cursor-pointer">
-          {isRTL 
-            ? 'אני מסכים/ה לקבל ניוזלטרים מ-tariff.ai'
-            : 'I agree to receive newsletters from tariff.ai'}
-        </label>
-      </div>
-
-      {error && (
-        <p className="text-xs text-red-300">{error}</p>
-      )}
-
-      <Button
-        type="submit"
-        disabled={submitted}
-        className="w-full bg-gradient-to-r from-[#42C0B9] to-[#114B5F] hover:from-[#3ab0a9] hover:to-[#0d3a4a] text-white py-5 rounded-xl font-medium disabled:opacity-50"
-      >
-        {submitted ? '✓ ' + (isRTL ? 'נשלח' : 'Sent') : (
-          <>
-            {t.newsletter.cta}
-            <Send className={`w-4 h-4 ${isRTL ? 'mr-2' : 'ml-2'}`} />
-          </>
-        )}
-      </Button>
-    </form>
-  );
-}
-
-export default function Footer() {
-  const { t, isRTL } = useLanguage();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    <footer className="relative bg-[#114B5F] dark:bg-[#0a1628] overflow-hidden">
-      {/* Top Gradient Line */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#42C0B9] to-transparent" />
-
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: '30px 30px'
-        }} />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          
-          {/* Column 1: Brand & Info */}
-          <div className="flex flex-col items-start">
-            <motion.a 
-              href="#"
-              onClick={scrollToTop}
-              className="flex items-center gap-3 mb-6"
-              whileHover={{ scale: 1.02 }}
-            >
-              <img src={LOGO_URL} alt="tariff.ai" className="h-10 w-auto" />
-              <span className="text-2xl font-bold text-white">
-                tariff<span className="text-[#42C0B9]">.ai</span>
-              </span>
-            </motion.a>
-            <p className="text-white/60 mb-6 max-w-sm">
-              {t.footer.description}
-            </p>
-            {/* Social Links */}
-            <div className="flex gap-3">
-              {[Twitter, Linkedin, Facebook, Instagram].map((Icon, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="p-2 rounded-lg bg-white/10 text-white/60 hover:text-[#42C0B9] hover:bg-white/20 transition-colors"
-                >
-                  <Icon className="w-5 h-5" />
-                </motion.a>
-              ))}
+    <footer className={`${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-slate-50'} py-16 border-t ${
+      theme === 'dark' ? 'border-white/10' : 'border-slate-200'
+    }`} dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+          <div className="space-y-6">
+            <div>
+              <div className={`text-3xl font-bold tracking-tight ${
+                theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+              }`}>
+                tariff<span className="text-[#E5A840]">.ai</span>
+              </div>
+              <p className={`mt-4 text-base leading-relaxed ${
+                theme === 'dark' ? 'text-gray-400' : 'text-slate-600'
+              }`}>
+                {t('footer.description')}
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <a href="#" className={`p-2 rounded-full transition-colors ${
+                theme === 'dark' ? 'bg-white/10 hover:bg-[#E5A840] text-white' : 'bg-slate-200 hover:bg-[#E5A840] text-slate-600'
+              }`}>
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className={`p-2 rounded-full transition-colors ${
+                theme === 'dark' ? 'bg-white/10 hover:bg-[#E5A840] text-white' : 'bg-slate-200 hover:bg-[#E5A840] text-slate-600'
+              }`}>
+                <Twitter className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
-          {/* Column 2: Legal Links */}
-          <div className="md:px-8">
-            <h4 className="text-white font-semibold mb-4">{t.footer.legal}</h4>
-            <ul className="space-y-3">
+          <div className="lg:ps-8">
+            <h4 className={`text-sm font-semibold uppercase tracking-wider mb-6 ${
+              theme === 'dark' ? 'text-gray-300' : 'text-slate-900'
+            }`}>
+              {t('footer.legal')}
+            </h4>
+            <ul className="space-y-4">
               <li>
-                <Link
-                  to={createPageUrl('Terms')}
-                  className="text-white/60 hover:text-[#42C0B9] transition-colors inline-block"
-                >
-                  {t.footer.links.terms}
+                <Link to={createPageUrl('TermsOfService')} className="text-sm hover:text-[#E5A840] transition-colors">
+                  {t('footer.terms')}
                 </Link>
               </li>
               <li>
-                <Link
-                  to={createPageUrl('Privacy')}
-                  className="text-white/60 hover:text-[#42C0B9] transition-colors inline-block"
-                >
-                  {t.footer.links.privacy}
+                <Link to={createPageUrl('PrivacyPolicy')} className="text-sm hover:text-[#E5A840] transition-colors">
+                  {t('footer.privacy')}
                 </Link>
               </li>
               <li>
-                <Link
-                  to={createPageUrl('Cookies')}
-                  className="text-white/60 hover:text-[#42C0B9] transition-colors inline-block"
-                >
-                  {t.footer.links.cookies}
+                <Link to={createPageUrl('CookiePolicy')} className="text-sm hover:text-[#E5A840] transition-colors">
+                  {t('footer.cookies')}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Newsletter */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">{t.newsletter.title}</h4>
-            <p className="text-white/60 text-sm mb-4">
-              {t.newsletter.subtitle}
+          <div className={`p-6 rounded-2xl ${
+            theme === 'dark' ? 'bg-[#1E293B]/50' : 'bg-white shadow-sm'
+          } border ${theme === 'dark' ? 'border-white/10' : 'border-slate-200'}`}>
+            <h4 className="text-lg font-semibold mb-2">
+              {t('newsletter.title')}
+            </h4>
+            <p className="text-sm mb-4 opacity-80">
+              {t('newsletter.subtitle')}
             </p>
-            <NewsletterForm />
+            <form onSubmit={handleSubscribe} className="space-y-3">
+              <div className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder={t('newsletter.placeholder')}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="rounded-full"
+                />
+                <Button type="submit" disabled={!email || !agreed} className="bg-[#E5A840] text-[#0F172A] rounded-full px-6">
+                  {t('common.subscribe')}
+                </Button>
+              </div>
+              <div className="flex items-center gap-2">
+                <Checkbox id="agree" checked={agreed} onCheckedChange={setAgreed} className="border-[#E5A840]" />
+                <label htmlFor="agree" className="text-xs opacity-70 cursor-pointer">
+                  {t('newsletter.consent')}
+                </label>
+              </div>
+            </form>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-white/40 text-sm order-2 sm:order-1">
-              {t.footer.copyright}
-            </p>
-            
-            <div className="flex items-center gap-6 order-1 sm:order-2">
-              <div className="flex items-center gap-2">
-                <span className="text-white/40 text-sm">Made with</span>
-                <motion.span
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                  className="text-red-500"
-                >
-                  ❤️
-                </motion.span>
-                <span className="text-white/40 text-sm">for global trade</span>
-              </div>
-
-              {/* Back to Top Button */}
-              <motion.button
-                onClick={scrollToTop}
-                whileHover={{ y: -3 }}
-                className="p-2 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-[#42C0B9] hover:bg-white/10 transition-all"
-                title="Back to Top"
-              >
-                <ArrowUp className="w-4 h-4" />
-              </motion.button>
-            </div>
+        <div className="mt-12 pt-8 border-t border-current opacity-10 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+          <p>© 2024 tariff.ai. {t('common.allRightsReserved')}</p>
+          <div className="flex items-center gap-1">
+            <span>{t('common.madeWith')}</span>
+            <Heart className="w-4 h-4 text-red-500 fill-red-500" /> 
+            <span>{t('common.forGlobalTrade')}</span>
           </div>
         </div>
       </div>
