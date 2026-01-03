@@ -220,10 +220,13 @@
   "footer": {
     "description": "AI-powered tariff intelligence for global trade professionals.",
     "legal": "LEGAL",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
     "links": {
-      "terms": "Terms of Service",
-      "privacy": "Privacy Policy",
-      "cookies": "Cookie Policy"
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookie Policy"
     },
     "copyright": "All rights reserved."
   },
@@ -285,68 +288,181 @@
   "legalPages": {
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Last Updated: December 22, 2025 | Version: 1.0",
-      "intro": "",
+      "updated": "Last updated: December 22, 2025 | Version 1.0",
+      "intro": "Understanding how we use cookies and similar technologies on tariff.ai",
       "back": "Back to Home",
       "sections": [
-        { "title": "1. Data Controller", "content": "tariff.ai (\"we\", \"our\", \"us\") is the data controller responsible for your personal information. You can contact us at:\nEmail: info@tariff-ai.com\nAddress: tariff.ai Privacy Team, San Francisco, CA\nFor GDPR-related inquiries, our EU representative can be contacted at info@tariff-ai.com." },
-        { "title": "2. Information We Collect", "content": "We collect the following types of personal data:\n\n2.1 Information You Provide:\nAccount Information: Full name, email address, company name\nNewsletter Subscriptions: Email address, consent timestamp\nContact Forms: Name, email, company, subject, message\n\n2.2 Information Collected Automatically:\nAnalytics Data: Page views, page URLs, referrer URLs, session IDs\nDevice Information: IP address (anonymized after 90 days), browser type, operating system, device type, screen resolution\nLocation Data: Country and city (derived from IP address)\nInteraction Data: Clicks, form submissions, scroll depth, element interactions, viewport size\nTechnical Data: User agent, language preferences, timezone\n\n2.3 Cookies and Tracking:\nEssential Cookies: Session management (necessary for functionality)\nAnalytics Cookies: Usage patterns and site performance (requires consent)\nMarketing Cookies: User preferences for marketing communications (requires consent)\nFor detailed cookie information, see our Cookie Policy." },
-        { "title": "3. Legal Basis for Processing", "content": "Under GDPR and LGPD, we process your personal data based on:\nConsent: Newsletter subscriptions, analytics cookies, marketing communications (you may withdraw consent at any time)\nContractual Necessity: Account management and service delivery\nLegitimate Interests: Site security, fraud prevention, product improvements (balanced against your privacy rights)\nLegal Obligations: Compliance with tax, accounting, and other legal requirements" },
-        { "title": "4. How We Use Your Information", "content": "We use your personal data for the following purposes:\nService Delivery: Provide tariff analysis reports, maintain your account, process transactions\nCommunication: Respond to inquiries, send service updates, deliver newsletters (with consent)\nAnalytics & Improvement: Understand usage patterns, optimize user experience, develop new features\nSecurity: Detect and prevent fraud, abuse, and security incidents\nCompliance: Meet legal and regulatory obligations\n\nWe do NOT:\nSell your personal data to third parties\nUse your data for automated decision-making that significantly affects you\nProcess sensitive personal data (health, biometric, political opinions) without explicit consent" },
-        { "title": "5. Information Sharing and Third Parties", "content": "We share your personal data only in the following circumstances:\n\n5.1 Service Providers:\nBase44 Platform: Infrastructure and database hosting\nEmail Service Providers: Transactional and marketing emails\nPayment Processors: Secure payment handling (we don't store payment card details)\nAll service providers are bound by Data Processing Agreements (DPAs) and strictly instructed.\n\n5.2 Legal Requirements:\nWe may disclose your data if required by law, court order, or to protect our legal rights.\n\n5.3 Business Transfers:\nIn the event of a merger or acquisition, your data may be transferred to the new entity, subject to the same privacy protections.\nWe do NOT rent, sell, or trade your personal data." },
-        { "title": "6. International Data Transfers", "content": "Your data may be transferred to and processed in countries outside your residence, including the United States.\nFor EU users: We ensure adequate protection through Standard Contractual Clauses (SCCs) approved by the European Commission or Adequacy decisions where applicable.\nFor Brazilian users (LGPD): We comply with cross-border transfer requirements and implement appropriate safeguards." },
-        { "title": "7. Data Retention", "content": "We retain your personal data only as long as necessary:\nAccount Data: Duration of account + 90 days after closure\nAnalytics Data: 12 months from collection\nNewsletter Subscriptions: Until you unsubscribe + 30 days\nContact Form Submissions: 24 months after last interaction\nConsent Records: 3 years (for compliance proof)\nFinancial Records: 7 years (legal requirement)\nAfter retention periods expire, data is permanently deleted or anonymized." },
-        { "title": "8. Data Security", "content": "We implement industry-standard security measures:\nEncryption: Data encrypted in transit (TLS/SSL) and at rest (AES-256)\nAccess Control: Role-based access, principle of least privilege\nAuthentication: Multi-factor authentication for administrative access\nMonitoring: 24/7 security monitoring and incident response\nRegular Audits: Periodic security assessments and penetration testing\nWhile we take every reasonable precaution, no system is 100% secure. We will notify you of any data breach as required by law." },
-        { "title": "9. Your Rights (GDPR & LGPD)", "content": "You have the following rights regarding your personal data:\nBe Informed: This Privacy Policy explains our practices\nGive or Withdraw Consent: Control which cookies are used\nAccess Your Data: Request information about data stored\nDelete Data: Request deletion of personal data\nObject to Processing: Opt out of non-essential processing\nTo exercise these rights, use the Data Request Form below or contact info@tariff-ai.com." },
-        { "title": "10. Children's Privacy", "content": "Our services are not intended for individuals under 18 years of age. We do not knowingly collect personal data from children. If we discover we have collected data from a child, we will delete it immediately. Parents or guardians who believe we may have collected data from a child should contact us at info@tariff-ai.com." },
-        { "title": "11. Automated Decision-Making", "content": "We do not use automated decision-making or profiling that produces legal or similarly significant effects on you. Any analytics or personalization features are used solely to improve user experience and can be opted out of via cookie preferences." },
-        { "title": "12. Marketing Communications", "content": "With your consent, we may send you:\nProduct updates and new features\nIndustry insights and educational content\nSpecial offers and promotions\nYou can opt out at any time by:\nClicking \"unsubscribe\" in any email\nUpdating your account preferences\nContacting info@tariff-ai.com" },
-        { "title": "13. Data Breach Notification", "content": "In the event of a data breach that poses a risk to your rights and freedoms, we will:\nNotify the relevant supervisory authority within 72 hours (GDPR) or as required by LGPD\nInform affected individuals without undue delay\nProvide information about the nature of the breach and remedial actions\nDocument all breaches for regulatory compliance" },
-        { "title": "14. Changes to This Policy", "content": "We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. We will:\nPost the updated policy on this page\nUpdate the \"Last Updated\" date\nNotify you of material changes via email or prominent notice\nObtain fresh consent where required by law\nContinued use of our services after changes constitutes acceptance of the updated policy." },
-        { "title": "15. Contact & Data Protection Officer", "content": "For any privacy-related questions or to exercise your rights:\nGeneral Inquiries: info@tariff-ai.com\nEU GDPR Inquiries: EU Representative: info@tariff-ai.com\nBrazil LGPD Inquiries: Brazil Representative: info@tariff-ai.com\nMailing Address: tariff.ai Privacy Team, San Francisco, CA\nSupervisory Authorities:\nEU: Your local Data Protection Authority\nBrazil: Autoridade Nacional de Proteção de Dados (ANPD)" }
+        { 
+            "title": "1. Data Controller", 
+            "content": [
+                { "type": "p", "text": "tariff.ai (\"we\", \"our\", \"us\") is the data controller responsible for your personal information. You can contact us at:" },
+                { "type": "ul", "items": [
+                    "Email: info@tariff-ai.com",
+                    "Address: tariff.ai Privacy Team, San Francisco, CA"
+                ]},
+                { "type": "p", "text": "For GDPR-related inquiries, our EU representative can be contacted at info@tariff-ai.com." }
+            ]
+        },
+        { 
+            "title": "2. Information We Collect", 
+            "content": [
+                { "type": "p", "text": "We collect the following types of personal data:" },
+                { "type": "p", "text": "2.1 Information You Provide:", "bold": true },
+                { "type": "ul", "items": [
+                    "Account Information: Full name, email address, company name",
+                    "Newsletter Subscriptions: Email address, consent timestamp",
+                    "Contact Forms: Name, email, company, subject, message"
+                ]},
+                { "type": "p", "text": "2.2 Information Collected Automatically:", "bold": true },
+                { "type": "ul", "items": [
+                    "Analytics Data: Page views, page URLs, referrer URLs, session IDs",
+                    "Device Information: IP address (anonymized after 90 days), browser type, operating system, device type, screen resolution",
+                    "Location Data: Country and city (derived from IP address)",
+                    "Interaction Data: Clicks, form submissions, scroll depth, element interactions, viewport size",
+                    "Technical Data: User agent, language preferences, timezone"
+                ]}
+            ]
+        },
+        { 
+            "title": "3. Legal Basis for Processing", 
+            "content": [
+                { "type": "p", "text": "Under GDPR and LGPD, we process your personal data based on:" },
+                { "type": "ul", "items": [
+                    "Consent: Newsletter subscriptions, analytics cookies, marketing communications (you may withdraw consent at any time)",
+                    "Contractual Necessity: Account management and service delivery",
+                    "Legitimate Interests: Site security, fraud prevention, product improvements (balanced against your privacy rights)",
+                    "Legal Obligations: Compliance with tax, accounting, and other legal requirements"
+                ]}
+            ]
+        },
+        { 
+            "title": "4. How We Use Your Information", 
+            "content": [
+                { "type": "p", "text": "We use your personal data for the following purposes:" },
+                { "type": "ul", "items": [
+                    "Service Delivery: Provide tariff analysis reports, maintain your account, process transactions",
+                    "Communication: Respond to inquiries, send service updates, deliver newsletters (with consent)",
+                    "Analytics & Improvement: Understand usage patterns, optimize user experience, develop new features",
+                    "Security: Detect and prevent fraud, abuse, and security incidents",
+                    "Compliance: Meet legal and regulatory obligations"
+                ]}
+            ]
+        },
+        { 
+            "title": "5. Information Sharing and Third Parties", 
+            "content": [
+                { "type": "p", "text": "We share your personal data only in the following circumstances:" },
+                { "type": "p", "text": "5.1 Service Providers:", "bold": true },
+                { "type": "ul", "items": [
+                    "Base44 Platform: Infrastructure and database hosting",
+                    "Email Service Providers: Transactional and marketing emails",
+                    "Payment Processors: Secure payment handling (we don't store payment card details)"
+                ]},
+                { "type": "p", "text": "5.2 Legal Requirements:", "bold": true },
+                { "type": "p", "text": "We may disclose your data if required by law, court order, or to protect our legal rights." }
+            ]
+        },
+        { 
+            "title": "8. Data Security", 
+            "content": [
+                { "type": "p", "text": "We implement industry-standard security measures:" },
+                { "type": "ul", "items": [
+                    "Encryption: Data encrypted in transit (TLS/SSL) and at rest (AES-256)",
+                    "Access Control: Role-based access, principle of least privilege",
+                    "Authentication: Multi-factor authentication for administrative access",
+                    "Monitoring: 24/7 security monitoring and incident response",
+                    "Regular Audits: Periodic security assessments and penetration testing"
+                ]},
+                { "type": "p", "text": "While we take every reasonable precaution, no system is 100% secure. We will notify you of any data breaches as required by law." }
+            ]
+        },
+        { "title": "9. Your Rights (GDPR & LGPD)", "content": "You have the following rights..." },
+        { "title": "15. Contact", "content": "Contact us at info@tariff-ai.com" }
       ]
     },
     "terms": {
       "title": "Terms of Service",
-      "updated": "Last Updated: December 22, 2025 | Version: 1.0",
-      "intro": "This document outlines the legally binding agreement between you and tariff.ai regarding your use of our services.",
+      "updated": "Last updated: December 22, 2025 | Version 1.0",
+      "intro": "This document outlines the legally binding agreement...",
       "back": "Back to Home",
       "sections": [
-        { "title": "1. Acceptance of Terms", "content": "By accessing or using any part of the tariff.ai website, platform, or services (collectively, \"the Service\"), you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree to all the terms and conditions of this agreement, then you may not access the Service or use any services. These Terms constitute a legally binding agreement between you and tariff.ai. Your continued use of the Service signifies your acceptance of any updated Terms." },
-        { "title": "2. Description of Service", "content": "tariff.ai provides AI-powered tariff analysis, trade intelligence, and related services designed to assist businesses with international trade compliance and strategy. The Service includes various features, subscription plans, and usage limits as described on our website and pricing pages. We reserve the right to modify, suspend, or discontinue any aspect of the Service at any time, with or without notice." },
-        { "title": "3. User Accounts and Responsibilities", "content": "To access and use certain features of the Service, you must register for a user account. You agree to:\nProvide Accurate Information: Maintain accurate, complete, and current registration information.\nAccount Security: Keep your username and password confidential and prevent unauthorized access to your account. You are solely responsible for all activities that occur under your account.\nProhibited Conduct: Not use the Service for any unlawful purpose, or in any way that violates these Terms.\nAge Restriction: Confirm you are at least 18 years of age or the legal age of majority in your jurisdiction." },
-        { "title": "4. Payment Terms and Subscriptions", "content": "4.1 Subscription Fees: Access to certain features of the Service requires a paid subscription. Subscription fees are billed in advance on a recurring basis (e.g., monthly or annually) as per your chosen plan.\n4.2 Automatic Renewal: Subscriptions automatically renew unless you cancel at least 24 hours before the end of the current billing period.\n4.3 Price Changes: We reserve the right to change our subscription fees upon 30 days prior notice. Your continued use after the price change constitutes your agreement to pay the modified amount.\n4.4 Refunds and Cancellations: All subscription fees are non-refundable, except as required by law. You may cancel your subscription at any time, and access will continue until the end of the current billing cycle." },
-        { "title": "5. Use of Service and Prohibited Conduct", "content": "You agree to use the Service only for lawful purposes and in accordance with these Terms. You shall not:\nMisuse: Engage in any activity that interferes with or disrupts the Service.\nUnauthorized Access: Attempt to gain unauthorized access to any part of the Service, other accounts, computer systems, or networks.\nData Scraping: Use any automated system or software to extract data from the Service without express written permission.\nHarmful Content: Transmit any malicious code, viruses, or other harmful data.\nResale: Reproduce, duplicate, copy, sell, resell, or exploit any portion of the Service without our express written permission." },
-        { "title": "6. Data Accuracy and Disclaimers", "content": "While tariff.ai strives to provide accurate and up-to-date tariff information and trade intelligence, we do not guarantee the accuracy, completeness, or timeliness of any data provided through the Service. The information is for general informational purposes only and does not constitute legal, financial, or professional advice. You are solely responsible for verifying critical information with official sources and for all decisions made based on the Service's output." },
-        { "title": "7. Intellectual Property", "content": "All content, features, and functionality of tariff.ai are the exclusive property of tariff.ai and its licensors and are protected by international copyright, trademark, patent, and trade secret laws. We grant you a limited, non-exclusive, non-transferable, revocable license to access and use the Service for your internal business purposes, subject to these Terms." },
-        { "title": "8. Limitation of Liability", "content": "In no event shall tariff.ai, its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service." },
-        { "title": "9. Termination", "content": "We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease." },
-        { "title": "10. Governing Law", "content": "These Terms shall be governed and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law provisions." },
-        { "title": "11. Changes to Terms", "content": "We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice. By continuing to access or use our Service after revisions become effective, you agree to be bound by the revised terms." },
-        { "title": "12. Miscellaneous", "content": "These Terms constitute the entire agreement between you and tariff.ai regarding our Service. Our failure to enforce any right or provision will not be considered a waiver. If any provision is held invalid, the remaining provisions will remain in effect." },
-        { "title": "13. Contact Information", "content": "For any questions regarding these Terms of Service, please contact us at info@tariff-ai.com. We will respond to all inquiries within 5 business days." }
+        { "title": "1. Acceptance of Terms", "content": "By accessing or using..." },
+        { "title": "2. Description of Service", "content": "tariff.ai provides AI-powered..." },
+        { 
+            "title": "3. User Accounts and Responsibilities", 
+            "content": [
+                 { "type": "p", "text": "To access and use certain features of the Service, you must register for a user account. You agree to:" },
+                 { "type": "ul", "items": [
+                     "Provide Accurate Information: Maintain accurate, complete, and current registration information.",
+                     "Account Security: Keep your username and password confidential.",
+                     "Prohibited Conduct: Not use the Service for any unlawful purpose.",
+                     "Age Restriction: Confirm you are at least 18 years of age."
+                 ]}
+            ]
+        },
+        {
+            "title": "4. Payment Terms and Subscriptions",
+            "content": [
+                { "type": "p", "text": "4.1 Subscription Fees: Access to certain features of the Service requires a paid subscription." },
+                { "type": "p", "text": "4.2 Automatic Renewal: Subscriptions automatically renew unless you cancel at least 24 hours before." },
+                { "type": "p", "text": "4.3 Price Changes: We reserve the right to change our subscription fees upon 30 days prior notice." },
+                { "type": "p", "text": "4.4 Refunds and Cancellations: All subscription fees are non-refundable, except as required by law." }
+            ]
+        },
+        { "title": "5. Use of Service", "content": "You agree to use the Service only for lawful purposes..." }
       ]
     },
     "cookiePolicy": {
       "title": "Cookie Policy",
-      "updated": "Last Updated: December 22, 2025 | Version: 1.0",
-      "intro": "Understanding how we use cookies and similar technologies on tariff.ai",
+      "updated": "Last updated: December 22, 2025 | Version 1.0",
+      "intro": "Understanding how we use cookies...",
       "back": "Back to Home",
       "sections": [
-        { "title": "1. What Are Cookies", "content": "Cookies are small text files stored on your device (computer, tablet, or mobile phone) when you visit a website. They help websites remember your preferences, understand how you use them, and provide a better user experience.\n\nKey Characteristics:\nText files (not programs or viruses)\nStore information about your visit\nCan be deleted or blocked at any time\nCome in different types with different purposes" },
-        { "title": "2. How We Use Cookies", "content": "tariff.ai uses cookies for the following purposes:\n\nEssential Functions:\nMaintain your logged-in session\nRemember your language and theme preferences\nSecure your connection to our services\n\nAnalytics & Performance:\nUnderstand which pages are most popular\nAnalyze user behavior to improve our service\nTrack technical errors and bugs\n\nUser Experience:\nRemember your cookie consent preferences\nPersonalize content based on your interests\nOptimize site performance" },
-        { "title": "3. Types of Cookies We Use", "content": "3.1 Essential Cookies (Always Active)\nThese cookies are necessary for the website to function and cannot be disabled.\nSession Management: Keeps you logged in as you navigate\nSecurity: Protects against CSRF and other attacks\nLoad Balancing: Distributes traffic across servers\nExamples: session_id, csrf_token, auth_state\n\n3.2 Analytics Cookies (Requires Consent)\nHelp us understand how visitors interact with our website.\nPage Views: Track which pages are visited (PageView entity)\nUser Actions: Monitor clicks, form submissions, scrolling (UserAction entity)\nSession Data: Analyze user journey and engagement\nDevice Info: Browser type, OS, screen resolution, language\nExamples: Google Analytics\n\n3.3 Marketing Cookies (Requires Consent)\nUsed to deliver relevant advertisements and measure campaign effectiveness.\nAd Targeting: Show relevant ads based on interests\nConversion Tracking: Measure effectiveness of campaigns\nRetargeting: Display ads to previous visitors\nNote: Marketing cookies are not active on tariff.ai" },
-        { "title": "4. Cookie Duration", "content": "Session Cookies (Temporary)\nThese cookies expire when you close your browser.\nDuration: Until browser close\nPurpose: Maintain active session, navigation state\nExamples: PHPSESSID, session token\nStorage: Browser memory only\n\nPersistent Cookies (Long-term)\nThese cookies remain on your device for a specified period.\nShort-term: 24 hours to 30 days (analytics)\nMedium-term: 30 days to 1 year (preferences)\nLong-term: 1-2 years (consent records)" },
-        { "title": "5. Cookies We Use - Detailed List", "content": "Essential Cookies:\n| COOKIE NAME | PURPOSE | DURATION | TYPE |\n| :--- | :--- | :--- | :--- |\n| session_id | User session management | Session | First-party |\n| analytics_session_id | Analytics tracking ID | 12 months | First-party |\n| language | Framework preferences | 1 year | First-party |\n| cookie_consent | Stores consent preferences | 1 year | First-party |\n\nAnalytics Cookies (with consent):\n| COOKIE NAME | PURPOSE | DURATION | TYPE |\n| :--- | :--- | :--- | :--- |\n| Page tracking | Records page views | 12 months | First-party |\n| Action tracking | Records interactions | 12 months | First-party |\n| Session data | Tracks users | 30 minutes | First-party |" },
-        { "title": "6. Third-Party Cookies", "content": "Currently, tariff.ai minimizes the use of third-party cookies. However, we may use:\n\nBase44 Platform (Infrastructure Provider):\nEssential for application functionality\nSecure data processing\nCovered by our Data Processing Agreement (DPA)\n\nFuture Third-Party Services:\nIf we integrate additional third-party services (analytics, payment processors), we will:\nUpdate this policy with details\nRequest your consent where required\nProvide opt-out mechanisms\nEnsure GDPR/LGPD compliance\nNote: We do NOT use third-party advertising networks or social media tracking pixels." },
-        { "title": "7. Managing Your Cookie Preferences", "content": "7.1 Through Our Cookie Banner:\nWhen you first visit tariff.ai, you'll see a cookie consent banner allowing you to:\nAccept all cookies\nAccept only essential cookies\nCustomize your preferences (choose which categories to allow)\nYour preferences are saved and can be changed at any time.\n\n7.2 Through Your Browser:\nAll modern browsers allow you to control cookies:\nGoogle Chrome: Settings > Privacy and security > Cookies and other site data (Choose: Allow all, Block third-party, or Block all)\nMozilla Firefox: Settings > Privacy & Security > Cookies and Site Data (Choose standard, strict, or custom blocking)\nSafari (Mac/iOS): Preferences > Privacy > Cookies and website data (Block all cookies or allow from current website only)\nMicrosoft Edge: Settings > Cookies and site permissions > Manage cookies (Choose blocking level)\nImportant: Blocking essential cookies will prevent the site from functioning properly." },
-        { "title": "8. Disabling Cookies - Impact", "content": "If You Disable All Cookies:\nCannot stay logged in\nSettings and preferences won't be saved\nSome features may not work\nYou'll need to set preferences on every visit\nRecommendation: Keep essential cookies active\n\nIf You Disable Only Non-Essential Cookies:\nWebsite will function normally\nYou'll stay logged in\nWe won't be able to improve the site based on usage data\nYou may see less relevant content (if analytics/marketing based on your privacy preferences)" },
-        { "title": "9. Do Not Track (DNT)", "content": "Some browsers offer a \"Do Not Track\" (DNT) signal that indicates you don't want to be tracked.\n\nOur Approach:\nWe honor your cookie consent choices through our banner\nDNT signals are not universally standardized\nYour explicit cookie preferences take precedence\nWe provide granular control through our cookie settings\nBest Practice: Use our cookie consent banner for precise control over tracking." },
-        { "title": "10. Data Collected Through Cookies", "content": "The data collected through cookies includes:\n\nDevice Information:\nIP address (anonymized after capture)\nBrowser type and version\nOperating system\nDevice type (mobile, tablet, desktop)\nScreen resolution\n\nUsage Information:\nPages visited and time spent\nClick patterns and interactions\nReferrer URL\nSession duration\nScroll depth\n\nTechnical Information:\nLanguage preference\nTimezone\nConnection type\nViewport size\n\nAll data is processed in accordance with our Privacy Policy and GDPR/LGPD requirements." },
-        { "title": "11. Your Rights (GDPR & LGPD)", "content": "Be Informed: This Cookie Policy explains our practices\nGive or Withdraw Consent: Control which cookies are used\nAccess Your Data: Request information about cookies stored\nDelete Data: Request deletion of cookie data\nObject to Processing: Opt out of non-essential cookies\nTo exercise these rights, visit our Privacy Policy page or contact info@tariff-ai.com." },
-        { "title": "12. International Users", "content": "For EU Users (GDPR):\nWe obtain explicit consent before non-essential cookies\nYou can withdraw consent at any time\nData transfers comply with Standard Contractual Clauses (SCCs)\n\nFor Brazilian Users (LGPD):\nWe obtain consent for non-essential cookies\nYou have the right to revoke consent\nData processing complies with LGPD requirements\nFor All Users: Cookie data is subject to the same protections as other personal data under our Privacy Policy." },
-        { "title": "13. Updates to This Cookie Policy", "content": "We may update this Cookie Policy to reflect:\nChanges in technology or cookie usage\nNew features or services\nLegal or regulatory requirements\nUser feedback and best practices\n\nWhen We Update:\nThe \"Last Updated\" date will change\nMaterial changes will be highlighted\nYou may be asked to review and accept new terms\nPrevious versions will be archived\nStaying informed: Review this policy periodically to stay informed about how we use cookies." },
-        { "title": "14. Contact Us", "content": "If you have questions about our use of cookies:\nEmail: info@tariff-ai.com\nSubject Line: \"Cookie Policy Inquiry\"\n\nWhat to Include:\nYour question or concern\nBrowser and device information (if technical issue)\nScreenshots if helpful\nWe respond to all cookie-related inquiries within 48 hours.\n\nFor GDPR/LGPD-specific inquiries:\nEU: info@tariff-ai.com\nBrazil: info@tariff-ai.com" }
+        { "title": "1. What Are Cookies", "content": "Cookies are small text files..." },
+        { 
+            "title": "5. Cookies We Use - Detailed List", 
+            "content": [
+                { "type": "p", "text": "Essential Cookies:", "bold": true },
+                {
+                    "type": "table",
+                    "headers": ["COOKIE NAME", "PURPOSE", "DURATION", "TYPE"],
+                    "rows": [
+                        ["session_id", "User session management", "Session", "First-party"],
+                        ["analytics_session_id", "Analytics tracking ID", "12 months", "First-party"],
+                        ["language", "Framework preferences", "1 year", "First-party"],
+                        ["cookie_consent", "Stores consent preferences", "1 year", "First-party"]
+                    ]
+                },
+                { "type": "p", "text": "Analytics Cookies (with consent):", "bold": true },
+                {
+                    "type": "table",
+                    "headers": ["COOKIE NAME", "PURPOSE", "DURATION", "TYPE"],
+                    "rows": [
+                        ["Page tracking", "Records page views", "12 months", "First-party"],
+                        ["Action tracking", "Records interactions", "12 months", "First-party"],
+                        ["Session data", "Tracks users", "30 minutes", "First-party"]
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7. Managing Your Cookie Preferences",
+            "content": [
+                { "type": "p", "text": "7.1 Through Our Cookie Banner:", "bold": true },
+                { "type": "ul", "items": [
+                    "Accept all cookies",
+                    "Accept only essential cookies",
+                    "Customize your preferences"
+                ]},
+                { "type": "p", "text": "7.2 Through Your Browser:", "bold": true },
+                { "type": "ul", "items": [
+                    "Google Chrome: Settings > Privacy",
+                    "Mozilla Firefox: Settings > Privacy",
+                    "Safari (Mac/iOS): Preferences > Privacy",
+                    "Microsoft Edge: Settings > Cookies"
+                ]}
+            ]
+        }
       ]
     }
   }
