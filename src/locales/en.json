@@ -5,42 +5,243 @@
     "howItWorks": "How It Works",
     "pricing": "Pricing",
     "faq": "FAQs",
-    "contact": "Contact"
+    "testimonials": "Testimonials",
+    "blog": "Blog",
+    "contact": "Contact",
+    "about": "About"
   },
   "common": {
     "getStarted": "Get Started",
     "subscribe": "Subscribe",
     "allRightsReserved": "All rights reserved.",
     "madeWith": "Made with",
-    "forGlobalTrade": "for global trade"
+    "forGlobalTrade": "for global trade",
+    "readMore": "Read More",
+    "viewAll": "View All Articles",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "sent": "Sent!",
+    "backToHome": "Back to Home"
   },
   "hero": {
     "badge": "AI-Powered Tariff Intelligence",
     "title": "Navigate Global Trade",
     "titleHighlight": "With Confidence",
-    "subtitle": "Instantly analyze tariffs, duties, and trade regulations for any product across 190+ countries. Make informed decisions with AI-powered insights."
+    "subtitle": "Instantly analyze tariffs, duties, and trade regulations for any product across 190+ countries. Make informed decisions with AI-powered insights.",
+    "cta": "Get Started",
+    "ctaSecondary": "Watch Demo",
+    "stats": {
+      "countries": "Countries",
+      "accuracy": "Accuracy",
+      "reports": "Reports"
+    }
   },
-  "problem": {
+  "challenges": {
     "badge": "The Challenge",
     "title": "Global Trade is Complex",
-    "subtitle": "Businesses lose millions annually due to tariff miscalculations and compliance issues"
+    "subtitle": "Businesses lose millions annually due to tariff miscalculations and compliance issues",
+    "items": [
+      {
+        "title": "Hidden Costs",
+        "description": "Unexpected tariffs and duties can increase product costs by 15-30%, destroying profit margins overnight."
+      },
+      {
+        "title": "Compliance Risk",
+        "description": "Non-compliance with trade regulations leads to shipment delays, fines, and damaged business relationships."
+      },
+      {
+        "title": "Time Waste",
+        "description": "Manual tariff research takes hours of expert time per product, slowing down business decisions."
+      }
+    ]
+  },
+  "about": {
+    "badge": "Who We Are",
+    "title": "Simplifying Global Trade",
+    "description1": "tariff.ai combines cutting-edge AI with comprehensive trade databases to deliver instant, accurate tariff intelligence.",
+    "description2": "Founded by trade compliance experts and AI engineers, we're on a mission to democratize access to trade intelligence. Our platform processes millions of data points to give you clear, actionable insights in seconds.",
+    "features": [
+      { "title": "Accuracy First", "desc": "Every report is verified against official sources" },
+      { "title": "Speed Matters", "desc": "Get answers in seconds, not hours" },
+      { "title": "Always Current", "desc": "Real-time updates on tariff changes" }
+    ],
+    "stats": {
+        "countries": "Countries",
+        "accuracy": "Accuracy",
+        "reports": "Reports",
+        "support": "Support"
+    }
+  },
+  "features": {
+    "badge": "Capabilities",
+    "title": "Everything You Need",
+    "subtitle": "Powerful tools designed to streamline your global trade operations",
+    "items": [
+      { "title": "HS Code Classification", "desc": "Automatic product classification with 98% accuracy using advanced AI" },
+      { "title": "Duty Calculator", "desc": "Instant calculation of duties, taxes, and fees for any trade route" },
+      { "title": "Trade Agreement Finder", "desc": "Discover preferential rates under FTAs and trade agreements" },
+      { "title": "Compliance Alerts", "desc": "Real-time notifications on regulatory changes affecting your products" },
+      { "title": "Multi-Country Analysis", "desc": "Compare tariffs across multiple destinations simultaneously" },
+      { "title": "Export Documentation", "desc": "Generate compliant export documents automatically" }
+    ],
+    "cta": "Get Started Now"
+  },
+  "howItWorks": {
+    "badge": "Process",
+    "title": "How It Works",
+    "subtitle": "Get accurate tariff insights in three simple steps",
+    "steps": [
+      { "title": "Describe Your Product", "desc": "Enter your product details or upload an image. Our AI identifies the correct HS code automatically." },
+      { "title": "Select Trade Route", "desc": "Choose origin and destination countries. We'll factor in all applicable trade agreements." },
+      { "title": "Get Your Report", "desc": "Receive a comprehensive breakdown of duties, taxes, and compliance requirements instantly." }
+    ]
   },
   "pricing": {
+    "badge": "Plans",
     "title": "Simple, Transparent Pricing",
     "subtitle": "Choose the plan that fits your business needs",
-    "popular": "Most Popular"
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "off": "off",
+    "popular": "Popular",
+    "mo": "mo",
+    "perReport": "per report",
+    "includes": "Includes:",
+    "packages": "Packages",
+    "subscriptions": "Subscriptions",
+    "getStarted": "Get Started",
+    "freeTier": {
+        "title": "Try Free",
+        "desc": "Perfect for trying out",
+        "features": ["HS-Code & Reasoning", "Confidence Score", "Sources"]
+    },
+    "packageFeatures": [
+        "HS-Code & Reasoning", "Tariff & taxes", "Regulation", "Compliance", "Alternative Codes", "Confidence Score", "Sources"
+    ],
+    "subscriptionFeatures": [
+        "Full report", "HS-Code Alert", "Tax Calculator", "Freight Calculator", "Shipping Management"
+    ]
   },
-  "newsletter": {
-    "title": "Join Our Newsletter",
-    "subtitle": "Get the latest tariff updates, trade news, and exclusive insights delivered to your inbox",
-    "placeholder": "Enter your email",
-    "consent": "I agree to receive newsletters from tariff.ai"
+  "testimonials": {
+    "badge": "Success Stories",
+    "title": "What Our Clients Say",
+    "subtitle": "Trusted by importers, exporters, and trade professionals worldwide",
+    "items": [
+      { 
+        "quote": "tariff.ai saved us over $50,000 in the first quarter by identifying FTA opportunities we had missed.",
+        "name": "Sarah Chen",
+        "role": "Import Manager"
+      },
+      {
+        "quote": "The accuracy and speed are incredible. What used to take our team days now takes minutes.",
+        "name": "Michael Torres",
+        "role": "Trade Compliance Director"
+      },
+      {
+        "quote": "Finally, a tool that speaks our language. The reports are clear, actionable, and always up-to-date.",
+        "name": "Emma Williams",
+        "role": "CEO"
+      }
+    ]
   },
-  "footer": {
-    "description": "AI-powered tariff intelligence for global trade professionals.",
-    "legal": "Legal",
-    "terms": "Terms of Service",
-    "privacy": "Privacy Policy",
-    "cookies": "Cookie Policy"
+  "faq": {
+    "badge": "FAQs",
+    "title": "tariff.ai Knowledge Center",
+    "subtitle": "Everything you need to know about the tool that's changing international trade",
+    "contactTitle": "Didn't find your answer? We're here to help",
+    "contactCta": "Contact Us",
+    "items": [
+      {
+        "q": "What is tariff.ai and how does it save me money?",
+        "a": "tariff.ai is an AI-powered platform that analyzes tariffs, duties, and trade regulations across 190+ countries. It saves you money by identifying the most cost-effective classification codes, alerting you to available trade agreements, and preventing costly compliance errors."
+      },
+      {
+        "q": "How accurate is the HS code classification?",
+        "a": "Our AI achieves 98% accuracy in HS code classification, verified against official customs databases. Each classification includes a confidence score and detailed reasoning, so you can verify the logic behind every recommendation."
+      },
+      {
+        "q": "Does the system consider Free Trade Agreements (FTAs)?",
+        "a": "Absolutely. tariff.ai automatically identifies tax-saving opportunities based on trade agreements between countries (like Israel-Europe or US agreements), and indicates which documents are required to claim the duty exemption."
+      },
+      {
+        "q": "How frequently is the data updated?",
+        "a": "Our database is updated in real-time with direct connections to government databases in 190+ countries. You'll always have access to the latest tariff rates and regulatory changes."
+      },
+      {
+        "q": "Can the system be integrated into our corporate ERP?",
+        "a": "Yes, we offer API access for enterprise customers, allowing seamless integration with your existing ERP, WMS, or customs management systems. Contact our sales team for integration details."
+      },
+      {
+        "q": "Is my information and searches kept confidential?",
+        "a": "Absolutely. We take data security seriously. All data is encrypted in transit and at rest, and we never share your search history or business data with third parties. See our Privacy Policy for complete details."
+      },
+      {
+        "q": "What's the difference between a regular HS code search and your analysis?",
+        "a": "Unlike basic HS code lookup tools, our analysis provides complete trade intelligence: duties, taxes, regulations, compliance requirements, FTA opportunities, alternative classifications, and confidence scores - all in one comprehensive report."
+      },
+      {
+        "q": "Which countries are supported by the system?",
+        "a": "tariff.ai covers 190+ countries and territories, including all major trading nations. Our coverage includes the US, EU member states, UK, China, Japan, and most other countries involved in international trade."
+      },
+      {
+        "q": "Is there a trial period?",
+        "a": "Yes! You can try tariff.ai for free with one complimentary report. This gives you a chance to experience our AI classification and see the value before committing to a paid plan."
+      },
+      {
+        "q": "How do I get support for professional questions?",
+        "a": "Our support team is available via email at hello@tariff.ai. Enterprise customers receive priority support with dedicated account managers and faster response times."
+      }
+    ]
+  },
+  "blog": {
+    "badge": "Insights",
+    "title": "From Our Blog",
+    "subtitle": "Expert analysis, industry news, and practical guides for global trade",
+    "articles": [
+        { "category": "Industry News", "title": "2024 Tariff Changes: What Importers Need to Know", "desc": "A comprehensive guide to the latest tariff updates affecting key industries..." },
+        { "category": "Guide", "title": "How to Leverage Free Trade Agreements", "desc": "Maximize your savings by understanding and utilizing FTA benefits..." },
+        { "category": "Technology", "title": "AI in Trade Compliance: The Future is Here", "desc": "Exploring how artificial intelligence is revolutionizing customs and compliance..." }
+    ]
+  },
+  "contact": {
+    "badge": "Get in Touch",
+    "title": "Contact Us",
+    "subtitle": "Have questions? We'd love to hear from you",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "success": "Message Sent!"
+    },
+    "info": {
+      "email": "Email",
+      "responseTime": "Response Time",
+      "responseTimeDesc": "We respond within 24 hours on business days. For urgent inquiries, please mention it in your message.",
+      "status": "Available now"
+    }
+  },
+  "cookieBanner": {
+    "title": "We Use Cookies",
+    "desc": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking \"Accept All\", you consent to our use of cookies.",
+    "customize": "Customize",
+    "acceptAll": "Accept All",
+    "essentialOnly": "Essential Only"
+  },
+  "legal": {
+    "privacy": {
+        "title": "Privacy Policy",
+        "updated": "Last updated: December 22, 2025 | Version 1.0",
+        "description": "This document outlines the legally binding agreement between you and tariff.ai regarding your use of our services.",
+        "back": "Back to Home"
+    },
+    "terms": {
+        "title": "Terms of Service",
+        "updated": "Last updated: December 22, 2025 | Version 1.0",
+        "description": "This document outlines the legally binding agreement between you and tariff.ai regarding your use of our services.",
+        "back": "Back to Home"
+    }
   }
 }
