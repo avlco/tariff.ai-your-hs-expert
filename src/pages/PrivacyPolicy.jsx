@@ -21,36 +21,6 @@ export default function PrivacyPolicy() {
 
   const sections = t('legalPages.privacy.sections', { returnObjects: true }) || [];
 
-  const renderContent = (content) => {
-    if (!content) return null;
-    if (typeof content === 'string') {
-      return <p className={`whitespace-pre-line leading-relaxed text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>{content}</p>;
-    }
-    
-    if (Array.isArray(content)) {
-      return content.map((block, i) => {
-        if (block.type === 'p') {
-          return (
-            <p key={i} className={`whitespace-pre-line leading-relaxed text-lg mb-4 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'} ${block.bold ? 'font-bold text-slate-900 dark:text-white' : ''}`}>
-              {block.text}
-            </p>
-          );
-        }
-        if (block.type === 'ul') {
-          return (
-            <ul key={i} className={`list-disc ps-6 mb-4 space-y-2 text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
-              {block.items.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          );
-        }
-        return null;
-      });
-    }
-    return null;
-  };
-
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       <Header theme={theme} toggleTheme={toggleTheme} />
@@ -74,22 +44,26 @@ export default function PrivacyPolicy() {
             <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-slate-500'}`}>
               {t('legalPages.privacy.updated')}
             </p>
-            <p className={`mt-4 text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
+            <p className={`mt-4 ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
               {t('legalPages.privacy.intro')}
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {sections.map((section, index) => (
-              <div key={index} className="max-w-none">
-                <h2 className={`text-2xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
+              <div key={index} className={`rounded-2xl p-6 ${
+                theme === 'dark' ? 'bg-[#1E293B]/50 border border-white/10' : 'bg-slate-50 border border-slate-200'
+              }`}>
+                <h2 className={`text-xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#0F172A]'}`}>
                   {section.title}
                 </h2>
-                {renderContent(section.content)}
+                <p className={`whitespace-pre-line leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-slate-600'}`}>
+                  {section.content}
+                </p>
               </div>
             ))}
 
-            <section id="data-request" className="pt-12 mt-12 border-t border-slate-200 dark:border-white/10">
+            <section id="data-request" className="pt-8 border-t border-slate-200 dark:border-white/10">
               <DataRequestForm theme={theme} />
             </section>
           </div>
