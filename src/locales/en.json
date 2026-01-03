@@ -22,19 +22,32 @@
     "sending": "Sending...",
     "sent": "Sent!",
     "backToHome": "Back to Home",
-    "tryFree": "Try Free"
+    "tryFree": "Try Free",
+    "startFreeAnalysis": "Start Free Analysis",
+    "watchDemo": "Watch Demo"
   },
   "hero": {
     "badge": "AI-Powered Tariff Intelligence",
     "title": "Navigate Global Trade",
     "titleHighlight": "With Confidence",
     "subtitle": "Instantly analyze tariffs, duties, and trade regulations for any product across 190+ countries. Make informed decisions with AI-powered insights.",
-    "cta": "Get Started",
+    "cta": "Start Free Analysis",
     "ctaSecondary": "Watch Demo",
     "stats": {
       "countries": "Countries",
       "accuracy": "Accuracy",
       "reports": "Reports"
+    },
+    "visuals": {
+      "processing": "0.4s processing",
+      "exportRoute": "Export Route",
+      "usToGermany": "US to Germany",
+      "compliant": "COMPLIANT",
+      "estimatedDuty": "Estimated Duty",
+      "hsCode": "HS Code",
+      "verified": "Verified",
+      "aiConfidence": "AI confidence score",
+      "instantAnalysis": "Instant Analysis"
     }
   },
   "challenges": {
@@ -67,10 +80,10 @@
       { "title": "Always Current", "desc": "Real-time updates on tariff changes" }
     ],
     "stats": {
-      "countries": "Countries",
-      "accuracy": "Accuracy",
-      "reports": "Reports",
-      "support": "Support"
+        "countries": "Countries",
+        "accuracy": "Accuracy",
+        "reports": "Reports",
+        "support": "Support"
     }
   },
   "features": {
@@ -104,7 +117,7 @@
     "monthly": "Monthly",
     "yearly": "Yearly",
     "off": "off",
-    "popular": "Most Popular",
+    "popular": "Popular",
     "mo": "mo",
     "perReport": "per report",
     "includes": "Includes:",
@@ -112,15 +125,15 @@
     "subscriptions": "Subscriptions",
     "getStarted": "Get Started",
     "freeTier": {
-      "title": "Try Free",
-      "desc": "Perfect for trying out",
-      "features": ["HS-Code & Reasoning", "Confidence Score", "Sources"]
+        "title": "Try Free",
+        "desc": "Perfect for trying out",
+        "features": ["HS-Code & Reasoning", "Confidence Score", "Sources"]
     },
     "packageFeatures": [
-      "HS-Code & Reasoning", "Tariff & taxes", "Regulation", "Compliance", "Alternative Codes", "Confidence Score", "Sources"
+        "HS-Code & Reasoning", "Tariff & taxes", "Regulation", "Compliance", "Alternative Codes", "Confidence Score", "Sources"
     ],
     "subscriptionFeatures": [
-      "Full report", "HS-Code Alert", "Tax Calculator", "Freight Calculator", "Shipping Management"
+        "Full report", "HS-Code Alert", "Tax Calculator", "Freight Calculator", "Shipping Management"
     ]
   },
   "testimonials": {
@@ -128,9 +141,21 @@
     "title": "What Our Clients Say",
     "subtitle": "Trusted by importers, exporters, and trade professionals worldwide",
     "items": [
-      { "quote": "tariff.ai saved us over $50,000 in the first quarter by identifying FTA opportunities we had missed.", "name": "Sarah Chen", "role": "Import Manager" },
-      { "quote": "The accuracy and speed are incredible. What used to take our team days now takes minutes.", "name": "Michael Torres", "role": "Trade Compliance Director" },
-      { "quote": "Finally, a tool that speaks our language. The reports are clear, actionable, and always up-to-date.", "name": "Emma Williams", "role": "CEO" }
+      { 
+        "quote": "tariff.ai saved us over $50,000 in the first quarter by identifying FTA opportunities we had missed.",
+        "name": "Sarah Chen",
+        "role": "Import Manager"
+      },
+      {
+        "quote": "The accuracy and speed are incredible. What used to take our team days now takes minutes.",
+        "name": "Michael Torres",
+        "role": "Trade Compliance Director"
+      },
+      {
+        "quote": "Finally, a tool that speaks our language. The reports are clear, actionable, and always up-to-date.",
+        "name": "Emma Williams",
+        "role": "CEO"
+      }
     ]
   },
   "faq": {
@@ -140,16 +165,46 @@
     "contactTitle": "Didn't find your answer? We're here to help",
     "contactCta": "Contact Us",
     "items": [
-      { "q": "What is tariff.ai and how does it save me money?", "a": "tariff.ai is an AI-powered platform that analyzes tariffs..." },
-      { "q": "How accurate is the HS code classification?", "a": "Our AI achieves 98% accuracy in HS code classification..." },
-      { "q": "Does the system consider Free Trade Agreements (FTAs)?", "a": "Absolutely. tariff.ai automatically identifies tax-saving opportunities..." },
-      { "q": "How frequently is the data updated?", "a": "Our database is updated in real-time..." },
-      { "q": "Can the system be integrated into our corporate ERP?", "a": "Yes, we offer API access for enterprise customers..." },
-      { "q": "Is my information and searches kept confidential?", "a": "Absolutely. We take data security seriously..." },
-      { "q": "What's the difference between a regular HS code search and your analysis?", "a": "Unlike basic HS code lookup tools, our analysis provides complete trade intelligence..." },
-      { "q": "Which countries are supported by the system?", "a": "tariff.ai covers 190+ countries and territories..." },
-      { "q": "Is there a trial period?", "a": "Yes! You can try tariff.ai for free..." },
-      { "q": "How do I get support for professional questions?", "a": "Our support team is available via email at hello@tariff.ai..." }
+      {
+        "q": "What is tariff.ai and how does it save me money?",
+        "a": "tariff.ai is an AI-powered platform that analyzes tariffs, duties, and trade regulations across 190+ countries. It saves you money by identifying the most cost-effective classification codes, alerting you to available trade agreements, and preventing costly compliance errors."
+      },
+      {
+        "q": "How accurate is the HS code classification?",
+        "a": "Our AI achieves 98% accuracy in HS code classification, verified against official customs databases. Each classification includes a confidence score and detailed reasoning, so you can verify the logic behind every recommendation."
+      },
+      {
+        "q": "Does the system consider Free Trade Agreements (FTAs)?",
+        "a": "Absolutely. tariff.ai automatically identifies tax-saving opportunities based on trade agreements between countries (like Israel-Europe or US agreements), and indicates which documents are required to claim the duty exemption."
+      },
+      {
+        "q": "How frequently is the data updated?",
+        "a": "Our database is updated in real-time with direct connections to government databases in 190+ countries. You'll always have access to the latest tariff rates and regulatory changes."
+      },
+      {
+        "q": "Can the system be integrated into our corporate ERP?",
+        "a": "Yes, we offer API access for enterprise customers, allowing seamless integration with your existing ERP, WMS, or customs management systems. Contact our sales team for integration details."
+      },
+      {
+        "q": "Is my information and searches kept confidential?",
+        "a": "Absolutely. We take data security seriously. All data is encrypted in transit and at rest, and we never share your search history or business data with third parties. See our Privacy Policy for complete details."
+      },
+      {
+        "q": "What's the difference between a regular HS code search and your analysis?",
+        "a": "Unlike basic HS code lookup tools, our analysis provides complete trade intelligence: duties, taxes, regulations, compliance requirements, FTA opportunities, alternative classifications, and confidence scores - all in one comprehensive report."
+      },
+      {
+        "q": "Which countries are supported by the system?",
+        "a": "tariff.ai covers 190+ countries and territories, including all major trading nations. Our coverage includes the US, EU member states, UK, China, Japan, and most other countries involved in international trade."
+      },
+      {
+        "q": "Is there a trial period?",
+        "a": "Yes! You can try tariff.ai for free with one complimentary report. This gives you a chance to experience our AI classification and see the value before committing to a paid plan."
+      },
+      {
+        "q": "How do I get support for professional questions?",
+        "a": "Our support team is available via email at hello@tariff.ai. Enterprise customers receive priority support with dedicated account managers and faster response times."
+      }
     ]
   },
   "blog": {
@@ -157,9 +212,9 @@
     "title": "From Our Blog",
     "subtitle": "Expert analysis, industry news, and practical guides for global trade",
     "articles": [
-      { "category": "Industry News", "title": "2024 Tariff Changes: What Importers Need to Know", "desc": "A comprehensive guide to the latest tariff updates..." },
-      { "category": "Guide", "title": "How to Leverage Free Trade Agreements", "desc": "Maximize your savings by understanding and utilizing FTA benefits..." },
-      { "category": "Technology", "title": "AI in Trade Compliance: The Future is Here", "desc": "Exploring how artificial intelligence is revolutionizing customs..." }
+        { "category": "Industry News", "title": "2024 Tariff Changes: What Importers Need to Know", "desc": "A comprehensive guide to the latest tariff updates affecting key industries..." },
+        { "category": "Guide", "title": "How to Leverage Free Trade Agreements", "desc": "Maximize your savings by understanding and utilizing FTA benefits..." },
+        { "category": "Technology", "title": "AI in Trade Compliance: The Future is Here", "desc": "Exploring how artificial intelligence is revolutionizing customs and compliance..." }
     ]
   },
   "contact": {
@@ -178,13 +233,13 @@
     "info": {
       "email": "Email",
       "responseTime": "Response Time",
-      "responseTimeDesc": "We respond within 24 hours on business days.",
+      "responseTimeDesc": "We respond within 24 hours on business days. For urgent inquiries, please mention it in your message.",
       "status": "Available now"
     }
   },
   "cookieBanner": {
     "title": "We Use Cookies",
-    "desc": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.",
+    "desc": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking \"Accept All\", you consent to our use of cookies.",
     "customize": "Customize",
     "acceptAll": "Accept All",
     "essentialOnly": "Essential Only",
@@ -192,23 +247,39 @@
     "save": "Save Preferences",
     "cancel": "Cancel",
     "types": {
-      "essential": { "title": "Essential Cookies", "desc": "These cookies are required for basic site functionality and cannot be disabled." },
-      "analytics": { "title": "Analytics Cookies", "desc": "These cookies help us understand how users interact with our website." },
-      "marketing": { "title": "Marketing Cookies", "desc": "These cookies are used to show you more relevant advertisements." }
+      "essential": {
+        "title": "Essential Cookies",
+        "desc": "These cookies are required for basic site functionality and cannot be disabled."
+      },
+      "analytics": {
+        "title": "Analytics Cookies",
+        "desc": "These cookies help us understand how users interact with our website."
+      },
+      "marketing": {
+        "title": "Marketing Cookies",
+        "desc": "These cookies are used to show you more relevant advertisements."
+      }
     }
   },
   "newsletter": {
     "title": "Join Our Newsletter",
     "subtitle": "Get the latest tariff updates, trade news, and exclusive insights delivered to your inbox",
     "placeholder": "Enter your email",
-    "consent": "I agree to receive newsletters from tariff.ai"
+    "consent": "I agree to receive newsletters from tariff.ai",
+    "cta": "Subscribe"
   },
   "footer": {
     "description": "AI-powered tariff intelligence for global trade professionals.",
     "legal": "Legal",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
-    "cookies": "Cookie Policy"
+    "cookies": "Cookie Policy",
+    "links": {
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookie Policy"
+    },
+    "copyright": "All rights reserved."
   },
   "dataRequest": {
     "title": "Exercise Your Data Rights",
@@ -235,7 +306,7 @@
     },
     "success": {
       "title": "Request Submitted",
-      "desc": "We have received your request and will process it within the legally required timeframe."
+      "desc": "We have received your request and will process it within the legally required timeframe. Check your email for a confirmation."
     },
     "messages": {
       "success": "Request submitted successfully",
@@ -270,26 +341,63 @@
       "title": "Privacy Policy",
       "updated": "Last updated: December 22, 2025 | Version 1.0",
       "intro": "Understanding how we use cookies and similar technologies on tariff.ai",
+      "back": "Back to Home",
       "sections": [
-        { "title": "1. Data Controller", "content": "tariff.ai ('we', 'our', 'us') is the data controller responsible for your personal information..." },
-        { "title": "2. Information We Collect", "content": "We collect the following types of personal data..." }
+        { "title": "1. Data Controller", "content": "tariff.ai ('we', 'our', 'us') is the data controller responsible for your personal information. You can contact us at:\nEmail: info@tariff-ai.com\nAddress: tariff.ai Privacy Team, San Francisco, CA\nFor GDPR-related inquiries, our EU representative can be contacted at info@tariff-ai.com" },
+        { "title": "2. Information We Collect", "content": "We collect the following types of personal data:\n\n2.1 Information You Provide:\n• Account Information: Full name, email address, company name\n• Newsletter Subscriptions: Email address, consent timestamp\n• Contact Forms: Name, email, company, subject, message\n\n2.2 Information Collected Automatically:\n• Analytics Data: Page views, page URLs, referrer URLs, session IDs\n• Device Information: IP address (anonymized after 90 days), browser type, operating system, device type, screen resolution\n• Location Data: Country and city (derived from IP address)\n• Interaction Data: Clicks, form submissions, scroll depth, element interactions, viewport size\n• Technical Data: User agent, language preferences, timezone\n\n2.3 Cookies and Tracking:\n• Essential Cookies: Session management (necessary for functionality)\n• Analytics Cookies: Usage patterns and site performance (requires consent)\n• Marketing Cookies: User preferences for marketing communications (requires consent)" },
+        { "title": "3. Legal Basis for Processing", "content": "Under GDPR and LGPD, we process your personal data based on:\n• Consent: Newsletter subscriptions, analytics cookies, marketing communications\n• Contractual Necessity: Account management and service delivery\n• Legitimate Interests: Site security, fraud prevention, product improvements\n• Legal Obligations: Compliance with tax, accounting, and other legal requirements" },
+        { "title": "4. How We Use Your Information", "content": "We use your personal data for the following purposes:\n• Service Delivery: Provide tariff analysis reports, maintain your account\n• Communication: Respond to inquiries, send service updates\n• Analytics & Improvement: Understand usage patterns, optimize user experience\n• Security: Detect and prevent fraud, abuse, and security incidents\n\nWe do NOT:\n• Sell your personal data to third parties\n• Use your data for automated decision-making that significantly affects you" },
+        { "title": "5. Information Sharing and Third Parties", "content": "We share your personal data only in the following circumstances:\n• Service Providers: Base44 Platform, Email Service Providers, Payment Processors\n• Legal Requirements: We may disclose your data if required by law\n• Business Transfers: In the event of a merger or acquisition" },
+        { "title": "6. International Data Transfers", "content": "Your data may be transferred to and processed in countries outside your residence, including the United States.\nFor EU users: We ensure adequate protection through Standard Contractual Clauses (SCCs).\nFor Brazilian users (LGPD): We comply with cross-border transfer requirements." },
+        { "title": "7. Data Retention", "content": "We retain your personal data only as long as necessary.\n• Account Data: Duration of account + 90 days after closure\n• Analytics Data: 12 months from collection\n• Consent Records: 3 years\n• Financial Records: 7 years" },
+        { "title": "8. Data Security", "content": "We implement industry-standard security measures:\n• Encryption: Data encrypted in transit (TLS/SSL) and at rest (AES-256)\n• Access Control: Role-based access, principle of least privilege\n• Monitoring: 24/7 security monitoring" },
+        { "title": "9. Your Rights (GDPR & LGPD)", "content": "You have the following rights:\n• Be Informed\n• Give or Withdraw Consent\n• Access Your Data\n• Delete Data\n• Object to Processing" },
+        { "title": "10. Children's Privacy", "content": "Our services are not intended for individuals under 18 years of age. We do not knowingly collect personal data from children." },
+        { "title": "14. Changes to This Policy", "content": "We may update this Privacy Policy periodically. We will post the updated policy on this page and update the 'Last Updated' date." },
+        { "title": "15. Contact & Data Protection Officer", "content": "For any privacy-related questions or to exercise your rights:\nEmail: info@tariff-ai.com" }
       ]
     },
     "terms": {
       "title": "Terms of Service",
       "updated": "Last updated: December 22, 2025 | Version 1.0",
-      "intro": "This document outlines the legally binding agreement...",
+      "intro": "This document outlines the legally binding agreement between you and tariff.ai regarding your use of our services.",
+      "back": "Back to Home",
       "sections": [
-        { "title": "1. Acceptance of Terms", "content": "By accessing or using any part of the tariff.ai website..." },
-        { "title": "2. Description of Service", "content": "tariff.ai provides AI-powered tariff analysis..." }
+        { "title": "1. Acceptance of Terms", "content": "By accessing or using any part of the tariff.ai website, platform, or services (collectively, 'the Service'), you agree to be bound by these Terms of Service ('Terms'). If you do not agree to all the terms and conditions of this agreement, then you may not access the Service or use any services." },
+        { "title": "2. Description of Service", "content": "tariff.ai provides AI-powered tariff analysis, trade intelligence, and related services designed to assist businesses with international trade compliance and strategy. The Service includes various features, subscription plans, and usage limits as described on our website and pricing pages." },
+        { "title": "3. User Accounts and Responsibilities", "content": "To access and use certain features of the Service, you must register for a user account. You agree to:\n• Provide Accurate Information\n• Account Security: Keep your username and password confidential\n• Prohibited Conduct: Not use the Service for any unlawful purpose\n• Age Restriction: Confirm you are at least 18 years of age" },
+        { "title": "4. Payment Terms and Subscriptions", "content": "4.1 Subscription Fees: Access to certain features of the Service requires a paid subscription.\n4.2 Automatic Renewal: Subscriptions automatically renew unless you cancel at least 24 hours before the end of the current billing period.\n4.3 Price Changes: We reserve the right to change our subscription fees upon 30 days' prior notice.\n4.4 Refunds and Cancellations: All subscription fees are non-refundable, except as required by law." },
+        { "title": "5. Use of Service and Prohibited Conduct", "content": "You agree to use the Service only for lawful purposes. You shall not:\n• Misuse: Engage in any activity that interferes with the Service\n• Unauthorized Access: Attempt to gain unauthorized access\n• Data Scraping: Use any automated system to extract data\n• Harmful Content: Transmit any malicious code" },
+        { "title": "6. Data Accuracy and Disclaimers", "content": "While tariff.ai strives to provide accurate tariff information, we do not guarantee the accuracy, completeness, or timeliness of any data provided through the Service. The information is for general informational purposes only and does not constitute legal or financial advice." },
+        { "title": "7. Intellectual Property", "content": "All content, features, and functionality of tariff.ai are the exclusive property of tariff.ai and its licensors and are protected by international copyright laws." },
+        { "title": "8. Limitation of Liability", "content": "In no event shall tariff.ai be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, or goodwill." },
+        { "title": "9. Termination", "content": "We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms." },
+        { "title": "10. Governing Law", "content": "These Terms shall be governed and construed in accordance with the laws of the State of California, United States." },
+        { "title": "11. Changes to Terms", "content": "We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice." },
+        { "title": "12. Miscellaneous", "content": "These Terms constitute the entire agreement between you and tariff.ai regarding our Service." },
+        { "title": "13. Contact Information", "content": "For any questions regarding these Terms of Service, please contact us at info@tariff-ai.com." }
       ]
     },
     "cookiePolicy": {
       "title": "Cookie Policy",
       "updated": "Last updated: December 22, 2025 | Version 1.0",
-      "intro": "Understanding how we use cookies...",
+      "intro": "Understanding how we use cookies and similar technologies on tariff.ai",
+      "back": "Back to Home",
       "sections": [
-        { "title": "1. What Are Cookies", "content": "Cookies are small text files..." }
+        { "title": "1. What Are Cookies", "content": "Cookies are small text files stored on your device (computer, tablet, or mobile phone) when you visit a website. They help websites remember your preferences, understand how you use them, and provide a better user experience." },
+        { "title": "2. How We Use Cookies", "content": "tariff.ai uses cookies for the following purposes:\n\nEssential Functions:\n• Maintain your logged-in session\n• Remember your language and theme preferences\n• Secure your connection to our services\n\nAnalytics & Performance:\n• Understand which pages are most popular\n• Analyze user behavior to improve our service\n• Track technical errors and bugs\n\nUser Experience:\n• Remember your cookie consent preferences\n• Personalize content based on your interests\n• Optimize site performance" },
+        { "title": "3. Types of Cookies We Use", "content": "3.1 Essential Cookies (Always Active)\nThese cookies are necessary for the website to function and cannot be disabled.\nExamples: session_id, csrf_token, auth_state\n\n3.2 Analytics Cookies (Requires Consent)\nHelp us understand how visitors interact with our website.\nExamples: Google Analytics\n\n3.3 Marketing Cookies (Requires Consent)\nUsed to deliver relevant advertisements and measure campaign effectiveness.\nExamples: Facebook Pixel, Google Ads" },
+        { "title": "4. Cookie Duration", "content": "Session Cookies (Temporary): These cookies expire when you close your browser.\nPersistent Cookies (Long-term): These cookies remain on your device for a specified period (e.g., 12 months for analytics)." },
+        { "title": "5. Cookies We Use - Detailed List", "content": "Essential Cookies:\n• session_id: User session management (Session, First-party)\n• analytics_session_id: Analytics tracking ID (12 months, First-party)\n• cookie_consent: Stores consent preferences (1 year, First-party)\n\nAnalytics Cookies (with consent):\n• Page tracking: Records page views (12 months, First-party)\n• Action tracking: Records user interactions (12 months, First-party)\n• Session data: Tracks user sessions (30 minutes, First-party)" },
+        { "title": "6. Third-Party Cookies", "content": "Currently, tariff.ai minimizes the use of third-party cookies. However, we may use:\n• Base44 Platform (Infrastructure Provider)\n• Future Third-Party Services (e.g., payment processors)" },
+        { "title": "7. Managing Your Cookie Preferences", "content": "7.1 Through Our Cookie Banner: You can customize your preferences when you first visit the site or through the settings.\n7.2 Through Your Browser: All modern browsers allow you to control cookies (Chrome, Firefox, Safari, Edge)." },
+        { "title": "8. Disabling Cookies - Impact", "content": "If You Disable All Cookies: Cannot stay logged in, settings won't be saved.\nIf You Disable Only Non-Essential Cookies: Website will function normally, you'll stay logged in, but we won't be able to improve the site based on usage data." },
+        { "title": "9. Do Not Track (DNT)", "content": "We honor your cookie consent choices through our banner. DNT signals are not universally standardized." },
+        { "title": "10. Data Collected Through Cookies", "content": "Device Information (IP address, Browser type), Usage Information (Pages visited), Technical Information (Language, Timezone)." },
+        { "title": "11. Your Rights (GDPR & LGPD)", "content": "• Be Informed\n• Give or Withdraw Consent\n• Access Your Data\n• Delete Data\n• Object to Processing" },
+        { "title": "12. International Users", "content": "For EU Users (GDPR): We obtain explicit consent before non-essential cookies.\nFor Brazilian Users (LGPD): We obtain consent for non-essential cookies." },
+        { "title": "13. Updates to This Cookie Policy", "content": "We may update this Cookie Policy to reflect changes in technology or cookie usage. We will post the updated policy on this page." },
+        { "title": "14. Contact Us", "content": "If you have questions about our use of cookies:\nEmail: info@tariff-ai.com\nSubject Line: 'Cookie Policy Inquiry'" }
       ]
     }
   }
