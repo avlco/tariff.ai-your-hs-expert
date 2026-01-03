@@ -37,6 +37,17 @@
       "countries": "Countries Covered",
       "accuracy": "Accuracy",
       "reports": "Reports Generated"
+    },
+    "visuals": {
+      "processing": "0.4s processing",
+      "exportRoute": "Export Route",
+      "usToGermany": "US to Germany",
+      "compliant": "COMPLIANT",
+      "estimatedDuty": "Estimated Duty",
+      "hsCode": "HS Code",
+      "verified": "Verified",
+      "aiConfidence": "AI confidence score",
+      "instantAnalysis": "Instant Analysis"
     }
   },
   "challenges": {
@@ -209,13 +220,10 @@
   "footer": {
     "description": "AI-powered tariff intelligence for global trade professionals.",
     "legal": "LEGAL",
-    "terms": "Terms of Service",
-    "privacy": "Privacy Policy",
-    "cookies": "Cookie Policy",
     "links": {
-        "terms": "Terms of Service",
-        "privacy": "Privacy Policy",
-        "cookies": "Cookie Policy"
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy"
     },
     "copyright": "All rights reserved."
   },
@@ -250,6 +258,29 @@
       "success": "Request submitted successfully",
       "error": "Failed to submit request"
     }
+  },
+  "publicReport": {
+    "loading": "Loading secure report...",
+    "accessDenied": "Access Denied",
+    "returnHome": "Return to Home",
+    "verifiedReport": "Verified Classification Report",
+    "generated": "Generated:",
+    "hsCode": "HS Code",
+    "tradeRoute": "Trade Route",
+    "category": "Category",
+    "analysisDetails": "Analysis Details",
+    "dutiesAndTaxes": "Duties & Taxes",
+    "complianceCheck": "Compliance Check",
+    "importLicense": "Import License",
+    "prohibited": "Prohibited",
+    "restricted": "Restricted",
+    "required": "Required",
+    "notRequired": "Not Required",
+    "yes": "Yes",
+    "no": "No",
+    "validUntil": "This report is valid until",
+    "print": "Print",
+    "exportPdf": "Export PDF"
   },
   "legalPages": {
     "privacy": {
@@ -288,7 +319,7 @@
         { "title": "5. Use of Service and Prohibited Conduct", "content": "You agree to use the Service only for lawful purposes and in accordance with these Terms. You shall not:\nMisuse: Engage in any activity that interferes with or disrupts the Service.\nUnauthorized Access: Attempt to gain unauthorized access to any part of the Service, other accounts, computer systems, or networks.\nData Scraping: Use any automated system or software to extract data from the Service without express written permission.\nHarmful Content: Transmit any malicious code, viruses, or other harmful data.\nResale: Reproduce, duplicate, copy, sell, resell, or exploit any portion of the Service without our express written permission." },
         { "title": "6. Data Accuracy and Disclaimers", "content": "While tariff.ai strives to provide accurate and up-to-date tariff information and trade intelligence, we do not guarantee the accuracy, completeness, or timeliness of any data provided through the Service. The information is for general informational purposes only and does not constitute legal, financial, or professional advice. You are solely responsible for verifying critical information with official sources and for all decisions made based on the Service's output." },
         { "title": "7. Intellectual Property", "content": "All content, features, and functionality of tariff.ai are the exclusive property of tariff.ai and its licensors and are protected by international copyright, trademark, patent, and trade secret laws. We grant you a limited, non-exclusive, non-transferable, revocable license to access and use the Service for your internal business purposes, subject to these Terms." },
-        { "title": "8. Limitation of Liability", "content": "In no event shall tariff.ai, its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, or use the Service." },
+        { "title": "8. Limitation of Liability", "content": "In no event shall tariff.ai, its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service." },
         { "title": "9. Termination", "content": "We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease." },
         { "title": "10. Governing Law", "content": "These Terms shall be governed and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law provisions." },
         { "title": "11. Changes to Terms", "content": "We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice. By continuing to access or use our Service after revisions become effective, you agree to be bound by the revised terms." },
