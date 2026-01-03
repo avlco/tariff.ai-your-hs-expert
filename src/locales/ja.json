@@ -1,0 +1,304 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "features": "機能",
+    "howItWorks": "仕組み",
+    "pricing": "料金",
+    "faq": "よくある質問",
+    "testimonials": "お客様の声",
+    "blog": "ブログ",
+    "contact": "お問い合わせ",
+    "about": "会社概要"
+  },
+  "common": {
+    "getStarted": "始める",
+    "subscribe": "登録する",
+    "allRightsReserved": "All rights reserved.",
+    "madeWith": "Made with",
+    "forGlobalTrade": "for global trade",
+    "readMore": "続きを読む",
+    "viewAll": "すべて見る",
+    "submit": "送信",
+    "sending": "送信中...",
+    "sent": "送信完了！",
+    "backToHome": "ホームに戻る",
+    "tryFree": "無料トライアル",
+    "startFreeAnalysis": "無料分析を開始",
+    "watchDemo": "デモを見る"
+  },
+  "hero": {
+    "badge": "AI搭載 関税インテリジェンス",
+    "title": "グローバル貿易をナビゲート",
+    "titleHighlight": "自信を持って",
+    "subtitle": "190カ国以上の製品の関税、税金、貿易規制を即座に分析。AIの洞察で情報に基づいた意思決定を。",
+    "cta": "今すぐ始める",
+    "ctaSecondary": "デモを見る",
+    "stats": {
+      "countries": "カ国",
+      "accuracy": "精度",
+      "reports": "レポート"
+    },
+    "visuals": {
+      "processing": "0.4秒 処理中",
+      "exportRoute": "輸出ルート",
+      "usToGermany": "米国 から ドイツ",
+      "compliant": "適合",
+      "estimatedDuty": "推定関税",
+      "hsCode": "HSコード",
+      "verified": "検証済み",
+      "aiConfidence": "AI信頼度スコア",
+      "instantAnalysis": "即時分析"
+    }
+  },
+  "challenges": {
+    "badge": "課題",
+    "title": "グローバル貿易は複雑です",
+    "subtitle": "関税計算のミスやコンプライアンスの問題により、企業は年間数百万ドルを失っています。",
+    "items": [
+      {
+        "title": "隠れたコスト",
+        "description": "予期せぬ関税は製品コストを15〜30％増加させる可能性があります。"
+      },
+      {
+        "title": "コンプライアンス・リスク",
+        "description": "規制違反は出荷遅延や罰金につながります。"
+      },
+      {
+        "title": "時間の浪費",
+        "description": "手作業での調査には、製品ごとに専門家の時間が何時間もかかります。"
+      }
+    ]
+  },
+  "about": {
+    "badge": "私たちについて",
+    "title": "貿易をシンプルに",
+    "description1": "tariff.aiは、最先端のAIと包括的な貿易データベースを組み合わせています。",
+    "description2": "貿易コンプライアンスの専門家とAIエンジニアによって設立されました。",
+    "features": [
+      { "title": "精度第一", "desc": "すべてのレポートは公式情報源と照合されます" },
+      { "title": "スピード重視", "desc": "数時間ではなく数秒で回答を得られます" },
+      { "title": "常に最新", "desc": "関税変更に関するリアルタイム更新" }
+    ],
+    "stats": {
+      "countries": "カ国",
+      "accuracy": "精度",
+      "reports": "レポート",
+      "support": "サポート"
+    }
+  },
+  "features": {
+    "badge": "機能",
+    "title": "必要なすべてがここに",
+    "subtitle": "グローバル貿易業務を効率化するための強力なツール",
+    "items": [
+      { "title": "HSコード分類", "desc": "AIを使用した98％の精度での自動製品分類" },
+      { "title": "関税計算機", "desc": "関税、税金、手数料の即時計算" },
+      { "title": "協定ファインダー", "desc": "FTAに基づく特恵税率を見つける" },
+      { "title": "コンプライアンス通知", "desc": "規制変更に関するリアルタイム通知" },
+      { "title": "複数国分析", "desc": "複数の仕向地の関税を同時に比較" },
+      { "title": "輸出書類", "desc": "適合する輸出書類を自動生成" }
+    ],
+    "cta": "今すぐ始める"
+  },
+  "howItWorks": {
+    "badge": "プロセス",
+    "title": "仕組み",
+    "subtitle": "3つの簡単なステップで正確な関税情報を取得",
+    "steps": [
+      { "title": "製品を記述", "desc": "詳細を入力するか画像をアップロードします。" },
+      { "title": "ルートを選択", "desc": "原産国と仕向国を選択します。" },
+      { "title": "レポートを取得", "desc": "関税とコンプライアンス要件の内訳を受け取ります。" }
+    ]
+  },
+  "pricing": {
+    "badge": "プラン",
+    "title": "シンプルで透明な価格設定",
+    "subtitle": "ビジネスニーズに合ったプランをお選びください",
+    "monthly": "月払い",
+    "yearly": "年払い",
+    "off": "OFF",
+    "popular": "人気",
+    "mo": "月",
+    "perReport": "/レポート",
+    "includes": "含まれるもの：",
+    "packages": "パッケージ",
+    "subscriptions": "サブスクリプション",
+    "getStarted": "選択する",
+    "freeTier": {
+      "title": "無料トライアル",
+      "desc": "お試しに最適",
+      "features": ["HSコードと根拠", "信頼度スコア", "情報源"]
+    },
+    "packageFeatures": [
+      "HSコードと根拠", "関税と税金", "規制", "コンプライアンス", "代替コード", "信頼度", "情報源"
+    ],
+    "subscriptionFeatures": [
+      "完全なレポート", "HSコードアラート", "税金計算機", "運賃計算機", "配送管理"
+    ]
+  },
+  "testimonials": {
+    "badge": "成功事例",
+    "title": "お客様の声",
+    "subtitle": "世界中の輸入業者や輸出業者から信頼されています",
+    "items": [
+      { "quote": "tariff.aiのおかげで、第1四半期だけで5万ドル以上の節約になりました。", "name": "Sarah Chen", "role": "輸入マネージャー" },
+      { "quote": "精度とスピードが信じられません。", "name": "Michael Torres", "role": "貿易コンプライアンスディレクター" },
+      { "quote": "ついに、私たちの言語を話すツールに出会えました。", "name": "Emma Williams", "role": "CEO" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "ナレッジセンター",
+    "subtitle": "ツールについて知っておくべきこと",
+    "contactTitle": "答えが見つかりませんか？",
+    "contactCta": "お問い合わせ",
+    "items": [
+      { "q": "tariff.aiとは何ですか？", "a": "関税を分析するAI搭載プラットフォームです..." },
+      { "q": "分類の精度はどれくらいですか？", "a": "当社のAIは98%の精度を達成しています..." }
+    ]
+  },
+  "blog": {
+    "badge": "インサイト",
+    "title": "ブログ",
+    "subtitle": "専門家による分析と業界ニュース",
+    "articles": [
+      { "category": "業界ニュース", "title": "2024年 関税変更", "desc": "主要産業に影響を与える最新の更新..." },
+      { "category": "ガイド", "title": "FTAの活用方法", "desc": "節約を最大化するために..." },
+      { "category": "テクノロジー", "title": "貿易コンプライアンスにおけるAI", "desc": "税関を革命的に変えるAI..." }
+    ]
+  },
+  "contact": {
+    "badge": "連絡先",
+    "title": "お問い合わせ",
+    "subtitle": "ご質問がありますか？お気軽にご連絡ください",
+    "form": {
+      "name": "氏名",
+      "email": "メールアドレス",
+      "company": "会社名",
+      "subject": "件名",
+      "message": "メッセージ",
+      "send": "送信する",
+      "success": "送信されました！"
+    },
+    "info": {
+      "email": "メール",
+      "responseTime": "応答時間",
+      "responseTimeDesc": "営業日24時間以内に返信いたします。",
+      "status": "対応可能"
+    }
+  },
+  "cookieBanner": {
+    "title": "クッキーの使用について",
+    "desc": "当サイトでは、利便性の向上とトラフィック分析のためにクッキーを使用しています。",
+    "customize": "設定",
+    "acceptAll": "すべて許可",
+    "essentialOnly": "必須のみ",
+    "settingsTitle": "クッキー設定",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "types": {
+      "essential": { "title": "必須クッキー", "desc": "サイトの機能に必要であり、無効にできません。" },
+      "analytics": { "title": "分析クッキー", "desc": "サイトの利用状況を理解するのに役立ちます。" },
+      "marketing": { "title": "マーケティングクッキー", "desc": "関連性の高い広告を表示します。" }
+    }
+  },
+  "newsletter": {
+    "title": "ニュースレター登録",
+    "subtitle": "最新の関税情報やニュースを受け取る",
+    "placeholder": "メールアドレス",
+    "consent": "ニュースレターの受信に同意します",
+    "cta": "登録"
+  },
+  "footer": {
+    "description": "グローバル貿易プロフェッショナルのためのAI関税インテリジェンス。",
+    "legal": "法的事項",
+    "terms": "利用規約",
+    "privacy": "プライバシー",
+    "cookies": "クッキー",
+    "copyright": "All rights reserved."
+  },
+  "dataRequest": {
+    "title": "データ権利の行使",
+    "subtitle": "個人データのアクセス、訂正、削除をリクエスト (GDPR & LGPD)。",
+    "form": {
+      "requestType": "リクエストの種類",
+      "requestTypePlaceholder": "選択...",
+      "fullName": "氏名",
+      "fullNamePlaceholder": "氏名を入力",
+      "email": "メールアドレス",
+      "emailPlaceholder": "your@email.com",
+      "details": "詳細",
+      "detailsPlaceholder": "追加情報...",
+      "submit": "送信",
+      "submitAnother": "別のリクエスト",
+      "types": {
+        "access": "データアクセス",
+        "rectification": "訂正",
+        "erasure": "削除（忘れられる権利）",
+        "restriction": "処理の制限",
+        "portability": "データポータビリティ",
+        "objection": "異議申し立て"
+      }
+    },
+    "success": {
+      "title": "リクエスト受信",
+      "desc": "法的期限内にリクエストを処理いたします。"
+    },
+    "messages": {
+      "success": "送信に成功しました",
+      "error": "送信に失敗しました"
+    }
+  },
+  "publicReport": {
+    "loading": "安全なレポートを読み込んでいます...",
+    "accessDenied": "アクセス拒否",
+    "returnHome": "ホームに戻る",
+    "verifiedReport": "検証済み分類レポート",
+    "generated": "作成日:",
+    "hsCode": "HSコード",
+    "tradeRoute": "貿易ルート",
+    "category": "カテゴリー",
+    "analysisDetails": "分析詳細",
+    "dutiesAndTaxes": "関税・税金",
+    "complianceCheck": "コンプライアンス・チェック",
+    "importLicense": "輸入ライセンス",
+    "prohibited": "禁止",
+    "restricted": "制限あり",
+    "required": "必須",
+    "notRequired": "不要",
+    "yes": "はい",
+    "no": "いいえ",
+    "validUntil": "有効期限",
+    "print": "印刷",
+    "exportPdf": "PDF出力"
+  },
+  "legalPages": {
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "updated": "最終更新日: 2025年12月22日",
+      "intro": "データの使用について。",
+      "back": "戻る",
+      "sections": [
+        { "title": "1. データ管理者", "content": "tariff.aiは管理者です..." }
+      ]
+    },
+    "terms": {
+      "title": "利用規約",
+      "updated": "最終更新日: 2025年12月22日",
+      "intro": "法的合意...",
+      "back": "戻る",
+      "sections": [
+        { "title": "1. 同意", "content": "サービスを利用することで..." }
+      ]
+    },
+    "cookiePolicy": {
+      "title": "クッキーポリシー",
+      "updated": "最終更新日: 2025年12月22日",
+      "intro": "クッキーの使用...",
+      "back": "戻る",
+      "sections": [
+        { "title": "1. クッキーとは", "content": "小さなテキストファイルです..." }
+      ]
+    }
+  }
+}
