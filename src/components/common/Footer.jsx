@@ -27,8 +27,6 @@ export default function Footer({ theme }) {
     }`} dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
-          
-          {/* Brand Column */}
           <div className="space-y-6">
             <div>
               <div className={`text-3xl font-bold tracking-tight ${
@@ -56,7 +54,6 @@ export default function Footer({ theme }) {
             </div>
           </div>
 
-          {/* Legal Column */}
           <div className="lg:ps-8">
             <h4 className={`text-sm font-semibold uppercase tracking-wider mb-6 ${
               theme === 'dark' ? 'text-gray-300' : 'text-slate-900'
@@ -82,7 +79,6 @@ export default function Footer({ theme }) {
             </ul>
           </div>
 
-          {/* Newsletter Column */}
           <div className={`p-6 rounded-2xl ${
             theme === 'dark' ? 'bg-[#1E293B]/50' : 'bg-white shadow-sm'
           } border ${theme === 'dark' ? 'border-white/10' : 'border-slate-200'}`}>
@@ -102,7 +98,7 @@ export default function Footer({ theme }) {
                   className="rounded-full"
                 />
                 <Button type="submit" disabled={!email || !agreed} className="bg-[#E5A840] text-[#0F172A] rounded-full px-6">
-                  {t('newsletter.cta')}
+                  {t('common.subscribe')}
                 </Button>
               </div>
               <div className="flex items-center gap-2">
@@ -115,9 +111,8 @@ export default function Footer({ theme }) {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-current opacity-10 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-          <p>© 2024 tariff.ai. {t('footer.copyright')}</p>
+          <p>© 2024 tariff.ai. {t('common.allRightsReserved')}</p>
           <div className="flex items-center gap-1">
             <span>{t('common.madeWith')}</span>
             <Heart className="w-4 h-4 text-red-500 fill-red-500" /> 
