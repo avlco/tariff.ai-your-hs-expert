@@ -31,12 +31,12 @@
     "title": "Naviga nel Commercio Globale",
     "titleHighlight": "Con Sicurezza",
     "subtitle": "Analizza istantaneamente tariffe, dazi e normative commerciali per qualsiasi prodotto in oltre 190 paesi. Prendi decisioni informate con approfondimenti basati sull'IA.",
-    "cta": "Inizia Ora",
+    "cta": "Inizia Analisi Gratuita",
     "ctaSecondary": "Guarda la Demo",
     "stats": {
-      "countries": "Paesi",
+      "countries": "Paesi Coperti",
       "accuracy": "Precisione",
-      "reports": "Report"
+      "reports": "Report Generati"
     },
     "visuals": {
       "processing": "0.4s elaborazione",
@@ -51,13 +51,13 @@
     }
   },
   "challenges": {
-    "badge": "La Sfida",
+    "badge": "LA SFIDA",
     "title": "Il Commercio Globale è Complesso",
-    "subtitle": "Le aziende perdono milioni ogni anno a causa di errori di calcolo tariffario e problemi di conformità.",
+    "subtitle": "Le aziende perdono milioni ogni anno a causa di errori di calcolo tariffario e problemi di conformità",
     "items": [
       {
         "title": "Costi Nascosti",
-        "description": "Tariffe e dazi imprevisti possono aumentare i costi del prodotto del 15-30%, distruggendo i margini di profitto da un giorno all'altro."
+        "description": "Tariffe e dazi imprevisti possono aumentare i costi del prodotto del 15-30%, distruggendo i margini di profitto da un giorno all'altro"
       },
       {
         "title": "Rischio di Conformità",
@@ -65,12 +65,12 @@
       },
       {
         "title": "Perdita di Tempo",
-        "description": "La ricerca manuale delle tariffe richiede ore di tempo esperto per prodotto, rallentando le decisioni aziendali."
+        "description": "La ricerca manuale delle tariffe richiede ore di tempo esperto per prodotto, rallentando le decisioni aziendali"
       }
     ]
   },
   "about": {
-    "badge": "Chi Siamo",
+    "badge": "CHI SIAMO",
     "title": "Semplificare il Commercio Globale",
     "description1": "tariff.ai combina IA all'avanguardia con database commerciali completi per fornire intelligenza tariffaria istantanea e precisa.",
     "description2": "Fondata da esperti di conformità commerciale e ingegneri di IA, la nostra missione è democratizzare l'accesso all'intelligenza commerciale. La nostra piattaforma elabora milioni di punti dati per fornirti approfondimenti chiari e utilizzabili in pochi secondi.",
@@ -87,13 +87,13 @@
     }
   },
   "features": {
-    "badge": "Funzionalità",
+    "badge": "CAPACITÀ",
     "title": "Tutto ciò di cui hai bisogno",
     "subtitle": "Strumenti potenti progettati per ottimizzare le tue operazioni commerciali globali",
     "items": [
       { "title": "Classificazione Codice SA", "desc": "Classificazione automatica del prodotto con precisione del 98% utilizzando IA avanzata" },
       { "title": "Calcolatore Dazi", "desc": "Calcolo istantaneo di dazi, tasse e commissioni per qualsiasi rotta commerciale" },
-      { "title": "Trova Accordi Commerciali", "desc": "Scopri tariffe preferenziali sotto Accordi di Libero Scambio (ALS)" },
+      { "title": "Trova Accordi Commerciali", "desc": "Scopri tariffe preferenziali sotto Accordi di Libero Scambio (ALS) e accordi commerciali" },
       { "title": "Avvisi di Conformità", "desc": "Notifiche in tempo reale sui cambiamenti normativi che riguardano i tuoi prodotti" },
       { "title": "Analisi Multi-Paese", "desc": "Confronta le tariffe su più destinazioni contemporaneamente" },
       { "title": "Documentazione Export", "desc": "Genera automaticamente documenti di esportazione conformi" }
@@ -101,7 +101,7 @@
     "cta": "Inizia Ora"
   },
   "howItWorks": {
-    "badge": "Processo",
+    "badge": "PROCESSO",
     "title": "Come Funziona",
     "subtitle": "Ottieni approfondimenti tariffari precisi in tre semplici passaggi",
     "steps": [
@@ -111,7 +111,7 @@
     ]
   },
   "pricing": {
-    "badge": "Piani",
+    "badge": "PIANI",
     "title": "Prezzi Semplici e Trasparenti",
     "subtitle": "Scegli il piano adatto alle tue esigenze aziendali",
     "monthly": "Mensile",
@@ -120,7 +120,7 @@
     "popular": "Più Popolare",
     "mo": "mese",
     "perReport": "per report",
-    "includes": "Include:",
+    "includes": "Include il Report Completo:",
     "packages": "Pacchetti",
     "subscriptions": "Abbonamenti",
     "getStarted": "Inizia",
@@ -137,24 +137,32 @@
     ]
   },
   "testimonials": {
-    "badge": "Storie di Successo",
+    "badge": "STORIE DI SUCCESSO",
     "title": "Cosa Dicono i Nostri Clienti",
     "subtitle": "Scelto da importatori, esportatori e professionisti del commercio in tutto il mondo",
     "items": [
-      { "quote": "tariff.ai ci ha fatto risparmiare oltre $50.000 nel primo trimestre identificando opportunità di ALS che avevamo perso.", "name": "Sarah Chen", "role": "Responsabile Importazioni" },
+      { "quote": "tariff.ai ci ha fatto risparmiare oltre $50.000 nel primo trimestre identificando opportunità di ALS che avevamo perso.", "name": "Sarah Chen", "role": "Responsable Importazioni" },
       { "quote": "La precisione e la velocità sono incredibili. Quello che richiedeva giorni al nostro team ora richiede minuti.", "name": "Michael Torres", "role": "Direttore Conformità Commerciale" },
       { "quote": "Finalmente uno strumento che parla la nostra lingua. I report sono chiari, utilizzabili e sempre aggiornati.", "name": "Emma Williams", "role": "CEO" }
     ]
   },
   "faq": {
-    "badge": "Domande Frequenti",
+    "badge": "FAQ",
     "title": "Centro Conoscenza tariff.ai",
     "subtitle": "Tutto ciò che devi sapere sullo strumento che sta cambiando il commercio internazionale",
     "contactTitle": "Non hai trovato la risposta? Siamo qui per aiutarti",
     "contactCta": "Contattaci",
     "items": [
       { "q": "Cos'è tariff.ai e come mi fa risparmiare denaro?", "a": "tariff.ai è una piattaforma basata su IA che analizza tariffe, dazi e normative commerciali in oltre 190 paesi. Ti fa risparmiare denaro identificando i codici di classificazione più convenienti, avvisandoti sugli accordi commerciali disponibili e prevenendo costosi errori di conformità." },
-      { "q": "Quanto è precisa la classificazione del codice SA?", "a": "La nostra IA raggiunge una precisione del 98% nella classificazione del codice SA, verificata rispetto ai database doganali ufficiali. Ogni classificazione include un punteggio di fiducia e un ragionamento dettagliato, in modo da poter verificare la logica dietro ogni raccomandazione." }
+      { "q": "Quanto è precisa la classificazione del codice SA?", "a": "La nostra IA raggiunge una precisione del 98% nella classificazione del codice SA, verificata rispetto ai database doganali ufficiali. Ogni classificazione include un punteggio di fiducia e un ragionamento dettagliato, in modo da poter verificare la logica dietro ogni raccomandazione." },
+      { "q": "Il sistema considera gli Accordi di Libero Scambio (ALS)?", "a": "Assolutamente. tariff.ai identifica automaticamente le opportunità di risparmio fiscale basate su accordi commerciali tra paesi (come accordi Israele-Europa o USA) e indica quali documenti sono necessari per richiedere l'esenzione dai dazi." },
+      { "q": "Con che frequenza vengono aggiornati i dati?", "a": "Il nostro database viene aggiornato in tempo reale con connessioni dirette ai database governativi in oltre 190 paesi. Avrai sempre accesso alle ultime aliquote tariffarie e ai cambiamenti normativi." },
+      { "q": "Il sistema può essere integrato nel nostro ERP aziendale?", "a": "Sì, offriamo accesso API per clienti enterprise, consentendo un'integrazione senza soluzione di continuità con i tuoi sistemi ERP, WMS o di gestione doganale esistenti. Contatta il nostro team vendite per i dettagli sull'integrazione." },
+      { "q": "Le mie informazioni e ricerche sono mantenute riservate?", "a": "Assolutamente. Prendiamo molto sul serio la sicurezza dei dati. Tutti i dati sono crittografati in transito e a riposo, e non condividiamo mai la tua cronologia di ricerca o i dati aziendali con terze parti. Vedi la nostra Informativa sulla Privacy per i dettagli completi." },
+      { "q": "Qual è la differenza tra una normale ricerca di codice SA e la vostra analisi?", "a": "A differenza degli strumenti di ricerca di base del codice SA, la nostra analisi fornisce un'intelligenza commerciale completa: dazi, tasse, regolamenti, requisiti di conformità, opportunità ALS, classificazioni alternative e punteggi di fiducia - tutto in un report completo." },
+      { "q": "Quali paesi sono supportati dal sistema?", "a": "tariff.ai copre oltre 190 paesi e territori, incluse tutte le principali nazioni commerciali. La nostra copertura include USA, stati membri dell'UE, Regno Unito, Cina, Giappone e la maggior parte degli altri paesi coinvolti nel commercio internazionale." },
+      { "q": "C'è un periodo di prova?", "a": "Sì! Puoi provare tariff.ai gratuitamente con un report omaggio. Questo ti dà l'opportunità di sperimentare la nostra classificazione IA e vedere il valore prima di impegnarti in un piano a pagamento." },
+      { "q": "Come ottengo supporto per domande professionali?", "a": "Il nostro team di supporto è disponibile via email all'indirizzo hello@tariff.ai. I clienti enterprise ricevono supporto prioritario con account manager dedicati e tempi di risposta più rapidi." }
     ]
   },
   "blog": {
@@ -168,7 +176,7 @@
     ]
   },
   "contact": {
-    "badge": "Mettiti in Contatto",
+    "badge": "METTITI IN CONTATTO",
     "title": "Contattaci",
     "subtitle": "Hai domande? Ci piacerebbe sentirti",
     "form": {
@@ -211,10 +219,15 @@
   },
   "footer": {
     "description": "Intelligenza tariffaria basata su IA per professionisti del commercio globale.",
-    "legal": "Legale",
+    "legal": "LEGALE",
     "terms": "Termini di Servizio",
     "privacy": "Informativa sulla Privacy",
     "cookies": "Cookie Policy",
+    "links": {
+        "terms": "Termini di Servizio",
+        "privacy": "Informativa sulla Privacy",
+        "cookies": "Cookie Policy"
+    },
     "copyright": "Tutti i diritti riservati."
   },
   "dataRequest": {
@@ -279,28 +292,64 @@
       "intro": "Comprendere come utilizziamo i cookie e tecnologie simili su tariff.ai",
       "back": "Torna alla Home",
       "sections": [
-        { "title": "1. Titolare del Trattamento", "content": "tariff.ai ('noi', 'nostro', 'ci') è il titolare del trattamento responsabile delle tue informazioni personali. Puoi contattarci a:\nEmail: info@tariff-ai.com\nIndirizzo: tariff.ai Privacy Team, San Francisco, CA\nPer richieste relative al GDPR, il nostro rappresentante UE può essere contattato a info@tariff-ai.com" },
-        { "title": "2. Informazioni che Raccogliamo", "content": "Raccogliamo i seguenti tipi di dati personali:\n\n2.1 Informazioni che Fornisci:\n• Informazioni Account: Nome completo, indirizzo email, nome azienda\n• Iscrizioni Newsletter: Indirizzo email, data e ora del consenso\n• Moduli di Contatto: Nome, email, azienda, oggetto, messaggio\n\n2.2 Informazioni Raccolte Automaticamente:\n• Dati Analitici: Visualizzazioni di pagina, URL di pagina, URL di riferimento, ID sessione\n• Informazioni Dispositivo: Indirizzo IP (anonimizzato dopo 90 giorni), tipo di browser, sistema operativo, tipo di dispositivo, risoluzione schermo\n• Dati di Posizione: Paese e città (derivati dall'indirizzo IP)\n• Dati di Interazione: Clic, invii moduli, profondità di scorrimento, interazioni elementi\n• Dati Tecnici: User agent, preferenze lingua, fuso orario\n\n2.3 Cookie e Tracciamento:\n• Cookie Essenziali: Gestione sessione (necessari per la funzionalità)\n• Cookie Analitici: Modelli di utilizzo e prestazioni del sito (richiede consenso)\n• Cookie Marketing: Preferenze utente per comunicazioni di marketing (richiede consenso)" }
+        { "title": "1. Titolare del Trattamento", "content": "tariff.ai (\"noi\", \"nostro\", \"ci\") è il titolare del trattamento responsabile delle tue informazioni personali. Puoi contattarci a:\nEmail: info@tariff-ai.com\nIndirizzo: tariff.ai Privacy Team, San Francisco, CA\nPer richieste relative al GDPR, il nostro rappresentante UE può essere contattato a info@tariff-ai.com" },
+        { "title": "2. Informazioni che Raccogliamo", "content": "Raccogliamo i seguenti tipi di dati personali:\n\n2.1 Informazioni che Fornisci:\n• Informazioni Account: Nome completo, indirizzo email, nome azienda\n• Iscrizioni Newsletter: Indirizzo email, data e ora del consenso\n• Moduli di Contatto: Nome, email, azienda, oggetto, messaggio\n\n2.2 Informazioni Raccolte Automaticamente:\n• Dati Analitici: Visualizzazioni di pagina, URL di pagina, URL di riferimento, ID sessione\n• Informazioni Dispositivo: Indirizzo IP (anonimizzato dopo 90 giorni), tipo di browser, sistema operativo, tipo di dispositivo, risoluzione schermo\n• Dati di Posizione: Paese e città (derivati dall'indirizzo IP)\n• Dati di Interazione: Clic, invii moduli, profondità di scorrimento, interazioni elementi, dimensione della finestra\n• Dati Tecnici: User agent, preferenze lingua, fuso orario\n\n2.3 Cookie e Tracciamento:\n• Cookie Essenziali: Gestione sessione (necessari per la funzionalità)\n• Cookie Analitici: Modelli di utilizzo e prestazioni del sito (richiede consenso)\n• Cookie Marketing: Preferenze utente per comunicazioni di marketing (richiede consenso)\nPer informazioni dettagliate sui cookie, consulta la nostra Cookie Policy." },
+        { "title": "3. Base Giuridica del Trattamento", "content": "Ai sensi del GDPR e della LGPD, trattiamo i tuoi dati personali sulla base di:\n• Consenso: Iscrizioni newsletter, cookie analitici, comunicazioni di marketing (puoi revocare il consenso in qualsiasi momento)\n• Necessità Contrattuale: Gestione account e fornitura del servizio\n• Legittimo Interesse: Sicurezza del sito, prevenzione frodi, miglioramento prodotti (bilanciato con i tuoi diritti alla privacy)\n• Obblighi Legali: Conformità fiscale, contabile e altri requisiti legali" },
+        { "title": "4. Come Utilizziamo le Tue Informazioni", "content": "Utilizziamo i tuoi dati personali per i seguenti scopi:\n• Fornitura del Servizio: Fornire report di analisi tariffaria, mantenere il tuo account, elaborare transazioni\n• Comunicazione: Rispondere alle richieste, inviare aggiornamenti di servizio, consegnare newsletter (con consenso)\n• Analisi & Miglioramento: Comprendere i modelli di utilizzo, ottimizzare l'esperienza utente, sviluppare nuove funzionalità\n• Sicurezza: Rilevare e prevenire frodi, abusi e incidenti di sicurezza\n• Conformità: Soddisfare obblighi legali e normativi\n\nNoi NON:\n• Vendiamo i tuoi dati personali a terzi\n• Utilizziamo i tuoi dati per processi decisionali automatizzati che ti riguardano significativamente\n• Trattiamo dati personali sensibili (salute, biometria, opinioni politiche) senza consenso esplicito" },
+        { "title": "5. Condivisione delle Informazioni e Terze Parti", "content": "Condividiamo i tuoi dati personali solo nelle seguenti circostanze:\n\n5.1 Fornitori di Servizi:\n• Piattaforma Base44: Infrastruttura e hosting database\n• Fornitori di Servizi Email: Email transazionali e di marketing\n• Processori di Pagamento: Gestione sicura dei pagamenti (non memorizziamo i dettagli della carta di pagamento)\nTutti i fornitori di servizi sono vincolati da Accordi sul Trattamento dei Dati (DPA) e rigorosamente istruiti.\n\n5.2 Requisiti Legali:\nPossiamo divulgare i tuoi dati se richiesto dalla legge, da un ordine del tribunale o per proteggere i nostri diritti legali.\n\n5.3 Trasferimenti Aziendali:\nIn caso di fusione o acquisizione, i tuoi dati potrebbero essere trasferiti alla nuova entità, soggetti alle stesse protezioni della privacy.\nNoi NON affittiamo, vendiamo o scambiamo i tuoi dati personali." },
+        { "title": "6. Trasferimenti Internazionali di Dati", "content": "I tuoi dati potrebbero essere trasferiti ed elaborati in paesi al di fuori della tua residenza, inclusi gli Stati Uniti.\nPer gli utenti UE: Garantiamo una protezione adeguata tramite Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea o decisioni di adeguatezza ove applicabile.\nPer gli utenti brasiliani (LGPD): Rispettiamo i requisiti di trasferimento transfrontaliero e implementiamo garanzie appropriate." },
+        { "title": "7. Conservazione dei Dati", "content": "Conserviamo i tuoi dati personali solo per il tempo necessario:\n• Dati Account: Durata dell'account + 90 giorni dopo la chiusura\n• Dati Analitici: 12 mesi dalla raccolta\n• Iscrizioni Newsletter: Fino all'annullamento + 30 giorni\n• Invii Moduli di Contatto: 24 mesi dopo l'ultima interazione\n• Registri di Consenso: 3 anni (per prova di conformità)\n• Registri Finanziari: 7 anni (requisito legale)\nDopo la scadenza dei periodi di conservazione, i dati vengono eliminati definitivamente o resi anonimi." },
+        { "title": "8. Sicurezza dei Dati", "content": "Implementiamo misure di sicurezza standard del settore:\n• Crittografia: Dati crittografati in transito (TLS/SSL) e a riposo (AES-256)\n• Controllo Accessi: Accesso basato sui ruoli, principio del privilegio minimo\n• Autenticazione: Autenticazione a più fattori per l'accesso amministrativo\n• Monitoraggio: Monitoraggio della sicurezza 24/7 e risposta agli incidenti\n• Audit Regolari: Valutazioni periodiche della sicurezza e test di penetrazione\nSebbene adottiamo ogni ragionevole precauzione, nessun sistema è sicuro al 100%. Ti notificheremo di eventuali violazioni dei dati come richiesto dalla legge." },
+        { "title": "9. I Tuoi Diritti (GDPR & LGPD)", "content": "Hai i seguenti diritti riguardanti i tuoi dati personali:\n• Essere Informato: Questa Informativa sulla Privacy spiega le nostre pratiche\n• Dare o Revocare il Consenso: Controllare quali cookie vengono utilizzati\n• Accedere ai Tuoi Dati: Richiedere informazioni sui dati memorizzati\n• Cancellare Dati: Richiedere la cancellazione dei dati personali\n• Opporsi al Trattamento: Rinunciare al trattamento non essenziale\nPer esercitare questi diritti, utilizza il Modulo di Richiesta Dati qui sotto o contatta info@tariff-ai.com." },
+        { "title": "10. Privacy dei Bambini", "content": "I nostri servizi non sono destinati a persone di età inferiore ai 18 anni. Non raccogliamo consapevolmente dati personali da bambini. Se scopriamo di aver raccolto dati da un bambino, li elimineremo immediatamente. I genitori o tutori che ritengono che potremmo aver raccolto dati da un bambino devono contattarci a info@tariff-ai.com." },
+        { "title": "11. Processo Decisionale Automatizzato", "content": "Non utilizziamo processi decisionali automatizzati o profilazione che producano effetti legali o similmente significativi su di te. Qualsiasi funzionalità di analisi o personalizzazione viene utilizzata esclusivamente per migliorare l'esperienza utente e può essere disattivata tramite le preferenze dei cookie." },
+        { "title": "12. Comunicazioni di Marketing", "content": "Con il tuo consenso, potremmo inviarti:\n• Aggiornamenti sui prodotti e nuove funzionalità\n• Approfondimenti del settore e contenuti educativi\n• Offerte speciali e promozioni\nPuoi annullare l'iscrizione in qualsiasi momento:\n• Cliccando su \"annulla iscrizione\" in qualsiasi email\n• Aggiornando le preferenze del tuo account\n• Contattando info@tariff-ai.com" },
+        { "title": "13. Notifica di Violazione dei Dati", "content": "In caso di violazione dei dati che comporti un rischio per i tuoi diritti e libertà, noi:\n• Notificheremo l'autorità di controllo competente entro 72 ore (GDPR) o come richiesto dalla LGPD\n• Informeremo le persone interessate senza ingiustificato ritardo\n• Forniremo informazioni sulla natura della violazione e sulle azioni correttive\n• Documenteremo tutte le violazioni per la conformità normativa" },
+        { "title": "14. Modifiche a Questa Informativa", "content": "Potremmo aggiornare periodicamente questa Informativa sulla Privacy per riflettere i cambiamenti nelle nostre pratiche o nei requisiti legali. Noi:\n• Pubblicheremo l'informativa aggiornata su questa pagina\n• Aggiorneremo la data di \"Ultimo Aggiornamento\"\n• Ti notificheremo modifiche sostanziali via email o avviso evidente\n• Otterremo nuovo consenso ove richiesto dalla legge\nL'uso continuato dei nostri servizi dopo le modifiche costituisce accettazione dell'informativa aggiornata." },
+        { "title": "15. Contatto e Responsabile della Protezione dei Dati", "content": "Per qualsiasi domanda relativa alla privacy o per esercitare i tuoi diritti:\nRichieste Generali: info@tariff-ai.com\nRichieste GDPR UE: Rappresentante UE: info@tariff-ai.com\nRichieste LGPD Brasile: Rappresentante Brasile: info@tariff-ai.com\nIndirizzo Postale: tariff.ai Privacy Team, San Francisco, CA\nAutorità di Controllo:\nUE: La tua Autorità locale per la Protezione dei Dati\nBrasile: Autoridade Nacional de Proteção de Dados (ANPD)" }
       ]
     },
     "terms": {
       "title": "Termini di Servizio",
-      "updated": "Ultimo aggiornamento: 22 dicembre 2025 | Versione 1.0",
+      "updated": "Ultimo Aggiornamento: 22 dicembre 2025 | Versione: 1.0",
       "intro": "Questo documento delinea l'accordo legalmente vincolante tra te e tariff.ai per quanto riguarda l'uso dei nostri servizi.",
       "back": "Torna alla Home",
       "sections": [
-        { "title": "1. Accettazione dei Termini", "content": "Accedendo o utilizzando qualsiasi parte del sito web, della piattaforma o dei servizi di tariff.ai (collettivamente, 'il Servizio'), accetti di essere vincolato da questi Termini di Servizio ('Termini'). Se non accetti tutti i termini e le condizioni di questo accordo, non puoi accedere al Servizio o utilizzare alcun servizio." },
-        { "title": "2. Descrizione del Servizio", "content": "tariff.ai fornisce analisi tariffaria basata su IA, intelligenza commerciale e servizi correlati progettati per assistere le aziende nella conformità e strategia del commercio internazionale." }
+        { "title": "1. Accettazione dei Termini", "content": "Accedendo o utilizzando qualsiasi parte del sito web, della piattaforma o dei servizi di tariff.ai (collettivamente, \"il Servizio\"), accetti di essere vincolato da questi Termini di Servizio (\"Termini\"). Se non accetti tutti i termini e le condizioni di questo accordo, non puoi accedere al Servizio o utilizzare alcun servizio. Questi Termini costituiscono un accordo legalmente vincolante tra te e tariff.ai. Il tuo uso continuato del Servizio significa la tua accettazione di qualsiasi Termine aggiornato." },
+        { "title": "2. Descrizione del Servizio", "content": "tariff.ai fornisce analisi tariffaria basata su IA, intelligenza commerciale e servizi correlati progettati per assistere le aziende nella conformità e strategia del commercio internazionale. Il Servizio include varie funzionalità, piani di abbonamento e limiti di utilizzo come descritto sul nostro sito web e nelle pagine dei prezzi. Ci riserviamo il diritto di modificare, sospendere o interrompere qualsiasi aspetto del Servizio in qualsiasi momento, con o senza preavviso." },
+        { "title": "3. Account Utente e Responsabilità", "content": "Per accedere e utilizzare alcune funzionalità del Servizio, devi registrarti per un account utente. Accetti di:\n• Fornire Informazioni Accurate: Mantenere informazioni di registrazione accurate, complete e attuali.\n• Sicurezza dell'Account: Mantenere riservati il tuo nome utente e la tua password e prevenire l'accesso non autorizzato al tuo account. Sei l'unico responsabile di tutte le attività che si verificano sotto il tuo account.\n• Condotta Vietata: Non utilizzare il Servizio per scopi illegali o in qualsiasi modo che violi questi Termini.\n• Restrizione di Età: Confermare di avere almeno 18 anni o la maggiore età legale nella tua giurisdizione." },
+        { "title": "4. Termini di Pagamento e Abbonamenti", "content": "4.1 Costi di Abbonamento: L'accesso a determinate funzionalità del Servizio richiede un abbonamento a pagamento. I costi di abbonamento sono fatturati in anticipo su base ricorrente (ad es. mensile o annuale) secondo il piano scelto.\n4.2 Rinnovo Automatico: Gli abbonamenti si rinnovano automaticamente a meno che non si annulli almeno 24 ore prima della fine del periodo di fatturazione corrente.\n4.3 Modifiche dei Prezzi: Ci riserviamo il diritto di modificare i nostri costi di abbonamento con un preavviso di 30 giorni. Il tuo uso continuato dopo la modifica del prezzo costituisce il tuo accordo a pagare l'importo modificato.\n4.4 Rimborsi e Cancellazioni: Tutti i costi di abbonamento non sono rimborsabili, salvo quanto richiesto dalla legge. Puoi cancellare il tuo abbonamento in qualsiasi momento e l'accesso continuerà fino alla fine del ciclo di fatturazione corrente." },
+        { "title": "5. Uso del Servizio e Condotta Vietata", "content": "Accetti di utilizzare il Servizio solo per scopi leciti e in conformità con questi Termini. Non devi:\n• Abuso: Impegnarti in qualsiasi attività che interferisca con o interrompa il Servizio.\n• Accesso Non Autorizzato: Tentare di ottenere accesso non autorizzato a qualsiasi parte del Servizio, ad altri account, sistemi informatici o reti.\n• Data Scraping: Utilizzare qualsiasi sistema automatizzato o software per estrarre dati dal Servizio senza espressa autorizzazione scritta.\n• Contenuto Dannoso: Trasmettere qualsiasi codice dannoso, virus o altri dati dannosi.\n• Rivendita: Riprodurre, duplicare, copiare, vendere, rivendere o sfruttare qualsiasi parte del Servizio senza la nostra espressa autorizzazione scritta." },
+        { "title": "6. Accuratezza dei Dati e Disclaimer", "content": "Sebbene tariff.ai si impegni a fornire informazioni tariffarie e intelligenza commerciale accurate e aggiornate, non garantiamo l'accuratezza, la completezza o l'attualità di alcun dato fornito tramite il Servizio. Le informazioni sono solo a scopo informativo generale e non costituiscono consulenza legale, finanziaria o professionale. Sei l'unico responsabile della verifica delle informazioni critiche con fonti ufficiali e di tutte le decisioni prese sulla base dell'output del Servizio." },
+        { "title": "7. Proprietà Intellettuale", "content": "Tutti i contenuti, le caratteristiche e le funzionalità di tariff.ai sono di proprietà esclusiva di tariff.ai e dei suoi licenziatari e sono protetti dalle leggi internazionali su copyright, marchi, brevetti e segreti commerciali. Ti concediamo una licenza limitata, non esclusiva, non trasferibile e revocabile per accedere e utilizzare il Servizio per i tuoi scopi aziendali interni, soggetta a questi Termini." },
+        { "title": "8. Limitazione di Responsabilità", "content": "In nessun caso tariff.ai, i suoi direttori, dipendenti, partner, agenti, fornitori o affiliati, saranno responsabili per danni indiretti, incidentali, speciali, consequenziali o punitivi, inclusi, senza limitazione, perdita di profitti, dati, uso, avviamento o altre perdite immateriali, derivanti dal tuo accesso a o uso di o impossibilità di accedere o utilizzare il Servizio." },
+        { "title": "9. Risoluzione", "content": "Possiamo terminare o sospendere il tuo account immediatamente, senza preavviso o responsabilità, per qualsiasi motivo, incluso senza limitazione se violi i Termini. Alla risoluzione, il tuo diritto di utilizzare il Servizio cesserà immediatamente." },
+        { "title": "10. Legge Applicabile", "content": "Questi Termini saranno regolati e interpretati in conformità con le leggi dello Stato della California, Stati Uniti, senza considerare le disposizioni sui conflitti di legge." },
+        { "title": "11. Modifiche ai Termini", "content": "Ci riserviamo il diritto di modificare o sostituire questi Termini in qualsiasi momento. Se una revisione è sostanziale, forniremo un preavviso di almeno 30 giorni. Continuando ad accedere o utilizzare il nostro Servizio dopo che le revisioni diventano effettive, accetti di essere vincolato dai termini rivisti." },
+        { "title": "12. Varie", "content": "Questi Termini costituiscono l'intero accordo tra te e tariff.ai in merito al nostro Servizio. La nostra mancata applicazione di qualsiasi diritto o disposizione non sarà considerata una rinuncia. Se una qualsiasi disposizione è ritenuta non valida, le restanti disposizioni rimarranno in vigore." },
+        { "title": "13. Informazioni di Contatto", "content": "Per qualsiasi domanda riguardante questi Termini di Servizio, ti preghiamo di contattarci a info@tariff-ai.com. Risponderemo a tutte le richieste entro 5 giorni lavorativi." }
       ]
     },
     "cookiePolicy": {
       "title": "Cookie Policy",
-      "updated": "Ultimo aggiornamento: 22 dicembre 2025 | Versione 1.0",
+      "updated": "Ultimo Aggiornamento: 22 dicembre 2025 | Versione: 1.0",
       "intro": "Comprendere come utilizziamo i cookie e tecnologie simili su tariff.ai",
       "back": "Torna alla Home",
       "sections": [
-        { "title": "1. Cosa sono i Cookie", "content": "I cookie sono piccoli file di testo memorizzati sul tuo dispositivo (computer, tablet o telefono cellulare) quando visiti un sito web. Aiutano i siti web a ricordare le tue preferenze, capire come li utilizzi e fornire una migliore esperienza utente." },
-        { "title": "2. Come Utilizziamo i Cookie", "content": "tariff.ai utilizza i cookie per i seguenti scopi:\n\nFunzioni Essenziali:\n• Mantenere la tua sessione attiva\n• Ricordare le tue preferenze di lingua e tema\n• Proteggere la tua connessione ai nostri servizi\n\nAnalisi & Prestazioni:\n• Capire quali pagine sono più popolari\n• Analizzare il comportamento degli utenti per migliorare il nostro servizio\n• Tracciare errori tecnici e bug\n\nEsperienza Utente:\n• Ricordare le tue preferenze di consenso ai cookie\n• Personalizzare i contenuti in base ai tuoi interessi\n• Ottimizzare le prestazioni del sito" }
+        { "title": "1. Cosa Sono i Cookie", "content": "I cookie sono piccoli file di testo memorizzati sul tuo dispositivo (computer, tablet o telefono cellulare) quando visiti un sito web. Aiutano i siti web a ricordare le tue preferenze, capire come li utilizzi e fornire una migliore esperienza utente.\n\nCaratteristiche Chiave:\nFile di testo (non programmi o virus)\nMemorizzano informazioni sulla tua visita\nPossono essere cancellati o bloccati in qualsiasi momento\nEsistono in diversi tipi con scopi diversi" },
+        { "title": "2. Come Utilizziamo i Cookie", "content": "tariff.ai utilizza i cookie per i seguenti scopi:\n\nFunzioni Essenziali:\nMantenere la tua sessione attiva\nRicordare le tue preferenze di lingua e tema\nProteggere la tua connessione ai nostri servizi\n\nAnalisi & Prestazioni:\nCapire quali pagine sono più popolari\nAnalizzare il comportamento degli utenti per migliorare il nostro servizio\nTracciare errori tecnici e bug\n\nEsperienza Utente:\nRicordare le tue preferenze di consenso ai cookie\nPersonalizzare i contenuti in base ai tuoi interessi\nOttimizzare le prestazioni del sito" },
+        { "title": "3. Tipi di Cookie che Utilizziamo", "content": "3.1 Cookie Essenziali (Sempre Attivi)\nQuesti cookie sono necessari per il funzionamento del sito web e non possono essere disabilitati.\nGestione Sessione: Ti mantiene connesso mentre navighi\nSicurezza: Protegge da CSRF e altri attacchi\nBilanciamento del Carico: Distribuisce il traffico tra i server\nEsempi: session_id, csrf_token, auth_state\n\n3.2 Cookie Analitici (Richiede Consenso)\nCi aiutano a capire come i visitatori interagiscono con il nostro sito web.\nVisualizzazioni Pagina: Traccia quali pagine vengono visitate (entità PageView)\nAzioni Utente: Monitora clic, invii moduli, scorrimento (entità UserAction)\nDati di Sessione: Analizza il percorso utente e il coinvolgimento\nInformazioni Dispositivo: Tipo di browser, SO, risoluzione schermo, lingua\nEsempi: Google Analytics\n\n3.3 Cookie di Marketing (Richiede Consenso)\nUtilizzati per fornire pubblicità pertinenti e misurare l'efficacia delle campagne.\nTargeting Pubblicitario: Mostra annunci pertinenti basati sugli interessi\nTracciamento Conversioni: Misura l'efficacia delle campagne\nRetargeting: Mostra annunci ai visitatori precedenti\nNota: I cookie di marketing non sono attivi su tariff.ai" },
+        { "title": "4. Durata dei Cookie", "content": "Cookie di Sessione (Temporanei)\nQuesti cookie scadono quando chiudi il browser.\nDurata: Fino alla chiusura del browser\nScopo: Mantenere sessione attiva, stato di navigazione\nEsempi: PHPSESSID, token di sessione\nArchiviazione: Solo memoria del browser\n\nCookie Persistenti (A lungo termine)\nQuesti cookie rimangono sul tuo dispositivo per un periodo specificato.\nA breve termine: 24 ore a 30 giorni (analisi)\nA medio termine: 30 giorni a 1 anno (preferenze)\nA lungo termine: 1-2 anni (registri di consenso)" },
+        { "title": "5. Cookie Utilizzati - Elenco Dettagliato", "content": "Cookie Essenziali:\n| NOME COOKIE | SCOPO | DURATA | TIPO |\n| :--- | :--- | :--- | :--- |\n| session_id | Gestione sessione utente | Sessione | Prima parte |\n| analytics_session_id | ID tracciamento analitico | 12 mesi | Prima parte |\n| language | Preferenze framework | 1 anno | Prima parte |\n| cookie_consent | Memorizza preferenze consenso | 1 anno | Prima parte |\n\nCookie Analitici (con consenso):\n| NOME COOKIE | SCOPO | DURATA | TIPO |\n| :--- | :--- | :--- | :--- |\n| Page tracking | Registra visualizzazioni pagina | 12 mesi | Prima parte |\n| Action tracking | Registra interazioni | 12 mesi | Prima parte |\n| Session data | Traccia utenti | 30 minuti | Prima parte |" },
+        { "title": "6. Cookie di Terze Parti", "content": "Attualmente, tariff.ai riduce al minimo l'uso di cookie di terze parti. Tuttavia, potremmo utilizzare:\n\nPiattaforma Base44 (Fornitore di Infrastruttura):\nEssenziale per la funzionalità dell'applicazione\nElaborazione sicura dei dati\nCoperto dal nostro Accordo sul Trattamento dei Dati (DPA)\n\nServizi di Terze Parti Futuri:\nSe integriamo servizi di terze parti aggiuntivi (analisi, processori di pagamento), noi:\nAggiorneremo questa politica con i dettagli\nRichiederemo il tuo consenso ove necessario\nForniremo meccanismi di opt-out\nGarantiremo la conformità GDPR/LGPD\nNota: NON utilizziamo reti pubblicitarie di terze parti o pixel di tracciamento dei social media." },
+        { "title": "7. Gestione delle Tue Preferenze Cookie", "content": "7.1 Tramite il Nostro Banner Cookie:\nQuando visiti tariff.ai per la prima volta, vedrai un banner di consenso ai cookie che ti consente di:\nAccettare tutti i cookie\nAccettare solo cookie essenziali\nPersonalizzare le tue preferenze (scegli quali categorie consentire)\nLe tue preferenze vengono salvate e possono essere modificate in qualsiasi momento.\n\n7.2 Tramite il Tuo Browser:\nTutti i browser moderni ti consentono di controllare i cookie:\nGoogle Chrome: Impostazioni > Privacy e sicurezza > Cookie e altri dati dei siti (Scegli: Consenti tutti, Blocca terze parti o Blocca tutti)\nMozilla Firefox: Impostazioni > Privacy e sicurezza > Cookie e dati dei siti (Scegli blocco standard, rigoroso o personalizzato)\nSafari (Mac/iOS): Preferenze > Privacy > Cookie e dati del sito web (Blocca tutti i cookie o consenti solo dal sito web attuale)\nMicrosoft Edge: Impostazioni > Cookie e autorizzazioni sito > Gestisci cookie (Scegli livello di blocco)\nImportante: Bloccare i cookie essenziali impedirà al sito di funzionare correttamente." },
+        { "title": "8. Disabilitare i Cookie - Impatto", "content": "Se Disabiliti Tutti i Cookie:\nNon puoi rimanere connesso\nImpostazioni e preferenze non verranno salvate\nAlcune funzionalità potrebbero non funzionare\nDovrai impostare le preferenze ad ogni visita\nRaccomandazione: Mantieni attivi i cookie essenziali\n\nSe Disabiliti Solo Cookie Non Essenziali:\nIl sito web funzionerà normalmente\nRimarrai connesso\nNon saremo in grado di migliorare il sito in base ai dati di utilizzo\nPotresti vedere contenuti meno pertinenti (se analisi/marketing basati sulle tue preferenze privacy)" },
+        { "title": "9. Do Not Track (DNT)", "content": "Alcuni browser offrono un segnale \"Do Not Track\" (DNT) che indica che non desideri essere tracciato.\n\nIl Nostro Approccio:\nRispettiamo le tue scelte di consenso ai cookie tramite il nostro banner\nI segnali DNT non sono universalmente standardizzati\nLe tue preferenze esplicite sui cookie hanno la precedenza\nForniamo un controllo granulare tramite le nostre impostazioni cookie\nMigliore Pratica: Usa il nostro banner di consenso ai cookie per un controllo preciso sul tracciamento." },
+        { "title": "10. Dati Raccolti Tramite Cookie", "content": "I dati raccolti tramite cookie includono:\n\nInformazioni Dispositivo:\nIndirizzo IP (anonimizzato dopo l'acquisizione)\nTipo e versione del browser\nSistema operativo\nTipo di dispositivo (mobile, tablet, desktop)\nRisoluzione schermo\n\nInformazioni Utilizzo:\nPagine visitate e tempo trascorso\nModelli di clic e interazioni\nURL di riferimento\nDurata della sessione\nProfondità di scorrimento\n\nInformazioni Tecniche:\nPreferenza lingua\nFuso orario\nTipo di connessione\nDimensione finestra\n\nTutti i dati sono trattati in conformità con la nostra Informativa sulla Privacy e i requisiti GDPR/LGPD." },
+        { "title": "11. I Tuoi Diritti (GDPR & LGPD)", "content": "Essere Informato: Questa Cookie Policy spiega le nostre pratiche\nDare o Revocare il Consenso: Controllare quali cookie vengono utilizzati\nAccedere ai Tuoi Dati: Richiedere informazioni sui cookie memorizzati\nCancellare Dati: Richiedere la cancellazione dei dati dei cookie\nOpporsi al Trattamento: Rinunciare ai cookie non essenziali\nPer esercitare questi diritti, visita la nostra pagina Informativa sulla Privacy o contatta info@tariff-ai.com." },
+        { "title": "12. Utenti Internazionali", "content": "Per Utenti UE (GDPR):\nOtteniamo consenso esplicito prima dei cookie non essenziali\nPuoi revocare il consenso in qualsiasi momento\nI trasferimenti di dati sono conformi alle Clausole Contrattuali Standard (SCC)\n\nPer Utenti Brasiliani (LGPD):\nOtteniamo consenso per cookie non essenziali\nHai il diritto di revocare il consenso\nIl trattamento dei dati è conforme ai requisiti LGPD\nPer Tutti gli Utenti: I dati dei cookie sono soggetti alle stesse protezioni degli altri dati personali ai sensi della nostra Informativa sulla Privacy." },
+        { "title": "13. Aggiornamenti a Questa Cookie Policy", "content": "Potremmo aggiornare questa Cookie Policy per riflettere:\nCambiamenti nella tecnologia o nell'uso dei cookie\nNuove funzionalità o servizi\nRequisiti legali o normativi\nFeedback degli utenti e migliori pratiche\n\nQuando Aggiorniamo:\nLa data di \"Ultimo Aggiornamento\" cambierà\nLe modifiche sostanziali saranno evidenziate\nTi potrebbe essere chiesto di rivedere e accettare nuovi termini\nLe versioni precedenti saranno archiviate\nRimanere informati: Rivedi periodicamente questa politica per rimanere informato su come utilizziamo i cookie." },
+        { "title": "14. Contattaci", "content": "Se hai domande sul nostro utilizzo dei cookie:\nEmail: info@tariff-ai.com\nOggetto: \"Richiesta Cookie Policy\"\n\nCosa Includere:\nLa tua domanda o preoccupazione\nInformazioni su browser e dispositivo (se problema tecnico)\nScreenshot se utili\nRispondiamo a tutte le richieste relative ai cookie entro 48 ore.\n\nPer richieste specifiche GDPR/LGPD:\nUE: info@tariff-ai.com\nBrasile: info@tariff-ai.com" }
       ]
     }
   }
