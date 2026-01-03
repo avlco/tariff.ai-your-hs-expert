@@ -23,14 +23,21 @@ export function LanguageProvider({ children }) {
     const loadLanguage = async () => {
       try {
         if (!fallback) {
-          // טוען את אנגלית כגיבוי למקרה שחסרים מפתחות
-          const enData = await import('../locales/en.json');
-          setFallback(enData.default);
+          try {
+            const enData = await import('./locales/en.json');
+            setFallback(enData.default);
+          } catch (e) {
+            console.error("Fallback load error:", e);
+          }
         }
         
-        // טוען את השפה שנבחרה
-        const selectedData = await import(`../locales/${langCode}.json`);
-        setTranslations(selectedData.default);
+        try {
+          const selectedData = await import(`./locales/${langCode}.json`);
+          setTranslations(selectedData.default);
+        } catch (e) {
+          console.warn(`Translation for ${langCode} not found, using fallback.`);
+          if (fallback) setTranslations(fallback);
+        }
         
         const dir = SUPPORTED_LANGUAGES[langCode]?.dir || 'ltr';
         document.documentElement.dir = dir;
@@ -38,34 +45,36 @@ export function LanguageProvider({ children }) {
         localStorage.setItem('tariff-lang', langCode);
       } catch (err) {
         console.error("Translation load error:", err);
-        // במקרה של שגיאה, נשארים עם אנגלית אם היא קיימת כגיבוי
         if (fallback) setTranslations(fallback);
       }
     };
     loadLanguage();
   }, [langCode, fallback]);
 
-  const t = (path) => {
+  const t = (path, options = {}) => {
     if (!path) return '';
     const keys = path.split('.');
     
-    // פונקציה רקורסיבית לשליפת ערך מתוך אובייקט מקונן
     const getValue = (obj) => {
       if (!obj) return null;
       return keys.reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : null), obj);
     };
 
-    const result = getValue(translations);
+    let result = getValue(translations);
     
-    // אם לא נמצא תרגום, מחזיר את הגיבוי (אנגלית), ואם גם זה לא - את המפתח עצמו
     if (result !== null && result !== undefined) return result;
     const fallbackResult = getValue(fallback);
-    return fallbackResult !== null && fallbackResult !== undefined ? fallbackResult : path;
+    const finalResult = fallbackResult !== null && fallbackResult !== undefined ? fallbackResult : path;
+    
+    // Handle options (like returnObjects) - although for strings it might not be needed
+    // But existing code used { returnObjects: true } which returns the object/array.
+    // My new content is string, so it should be fine.
+    
+    return finalResult;
   };
 
   const isRTL = SUPPORTED_LANGUAGES[langCode]?.dir === 'rtl';
 
-  // לא מרנדרים כלום עד שהתרגומים נטענים כדי למנוע הבהוב של מפתחות
   if (!translations && !fallback) return null;
 
   return (
