@@ -21,7 +21,8 @@
     "submit": "Submit",
     "sending": "Sending...",
     "sent": "Sent!",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "tryFree": "Try Free"
   },
   "hero": {
     "badge": "AI-Powered Tariff Intelligence",
@@ -66,10 +67,10 @@
       { "title": "Always Current", "desc": "Real-time updates on tariff changes" }
     ],
     "stats": {
-        "countries": "Countries",
-        "accuracy": "Accuracy",
-        "reports": "Reports",
-        "support": "Support"
+      "countries": "Countries",
+      "accuracy": "Accuracy",
+      "reports": "Reports",
+      "support": "Support"
     }
   },
   "features": {
@@ -103,7 +104,7 @@
     "monthly": "Monthly",
     "yearly": "Yearly",
     "off": "off",
-    "popular": "Popular",
+    "popular": "Most Popular",
     "mo": "mo",
     "perReport": "per report",
     "includes": "Includes:",
@@ -111,15 +112,15 @@
     "subscriptions": "Subscriptions",
     "getStarted": "Get Started",
     "freeTier": {
-        "title": "Try Free",
-        "desc": "Perfect for trying out",
-        "features": ["HS-Code & Reasoning", "Confidence Score", "Sources"]
+      "title": "Try Free",
+      "desc": "Perfect for trying out",
+      "features": ["HS-Code & Reasoning", "Confidence Score", "Sources"]
     },
     "packageFeatures": [
-        "HS-Code & Reasoning", "Tariff & taxes", "Regulation", "Compliance", "Alternative Codes", "Confidence Score", "Sources"
+      "HS-Code & Reasoning", "Tariff & taxes", "Regulation", "Compliance", "Alternative Codes", "Confidence Score", "Sources"
     ],
     "subscriptionFeatures": [
-        "Full report", "HS-Code Alert", "Tax Calculator", "Freight Calculator", "Shipping Management"
+      "Full report", "HS-Code Alert", "Tax Calculator", "Freight Calculator", "Shipping Management"
     ]
   },
   "testimonials": {
@@ -127,21 +128,9 @@
     "title": "What Our Clients Say",
     "subtitle": "Trusted by importers, exporters, and trade professionals worldwide",
     "items": [
-      { 
-        "quote": "tariff.ai saved us over $50,000 in the first quarter by identifying FTA opportunities we had missed.",
-        "name": "Sarah Chen",
-        "role": "Import Manager"
-      },
-      {
-        "quote": "The accuracy and speed are incredible. What used to take our team days now takes minutes.",
-        "name": "Michael Torres",
-        "role": "Trade Compliance Director"
-      },
-      {
-        "quote": "Finally, a tool that speaks our language. The reports are clear, actionable, and always up-to-date.",
-        "name": "Emma Williams",
-        "role": "CEO"
-      }
+      { "quote": "tariff.ai saved us over $50,000 in the first quarter by identifying FTA opportunities we had missed.", "name": "Sarah Chen", "role": "Import Manager" },
+      { "quote": "The accuracy and speed are incredible. What used to take our team days now takes minutes.", "name": "Michael Torres", "role": "Trade Compliance Director" },
+      { "quote": "Finally, a tool that speaks our language. The reports are clear, actionable, and always up-to-date.", "name": "Emma Williams", "role": "CEO" }
     ]
   },
   "faq": {
@@ -151,46 +140,16 @@
     "contactTitle": "Didn't find your answer? We're here to help",
     "contactCta": "Contact Us",
     "items": [
-      {
-        "q": "What is tariff.ai and how does it save me money?",
-        "a": "tariff.ai is an AI-powered platform that analyzes tariffs, duties, and trade regulations across 190+ countries. It saves you money by identifying the most cost-effective classification codes, alerting you to available trade agreements, and preventing costly compliance errors."
-      },
-      {
-        "q": "How accurate is the HS code classification?",
-        "a": "Our AI achieves 98% accuracy in HS code classification, verified against official customs databases. Each classification includes a confidence score and detailed reasoning, so you can verify the logic behind every recommendation."
-      },
-      {
-        "q": "Does the system consider Free Trade Agreements (FTAs)?",
-        "a": "Absolutely. tariff.ai automatically identifies tax-saving opportunities based on trade agreements between countries (like Israel-Europe or US agreements), and indicates which documents are required to claim the duty exemption."
-      },
-      {
-        "q": "How frequently is the data updated?",
-        "a": "Our database is updated in real-time with direct connections to government databases in 190+ countries. You'll always have access to the latest tariff rates and regulatory changes."
-      },
-      {
-        "q": "Can the system be integrated into our corporate ERP?",
-        "a": "Yes, we offer API access for enterprise customers, allowing seamless integration with your existing ERP, WMS, or customs management systems. Contact our sales team for integration details."
-      },
-      {
-        "q": "Is my information and searches kept confidential?",
-        "a": "Absolutely. We take data security seriously. All data is encrypted in transit and at rest, and we never share your search history or business data with third parties. See our Privacy Policy for complete details."
-      },
-      {
-        "q": "What's the difference between a regular HS code search and your analysis?",
-        "a": "Unlike basic HS code lookup tools, our analysis provides complete trade intelligence: duties, taxes, regulations, compliance requirements, FTA opportunities, alternative classifications, and confidence scores - all in one comprehensive report."
-      },
-      {
-        "q": "Which countries are supported by the system?",
-        "a": "tariff.ai covers 190+ countries and territories, including all major trading nations. Our coverage includes the US, EU member states, UK, China, Japan, and most other countries involved in international trade."
-      },
-      {
-        "q": "Is there a trial period?",
-        "a": "Yes! You can try tariff.ai for free with one complimentary report. This gives you a chance to experience our AI classification and see the value before committing to a paid plan."
-      },
-      {
-        "q": "How do I get support for professional questions?",
-        "a": "Our support team is available via email at hello@tariff.ai. Enterprise customers receive priority support with dedicated account managers and faster response times."
-      }
+      { "q": "What is tariff.ai and how does it save me money?", "a": "tariff.ai is an AI-powered platform that analyzes tariffs..." },
+      { "q": "How accurate is the HS code classification?", "a": "Our AI achieves 98% accuracy in HS code classification..." },
+      { "q": "Does the system consider Free Trade Agreements (FTAs)?", "a": "Absolutely. tariff.ai automatically identifies tax-saving opportunities..." },
+      { "q": "How frequently is the data updated?", "a": "Our database is updated in real-time..." },
+      { "q": "Can the system be integrated into our corporate ERP?", "a": "Yes, we offer API access for enterprise customers..." },
+      { "q": "Is my information and searches kept confidential?", "a": "Absolutely. We take data security seriously..." },
+      { "q": "What's the difference between a regular HS code search and your analysis?", "a": "Unlike basic HS code lookup tools, our analysis provides complete trade intelligence..." },
+      { "q": "Which countries are supported by the system?", "a": "tariff.ai covers 190+ countries and territories..." },
+      { "q": "Is there a trial period?", "a": "Yes! You can try tariff.ai for free..." },
+      { "q": "How do I get support for professional questions?", "a": "Our support team is available via email at hello@tariff.ai..." }
     ]
   },
   "blog": {
@@ -198,9 +157,9 @@
     "title": "From Our Blog",
     "subtitle": "Expert analysis, industry news, and practical guides for global trade",
     "articles": [
-        { "category": "Industry News", "title": "2024 Tariff Changes: What Importers Need to Know", "desc": "A comprehensive guide to the latest tariff updates affecting key industries..." },
-        { "category": "Guide", "title": "How to Leverage Free Trade Agreements", "desc": "Maximize your savings by understanding and utilizing FTA benefits..." },
-        { "category": "Technology", "title": "AI in Trade Compliance: The Future is Here", "desc": "Exploring how artificial intelligence is revolutionizing customs and compliance..." }
+      { "category": "Industry News", "title": "2024 Tariff Changes: What Importers Need to Know", "desc": "A comprehensive guide to the latest tariff updates..." },
+      { "category": "Guide", "title": "How to Leverage Free Trade Agreements", "desc": "Maximize your savings by understanding and utilizing FTA benefits..." },
+      { "category": "Technology", "title": "AI in Trade Compliance: The Future is Here", "desc": "Exploring how artificial intelligence is revolutionizing customs..." }
     ]
   },
   "contact": {
@@ -219,29 +178,119 @@
     "info": {
       "email": "Email",
       "responseTime": "Response Time",
-      "responseTimeDesc": "We respond within 24 hours on business days. For urgent inquiries, please mention it in your message.",
+      "responseTimeDesc": "We respond within 24 hours on business days.",
       "status": "Available now"
     }
   },
   "cookieBanner": {
     "title": "We Use Cookies",
-    "desc": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking \"Accept All\", you consent to our use of cookies.",
+    "desc": "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.",
     "customize": "Customize",
     "acceptAll": "Accept All",
-    "essentialOnly": "Essential Only"
+    "essentialOnly": "Essential Only",
+    "settingsTitle": "Cookie Settings",
+    "save": "Save Preferences",
+    "cancel": "Cancel",
+    "types": {
+      "essential": { "title": "Essential Cookies", "desc": "These cookies are required for basic site functionality and cannot be disabled." },
+      "analytics": { "title": "Analytics Cookies", "desc": "These cookies help us understand how users interact with our website." },
+      "marketing": { "title": "Marketing Cookies", "desc": "These cookies are used to show you more relevant advertisements." }
+    }
   },
-  "legal": {
+  "newsletter": {
+    "title": "Join Our Newsletter",
+    "subtitle": "Get the latest tariff updates, trade news, and exclusive insights delivered to your inbox",
+    "placeholder": "Enter your email",
+    "consent": "I agree to receive newsletters from tariff.ai"
+  },
+  "footer": {
+    "description": "AI-powered tariff intelligence for global trade professionals.",
+    "legal": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy"
+  },
+  "dataRequest": {
+    "title": "Exercise Your Data Rights",
+    "subtitle": "Request access, correction, or deletion of your personal data under GDPR & LGPD.",
+    "form": {
+      "requestType": "Request Type",
+      "requestTypePlaceholder": "Select request type...",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "details": "Additional Details (Optional)",
+      "detailsPlaceholder": "Add any additional details about your request...",
+      "submit": "Submit Request",
+      "submitAnother": "Submit Another Request",
+      "types": {
+        "access": "Access my personal data",
+        "rectification": "Correct my data",
+        "erasure": "Delete my data (Right to be forgotten)",
+        "restriction": "Restrict processing",
+        "portability": "Data portability",
+        "objection": "Object to processing"
+      }
+    },
+    "success": {
+      "title": "Request Submitted",
+      "desc": "We have received your request and will process it within the legally required timeframe."
+    },
+    "messages": {
+      "success": "Request submitted successfully",
+      "error": "Failed to submit request"
+    }
+  },
+  "publicReport": {
+    "loading": "Loading secure report...",
+    "accessDenied": "Access Denied",
+    "returnHome": "Return to Home",
+    "verifiedReport": "Verified Classification Report",
+    "generated": "Generated:",
+    "hsCode": "HS Code",
+    "tradeRoute": "Trade Route",
+    "category": "Category",
+    "analysisDetails": "Analysis Details",
+    "dutiesAndTaxes": "Duties & Taxes",
+    "complianceCheck": "Compliance Check",
+    "importLicense": "Import License",
+    "prohibited": "Prohibited",
+    "restricted": "Restricted",
+    "required": "Required",
+    "notRequired": "Not Required",
+    "yes": "Yes",
+    "no": "No",
+    "validUntil": "This report is valid until",
+    "print": "Print",
+    "exportPdf": "Export PDF"
+  },
+  "legalPages": {
     "privacy": {
-        "title": "Privacy Policy",
-        "updated": "Last updated: December 22, 2025 | Version 1.0",
-        "description": "This document outlines the legally binding agreement between you and tariff.ai regarding your use of our services.",
-        "back": "Back to Home"
+      "title": "Privacy Policy",
+      "updated": "Last updated: December 22, 2025 | Version 1.0",
+      "intro": "Understanding how we use cookies and similar technologies on tariff.ai",
+      "sections": [
+        { "title": "1. Data Controller", "content": "tariff.ai ('we', 'our', 'us') is the data controller responsible for your personal information..." },
+        { "title": "2. Information We Collect", "content": "We collect the following types of personal data..." }
+      ]
     },
     "terms": {
-        "title": "Terms of Service",
-        "updated": "Last updated: December 22, 2025 | Version 1.0",
-        "description": "This document outlines the legally binding agreement between you and tariff.ai regarding your use of our services.",
-        "back": "Back to Home"
+      "title": "Terms of Service",
+      "updated": "Last updated: December 22, 2025 | Version 1.0",
+      "intro": "This document outlines the legally binding agreement...",
+      "sections": [
+        { "title": "1. Acceptance of Terms", "content": "By accessing or using any part of the tariff.ai website..." },
+        { "title": "2. Description of Service", "content": "tariff.ai provides AI-powered tariff analysis..." }
+      ]
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy",
+      "updated": "Last updated: December 22, 2025 | Version 1.0",
+      "intro": "Understanding how we use cookies...",
+      "sections": [
+        { "title": "1. What Are Cookies", "content": "Cookies are small text files..." }
+      ]
     }
   }
 }
