@@ -18,7 +18,7 @@ export default function CookiePolicy() {
 
   const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
-  const sections = t('legalPages.cookiePolicy.sections') || [];
+  const sections = t('legalPages.cookiePolicy.sections', { returnObjects: true }) || [];
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'}`} dir={isRTL ? 'rtl' : 'ltr'}>
