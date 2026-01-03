@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import en from './locales/en.js';
+import en from '@/components/locales/en.js';
 
 const LanguageContext = createContext();
 
@@ -26,7 +26,15 @@ export function LanguageProvider({ children }) {
           setTranslations(en);
         } else {
           try {
-            // Vite supports dynamic imports with variables if they are relative paths
+            // Use absolute path alias for dynamic import to avoid relative path issues
+            // Note: dynamic import with template string and alias might be tricky in Vite sometimes
+            // but let's try with consistent relative path if alias fails, or stick to relative if we are sure of structure.
+            // Actually, for dynamic imports in Vite, relative paths are often better supported for analysis.
+            // Let's use relative path but be very careful.
+            // components/locales is ./locales from components/LanguageContext.js
+            
+            // However, the import en above is static.
+            
             const module = await import(`./locales/${langCode}.js`);
             setTranslations(module.default);
           } catch (e) {
