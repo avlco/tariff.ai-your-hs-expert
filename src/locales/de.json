@@ -17,7 +17,7 @@
     "madeWith": "Erstellt mit",
     "forGlobalTrade": "für den Welthandel",
     "readMore": "Mehr lesen",
-    "viewAll": "Alle ansehen",
+    "viewAll": "Alle Artikel ansehen",
     "submit": "Senden",
     "sending": "Senden...",
     "sent": "Gesendet!",
@@ -57,26 +57,26 @@
     "items": [
       {
         "title": "Versteckte Kosten",
-        "description": "Unerwartete Zölle können Produktkosten um 15-30% erhöhen."
+        "description": "Unerwartete Zölle können Produktkosten um 15-30% erhöhen und Gewinnmargen über Nacht zerstören."
       },
       {
         "title": "Compliance-Risiko",
-        "description": "Nichteinhaltung führt zu Lieferverzögerungen und Bußgeldern."
+        "description": "Nichteinhaltung von Handelsvorschriften führt zu Lieferverzögerungen, Bußgeldern und geschädigten Geschäftsbeziehungen."
       },
       {
         "title": "Zeitverschwendung",
-        "description": "Manuelle Recherche kostet Experten stundenlange Arbeit."
+        "description": "Manuelle Zollrecherche kostet Experten stundenlange Arbeit pro Produkt und verlangsamt Geschäftsentscheidungen."
       }
     ]
   },
   "about": {
     "badge": "Über Uns",
     "title": "Welthandel vereinfachen",
-    "description1": "tariff.ai kombiniert modernste KI mit umfassenden Handelsdatenbanken.",
-    "description2": "Gegründet von Compliance-Experten und KI-Ingenieuren.",
+    "description1": "tariff.ai kombiniert modernste KI mit umfassenden Handelsdatenbanken, um sofortige, genaue Zollinformationen zu liefern.",
+    "description2": "Gegründet von Experten für Handelscompliance und KI-Ingenieuren, haben wir es uns zur Aufgabe gemacht, den Zugang zu Handelsinformationen zu demokratisieren. Unsere Plattform verarbeitet Millionen von Datenpunkten, um Ihnen in Sekundenschnelle klare, umsetzbare Erkenntnisse zu liefern.",
     "features": [
       { "title": "Genauigkeit zuerst", "desc": "Jeder Bericht wird gegen offizielle Quellen geprüft" },
-      { "title": "Geschwindigkeit zählt", "desc": "Antworten in Sekunden, nicht Stunden" },
+      { "title": "Geschwindigkeit zählt", "desc": "Erhalten Sie Antworten in Sekunden, nicht Stunden" },
       { "title": "Immer aktuell", "desc": "Echtzeit-Updates zu Zolländerungen" }
     ],
     "stats": {
@@ -91,29 +91,29 @@
     "title": "Alles was Sie brauchen",
     "subtitle": "Leistungsstarke Tools zur Optimierung Ihrer globalen Handelsgeschäfte",
     "items": [
-      { "title": "HS-Code Klassifizierung", "desc": "Automatische Klassifizierung mit 98% Genauigkeit" },
-      { "title": "Zollrechner", "desc": "Sofortige Berechnung von Zöllen und Steuern" },
-      { "title": "Handelsabkommen-Finder", "desc": "Finden Sie Vorzugssätze unter Freihandelsabkommen" },
-      { "title": "Compliance-Warnungen", "desc": "Echtzeit-Benachrichtigungen bei regulatorischen Änderungen" },
-      { "title": "Multi-Länder-Analyse", "desc": "Vergleichen Sie Zölle über mehrere Ziele hinweg" },
-      { "title": "Exportdokumentation", "desc": "Erstellen Sie automatisch konforme Dokumente" }
+      { "title": "HS-Code Klassifizierung", "desc": "Automatische Produktklassifizierung mit 98% Genauigkeit durch fortgeschrittene KI" },
+      { "title": "Zollrechner", "desc": "Sofortige Berechnung von Zöllen, Steuern und Gebühren für jede Handelsroute" },
+      { "title": "Handelsabkommen-Finder", "desc": "Entdecken Sie Vorzugssätze unter Freihandelsabkommen und Handelsvereinbarungen" },
+      { "title": "Compliance-Warnungen", "desc": "Echtzeit-Benachrichtigungen über regulatorische Änderungen, die Ihre Produkte betreffen" },
+      { "title": "Multi-Länder-Analyse", "desc": "Vergleichen Sie Zölle über mehrere Ziele gleichzeitig" },
+      { "title": "Exportdokumentation", "desc": "Erstellen Sie automatisch konforme Exportdokumente" }
     ],
     "cta": "Jetzt loslegen"
   },
   "howItWorks": {
     "badge": "Prozess",
     "title": "Wie es funktioniert",
-    "subtitle": "Präzise Zollerkenntnisse in drei einfachen Schritten",
+    "subtitle": "Erhalten Sie präzise Zollerkenntnisse in drei einfachen Schritten",
     "steps": [
-      { "title": "Produkt beschreiben", "desc": "Geben Sie Details ein oder laden Sie ein Bild hoch." },
-      { "title": "Handelsroute wählen", "desc": "Wählen Sie Ursprungs- und Zielland." },
-      { "title": "Bericht erhalten", "desc": "Erhalten Sie eine umfassende Aufschlüsselung." }
+      { "title": "Produkt beschreiben", "desc": "Geben Sie Ihre Produktdetails ein oder laden Sie ein Bild hoch. Unsere KI identifiziert automatisch den korrekten HS-Code." },
+      { "title": "Handelsroute wählen", "desc": "Wählen Sie Ursprungs- und Zielländer. Wir berücksichtigen alle anwendbaren Handelsabkommen." },
+      { "title": "Bericht erhalten", "desc": "Erhalten Sie sofort eine umfassende Aufschlüsselung von Zöllen, Steuern und Compliance-Anforderungen." }
     ]
   },
   "pricing": {
-    "badge": "Preise",
+    "badge": "Pläne",
     "title": "Einfache, transparente Preise",
-    "subtitle": "Wählen Sie den Plan, der zu Ihrem Unternehmen passt",
+    "subtitle": "Wählen Sie den Plan, der zu Ihren Geschäftsanforderungen passt",
     "monthly": "Monatlich",
     "yearly": "Jährlich",
     "off": "Rabatt",
@@ -139,114 +139,114 @@
   "testimonials": {
     "badge": "Erfolgsgeschichten",
     "title": "Was unsere Kunden sagen",
-    "subtitle": "Vertraut von Importeuren und Exporteuren weltweit",
+    "subtitle": "Vertraut von Importeuren, Exporteuren und Handelsprofis weltweit",
     "items": [
-      { "quote": "tariff.ai hat uns im ersten Quartal über 50.000 $ gespart.", "name": "Sarah Chen", "role": "Import Managerin" },
-      { "quote": "Die Genauigkeit und Geschwindigkeit sind unglaublich.", "name": "Michael Torres", "role": "Direktor für Handelscompliance" },
-      { "quote": "Endlich ein Tool, das unsere Sprache spricht.", "name": "Emma Williams", "role": "CEO" }
+      { "quote": "tariff.ai hat uns im ersten Quartal über 50.000 $ gespart, indem es verpasste FTA-Chancen identifizierte.", "name": "Sarah Chen", "role": "Import Managerin" },
+      { "quote": "Die Genauigkeit und Geschwindigkeit sind unglaublich. Was früher Tage dauerte, dauert jetzt Minuten.", "name": "Michael Torres", "role": "Direktor für Handelscompliance" },
+      { "quote": "Endlich ein Tool, das unsere Sprache spricht. Die Berichte sind klar, umsetzbar und immer aktuell.", "name": "Emma Williams", "role": "CEO" }
     ]
   },
   "faq": {
     "badge": "FAQ",
-    "title": "Wissenszentrum",
-    "subtitle": "Alles, was Sie wissen müssen",
-    "contactTitle": "Keine Antwort gefunden?",
+    "title": "Wissenszentrum von tariff.ai",
+    "subtitle": "Alles, was Sie über das Tool wissen müssen, das den internationalen Handel verändert",
+    "contactTitle": "Haben Sie Ihre Antwort nicht gefunden? Wir helfen gerne",
     "contactCta": "Kontaktieren Sie uns",
     "items": [
-      { "q": "Was ist tariff.ai?", "a": "Eine KI-gestützte Plattform zur Analyse von Zöllen..." },
-      { "q": "Wie genau ist die Klassifizierung?", "a": "Unsere KI erreicht eine Genauigkeit von 98%..." }
+      { "q": "Was ist tariff.ai und wie spart es mir Geld?", "a": "tariff.ai ist eine KI-gestützte Plattform, die Zölle, Abgaben und Handelsvorschriften in über 190 Ländern analysiert. Sie spart Geld, indem sie die kostengünstigsten Klassifizierungscodes identifiziert, auf verfügbare Handelsabkommen hinweist und kostspielige Compliance-Fehler verhindert." },
+      { "q": "Wie genau ist die HS-Code-Klassifizierung?", "a": "Unsere KI erreicht eine Genauigkeit von 98% bei der HS-Code-Klassifizierung, verifiziert gegen offizielle Zolldatenbanken. Jeder Klassifizierung liegt ein Konfidenzscore und eine detaillierte Begründung bei, damit Sie die Logik hinter jeder Empfehlung überprüfen können." }
     ]
   },
   "blog": {
     "badge": "Einblicke",
     "title": "Aus unserem Blog",
-    "subtitle": "Expertenanalysen und Branchennachrichten",
+    "subtitle": "Expertenanalysen, Branchennachrichten und praktische Leitfäden für den globalen Handel",
     "articles": [
-      { "category": "Branche", "title": "Zolländerungen 2024", "desc": "Ein umfassender Leitfaden..." },
-      { "category": "Leitfaden", "title": "Freihandelsabkommen nutzen", "desc": "Maximieren Sie Ihre Einsparungen..." },
-      { "category": "Technologie", "title": "KI in der Compliance", "desc": "Die Zukunft des Zolls..." }
+      { "category": "Branchennachrichten", "title": "Zolländerungen 2024: Was Importeure wissen müssen", "desc": "Ein umfassender Leitfaden zu den neuesten Zollaktualisierungen, die Schlüsselindustrien betreffen..." },
+      { "category": "Leitfaden", "title": "Wie man Freihandelsabkommen nutzt", "desc": "Maximieren Sie Ihre Einsparungen durch das Verständnis und die Nutzung von FTA-Vorteilen..." },
+      { "category": "Technologie", "title": "KI in der Handelscompliance: Die Zukunft ist hier", "desc": "Erforschung, wie künstliche Intelligenz Zoll und Compliance revolutioniert..." }
     ]
   },
   "contact": {
     "badge": "Kontakt",
     "title": "Kontaktieren Sie uns",
-    "subtitle": "Fragen? Wir sind für Sie da",
+    "subtitle": "Haben Sie Fragen? Wir würden uns freuen, von Ihnen zu hören",
     "form": {
       "name": "Vollständiger Name",
-      "email": "E-Mail",
+      "email": "E-Mail-Adresse",
       "company": "Unternehmen",
       "subject": "Betreff",
       "message": "Nachricht",
       "send": "Nachricht senden",
-      "success": "Gesendet!"
+      "success": "Nachricht gesendet!"
     },
     "info": {
       "email": "E-Mail",
       "responseTime": "Antwortzeit",
-      "responseTimeDesc": "Wir antworten innerhalb von 24 Stunden an Werktagen.",
+      "responseTimeDesc": "Wir antworten innerhalb von 24 Stunden an Werktagen. Bei dringenden Anfragen erwähnen Sie dies bitte in Ihrer Nachricht.",
       "status": "Jetzt verfügbar"
     }
   },
   "cookieBanner": {
     "title": "Wir verwenden Cookies",
-    "desc": "Um Ihre Erfahrung zu verbessern und den Verkehr zu analysieren.",
+    "desc": "Wir verwenden Cookies, um Ihre Browser-Erfahrung zu verbessern, den Website-Verkehr zu analysieren und Inhalte zu personalisieren. Durch Klicken auf 'Alle akzeptieren' stimmen Sie unserer Verwendung von Cookies zu.",
     "customize": "Anpassen",
     "acceptAll": "Alle akzeptieren",
     "essentialOnly": "Nur essenzielle",
     "settingsTitle": "Cookie-Einstellungen",
-    "save": "Speichern",
+    "save": "Einstellungen speichern",
     "cancel": "Abbrechen",
     "types": {
-      "essential": { "title": "Essenzielle Cookies", "desc": "Notwendig für die Grundfunktionen." },
-      "analytics": { "title": "Analyse-Cookies", "desc": "Helfen uns, die Nutzung zu verstehen." },
-      "marketing": { "title": "Marketing-Cookies", "desc": "Für relevante Werbung." }
+      "essential": { "title": "Essenzielle Cookies", "desc": "Diese Cookies sind für die grundlegende Funktionalität der Website erforderlich und können nicht deaktiviert werden." },
+      "analytics": { "title": "Analyse-Cookies", "desc": "Diese Cookies helfen uns zu verstehen, wie Benutzer mit unserer Website interagieren." },
+      "marketing": { "title": "Marketing-Cookies", "desc": "Diese Cookies werden verwendet, um Ihnen relevantere Werbung anzuzeigen." }
     }
   },
   "newsletter": {
-    "title": "Newsletter abonnieren",
-    "subtitle": "Erhalten Sie die neuesten Zoll-Updates und Nachrichten",
-    "placeholder": "Ihre E-Mail",
-    "consent": "Ich stimme dem Erhalt von Newslettern zu",
+    "title": "Treten Sie unserem Newsletter bei",
+    "subtitle": "Erhalten Sie die neuesten Zoll-Updates, Handelsnachrichten und exklusive Einblicke direkt in Ihren Posteingang",
+    "placeholder": "Geben Sie Ihre E-Mail ein",
+    "consent": "Ich stimme zu, Newsletter von tariff.ai zu erhalten",
     "cta": "Abonnieren"
   },
   "footer": {
     "description": "KI-gestützte Zollintelligenz für Welthandelsprofis.",
     "legal": "Rechtliches",
     "terms": "Nutzungsbedingungen",
-    "privacy": "Datenschutz",
-    "cookies": "Cookies",
+    "privacy": "Datenschutzrichtlinie",
+    "cookies": "Cookie-Richtlinie",
     "copyright": "Alle Rechte vorbehalten."
   },
   "dataRequest": {
-    "title": "Datenrechte ausüben",
-    "subtitle": "Zugang, Korrektur oder Löschung Ihrer Daten (DSGVO).",
+    "title": "Ihre Datenrechte ausüben",
+    "subtitle": "Fordern Sie Zugang, Korrektur oder Löschung Ihrer persönlichen Daten gemäß DSGVO & LGPD an.",
     "form": {
       "requestType": "Anfragetyp",
-      "requestTypePlaceholder": "Wählen...",
-      "fullName": "Name",
-      "fullNamePlaceholder": "Ihr Name",
-      "email": "E-Mail",
+      "requestTypePlaceholder": "Anfragetyp auswählen...",
+      "fullName": "Vollständiger Name",
+      "fullNamePlaceholder": "Geben Sie Ihren vollen Namen ein",
+      "email": "E-Mail-Adresse",
       "emailPlaceholder": "ihre@email.com",
-      "details": "Details",
-      "detailsPlaceholder": "Zusätzliche Informationen...",
-      "submit": "Absenden",
-      "submitAnother": "Neue Anfrage",
+      "details": "Zusätzliche Details (Optional)",
+      "detailsPlaceholder": "Fügen Sie zusätzliche Details zu Ihrer Anfrage hinzu...",
+      "submit": "Anfrage senden",
+      "submitAnother": "Weitere Anfrage senden",
       "types": {
-        "access": "Datenzugriff",
-        "rectification": "Korrektur",
-        "erasure": "Löschung (Recht auf Vergessenwerden)",
+        "access": "Zugang zu meinen persönlichen Daten",
+        "rectification": "Meine Daten korrigieren",
+        "erasure": "Meine Daten löschen (Recht auf Vergessenwerden)",
         "restriction": "Verarbeitung einschränken",
         "portability": "Datenübertragbarkeit",
-        "objection": "Widerspruch"
+        "objection": "Widerspruch gegen die Verarbeitung"
       }
     },
     "success": {
       "title": "Anfrage erhalten",
-      "desc": "Wir werden Ihre Anfrage innerhalb der gesetzlichen Frist bearbeiten."
+      "desc": "Wir haben Ihre Anfrage erhalten und werden sie innerhalb der gesetzlich vorgeschriebenen Frist bearbeiten. Überprüfen Sie Ihre E-Mail auf eine Bestätigung."
     },
     "messages": {
-      "success": "Erfolgreich gesendet",
-      "error": "Fehler beim Senden"
+      "success": "Anfrage erfolgreich gesendet",
+      "error": "Fehler beim Senden der Anfrage"
     }
   },
   "publicReport": {
@@ -268,36 +268,39 @@
     "notRequired": "Nicht erforderlich",
     "yes": "Ja",
     "no": "Nein",
-    "validUntil": "Gültig bis",
+    "validUntil": "Dieser Bericht ist gültig bis",
     "print": "Drucken",
     "exportPdf": "PDF exportieren"
   },
   "legalPages": {
     "privacy": {
       "title": "Datenschutzerklärung",
-      "updated": "Letzte Aktualisierung: 22. Dezember 2025",
-      "intro": "Verständnis unserer Datennutzung.",
-      "back": "Zurück",
+      "updated": "Letzte Aktualisierung: 22. Dezember 2025 | Version 1.0",
+      "intro": "Verständnis unserer Nutzung von Cookies und ähnlichen Technologien auf tariff.ai",
+      "back": "Zurück zur Startseite",
       "sections": [
-        { "title": "1. Datenverantwortlicher", "content": "tariff.ai ist verantwortlich..." }
+        { "title": "1. Datenverantwortlicher", "content": "tariff.ai ('wir', 'unser', 'uns') ist der Datenverantwortliche für Ihre persönlichen Informationen. Sie können uns kontaktieren unter:\nE-Mail: info@tariff-ai.com\nAdresse: tariff.ai Privacy Team, San Francisco, CA\nFür DSGVO-bezogene Anfragen kann unser EU-Vertreter unter info@tariff-ai.com kontaktiert werden" },
+        { "title": "2. Informationen, die wir sammeln", "content": "Wir sammeln folgende Arten von persönlichen Daten:\n\n2.1 Informationen, die Sie bereitstellen:\n• Kontoinformationen: Vollständiger Name, E-Mail-Adresse, Firmenname\n• Newsletter-Abonnements: E-Mail-Adresse, Zeitstempel der Zustimmung\n• Kontaktformulare: Name, E-Mail, Firma, Betreff, Nachricht\n\n2.2 Automatisch gesammelte Informationen:\n• Analysedaten: Seitenaufrufe, Seiten-URLs, Referrer-URLs, Sitzungs-IDs\n• Geräteinformationen: IP-Adresse (nach 90 Tagen anonymisiert), Browsertyp, Betriebssystem, Gerätetyp, Bildschirmauflösung\n• Standortdaten: Land und Stadt (abgeleitet von der IP-Adresse)\n• Interaktionsdaten: Klicks, Formulareinsendungen, Scrolltiefe, Elementinteraktionen, Viewport-Größe\n• Technische Daten: User Agent, Spracheinstellungen, Zeitzone\n\n2.3 Cookies und Tracking:\n• Essenzielle Cookies: Sitzungsmanagement (notwendig für die Funktionalität)\n• Analyse-Cookies: Nutzungsmuster und Website-Leistung (erfordert Zustimmung)\n• Marketing-Cookies: Benutzerpräferenzen für Marketingkommunikation (erfordert Zustimmung)" }
       ]
     },
     "terms": {
       "title": "Nutzungsbedingungen",
-      "updated": "Letzte Aktualisierung: 22. Dezember 2025",
-      "intro": "Rechtliche Vereinbarung...",
-      "back": "Zurück",
+      "updated": "Letzte Aktualisierung: 22. Dezember 2025 | Version 1.0",
+      "intro": "Dieses Dokument beschreibt die rechtlich bindende Vereinbarung zwischen Ihnen und tariff.ai bezüglich Ihrer Nutzung unserer Dienste.",
+      "back": "Zurück zur Startseite",
       "sections": [
-        { "title": "1. Akzeptanz", "content": "Durch die Nutzung stimmen Sie zu..." }
+        { "title": "1. Akzeptanz der Bedingungen", "content": "Durch den Zugriff auf oder die Nutzung eines Teils der tariff.ai-Website, -Plattform oder -Dienste (zusammen 'der Dienst') erklären Sie sich mit diesen Nutzungsbedingungen ('Bedingungen') einverstanden. Wenn Sie nicht allen Bedingungen dieser Vereinbarung zustimmen, dürfen Sie nicht auf den Dienst zugreifen oder Dienste nutzen." },
+        { "title": "2. Beschreibung des Dienstes", "content": "tariff.ai bietet KI-gestützte Zollanalysen, Handelsinformationen und damit verbundene Dienstleistungen, um Unternehmen bei der Einhaltung und Strategie des internationalen Handels zu unterstützen." }
       ]
     },
     "cookiePolicy": {
       "title": "Cookie-Richtlinie",
-      "updated": "Letzte Aktualisierung: 22. Dezember 2025",
-      "intro": "Nutzung von Cookies...",
-      "back": "Zurück",
+      "updated": "Letzte Aktualisierung: 22. Dezember 2025 | Version 1.0",
+      "intro": "Verständnis unserer Nutzung von Cookies und ähnlichen Technologien auf tariff.ai",
+      "back": "Zurück zur Startseite",
       "sections": [
-        { "title": "1. Was sind Cookies", "content": "Kleine Textdateien..." }
+        { "title": "1. Was sind Cookies", "content": "Cookies sind kleine Textdateien, die auf Ihrem Gerät (Computer, Tablet oder Mobiltelefon) gespeichert werden, wenn Sie eine Website besuchen. Sie helfen Websites, Ihre Präferenzen zu speichern, zu verstehen, wie Sie sie nutzen, und eine bessere Benutzererfahrung zu bieten." },
+        { "title": "2. Wie wir Cookies verwenden", "content": "tariff.ai verwendet Cookies für folgende Zwecke:\n\nEssenzielle Funktionen:\n• Aufrechterhaltung Ihrer angemeldeten Sitzung\n• Speicherung Ihrer Sprach- und Designpräferenzen\n• Sicherung Ihrer Verbindung zu unseren Diensten\n\nAnalyse & Leistung:\n• Verstehen, welche Seiten am beliebtesten sind\n• Analyse des Benutzerverhaltens zur Verbesserung unseres Dienstes\n• Verfolgung technischer Fehler und Bugs\n\nBenutzererfahrung:\n• Speicherung Ihrer Cookie-Zustimmungspräferenzen\n• Personalisierung von Inhalten basierend auf Ihren Interessen\n• Optimierung der Website-Leistung" }
       ]
     }
   }
