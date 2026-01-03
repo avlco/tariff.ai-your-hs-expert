@@ -24,7 +24,7 @@ export function LanguageProvider({ children }) {
       try {
         if (!fallback) {
           try {
-            const enData = await import('./locales/en.json');
+            const enData = await import('./locales/en.js');
             setFallback(enData.default);
           } catch (e) {
             console.error("Fallback load error:", e);
@@ -32,7 +32,7 @@ export function LanguageProvider({ children }) {
         }
         
         try {
-          const selectedData = await import(`./locales/${langCode}.json`);
+          const selectedData = await import(`./locales/${langCode}.js`);
           setTranslations(selectedData.default);
         } catch (e) {
           console.warn(`Translation for ${langCode} not found, using fallback.`);
