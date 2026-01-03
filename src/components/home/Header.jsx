@@ -1,149 +1,159 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
+import { Button } from '@/components/ui/button';
 import { Moon, Sun, Globe, Menu, X } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { useLanguage } from '../LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLanguage, SUPPORTED_LANGUAGES } from '@/components/LanguageContext';
 
-const LOGO_URL = 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_680e05f48b22dd123802c416/3bb573531_tarifficon.png';
-
-export default function Header() {
-  const { language, toggleLanguage, theme, toggleTheme, t, isRTL } = useLanguage();
-  const [scrolled, setScrolled] = useState(false);
+export default function Header({ theme, toggleTheme }) {
+  const { language, setLanguage, t } = useLanguage();
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { label: t.nav.features, id: '#features' },
-    { label: t.nav.howItWorks, id: '#how-it-works' },
-    { label: t.nav.pricing, id: '#pricing' },
-    { label: t.nav.faq, id: '#faq' },
+    { href: '#features', label: t('nav.features') },
+    { href: '#how-it-works', label: t('nav.howItWorks') },
+    { href: '#pricing', label: t('nav.pricing') },
+    { href: '#faq', label: t('nav.faq') },
+    { href: '#contact', label: t('nav.contact') },
   ];
 
-  const scrollToSection = (id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-    setMobileMenuOpen(false);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setMobileMenuOpen(false);
-  };
-
   return (
-    <>
-      {/* Desktop Header */}
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-white/90 dark:bg-[#0B2C36]/90 backdrop-blur-xl border-b border-[#114B5F]/10 dark:border-white/10'
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <motion.button
-              onClick={scrollToTop}
-              className="flex items-center gap-3 group"
-              whileHover={{ x: isRTL ? 5 : -5 }}
-            >
-              <img src={LOGO_URL} alt="tariff.ai" className="h-8 w-auto" />
-              <span className="text-xl font-bold text-[#114B5F] dark:text-white">
-                tariff<span className="text-[#42C0B9]">.ai</span>
-              </span>
-            </motion.button>
-
-            {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-sm font-medium text-[#114B5F] dark:text-white/80 hover:text-[#42C0B9] dark:hover:text-[#42C0B9] transition-colors"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
-
-            {/* Actions */}
-            <div className="flex items-center gap-4">
-              {/* Theme Toggle */}
-              <button
-                onClick={toggleTheme}
-                className="p-2 text-[#114B5F] dark:text-white/80 hover:text-[#42C0B9] dark:hover:text-[#42C0B9] transition-colors"
-              >
-                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
-
-              {/* Language Toggle */}
-              <button
-                onClick={toggleLanguage}
-                className="p-2 text-[#114B5F] dark:text-white/80 hover:text-[#42C0B9] dark:hover:text-[#42C0B9] transition-colors flex items-center gap-1"
-              >
-                <Globe className="w-5 h-5" />
-                <span className="text-xs font-medium mono">{language.toUpperCase()}</span>
-              </button>
-
-              {/* CTA */}
-              <Button
-                onClick={() => scrollToSection('#pricing')}
-                className="hidden lg:inline-flex bg-[#42C0B9] hover:bg-[#42C0B9]/90 text-white px-6 py-2 rounded-none font-medium"
-              >
-                {t.nav.pricing}
-              </Button>
-
-              {/* Mobile Menu Toggle */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-[#114B5F] dark:text-white"
-              >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? theme === 'dark'
+            ? 'bg-[#0F172A]/80 backdrop-blur-xl border-b border-white/10 shadow-2xl'
+            : 'bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-lg'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          <Link to={createPageUrl('Home')} className="flex items-center gap-2">
+            <div className={`text-2xl font-bold tracking-tight ${
+              theme === 'dark' ? 'text-white' : 'text-[#0F172A]'
+            }`}>
+              tariff<span className="text-[#E5A840]">.ai</span>
             </div>
+          </Link>
+
+          <nav className="hidden lg:flex items-center gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition-colors hover:text-[#E5A840] ${
+                  theme === 'dark' ? 'text-gray-300' : 'text-slate-600'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className={theme === 'dark' ? 'text-white hover:bg-white/10' : 'text-slate-700 hover:bg-slate-100'}
+                >
+                  <Globe className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className={theme === 'dark' ? 'bg-[#1E293B] border-white/10' : ''}>
+                {Object.entries(SUPPORTED_LANGUAGES).map(([code, info]) => (
+                  <DropdownMenuItem 
+                    key={code}
+                    onClick={() => setLanguage(code)}
+                    className={`cursor-pointer ${language === code ? 'text-[#E5A840]' : ''}`}
+                  >
+                    {info.label}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className={theme === 'dark' ? 'text-white hover:bg-white/10' : 'text-slate-700 hover:bg-slate-100'}
+            >
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+
+            <a href="https://app.tariff-ai.com" className="hidden sm:block">
+              <Button
+                className="bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold px-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E5A840]/25"
+              >
+                {t('common.getStarted')}
+              </Button>
+            </a>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className={`lg:hidden ${theme === 'dark' ? 'text-white' : 'text-slate-700'}`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
           </div>
         </div>
-      </motion.header>
+      </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white dark:bg-[#0B2C36] pt-20"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className={`lg:hidden overflow-hidden ${
+              theme === 'dark' ? 'bg-[#0F172A]/95' : 'bg-white/95'
+            } backdrop-blur-xl`}
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8">
-              {navItems.map((item, index) => (
-                <motion.button
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-2xl font-semibold text-[#114B5F] dark:text-white"
+            <div className="px-4 py-6 space-y-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block text-lg font-medium py-2 ${
+                    theme === 'dark' ? 'text-white' : 'text-slate-900'
+                  }`}
                 >
                   {item.label}
-                </motion.button>
+                </a>
               ))}
-              <Button
-                onClick={() => scrollToSection('#pricing')}
-                className="bg-[#42C0B9] hover:bg-[#42C0B9]/90 text-white px-8 py-6 rounded-none font-medium"
-              >
-                {t.nav.pricing}
-              </Button>
+              <a href="https://app.tariff-ai.com" className="block mt-4">
+                <Button className="w-full bg-[#E5A840] hover:bg-[#C28E36] text-[#0F172A] font-semibold rounded-full">
+                  {t('common.getStarted')}
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </motion.header>
   );
 }
