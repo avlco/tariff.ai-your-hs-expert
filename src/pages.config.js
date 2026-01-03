@@ -1,21 +1,21 @@
-import PublicReport from './pages/PublicReport';
 import CookiePolicy from './pages/CookiePolicy';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
 import Home from './pages/Home';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import PublicReport from './pages/PublicReport';
+import TermsOfService from './pages/TermsOfService';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
-    "PublicReport": PublicReport,
     "CookiePolicy": CookiePolicy,
-    "PrivacyPolicy": PrivacyPolicy,
-    "TermsOfService": TermsOfService,
     "Home": Home,
+    "PrivacyPolicy": PrivacyPolicy,
+    "PublicReport": PublicReport,
+    "TermsOfService": TermsOfService,
 }
 
 export const pagesConfig = {
-    mainPage: "PublicReport",
+    mainPage: "Home",
     Pages: PAGES,
     Layout: __Layout,
 };

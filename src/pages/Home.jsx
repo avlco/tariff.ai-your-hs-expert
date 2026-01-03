@@ -14,10 +14,10 @@ import TestimonialsSection from '@/components/home/TestimonialsSection';
 import FAQSection from '@/components/home/FAQSection';
 import BlogSection from '@/components/home/BlogSection';
 import ContactSection from '@/components/home/ContactSection';
-import { useLanguage } from '@/components/LanguageContext';
+import { useLanguage } from '@/components/LanguageContext'; // ייבוא המנגנון
 
 export default function Home() {
-  const { isRTL } = useLanguage();
+  const { isRTL } = useLanguage(); // שליחת ה-Context
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
@@ -29,11 +29,13 @@ export default function Home() {
   const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
   return (
+    // הוספת ה-dirAttribute כדי שהאתר יתהפך פיזית
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-[#0F172A]' : 'bg-white'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <SideNav theme={theme} />
       
       <main>
+        {/* לא מעבירים Props של שפה, הרכיבים ימשכו זאת מה-Context בעצמם */}
         <HeroSection theme={theme} />
         <ChallengesSection theme={theme} />
         <AboutSection theme={theme} />

@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import en from '@/components/locales/en.js';
 
 const LanguageContext = createContext();
 
@@ -17,62 +16,57 @@ export const SUPPORTED_LANGUAGES = {
 
 export function LanguageProvider({ children }) {
   const [langCode, setLangCode] = useState(() => localStorage.getItem('tariff-lang') || 'en');
-  const [translations, setTranslations] = useState(en);
+  const [translations, setTranslations] = useState(null);
+  const [fallback, setFallback] = useState(null);
 
   useEffect(() => {
     const loadLanguage = async () => {
       try {
-        if (langCode === 'en') {
-          setTranslations(en);
-        } else {
-          try {
-            // Use absolute path alias for dynamic import to avoid relative path issues
-            // Note: dynamic import with template string and alias might be tricky in Vite sometimes
-            // but let's try with consistent relative path if alias fails, or stick to relative if we are sure of structure.
-            // Actually, for dynamic imports in Vite, relative paths are often better supported for analysis.
-            // Let's use relative path but be very careful.
-            // components/locales is ./locales from components/LanguageContext.js
-            
-            // However, the import en above is static.
-            
-            const module = await import(`./locales/${langCode}.js`);
-            setTranslations(module.default);
-          } catch (e) {
-            console.warn(`Translation for ${langCode} not found, using fallback.`);
-            setTranslations(en);
-          }
+        if (!fallback) {
+          // טוען את אנגלית כגיבוי למקרה שחסרים מפתחות
+          const enData = await import('../locales/en.json');
+          setFallback(enData.default);
         }
+        
+        // טוען את השפה שנבחרה
+        const selectedData = await import(`../locales/${langCode}.json`);
+        setTranslations(selectedData.default);
         
         const dir = SUPPORTED_LANGUAGES[langCode]?.dir || 'ltr';
         document.documentElement.dir = dir;
         document.documentElement.lang = langCode;
         localStorage.setItem('tariff-lang', langCode);
       } catch (err) {
-        console.error("Language load error:", err);
-        setTranslations(en);
+        console.error("Translation load error:", err);
+        // במקרה של שגיאה, נשארים עם אנגלית אם היא קיימת כגיבוי
+        if (fallback) setTranslations(fallback);
       }
     };
     loadLanguage();
-  }, [langCode]);
+  }, [langCode, fallback]);
 
   const t = (path) => {
     if (!path) return '';
     const keys = path.split('.');
     
+    // פונקציה רקורסיבית לשליפת ערך מתוך אובייקט מקונן
     const getValue = (obj) => {
       if (!obj) return null;
       return keys.reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : null), obj);
     };
 
-    let result = getValue(translations);
-    if (result !== null && result !== undefined) return result;
+    const result = getValue(translations);
     
-    // Fallback to English if translation missing
-    const fallbackResult = getValue(en);
+    // אם לא נמצא תרגום, מחזיר את הגיבוי (אנגלית), ואם גם זה לא - את המפתח עצמו
+    if (result !== null && result !== undefined) return result;
+    const fallbackResult = getValue(fallback);
     return fallbackResult !== null && fallbackResult !== undefined ? fallbackResult : path;
   };
 
   const isRTL = SUPPORTED_LANGUAGES[langCode]?.dir === 'rtl';
+
+  // לא מרנדרים כלום עד שהתרגומים נטענים כדי למנוע הבהוב של מפתחות
+  if (!translations && !fallback) return null;
 
   return (
     <LanguageContext.Provider value={{ language: langCode, setLanguage: setLangCode, t, isRTL, SUPPORTED_LANGUAGES }}>
