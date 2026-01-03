@@ -4,25 +4,20 @@ Deno.serve(async (req) => {
     try {
         const base44 = createClientFromRequest(req);
         
-        // Try to read the files from the current working directory
         const languages = ['en', 'he', 'fr', 'de', 'es', 'it', 'ru', 'ja', 'pt'];
         const results = {};
         
         for (const lang of languages) {
             try {
-                // Try different paths
+                // Try reading directly from CWD (which is /src)
                 let content;
                 try {
-                    content = await Deno.readTextFile(`locales/${lang}.json`);
+                    content = await Deno.readTextFile(`${lang}.json`);
                 } catch (e) {
-                    try {
-                        content = await Deno.readTextFile(`src/locales/${lang}.json`);
+                     try {
+                        content = await Deno.readTextFile(`locales/${lang}.json`);
                     } catch (e2) {
-                         try {
-                            content = await Deno.readTextFile(`./locales/${lang}.json`);
-                        } catch (e3) {
-                            content = "Not found";
-                        }
+                        content = "Not found";
                     }
                 }
                 
@@ -35,8 +30,18 @@ Deno.serve(async (req) => {
                 results[lang] = { error: err.message };
             }
         }
+        
+        // Also list files in CWD to be sure
+        const files = [];
+        try {
+            for await (const dirEntry of Deno.readDir(".")) {
+                files.push(dirEntry.name);
+            }
+        } catch(e) {
+            files.push("Error listing dir: " + e.message);
+        }
 
-        return Response.json({ results, cwd: Deno.cwd() });
+        return Response.json({ results, files, cwd: Deno.cwd() });
     } catch (error) {
         return Response.json({ error: error.message }, { status: 500 });
     }
