@@ -17,20 +17,20 @@
     "madeWith": "Feito com",
     "forGlobalTrade": "para o comércio global",
     "readMore": "Ler mais",
-    "viewAll": "Ver tudo",
+    "viewAll": "Ver todos os artigos",
     "submit": "Enviar",
     "sending": "Enviando...",
     "sent": "Enviado!",
     "backToHome": "Voltar ao Início",
     "tryFree": "Teste Grátis",
-    "startFreeAnalysis": "Análise Gratuita",
+    "startFreeAnalysis": "Iniciar Análise Gratuita",
     "watchDemo": "Ver Demo"
   },
   "hero": {
     "badge": "Inteligência Tarifária com IA",
     "title": "Navegue pelo Comércio Global",
     "titleHighlight": "Com Confiança",
-    "subtitle": "Analise instantaneamente tarifas, impostos e regulamentações comerciais para qualquer produto em mais de 190 países.",
+    "subtitle": "Analise instantaneamente tarifas, impostos e regulamentações comerciais para qualquer produto em mais de 190 países. Tome decisões informadas com insights impulsionados por IA.",
     "cta": "Começar agora",
     "ctaSecondary": "Ver demo",
     "stats": {
@@ -53,31 +53,31 @@
   "challenges": {
     "badge": "O Desafio",
     "title": "O Comércio Global é Complexo",
-    "subtitle": "Empresas perdem milhões anualmente devido a erros de cálculo tarifário.",
+    "subtitle": "Empresas perdem milhões anualmente devido a erros de cálculo tarifário e problemas de compliance.",
     "items": [
       {
         "title": "Custos Ocultos",
-        "description": "Tarifas inesperadas podem aumentar os custos em 15-30%."
+        "description": "Tarifas inesperadas podem aumentar os custos do produto em 15-30%, destruindo as margens de lucro da noite para o dia."
       },
       {
         "title": "Risco de Compliance",
-        "description": "O não cumprimento leva a atrasos e multas."
+        "description": "O não cumprimento das regulamentações comerciais leva a atrasos nas remessas, multas e danos às relações comerciais."
       },
       {
         "title": "Perda de Tempo",
-        "description": "Pesquisa manual leva horas de um especialista."
+        "description": "A pesquisa tarifária manual leva horas de tempo de um especialista por produto, retardando as decisões de negócios."
       }
     ]
   },
   "about": {
     "badge": "Quem Somos",
-    "title": "Simplificando o Comércio",
-    "description1": "tariff.ai combina IA avançada com bancos de dados comerciais abrangentes.",
-    "description2": "Fundada por especialistas em compliance e engenheiros de IA.",
+    "title": "Simplificando o Comércio Global",
+    "description1": "tariff.ai combina IA de ponta com bancos de dados comerciais abrangentes para fornecer inteligência tarifária instantânea e precisa.",
+    "description2": "Fundada por especialistas em compliance comercial e engenheiros de IA, nossa missão é democratizar o acesso à inteligência comercial. Nossa plataforma processa milhões de pontos de dados para fornecer insights claros e acionáveis em segundos.",
     "features": [
-      { "title": "Precisão Primeiro", "desc": "Verificado contra fontes oficiais" },
-      { "title": "Velocidade", "desc": "Respostas em segundos, não horas" },
-      { "title": "Sempre Atualizado", "desc": "Atualizações em tempo real" }
+      { "title": "Precisão Primeiro", "desc": "Cada relatório é verificado contra fontes oficiais" },
+      { "title": "Velocidade Importa", "desc": "Obtenha respostas em segundos, não horas" },
+      { "title": "Sempre Atualizado", "desc": "Atualizações em tempo real sobre mudanças tarifárias" }
     ],
     "stats": {
       "countries": "Países",
@@ -89,35 +89,35 @@
   "features": {
     "badge": "Capacidades",
     "title": "Tudo o que você precisa",
-    "subtitle": "Ferramentas poderosas para otimizar suas operações globais",
+    "subtitle": "Ferramentas poderosas projetadas para otimizar suas operações comerciais globais",
     "items": [
-      { "title": "Classificação Código SH", "desc": "Classificação automática com 98% de precisão" },
-      { "title": "Calculadora de Tarifas", "desc": "Cálculo instantâneo de impostos e taxas" },
-      { "title": "Buscador de Acordos", "desc": "Descubra taxas preferenciais em ALCs" },
-      { "title": "Alertas de Compliance", "desc": "Notificações em tempo real sobre mudanças" },
-      { "title": "Análise Multi-País", "desc": "Compare tarifas em múltiplos destinos" },
-      { "title": "Documentação", "desc": "Gere documentos conformes automaticamente" }
+      { "title": "Classificação Código SH", "desc": "Classificação automática de produtos com 98% de precisão usando IA avançada" },
+      { "title": "Calculadora de Tarifas", "desc": "Cálculo instantâneo de tarifas, impostos e taxas para qualquer rota comercial" },
+      { "title": "Buscador de Acordos Comerciais", "desc": "Descubra taxas preferenciais sob Acordos de Livre Comércio (ALC)" },
+      { "title": "Alertas de Compliance", "desc": "Notificações em tempo real sobre mudanças regulatórias que afetam seus produtos" },
+      { "title": "Análise Multi-País", "desc": "Compare tarifas em múltiplos destinos simultaneamente" },
+      { "title": "Documentação de Exportação", "desc": "Gere documentos de exportação conformes automaticamente" }
     ],
     "cta": "Começar agora"
   },
   "howItWorks": {
     "badge": "Processo",
     "title": "Como Funciona",
-    "subtitle": "Insights precisos em três passos simples",
+    "subtitle": "Obtenha insights tarifários precisos em três passos simples",
     "steps": [
-      { "title": "Descreva seu produto", "desc": "Insira detalhes ou envie uma imagem." },
-      { "title": "Selecione a rota", "desc": "Escolha origem e destino." },
-      { "title": "Obtenha seu relatório", "desc": "Receba um detalhamento completo." }
+      { "title": "Descreva seu Produto", "desc": "Insira os detalhes do seu produto ou envie uma imagem. Nossa IA identifica o código SH correto automaticamente." },
+      { "title": "Selecione a Rota Comercial", "desc": "Escolha os países de origem e destino. Levaremos em consideração todos os acordos comerciais aplicáveis." },
+      { "title": "Obtenha seu Relatório", "desc": "Receba um detalhamento completo de tarifas, impostos e requisitos de compliance instantaneamente." }
     ]
   },
   "pricing": {
     "badge": "Planos",
     "title": "Preços Simples e Transparentes",
-    "subtitle": "Escolha o plano ideal para seu negócio",
+    "subtitle": "Escolha o plano que se adapta às necessidades do seu negócio",
     "monthly": "Mensal",
     "yearly": "Anual",
     "off": "desc.",
-    "popular": "Popular",
+    "popular": "Mais Popular",
     "mo": "mês",
     "perReport": "por relatório",
     "includes": "Inclui:",
@@ -130,123 +130,123 @@
       "features": ["Código SH e Raciocínio", "Score de Confiança", "Fontes"]
     },
     "packageFeatures": [
-      "Código SH e Raciocínio", "Tarifas e impostos", "Regulação", "Compliance", "Códigos Alternativos", "Confiança", "Fontes"
+      "Código SH e Raciocínio", "Tarifas e impostos", "Regulação", "Compliance", "Códigos Alternativos", "Score de Confiança", "Fontes"
     ],
     "subscriptionFeatures": [
       "Relatório completo", "Alerta Código SH", "Calculadora de Impostos", "Calculadora de Frete", "Gestão de Envios"
     ]
   },
   "testimonials": {
-    "badge": "Sucesso",
+    "badge": "Histórias de Sucesso",
     "title": "O que dizem nossos clientes",
-    "subtitle": "Confiado por importadores e exportadores mundialmente",
+    "subtitle": "Confiado por importadores, exportadores e profissionais de comércio em todo o mundo",
     "items": [
-      { "quote": "tariff.ai nos economizou mais de $50.000 no primeiro trimestre.", "name": "Sarah Chen", "role": "Gerente de Importação" },
-      { "quote": "A precisão e velocidade são incríveis.", "name": "Michael Torres", "role": "Diretor de Compliance" },
-      { "quote": "Finalmente uma ferramenta que fala nossa língua.", "name": "Emma Williams", "role": "CEO" }
+      { "quote": "tariff.ai nos economizou mais de $50.000 no primeiro trimestre ao identificar oportunidades de ALC que havíamos perdido.", "name": "Sarah Chen", "role": "Gerente de Importação" },
+      { "quote": "A precisão e velocidade são incríveis. O que costumava levar dias para nossa equipe agora leva minutos.", "name": "Michael Torres", "role": "Diretor de Compliance Comercial" },
+      { "quote": "Finalmente uma ferramenta que fala nossa língua. Os relatórios são claros, acionáveis e sempre atualizados.", "name": "Emma Williams", "role": "CEO" }
     ]
   },
   "faq": {
     "badge": "FAQ",
-    "title": "Centro de Conhecimento",
-    "subtitle": "Tudo o que você precisa saber",
-    "contactTitle": "Não encontrou sua resposta?",
+    "title": "Centro de Conhecimento tariff.ai",
+    "subtitle": "Tudo o que você precisa saber sobre a ferramenta que está mudando o comércio internacional",
+    "contactTitle": "Não encontrou sua resposta? Estamos aqui para ajudar",
     "contactCta": "Fale Conosco",
     "items": [
-      { "q": "O que é tariff.ai?", "a": "Uma plataforma de IA para análise tarifária..." },
-      { "q": "Quão precisa é a classificação?", "a": "Nossa IA atinge 98% de precisão..." }
+      { "q": "O que é tariff.ai e como me economiza dinheiro?", "a": "tariff.ai é uma plataforma impulsionada por IA que analisa tarifas, impostos e regulamentações comerciais em mais de 190 países. Ela economiza dinheiro identificando os códigos de classificação mais econômicos, alertando sobre acordos comerciais disponíveis e prevenindo erros de compliance dispendiosos." },
+      { "q": "Quão precisa é a classificação do código SH?", "a": "Nossa IA atinge 98% de precisão na classificação do código SH, verificada contra bancos de dados aduaneiros oficiais. Cada classificação inclui um score de confiança e um raciocínio detalhado, para que você possa verificar a lógica por trás de cada recomendação." }
     ]
   },
   "blog": {
     "badge": "Insights",
-    "title": "Nosso Blog",
-    "subtitle": "Análises de especialistas e notícias da indústria",
+    "title": "Do Nosso Blog",
+    "subtitle": "Análises de especialistas, notícias da indústria e guias práticos para o comércio global",
     "articles": [
-      { "category": "Indústria", "title": "Mudanças Tarifárias 2024", "desc": "Guia completo..." },
-      { "category": "Guia", "title": "Como usar Acordos de Livre Comércio", "desc": "Maximize sua economia..." },
-      { "category": "Tecnologia", "title": "IA no Compliance", "desc": "O futuro da alfândega..." }
+      { "category": "Notícias da Indústria", "title": "Mudanças Tarifárias 2024: O que Importadores Precisam Saber", "desc": "Um guia completo sobre as últimas atualizações tarifárias que afetam indústrias-chave..." },
+      { "category": "Guia", "title": "Como Aproveitar Acordos de Livre Comércio", "desc": "Maximize sua economia entendendo e utilizando os benefícios dos ALCs..." },
+      { "category": "Tecnologia", "title": "IA no Compliance Comercial: O Futuro está Aqui", "desc": "Explorando como a inteligência artificial está revolucionando a alfândega e o compliance..." }
     ]
   },
   "contact": {
-    "badge": "Contato",
+    "badge": "Entre em Contato",
     "title": "Fale Conosco",
-    "subtitle": "Dúvidas? Estamos aqui para ajudar",
+    "subtitle": "Tem dúvidas? Adoraríamos ouvir você",
     "form": {
-      "name": "Nome completo",
-      "email": "Email",
+      "name": "Nome Completo",
+      "email": "Endereço de Email",
       "company": "Empresa",
       "subject": "Assunto",
       "message": "Mensagem",
-      "send": "Enviar mensagem",
-      "success": "Enviado!"
+      "send": "Enviar Mensagem",
+      "success": "Mensagem Enviada!"
     },
     "info": {
       "email": "Email",
-      "responseTime": "Tempo de resposta",
-      "responseTimeDesc": "Respondemos em 24h em dias úteis.",
+      "responseTime": "Tempo de Resposta",
+      "responseTimeDesc": "Respondemos em 24h em dias úteis. Para consultas urgentes, mencione isso em sua mensagem.",
       "status": "Disponível agora"
     }
   },
   "cookieBanner": {
     "title": "Usamos Cookies",
-    "desc": "Para melhorar sua experiência e analisar tráfego.",
+    "desc": "Usamos cookies para melhorar sua experiência de navegação, analisar o tráfego do site e personalizar o conteúdo. Ao clicar em \"Aceitar Tudo\", você concorda com nosso uso de cookies.",
     "customize": "Personalizar",
     "acceptAll": "Aceitar Tudo",
     "essentialOnly": "Apenas Essenciais",
     "settingsTitle": "Configurações de Cookies",
-    "save": "Salvar",
+    "save": "Salvar Preferências",
     "cancel": "Cancelar",
     "types": {
-      "essential": { "title": "Cookies Essenciais", "desc": "Necessários para o site funcionar." },
-      "analytics": { "title": "Cookies Analíticos", "desc": "Ajudam a entender o uso do site." },
-      "marketing": { "title": "Cookies de Marketing", "desc": "Para anúncios relevantes." }
+      "essential": { "title": "Cookies Essenciais", "desc": "Esses cookies são necessários para a funcionalidade básica do site e não podem ser desativados." },
+      "analytics": { "title": "Cookies Analíticos", "desc": "Esses cookies nos ajudam a entender como os usuários interagem com nosso site." },
+      "marketing": { "title": "Cookies de Marketing", "desc": "Esses cookies são usados para mostrar anúncios mais relevantes para você." }
     }
   },
   "newsletter": {
     "title": "Assine nossa Newsletter",
-    "subtitle": "Receba as últimas atualizações tarifárias",
-    "placeholder": "Seu email",
-    "consent": "Concordo em receber emails da tariff.ai",
+    "subtitle": "Receba as últimas atualizações tarifárias, notícias comerciais e insights exclusivos diretamente na sua caixa de entrada",
+    "placeholder": "Digite seu email",
+    "consent": "Concordo em receber newsletters da tariff.ai",
     "cta": "Assinar"
   },
   "footer": {
     "description": "Inteligência tarifária com IA para profissionais de comércio global.",
     "legal": "Legal",
     "terms": "Termos de Serviço",
-    "privacy": "Privacidade",
-    "cookies": "Cookies",
+    "privacy": "Política de Privacidade",
+    "cookies": "Política de Cookies",
     "copyright": "Todos os direitos reservados."
   },
   "dataRequest": {
-    "title": "Exercer seus direitos",
-    "subtitle": "Acesso, correção ou exclusão de dados (GDPR & LGPD).",
+    "title": "Exercer seus direitos de dados",
+    "subtitle": "Solicite acesso, correção ou exclusão de seus dados pessoais sob GDPR e LGPD.",
     "form": {
-      "requestType": "Tipo de solicitação",
-      "requestTypePlaceholder": "Selecione...",
-      "fullName": "Nome",
-      "fullNamePlaceholder": "Seu nome",
-      "email": "Email",
+      "requestType": "Tipo de Solicitação",
+      "requestTypePlaceholder": "Selecione o tipo de solicitação...",
+      "fullName": "Nome Completo",
+      "fullNamePlaceholder": "Digite seu nome completo",
+      "email": "Endereço de Email",
       "emailPlaceholder": "seu@email.com",
-      "details": "Detalhes",
-      "detailsPlaceholder": "Informações adicionais...",
-      "submit": "Enviar",
-      "submitAnother": "Nova solicitação",
+      "details": "Detalhes Adicionais (Opcional)",
+      "detailsPlaceholder": "Adicione detalhes adicionais sobre sua solicitação...",
+      "submit": "Enviar Solicitação",
+      "submitAnother": "Enviar Outra Solicitação",
       "types": {
-        "access": "Acesso aos dados",
-        "rectification": "Correção",
-        "erasure": "Exclusão (Direito ao esquecimento)",
+        "access": "Acesso aos meus dados pessoais",
+        "rectification": "Corrigir meus dados",
+        "erasure": "Excluir meus dados (Direito ao esquecimento)",
         "restriction": "Restringir processamento",
-        "portability": "Portabilidade",
-        "objection": "Objeção"
+        "portability": "Portabilidade de dados",
+        "objection": "Opor-se ao processamento"
       }
     },
     "success": {
       "title": "Solicitação Recebida",
-      "desc": "Processaremos sua solicitação dentro do prazo legal."
+      "desc": "Recebemos sua solicitação e a processaremos dentro do prazo legal exigido. Verifique seu email para uma confirmação."
     },
     "messages": {
-      "success": "Enviado com sucesso",
-      "error": "Falha ao enviar"
+      "success": "Solicitação enviada com sucesso",
+      "error": "Falha ao enviar solicitação"
     }
   },
   "publicReport": {
@@ -268,36 +268,39 @@
     "notRequired": "Não Necessário",
     "yes": "Sim",
     "no": "Não",
-    "validUntil": "Válido até",
+    "validUntil": "Este relatório é válido até",
     "print": "Imprimir",
     "exportPdf": "Exportar PDF"
   },
   "legalPages": {
     "privacy": {
       "title": "Política de Privacidade",
-      "updated": "Última atualização: 22 de dezembro de 2025",
-      "intro": "Entendendo nosso uso de dados.",
-      "back": "Voltar",
+      "updated": "Última atualização: 22 de dezembro de 2025 | Versão 1.0",
+      "intro": "Compreendendo como usamos cookies e tecnologias semelhantes na tariff.ai",
+      "back": "Voltar ao Início",
       "sections": [
-        { "title": "1. Controlador de Dados", "content": "tariff.ai é o controlador..." }
+        { "title": "1. Controlador de Dados", "content": "tariff.ai ('nós', 'nosso', 'nos') é o controlador de dados responsável pelas suas informações pessoais. Você pode nos contatar em:\nEmail: info@tariff-ai.com\nEndereço: Equipe de Privacidade tariff.ai, São Francisco, CA\nPara consultas relacionadas ao GDPR, nosso representante da UE pode ser contatado em info@tariff-ai.com" },
+        { "title": "2. Informações que Coletamos", "content": "Coletamos os seguintes tipos de dados pessoais:\n\n2.1 Informações que Você Fornece:\n• Informações da Conta: Nome completo, endereço de email, nome da empresa\n• Assinaturas de Newsletter: Endereço de email, carimbo de data/hora do consentimento\n• Formulários de Contato: Nome, email, empresa, assunto, mensagem\n\n2.2 Informações Coletadas Automaticamente:\n• Dados Analíticos: Visualizações de página, URLs de página, URLs de referência, IDs de sessão\n• Informações do Dispositivo: Endereço IP (anonimizado após 90 dias), tipo de navegador, sistema operacional, tipo de dispositivo, resolução da tela\n• Dados de Localização: País e cidade (derivados do endereço IP)\n• Dados de Interação: Cliques, envios de formulários, profundidade de rolagem, interações com elementos\n• Dados Técnicos: Agente de usuário, preferências de idioma, fuso horário\n\n2.3 Cookies e Rastreamento:\n• Cookies Essenciais: Gerenciamento de sessão (necessário para funcionalidade)\n• Cookies Analíticos: Padrões de uso e desempenho do site (requer consentimento)\n• Cookies de Marketing: Preferências do usuário para comunicações de marketing (requer consentimento)" }
       ]
     },
     "terms": {
       "title": "Termos de Serviço",
-      "updated": "Última atualização: 22 de dezembro de 2025",
-      "intro": "Acordo legal...",
-      "back": "Voltar",
+      "updated": "Última atualização: 22 de dezembro de 2025 | Versão 1.0",
+      "intro": "Este documento descreve o acordo legalmente vinculativo entre você e a tariff.ai em relação ao uso de nossos serviços.",
+      "back": "Voltar ao Início",
       "sections": [
-        { "title": "1. Aceitação", "content": "Ao usar o serviço..." }
+        { "title": "1. Aceitação dos Termos", "content": "Ao acessar ou usar qualquer parte do site, plataforma ou serviços da tariff.ai (coletivamente, 'o Serviço'), você concorda em ficar vinculado a estes Termos de Serviço ('Termos'). Se você não concordar com todos os termos e condições deste acordo, então você não poderá acessar o Serviço ou usar quaisquer serviços." },
+        { "title": "2. Descrição do Serviço", "content": "A tariff.ai fornece análise tarifária impulsionada por IA, inteligência comercial e serviços relacionados projetados para ajudar empresas com compliance e estratégia de comércio internacional." }
       ]
     },
     "cookiePolicy": {
       "title": "Política de Cookies",
-      "updated": "Última atualização: 22 de dezembro de 2025",
-      "intro": "Uso de cookies...",
-      "back": "Voltar",
+      "updated": "Última atualização: 22 de dezembro de 2025 | Versão 1.0",
+      "intro": "Compreendendo como usamos cookies e tecnologias semelhantes na tariff.ai",
+      "back": "Voltar ao Início",
       "sections": [
-        { "title": "1. O que são Cookies", "content": "Pequenos arquivos de texto..." }
+        { "title": "1. O que são Cookies", "content": "Cookies são pequenos arquivos de texto armazenados no seu dispositivo (computador, tablet ou telefone celular) quando você visita um site. Eles ajudam os sites a lembrar suas preferências, entender como você os usa e fornecer uma melhor experiência ao usuário." },
+        { "title": "2. Como Usamos Cookies", "content": "A tariff.ai usa cookies para os seguintes propósitos:\n\nFunções Essenciais:\n• Manter sua sessão logada\n• Lembrar suas preferências de idioma e tema\n• Proteger sua conexão com nossos serviços\n\nAnálise e Desempenho:\n• Entender quais páginas são as mais populares\n• Analisar o comportamento do usuário para melhorar nosso serviço\n• Rastrear erros técnicos e bugs\n\nExperiência do Usuário:\n• Lembrar suas preferências de consentimento de cookies\n• Personalizar conteúdo com base em seus interesses\n• Otimizar o desempenho do site" }
       ]
     }
   }
