@@ -1,0 +1,304 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Funzionalità",
+    "howItWorks": "Come funziona",
+    "pricing": "Prezzi",
+    "faq": "FAQ",
+    "testimonials": "Testimonianze",
+    "blog": "Blog",
+    "contact": "Contatti",
+    "about": "Chi siamo"
+  },
+  "common": {
+    "getStarted": "Inizia",
+    "subscribe": "Iscriviti",
+    "allRightsReserved": "Tutti i diritti riservati.",
+    "madeWith": "Fatto con",
+    "forGlobalTrade": "per il commercio globale",
+    "readMore": "Leggi di più",
+    "viewAll": "Vedi tutto",
+    "submit": "Invia",
+    "sending": "Invio...",
+    "sent": "Inviato!",
+    "backToHome": "Torna alla Home",
+    "tryFree": "Prova Gratis",
+    "startFreeAnalysis": "Analisi Gratuita",
+    "watchDemo": "Guarda la Demo"
+  },
+  "hero": {
+    "badge": "Intelligenza Tariffaria AI",
+    "title": "Navigate nel Commercio Globale",
+    "titleHighlight": "Con Sicurezza",
+    "subtitle": "Analizza istantaneamente tariffe, dazi e regolamenti commerciali per qualsiasi prodotto in oltre 190 paesi.",
+    "cta": "Inizia ora",
+    "ctaSecondary": "Guarda la demo",
+    "stats": {
+      "countries": "Paesi",
+      "accuracy": "Precisione",
+      "reports": "Report"
+    },
+    "visuals": {
+      "processing": "0.4s elaborazione",
+      "exportRoute": "Rotta Export",
+      "usToGermany": "USA verso Germania",
+      "compliant": "CONFORME",
+      "estimatedDuty": "Dazio Stimato",
+      "hsCode": "Codice SA",
+      "verified": "Verificato",
+      "aiConfidence": "Affidabilità IA",
+      "instantAnalysis": "Analisi Istantanea"
+    }
+  },
+  "challenges": {
+    "badge": "La Sfida",
+    "title": "Il Commercio Globale è Complesso",
+    "subtitle": "Le aziende perdono milioni annualmente a causa di errori di calcolo tariffario.",
+    "items": [
+      {
+        "title": "Costi Nascosti",
+        "description": "Dazi imprevisti possono aumentare i costi del 15-30%."
+      },
+      {
+        "title": "Rischio di Conformità",
+        "description": "La non conformità porta a ritardi e multe."
+      },
+      {
+        "title": "Perdita di Tempo",
+        "description": "La ricerca manuale richiede ore per prodotto."
+      }
+    ]
+  },
+  "about": {
+    "badge": "Chi Siamo",
+    "title": "Semplificare il Commercio",
+    "description1": "tariff.ai combina IA avanzata con database commerciali completi.",
+    "description2": "Fondata da esperti di compliance e ingegneri IA.",
+    "features": [
+      { "title": "Precisione Prima di Tutto", "desc": "Verificato con fonti ufficiali" },
+      { "title": "Velocità", "desc": "Risposte in secondi, non ore" },
+      { "title": "Sempre Aggiornato", "desc": "Aggiornamenti in tempo reale" }
+    ],
+    "stats": {
+      "countries": "Paesi",
+      "accuracy": "Precisione",
+      "reports": "Report",
+      "support": "Supporto"
+    }
+  },
+  "features": {
+    "badge": "Capacità",
+    "title": "Tutto ciò che serve",
+    "subtitle": "Strumenti potenti per ottimizzare le operazioni globali",
+    "items": [
+      { "title": "Classificazione Codice SA", "desc": "Classificazione automatica con 98% di precisione" },
+      { "title": "Calcolatore Dazi", "desc": "Calcolo istantaneo di dazi e tasse" },
+      { "title": "Ricerca Accordi", "desc": "Scopri tariffe preferenziali negli accordi di libero scambio" },
+      { "title": "Avvisi Conformità", "desc": "Notifiche in tempo reale sui cambiamenti normativi" },
+      { "title": "Analisi Multi-Paese", "desc": "Confronta tariffe su più destinazioni" },
+      { "title": "Documentazione", "desc": "Genera documenti conformi automaticamente" }
+    ],
+    "cta": "Inizia subito"
+  },
+  "howItWorks": {
+    "badge": "Processo",
+    "title": "Come funziona",
+    "subtitle": "Approfondimenti tariffari precisi in tre passaggi",
+    "steps": [
+      { "title": "Descrivi il prodotto", "desc": "Inserisci dettagli o carica un'immagine." },
+      { "title": "Scegli la rotta", "desc": "Seleziona origine e destinazione." },
+      { "title": "Ottieni il report", "desc": "Ricevi un'analisi completa." }
+    ]
+  },
+  "pricing": {
+    "badge": "Piani",
+    "title": "Prezzi Semplici e Trasparenti",
+    "subtitle": "Scegli il piano adatto alla tua azienda",
+    "monthly": "Mensile",
+    "yearly": "Annuale",
+    "off": "sconto",
+    "popular": "Popolare",
+    "mo": "mese",
+    "perReport": "per report",
+    "includes": "Include:",
+    "packages": "Pacchetti",
+    "subscriptions": "Abbonamenti",
+    "getStarted": "Scegli",
+    "freeTier": {
+      "title": "Prova Gratis",
+      "desc": "Perfetto per provare",
+      "features": ["Codice SA e Ragionamento", "Punteggio Affidabilità", "Fonti"]
+    },
+    "packageFeatures": [
+      "Codice SA e Ragionamento", "Tariffe e tasse", "Regolamentazione", "Conformità", "Codici Alternativi", "Affidabilità", "Fonti"
+    ],
+    "subscriptionFeatures": [
+      "Report completo", "Avviso Codice SA", "Calcolatore Tasse", "Calcolatore Nolo", "Gestione Spedizioni"
+    ]
+  },
+  "testimonials": {
+    "badge": "Successi",
+    "title": "Cosa dicono i clienti",
+    "subtitle": "Scelto da importatori ed esportatori in tutto il mondo",
+    "items": [
+      { "quote": "tariff.ai ci ha fatto risparmiare oltre $50.000 nel primo trimestre.", "name": "Sarah Chen", "role": "Responsabile Import" },
+      { "quote": "La precisione e la velocità sono incredibili.", "name": "Michael Torres", "role": "Direttore Compliance" },
+      { "quote": "Finalmente uno strumento che parla la nostra lingua.", "name": "Emma Williams", "role": "CEO" }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Centro Conoscenza",
+    "subtitle": "Tutto ciò che devi sapere",
+    "contactTitle": "Non hai trovato risposta?",
+    "contactCta": "Contattaci",
+    "items": [
+      { "q": "Cos'è tariff.ai?", "a": "Una piattaforma IA per l'analisi tariffaria..." },
+      { "q": "Quanto è precisa la classificazione?", "a": "La nostra IA raggiunge il 98% di precisione..." }
+    ]
+  },
+  "blog": {
+    "badge": "Approfondimenti",
+    "title": "Dal nostro Blog",
+    "subtitle": "Analisi di esperti e notizie del settore",
+    "articles": [
+      { "category": "Settore", "title": "Cambiamenti Tariffari 2024", "desc": "Guida completa agli aggiornamenti..." },
+      { "category": "Guida", "title": "Sfruttare gli Accordi Commerciali", "desc": "Massimizza i risparmi..." },
+      { "category": "Tecnologia", "title": "IA nella Compliance", "desc": "Il futuro delle dogane..." }
+    ]
+  },
+  "contact": {
+    "badge": "Contatti",
+    "title": "Contattaci",
+    "subtitle": "Domande? Siamo qui per aiutarti",
+    "form": {
+      "name": "Nome completo",
+      "email": "Email",
+      "company": "Azienda",
+      "subject": "Oggetto",
+      "message": "Messaggio",
+      "send": "Invia messaggio",
+      "success": "Inviato!"
+    },
+    "info": {
+      "email": "Email",
+      "responseTime": "Tempo di risposta",
+      "responseTimeDesc": "Rispondiamo entro 24 ore nei giorni lavorativi.",
+      "status": "Disponibile ora"
+    }
+  },
+  "cookieBanner": {
+    "title": "Utilizziamo i Cookie",
+    "desc": "Per migliorare l'esperienza e analizzare il traffico.",
+    "customize": "Personalizza",
+    "acceptAll": "Accetta Tutto",
+    "essentialOnly": "Solo Essenziali",
+    "settingsTitle": "Impostazioni Cookie",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "types": {
+      "essential": { "title": "Cookie Essenziali", "desc": "Necessari per il funzionamento del sito." },
+      "analytics": { "title": "Cookie Analitici", "desc": "Per capire l'utilizzo del sito." },
+      "marketing": { "title": "Cookie Marketing", "desc": "Per pubblicità rilevanti." }
+    }
+  },
+  "newsletter": {
+    "title": "Iscriviti alla Newsletter",
+    "subtitle": "Ricevi gli ultimi aggiornamenti tariffari",
+    "placeholder": "La tua email",
+    "consent": "Accetto di ricevere email da tariff.ai",
+    "cta": "Iscriviti"
+  },
+  "footer": {
+    "description": "Intelligenza tariffaria IA per professionisti del commercio globale.",
+    "legal": "Legale",
+    "terms": "Termini di Servizio",
+    "privacy": "Privacy",
+    "cookies": "Cookie",
+    "copyright": "Tutti i diritti riservati."
+  },
+  "dataRequest": {
+    "title": "Esercita i tuoi diritti",
+    "subtitle": "Accesso, correzione o cancellazione dati (GDPR & LGPD).",
+    "form": {
+      "requestType": "Tipo richiesta",
+      "requestTypePlaceholder": "Seleziona...",
+      "fullName": "Nome",
+      "fullNamePlaceholder": "Il tuo nome",
+      "email": "Email",
+      "emailPlaceholder": "tua@email.com",
+      "details": "Dettagli",
+      "detailsPlaceholder": "Info aggiuntive...",
+      "submit": "Invia",
+      "submitAnother": "Nuova richiesta",
+      "types": {
+        "access": "Accesso ai dati",
+        "rectification": "Correzione",
+        "erasure": "Cancellazione (Diritto all'oblio)",
+        "restriction": "Limitazione trattamento",
+        "portability": "Portabilità",
+        "objection": "Opposizione"
+      }
+    },
+    "success": {
+      "title": "Richiesta Ricevuta",
+      "desc": "Elaboreremo la richiesta nei termini di legge."
+    },
+    "messages": {
+      "success": "Inviata con successo",
+      "error": "Errore nell'invio"
+    }
+  },
+  "publicReport": {
+    "loading": "Caricamento report sicuro...",
+    "accessDenied": "Accesso Negato",
+    "returnHome": "Torna alla Home",
+    "verifiedReport": "Report di Classificazione Verificato",
+    "generated": "Generato:",
+    "hsCode": "Codice SA",
+    "tradeRoute": "Rotta Commerciale",
+    "category": "Categoria",
+    "analysisDetails": "Dettagli Analisi",
+    "dutiesAndTaxes": "Dazi & Tasse",
+    "complianceCheck": "Verifica Conformità",
+    "importLicense": "Licenza Import",
+    "prohibited": "Proibito",
+    "restricted": "Limitato",
+    "required": "Richiesto",
+    "notRequired": "Non Richiesto",
+    "yes": "Sì",
+    "no": "No",
+    "validUntil": "Valido fino al",
+    "print": "Stampa",
+    "exportPdf": "Esporta PDF"
+  },
+  "legalPages": {
+    "privacy": {
+      "title": "Informativa sulla Privacy",
+      "updated": "Ultimo aggiornamento: 22 dicembre 2025",
+      "intro": "Come utilizziamo i tuoi dati.",
+      "back": "Indietro",
+      "sections": [
+        { "title": "1. Titolare dei dati", "content": "tariff.ai è il titolare..." }
+      ]
+    },
+    "terms": {
+      "title": "Termini di Servizio",
+      "updated": "Ultimo aggiornamento: 22 dicembre 2025",
+      "intro": "Accordo legale...",
+      "back": "Indietro",
+      "sections": [
+        { "title": "1. Accettazione", "content": "Utilizzando il servizio accetti..." }
+      ]
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy",
+      "updated": "Ultimo aggiornamento: 22 dicembre 2025",
+      "intro": "Utilizzo dei cookie...",
+      "back": "Indietro",
+      "sections": [
+        { "title": "1. Cosa sono i cookie", "content": "Piccoli file di testo..." }
+      ]
+    }
+  }
+}
